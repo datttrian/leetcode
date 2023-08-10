@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "median-of-two-sorted-arrays"
+version = "0.1.0"
+description = ""
+authors = ["Dat T. Tran <datttrian@gmail.com>"]
+readme = "README.md"
+packages = [{include = "median_of_two_sorted_arrays"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pytest = "^7.4.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
