@@ -10,14 +10,14 @@
 	// 👇 Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "",
 	// 👇 Configure tool-specific properties.
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"ms-python.python",
-				"njpwerner.autodocstring"
-			]
-		}
-	},
+	// "customizations": {
+	// 	"vscode": {
+	// 		"extensions": [
+	// 			"ms-python.python",
+	// 			"njpwerner.autodocstring"
+	// 		]
+	// 	}
+	// },
 	// 👇 Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
 	"extensions": [
@@ -30,7 +30,7 @@
 		"dbaeumer.vscode-eslint",
 		"streetsidesoftware.code-spell-checker",
 		"PKief.material-icon-theme",
-		"VisualStudioExptTeam.vscodeintellicode",
 		"VisualStudioExptTeam.intellicode-api-usage-examples",
+		"ms-python.black-formatter"
 	],
 }
