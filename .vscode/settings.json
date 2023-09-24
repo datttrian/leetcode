@@ -9,5 +9,5 @@
     "git.postCommitCommand": "push",
     "git.allowForcePush": true,
     "git.showPushSuccessNotification": true,
-    "gitdoc.commitMessageFormat": "DDDD"
+    "gitdoc.commitMessageFormat": "FFFF"
 }
