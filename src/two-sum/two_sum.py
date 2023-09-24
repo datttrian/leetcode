@@ -1,8 +1,7 @@
 class Solution:
     def twoSum(self, nums, target):
         """
-        Find and return the indices of two numbers in the 'nums' list that
-        add up to the 'target'.
+        Find and return the indices of two numbers in the 'nums' list that add up to the 'target'.
 
         Args:
             nums (List[int]): The list of integers to search for a pair.
