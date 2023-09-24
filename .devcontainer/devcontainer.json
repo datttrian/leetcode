@@ -34,6 +34,7 @@
 		"rvest.vs-code-prettier-eslint",
 		"streetsidesoftware.code-spell-checker",
 		"VisualStudioExptTeam.intellicode-api-usage-examples",
-		"VisualStudioExptTeam.vscodeintellicode"
+		"VisualStudioExptTeam.vscodeintellicode",
+		"vsls-contrib.gitdoc"
 	],
 }

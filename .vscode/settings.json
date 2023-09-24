@@ -4,5 +4,10 @@
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
-    "python.formatting.provider": "none"
+    "python.formatting.provider": "none",
+    "gitdoc.enabled": true,
+    "git.postCommitCommand": "push",
+    "git.allowForcePush": true,
+    "git.showPushSuccessNotification": true,
+    "gitdoc.commitMessageFormat": "DDDD"
 }
