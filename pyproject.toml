@@ -31,4 +31,9 @@ build-backend = "poetry.core.masonry.api"
 disable = ["R0903", "C0114", "C0115", "C0103"]
 
 [tool.flake8]
-extend-ignore = ["D100", "D101"]
+ignore = ['D100', 'D101']
+per-file-ignores = [
+    '__init__.py:F401',
+]
+max-line-length = 88
+count = true
