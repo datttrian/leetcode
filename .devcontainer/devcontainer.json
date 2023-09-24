@@ -20,7 +20,9 @@
 	// },
 	// 👇 Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
-	"extensions": [
+	"customizations": {
+    "vscode": {
+      "extensions": [
 		"donjayamanne.python-environment-manager",
 		"KevinRose.vsc-python-indent",
 		"ms-python.black-formatter",
@@ -36,5 +38,16 @@
 		"VisualStudioExptTeam.intellicode-api-usage-examples",
 		"VisualStudioExptTeam.vscodeintellicode",
 		"vsls-contrib.gitdoc"
-	],
+		],
+      "settings": {
+		"gitdoc.enabled": true,
+    	"git.postCommitCommand": "push",
+    	"git.allowForcePush": true,
+    	"git.showPushSuccessNotification": true,
+    	"gitdoc.commitMessageFormat": "ccc, LLL d, y, h:mm:ss a '+00:00:00'",
+		"git.autofetch": true,
+		"git.autofetchPeriod": 600
+	  }
+    }
+  }
 }
