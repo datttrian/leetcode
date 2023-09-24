@@ -1,17 +1,16 @@
-from typing import List
-
-
 class Solution:
-    def twoSum(self, nums: List[int], target: int):
+    def twoSum(self, nums, target):
         """
-        Find and return the indices of two numbers in the 'nums' list that add up to the 'target'.
+        Find and return the indices of two numbers in the 'nums' list that
+        add up to the 'target'.
 
         Args:
             nums (List[int]): The list of integers to search for a pair.
             target (int): The target sum to find.
 
         Returns:
-            List[int]: A list containing the indices of the two numbers that add up to the target.
+            List[int]: A list containing the indices of the two numbers
+            that add up to the target.
                        If no such pair is found, an empty list is returned.
         """
         numMap = {}
