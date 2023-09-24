@@ -28,4 +28,4 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.pylint.messages]
-disable = ["R0903", "C0114", "C0115", "C0103"]
+disable = ["R0903", "C0114", "C0115", "C0103", "C0116]
