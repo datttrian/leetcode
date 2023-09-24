@@ -16,5 +16,6 @@
         "--line-length=79",
         "--skip-string-normalization"
     ],
+    "flake8.importStrategy": "fromEnvironment",
     
 }
