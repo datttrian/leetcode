@@ -18,7 +18,7 @@
     ],
     "flake8.importStrategy": "fromEnvironment",
     "flake8.args": [
-        "--ignore=E402,F841,F401,E302,E305"
+        "--ignore=D100,D101"
     ],
     
 }
