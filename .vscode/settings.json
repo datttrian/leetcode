@@ -6,5 +6,11 @@
     },
     "python.formatting.provider": "none",
     "git.autofetch": true,
+    "gitdoc.commitMessageFormat": "ccc, LLL d, y, h:mm:ss a '+00:00:00'",
+    "git.postCommitCommand": "push",
+    "git.autofetchPeriod": 360,
+    "gitdoc.autoCommitDelay": 3000,
+    "gitdoc.autoPullDelay": 3000,
+    "gitdoc.enabled": true,
     
 }
