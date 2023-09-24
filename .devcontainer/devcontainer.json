@@ -37,7 +37,8 @@
 		"streetsidesoftware.code-spell-checker",
 		"VisualStudioExptTeam.intellicode-api-usage-examples",
 		"VisualStudioExptTeam.vscodeintellicode",
-		"vsls-contrib.gitdoc"
+		"vsls-contrib.gitdoc",
+		"ms-pyright.pyright"
 		]
     }
   }

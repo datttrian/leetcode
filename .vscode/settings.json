@@ -6,7 +6,7 @@
     },
     "python.formatting.provider": "none",
     "git.autofetch": true,
-    "gitdoc.commitMessageFormat": "ccc, LLL d, y, h:mm:ss a '+00:00:00'",
+    "gitdoc.commitMessageFormat": "ccc, LLL d, y, h:mm a '+00:00'",
     "git.postCommitCommand": "push",
     "git.autofetchPeriod": 360,
     "gitdoc.autoCommitDelay": 3000,
@@ -18,7 +18,8 @@
     ],
     "flake8.importStrategy": "fromEnvironment",
     "flake8.args": [
-        "--ignore=D100,D101,D102"
+        "--ignore=D100,D101,D102,D103"
     ],
+    "python.analysis.typeCheckingMode": "strict",
     
 }
