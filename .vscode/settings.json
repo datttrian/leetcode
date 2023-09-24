@@ -16,8 +16,5 @@
         "--line-length=79",
         "--skip-string-normalization"
     ],
-    "flake8.args": [
-        "ignore = D100, D101"
-    ],
     
 }
