@@ -1,18 +1,21 @@
 class Solution:
-    def longestPalindrome(self, s):
-        def expand(l, r):
-            while l >= 0 and r < len(s) and s[l] == s[r]:
-                l -= 1
-                r += 1
-            return s[l+1:r]
+    def longestPalindrome(self, input_string: str) -> str:
+        def expand_around_center(left: int, right: int) -> str:
+            while (
+                left >= 0
+                and right < len(input_string)
+                and input_string[left] == input_string[right]
+            ):
+                left -= 1
+                right += 1
+            return input_string[left + 1 : right]
 
-        result = ""
-        for i in range(len(s)):
-            sub1 = expand(i, i)
-            if len(sub1) > len(result):
-                result = sub1
-            sub2 = expand(i, i+1)
-            if len(sub2) > len(result):
-                result = sub2
-        return result
-
+        longest_palindrome: str = ''
+        for center in range(len(input_string)):
+            palindrome1: str = expand_around_center(center, center)
+            if len(palindrome1) > len(longest_palindrome):
+                longest_palindrome = palindrome1
+            palindrome2: str = expand_around_center(center, center + 1)
+            if len(palindrome2) > len(longest_palindrome):
+                longest_palindrome = palindrome2
+        return longest_palindrome
