@@ -1,3 +1,4 @@
+from typing import List
 import pytest
 from next_permutation import (
     Solution,
@@ -6,7 +7,7 @@ from next_permutation import (
 
 class TestSolution:
     @pytest.mark.parametrize(
-        "nums, expected",
+        ('nums', 'expected'),
         [
             ([1, 2, 3], [1, 3, 2]),
             ([3, 2, 1], [1, 2, 3]),
@@ -20,7 +21,7 @@ class TestSolution:
             ([1, 1], [1, 1]),
         ],
     )
-    def test_nextPermutation(self, nums, expected):
+    def test_nextPermutation(self, nums: List[int], expected: List[int]):
         solution = Solution()
         solution.nextPermutation(nums)
         assert nums == expected
