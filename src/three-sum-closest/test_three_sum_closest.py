@@ -1,11 +1,11 @@
 import pytest
 from typing import List
-from three_sum_closest.Solution import Solution
+from three_sum_closest import Solution
 
 
 class TestSolution:
     @pytest.mark.parametrize(
-        "nums, target, expected",
+        ('nums', 'target', 'expected'),
         [
             ([-1, 2, 1, -4], 1, 2),
             ([0, 0, 0], 1, 0),
@@ -14,7 +14,12 @@ class TestSolution:
             ([1, 1, 1, 1], 4, 3),
         ],
     )
-    def test_threeSumClosest(self, nums: List[int], target: int, expected: int):
+    def test_threeSumClosest(
+        self,
+        nums: List[int],
+        target: int,
+        expected: int,
+    ):
         solution = Solution()
         result = solution.threeSumClosest(nums, target)
         assert result == expected
