@@ -1,5 +1,5 @@
 import pytest
-from add_two_numbers.Solution import Solution, ListNode
+from add_two_numbers import Solution, ListNode
         
 class TestSolution:
     @pytest.mark.parametrize("l1_values, l2_values, expected_result", [
