@@ -1,5 +1,5 @@
 import pytest
-from container_with_most_water.Solution import Solution
+from container_with_most_water import Solution
 
 
 class TestSolution:
