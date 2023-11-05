@@ -1,6 +1,6 @@
 # LeetCode
 
-|                   Problem Name                                            | Time Complexity                                | Space Complexity                              |
+|                   Problem                                            | Time Complexity                                | Space Complexity                              |
 |---------------------------------------------------------------------------|------------------------------------------------|-----------------------------------------------|
 |[Two Sum](https://github.com/datttrian/leetcode/tree/main/src/two-sum)                                                     |$$O(n)$$                                        |$$O(n)$$                                       |
 
