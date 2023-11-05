@@ -15,5 +15,4 @@ class Solution:
             # Otherwise, add the number to the dictionary
             num_dict[num] = i
         # If no solution is found, this line will never be reached
-        # because the problem statement guarantees exactly one solution
         return []
