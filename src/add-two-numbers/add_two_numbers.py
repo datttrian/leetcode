@@ -31,6 +31,7 @@ class Solution:
             val1: int = (
                 l1.val if l1 else 0
             )  # get the value of the current node of l1, 0 if l1 is exhausted
+
             val2: int = (
                 l2.val if l2 else 0
             )  # get the value of the current node of l2, 0 if l2 is exhausted
