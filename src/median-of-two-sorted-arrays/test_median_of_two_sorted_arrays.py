@@ -24,5 +24,6 @@ def test_findMedianSortedArrays(
     b: List[int],
     expected_median: Optional[float],
 ) -> None:
+    solution = Solution()
     result = solution.findMedianSortedArrays(a, b)
     assert result == expected_median
