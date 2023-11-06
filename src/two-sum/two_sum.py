@@ -24,8 +24,7 @@ class Solution:
 
         Raises:
         - This function assumes that there is exactly one solution, and it
-        does not handle the
-          case where no solution exists.
+        does not handle the case where no solution exists.
 
         Complexity:
         - Time: O(n), where n is the number of elements in `nums`. The
