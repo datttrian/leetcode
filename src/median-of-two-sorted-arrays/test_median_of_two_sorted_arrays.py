@@ -6,7 +6,6 @@ from median_of_two_sorted_arrays import Solution
 def solution():
     return Solution()
 
-
 @pytest.mark.parametrize(
     "a, b, expected_median",
     [
@@ -16,7 +15,7 @@ def solution():
         ([], [1], 1.0),
         ([2], [], 2.0),
         ([], [], None),
-    ],
+    ]
 )
 def test_find_median_sorted_arrays(solution, a, b, expected_median):
     result = solution.findMedianSortedArrays(a, b)
