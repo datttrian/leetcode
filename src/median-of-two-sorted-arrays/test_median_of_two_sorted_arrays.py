@@ -19,7 +19,6 @@ from median_of_two_sorted_arrays import Solution
     ],
 )
 def test_findMedianSortedArrays(
-    solution: Solution,
     a: List[int],
     b: List[int],
     expected_median: Optional[float],
