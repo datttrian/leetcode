@@ -39,6 +39,12 @@ class Solution:
         through both lists until all digits have been processed. In each
         iteration, it adds the digits along with the carry from the previous
         iteration.
+
+        Complexity:
+        - Time: O(log(min(n, m))), where n and m are the lengths of arrays a
+        and b.
+        - Space: O(1), since this approach only uses a constant amount of
+        extra space.
         """
         # Initialize a dummy head node to simplify addition when a new node is
         # required.
