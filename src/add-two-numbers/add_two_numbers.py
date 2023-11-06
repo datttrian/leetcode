@@ -43,8 +43,10 @@ class Solution:
         Complexity:
         - Time: O(max(n, m)), where n and m are number of nodes in the first
         and second linked list .
-        - Space: O(1), since this approach only uses a constant amount of
-        extra space.
+        - Space: O(max(n, m)), since we may need to store the sum in a new
+        linked list, the space required for the new list is at most the length
+        of the longer input list plus one additional node for a potential
+        carry-over.
         """
         # Initialize a dummy head node to simplify addition when a new node is
         # required.
