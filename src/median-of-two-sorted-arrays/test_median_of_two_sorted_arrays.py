@@ -1,5 +1,5 @@
-import pytest
 from typing import List, Optional
+import pytest
 from median_of_two_sorted_arrays import Solution
 
 
