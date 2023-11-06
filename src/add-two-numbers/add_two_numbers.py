@@ -41,8 +41,8 @@ class Solution:
         iteration.
 
         Complexity:
-        - Time: O(log(min(n, m))), where n and m are the lengths of arrays a
-        and b.
+        - Time: O(max(n, m)), where n and m are number of nodes in the first
+        and second linked list .
         - Space: O(1), since this approach only uses a constant amount of
         extra space.
         """
