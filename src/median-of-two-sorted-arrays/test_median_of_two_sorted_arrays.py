@@ -1,17 +1,23 @@
-from typing import List
 import pytest
-from two_sum import Solution
+from median_of_two_sorted_arrays import Solution
+
+
+@pytest.fixture
+def solution():
+    return Solution()
 
 
 @pytest.mark.parametrize(
-    ('nums', 'target', 'expected'),
+    "a, b, expected_median",
     [
-        ([2, 7, 11, 15], 9, [0, 1]),
-        ([3, 2, 4], 6, [1, 2]),
-        ([3, 3], 6, [0, 1]),
-        # Add more test cases here
+        ([1, 3], [2], 2.0),
+        ([1, 2], [3, 4], 2.5),
+        ([0, 0], [0, 0], 0.0),
+        ([], [1], 1.0),
+        ([2], [], 2.0),
+        ([], [], None),
     ],
 )
-def test_twoSum(nums: List[int], target: int, expected: List[int]):
-    solution = Solution()
-    assert solution.twoSum(nums, target) == expected
+def test_find_median_sorted_arrays(solution, a, b, expected_median):
+    result = solution.findMedianSortedArrays(a, b)
+    assert result == expected_median
