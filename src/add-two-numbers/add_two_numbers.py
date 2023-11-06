@@ -17,42 +17,57 @@ class Solution:
         l1: ListNode | None,
         l2: ListNode | None,
     ) -> ListNode | None:
-        head: ListNode = ListNode(
-            0,
-        )  # dummy head node to simplify the addition
+        """
+        Add two numbers represented as linked lists and return the sum.
 
-        current: ListNode = (
-            head  # pointer to the current node in the result list
-        )
-        carry: int = 0  # initialize carry to zero
+        Each node in the input lists contains a single digit, and the digits
+        are stored in reverse order, with the head node representing the least
+        significant digit. The function computes the sum digit by digit, taking
+        care to manage the carry from the sum that exceeds 9.
 
-        # Continue looping until both lists are exhausted and there is no carry
+        Args:
+            l1 (ListNode | None): The head node of the first linked list.
+            l2 (ListNode | None): The head node of the second linked list.
+
+        Returns:
+            ListNode | None: The head node of the linked list that represents
+            the sum.
+
+        The method uses a dummy head node to simplify the handling of the edge
+        case where a new digit is added (e.g., when the sum of the highest
+        digits plus a carry results in a new digit). The function iterates
+        through both lists until all digits have been processed. In each
+        iteration, it adds the digits along with the carry from the previous
+        iteration.
+        """
+        # Initialize a dummy head node to simplify addition when a new node is
+        # required.
+        head: ListNode = ListNode(0)
+        # Start with the current node pointing to the dummy head.
+        current: ListNode = head
+        # Initialize carry to zero.
+        carry: int = 0
+
+        # Loop until both lists are exhausted and there is no carry.
         while l1 or l2 or carry:
-            val1: int = (
-                l1.val if l1 else 0
-            )  # get the value of the current node of l1, 0 if l1 is exhausted
+            # Extract values from the lists, defaulting to 0 if the list is
+            # exhausted.
+            val1: int = l1.val if l1 else 0
+            val2: int = l2.val if l2 else 0
 
-            val2: int = (
-                l2.val if l2 else 0
-            )  # get the value of the current node of l2, 0 if l2 is exhausted
+            # Sum the values with the carry, calculate the new carry and the
+            # digit to store.
+            carry, out = divmod(val1 + val2 + carry, 10)
 
-            carry, out = divmod(
-                val1 + val2 + carry,
-                10,
-            )  # calculate the sum and the new carry
+            # Append the calculated digit to the result list.
+            current.next = ListNode(out)
 
-            current.next = ListNode(
-                out,
-            )  # create a new node with the sum value
+            # Move to the next node in the result list.
+            current = current.next
 
-            current = current.next  # move to the next node
+            # Move to the next nodes in the input lists, if available.
+            l1 = l1.next if l1 else None
+            l2 = l2.next if l2 else None
 
-            l1 = (
-                l1.next if l1 else None
-            )  # advance to the next node in l1 if available
-
-            l2 = (
-                l2.next if l2 else None
-            )  # advance to the next node in l2 if available
-
+        # Return the sum list, which is next to the dummy head.
         return head.next
