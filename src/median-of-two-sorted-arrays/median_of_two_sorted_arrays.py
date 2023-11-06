@@ -1,34 +1,44 @@
 from typing import List
 
 
-class Solution:
-    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
-        A, B = nums1, nums2
-        total = len(nums1) + len(nums2)
-        half = total // 2
+class Solution:     
+	def findMedianSortedArrays(self, a, b):
 
-        # Make sure A is the smaller array
-        if len(B) < len(A):
-            A, B = B, A
+		l = len(a) + len(b)
 
-        l, r = 0, len(A) - 1
-        while True:
-            i = (l + r) // 2  # A's midpoint
-            j = half - i - 2  # B's midpoint
+		if l == 0:
+			return None
+		if l % 2:
+			return self.get_median(a, b, l // 2)
+		else:
+			return (self.get_median(a, b, l // 2) + self.get_median(a, b, l // 2 - 1))  / 2
 
-            Aleft = A[i] if i >= 0 else float("-infinity")
-            Aright = A[i + 1] if (i + 1) < len(A) else float("infinity")
-            Bleft = B[j] if j >= 0 else float("-infinity")
-            Bright = B[j + 1] if (j + 1) < len(B) else float("infinity")
-        
-            # Partition is correct
-            if Aleft <= Bright and Bleft <= Aright:
-                # Odd total length
-                if total % 2:
-                    return min(Aright, Bright)
-                # Even total length
-                return (max(Aleft, Bleft) + min(Aright, Bright)) / 2
-            elif Aleft > Bright:
-                r = i - 1
-            else:
-                l = i + 1
+		
+
+	def get_median(self, a, b, idx):
+
+		if not a:
+			return b[idx]
+		if not b:
+			return a[idx]
+
+		ai = len(a) // 2
+		bi = len(b) // 2
+		ma = a[ai]
+		mb = b[bi]
+
+		if ma > mb:
+			ma, mb = mb, ma
+			ai, bi = bi, ai
+			a, b = b, a
+
+		max_idx_ma = len(a) // 2 + len(b) // 2
+
+		if max_idx_ma < idx:
+			med = self.get_median(a[ai+1:], b, idx - (len(a)//2+1))
+		else:
+			# max_idx_ma < min_idx_mb (because they are different numbers) 
+			# => idx <= max_idx_ma <  min_idx_mb => idx < min_idx_mb
+			med = self.get_median(a, b[:bi], idx)
+
+		return med
