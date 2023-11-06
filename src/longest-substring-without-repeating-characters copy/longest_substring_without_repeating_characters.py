@@ -7,8 +7,8 @@ class Solution:
         start = max_length = 0
 
         for i, char in enumerate(s):
-            # If the character is found in the map and
-            # is inside the current window
+            # If the character is found in the map and is inside the current
+            # window
             if char in char_index_map and char_index_map[char] >= start:
                 # Move the start to one position ahead of the last occurrence
                 # to avoid repeating character
