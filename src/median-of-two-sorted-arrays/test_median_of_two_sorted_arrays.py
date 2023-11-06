@@ -14,6 +14,7 @@ def solution():
         ([0, 0], [0, 0], 0.0),
         ([], [1], 1.0),
         ([2], [], 2.0),
+        ([], [], None),
     ]
 )
 def test_find_median_sorted_arrays(solution, a, b, expected_median):
