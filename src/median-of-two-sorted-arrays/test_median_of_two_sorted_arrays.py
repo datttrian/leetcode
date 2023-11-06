@@ -1,6 +1,6 @@
 import pytest
-from median_of_two_sorted_arrays import Solution
 from typing import List, Optional
+from median_of_two_sorted_arrays import Solution
 
 
 @pytest.mark.parametrize(
