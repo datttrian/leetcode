@@ -1,37 +1,38 @@
-Let's use the provided code to add the numbers 564 (which is represented in reverse order as the linked list 4 -> 6 -> 5) and 243 (represented in reverse order as 3 -> 4 -> 2). When added together, they equal 807, which should be represented in reverse as 7 -> 0 -> 8.
-
-Here's the step-by-step process that the code would follow:
+The code snippet you've provided defines a method `lengthOfLongestSubstring` within a `Solution` class that calculates the length of the longest substring without repeating characters in a given string `s`. It uses the sliding window approach, where a window is a range of characters that does not contain any duplicates. Here's how it works, step by step, with the example string `s = "abcabcbb"`:
 
 1. **Initialization**:
-   - `carry` is set to 0.
-   - A new `ListNode` is created and assigned to `head`. `current` is also pointed to this dummy node.
+   - A dictionary `char_index_map` is created to keep track of the most recent index where each character occurs.
+   - Two pointers `left` and `right` are initialized to represent the boundaries of the sliding window. `left` is the start index, and `right` is the end index of the sliding window.
+   - `max_length` is initialized to 0 to keep track of the length of the longest substring found.
 
-2. **First Iteration**:
-   - `l1` points to 4, `l2` points to 3.
-   - `val1` is 4, `val2` is 3.
-   - `carry, out` = `divmod(4 + 3 + 0, 10)` which gives `(0, 7)`.
-   - `current.next` is set to a new `ListNode` with value 7.
-   - `current` is moved to `current.next`.
-   - `l1` is moved to `l1.next` (now points to 6), and `l2` is moved to `l2.next` (now points to 4).
+2. **First Iteration (`right` = 0, `char` = 'a')**:
+   - The character 'a' is not in `char_index_map`, so the current window is from index 0 to index 0.
+   - `char_index_map` is updated with `char_index_map['a'] = 0`.
+   - `max_length` is updated to `max(0, 0 - 0 + 1)` which is 1.
 
-3. **Second Iteration**:
-   - `l1` now points to 6, `l2` now points to 4.
-   - `val1` is 6, `val2` is 4.
-   - `carry, out` = `divmod(6 + 4 + 0, 10)` which gives `(1, 0)`.
-   - `current.next` is set to a new `ListNode` with value 0.
-   - `current` is moved to `current.next`.
-   - `l1` is moved to `l1.next` (now points to 5), and `l2` is moved to `l2.next` (now points to 2).
+3. **Second Iteration (`right` = 1, `char` = 'b')**:
+   - The character 'b' is not in `char_index_map`, so the current window is from index 0 to index 1.
+   - `char_index_map` is updated with `char_index_map['b'] = 1`.
+   - `max_length` is updated to `max(1, 1 - 0 + 1)` which is 2.
 
-4. **Third Iteration**:
-   - `l1` now points to 5, `l2` now points to 2.
-   - `val1` is 5, `val2` is 2.
-   - `carry, out` = `divmod(5 + 2 + 1, 10)` which gives `(0, 8)`.
-   - `current.next` is set to a new `ListNode` with value 8.
-   - `current` is moved to `current.next`.
-   - Both `l1` and `l2` will now be moved to `None` as there are no more nodes in the lists.
+4. **Third Iteration (`right` = 2, `char` = 'c')**:
+   - The character 'c' is not in `char_index_map`, so the current window is from index 0 to index 2.
+   - `char_index_map` is updated with `char_index_map['c'] = 2`.
+   - `max_length` is updated to `max(2, 2 - 0 + 1)` which is 3.
 
-5. **Finalization**:
-   - The loop ends as `l1`, `l2`, and `carry` are all `None` or zero.
-   - The `head` node's `next` is returned, which points to the head of the new linked list representing the sum: (7 -> 0 -> 8).
+5. **Fourth Iteration (`right` = 3, `char` = 'a')**:
+   - The character 'a' is in `char_index_map` at index 0. Since 0 is not greater than or equal to the current `left` (0), the `left` is not updated.
+   - `char_index_map` is updated with `char_index_map['a'] = 3`.
+   - `max_length` remains 3, as `max(3, 3 - 0 + 1)` is 4, but the window actually moved to start after the last 'a'.
 
-The final linked list represents the number 807, reversed as required by the problem statement. In this case, no new node for an additional digit was required since the sum of the numbers did not result in a longer number than the inputs.
+Now the window is from index 1 to index 3.
+
+6. **Continuing the process**, the algorithm will update the `left` boundary whenever it encounters a repeated character that lies within the current window. Each time it moves `left`, it effectively removes the previous occurrence of the character from the current window.
+
+7. **Final Iteration (`right` = 7, `char` = 'b')**:
+   - At the last character 'b', `char_index_map` contains `{'a': 6, 'b': 5, 'c': 4}`.
+   - The character 'b' was last seen at index 5, so `left` is updated to 5 + 1 = 6.
+   - `char_index_map` is updated with `char_index_map['b'] = 7`.
+   - `max_length` is updated to `max(3, 7 - 6 + 1)` which is 3.
+
+At the end of the loop, the algorithm returns the `max_length`, which is the length of the longest substring without repeating characters. For the string "abcabcbb", the longest substring without repeating characters is "abc", and its length is 3.
