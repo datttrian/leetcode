@@ -50,7 +50,7 @@ class Solution:
         """
         # Initialize a dummy head node to simplify addition when a new node is
         # required.
-        head: ListNode = ListNode(0)
+        head: ListNode = ListNode()
         # Start with the current node pointing to the dummy head.
         current: ListNode = head
         # Initialize carry to zero.
