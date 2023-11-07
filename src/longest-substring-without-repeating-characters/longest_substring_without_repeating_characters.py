@@ -3,49 +3,29 @@ from typing import Dict
 
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        """
-        Calculate length of the longest substring without repeating characters.
+        char_index_map: Dict[
+            str,
+            int,
+        ] = {}  # Maps characters to their latest indices
+        left: int = 0  # Left boundary of the window
+        max_length: int = (
+            0  # Result to store the length of the longest substring
+        )
 
-        This method iterates through the given string, utilizing a dictionary
-        to track the last index at which each character appears. It uses a
-        sliding window approach to maintain a substring where no characters are
-        repeated. The length of this window is checked at each step to
-        determine if it's the longest one found so far.
-
-        Args:
-            s (str): The string to be evaluated.
-
-        Returns:
-            int: The length of the longest substring without repeating
-            characters.
-
-        Complexity:
-            Time: O(n), where n is the length of the string. The method
-            iterates through the string once.
-            Space: O(min(m, n)), where m is the size of the charset used in
-            the string. In the worst case, all characters are unique and m
-            equals n.
-        """
-        # Initialize a dictionary to keep track of the last index of each
-        # character.
-        char_index_map: Dict[str, int] = {}
-        # 'start' marks the beginning of the current substring, 'max_length'
-        # is the max substring length found.
-        start = max_length = 0
-
-        for i, char in enumerate(s):
-            # If the character is already in the dictionary and its last
-            # occurrence is within the current window.
-            if char in char_index_map and char_index_map[char] >= start:
-                # Update 'start' to be one position after the last occurrence
-                # of 'char'.
-                start = char_index_map[char] + 1
-
-            # Update the last occurrence of 'char' to the current index 'i'.
-            char_index_map[char] = i
-
-            # Update 'max_length' to the maximum of its current value or the
-            # length of the current window.
-            max_length = max(max_length, i - start + 1)
-
+        for right, char in enumerate(
+            s,
+        ):  # right is the right boundary of the window
+            # If the character is found in the map and the last index is
+            # within the current window
+            if char in char_index_map and char_index_map[char] >= left:
+                # Move the left boundary right after the previous occurrence
+                # of the character
+                left = char_index_map[char] + 1
+            char_index_map[
+                char
+            ] = right  # Update the latest index of the character
+            max_length = max(
+                max_length,
+                right - left + 1,
+            )  # Calculate the window size and update the result if it's larger
         return max_length
