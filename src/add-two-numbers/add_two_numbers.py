@@ -15,8 +15,8 @@ class Solution:
     def addTwoNumbers(
         self,
         l1: Optional[ListNode],
-        l2: ListNode | None,
-    ) -> ListNode | None:
+        l2: Optional[ListNode],
+    ) -> Optional[ListNode]:
         """
         Add two numbers represented as linked lists and return the sum.
 
