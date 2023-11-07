@@ -28,19 +28,29 @@ class Solution:
             Space: O(min(m, n)), where m is the size of the character set and
             n is the length of the string. In the worst case, the whole string
             might be stored in the dictionary, but typically the size is
-             limited by the character set.
+            limited by the character set.
         """
+        # Dictionary to store the most recent index of each character.
         char_index_map: Dict[str, int] = {}
-        left: int = 0  # Initial left boundary of the sliding window
-        max_length: int = 0  # Length of the longest substring found
+        # Initialize the left boundary of the current window.
+        left: int = 0
+        # Initialize the length of the longest substring found.
+        max_length: int = 0
 
+        # Enumerate over each character in the string with its index.
         for right, char in enumerate(s):
+            # Check if the character has been seen and is within the current
+            # window.
             if char in char_index_map and char_index_map[char] >= left:
-                left = char_index_map[char] + 1  # Adjust the left boundary
-            char_index_map[char] = right  # Update the character's index
-            max_length = max(
-                max_length,
-                right - left + 1,
-            )  # Update max_length if current window is larger
+                # Move the left boundary to one past the last occurrence of
+                # the current character.
+                left = char_index_map[char] + 1
 
+            # Update the character's latest index in the dictionary.
+            char_index_map[char] = right
+
+            # Update the maximum length if the current window size is larger.
+            max_length = max(max_length, right - left + 1)
+
+        # Return the length of the longest substring found.
         return max_length
