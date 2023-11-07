@@ -1,112 +1,59 @@
-from typing import List, Optional
+from typing import List
 
 
 class Solution:
     def findMedianSortedArrays(
         self,
-        a: List[int],
-        b: List[int],
-    ) -> Optional[float]:
+        nums1: List[int],
+        nums2: List[int],
+    ) -> float:
         """
         Find the median of two sorted arrays.
 
-        This method handles both even
-        and odd total lengths by calling the helper method `get_median` which
-        performs a binary search.
+        This function takes two sorted arrays and finds their median as if
+        they were part of the same sorted array. It uses a binary search
+        algorithm to find the correct partition between the arrays that would
+        form a merged sorted array, and calculates the median from the
+        elements around the partition.
 
-        The median is defined as the middle number of a sorted list of numbers
-        or the average
-        of the two middle numbers if the list has an even number of elements.
-        This function
-        handles both empty and non-empty lists, and it can return a float or
-        None if the input
-        lists are empty.
-
-        Parameters:
-        - a (List[int]): The first sorted list of integers.
-        - b (List[int]): The second sorted list of integers.
+        Args:
+            nums1 (List[int]): The first sorted array.
+            nums2 (List[int]): The second sorted array.
 
         Returns:
-        - Optional[float]: The median value as a float if the total length is
-        odd, or the average of the two medians if the total length is even.
-        Returns None if both input lists are empty.
+            float: The median of the two sorted arrays.
 
         Complexity:
-        - Time: O(log(min(n, m))), where n and m are the lengths of arrays a
-        and b.
-        - Space: O(1), since this approach only uses a constant amount of
-        extra space.
+            Time: O(log(min(m, n))), where m and n are the lengths of the two
+            arrays.
+            This is because the binary search is performed on the smaller
+            array.
+            Space: O(1), as the solution uses constant extra space.
         """
-        l: int = len(a) + len(b)  # Total length of both arrays combined.
+        # Make sure A is the smaller array to apply binary search on it.
+        A, B = (nums1, nums2) if len(nums1) <= len(nums2) else (nums2, nums1)
+        total_length = len(A) + len(B)
+        half_point = total_length // 2
 
-        if l == 0:
-            return None  # Edge case: if both arrays are empty, return None.
+        left_index, right_index = 0, len(A) - 1
+        while True:
+            i = (left_index + right_index) // 2  # Index in A
+            j = half_point - i - 2  # Corresponding index in B
 
-        if l % 2:
-            return self.get_median(
-                a,
-                b,
-                l // 2,
-            )  # If odd, return the middle element.
-        else:
-            # If even, calculate the average of the two middle elements.
-            return (
-                self.get_median(a, b, l // 2)
-                + self.get_median(a, b, l // 2 - 1)
-            ) / 2
+            # Calculate partition values, taking care of edges
+            Aleft = A[i] if i >= 0 else float('-infinity')
+            Aright = A[i + 1] if (i + 1) < len(A) else float('infinity')
+            Bleft = B[j] if j >= 0 else float('-infinity')
+            Bright = B[j + 1] if (j + 1) < len(B) else float('infinity')
 
-    def get_median(self, a: List[int], b: List[int], idx: int) -> int:
-        """
-        Find the median of two sorted arrays using a binary search approach.
-
-        The function is recursively called until the median is found.
-
-        This helper method assumes that at least one of the arrays is
-        non-empty and it is
-        designed to be called by `findMedianSortedArrays`.
-
-        Parameters:
-        - a (List[int]): Non-empty sorted array or the relevant subarray from
-        the first array.
-        - b (List[int]): Non-empty sorted array or the relevant subarray from
-        the second array.
-        - idx (int): The index of the median to find in the merged array view.
-
-        Returns:
-        - int: The value of the median found at the specified index.
-
-        Note:
-        This method will modify the input lists `a` and `b` by slicing, which
-        does not affect
-        the original lists passed to `findMedianSortedArrays` due to Python's
-        list slicing
-        creating new lists.
-        """
-        # Base cases: if one of the arrays is empty, return the idx-th element
-        # of the other array.
-        if not a:
-            return b[idx]
-        if not b:
-            return a[idx]
-
-        # Find the middle indices and values of the current arrays.
-        ai: int = len(a) // 2
-        bi: int = len(b) // 2
-        ma: int = a[ai]
-        mb: int = b[bi]
-
-        # Ensure that 'a' contains the smaller middle element to simplify the
-        # logic.
-        if ma > mb:
-            a, b = b, a
-            ai, bi = bi, ai
-
-        # Recursively call `get_median` with adjusted arrays and index based
-        # on comparison.
-        max_idx_ma: int = ai + bi
-        if max_idx_ma < idx:
-            # If the index is in the second half, narrow down to that side.
-            return self.get_median(a[ai + 1 :], b, idx - (ai + 1))
-        else:
-            # If the index is in the first half, narrow down to that side.
-            return self.get_median(a, b[:bi], idx)
+            # Check if the partition is correct
+            if Aleft <= Bright and Bleft <= Aright:
+                # Return the middle value for odd total length
+                if total_length % 2:
+                    return min(Aright, Bright)
+                # Return average of two middle values for even total length
+                return (max(Aleft, Bleft) + min(Aright, Bright)) / 2
+            elif Aleft > Bright:
+                right_index = i - 1  # Move left in A
+            else:
+                left_index = i + 1  # Move right in A
