@@ -14,7 +14,7 @@ class ListNode:
 class Solution:
     def addTwoNumbers(
         self,
-        l1: ListNode | None,
+        l1: Optional[ListNode],
         l2: ListNode | None,
     ) -> ListNode | None:
         """
