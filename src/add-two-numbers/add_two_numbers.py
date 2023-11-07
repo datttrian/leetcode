@@ -48,32 +48,29 @@ class Solution:
         of the longer input list plus one additional node for a potential
         carry-over.
         """
-        # Initialize a dummy head node to simplify addition when a new node is
-        # required.
+        # Initialize a dummy head node to simplify cases requiring new node
         head: ListNode = ListNode()
-        # Start with the current node pointing to the dummy head.
+
+        # Start with the current node pointing to the dummy head
         current: ListNode = head
-        # Initialize carry to zero.
+
+        # Initialize carry to zero
         carry: int = 0
 
-        # Loop until both lists are exhausted and there is no carry.
+        # Loop until both lists are exhausted and there is no carry
         while l1 or l2 or carry:
-            # Extract values from the lists, defaulting to 0 if the list is
-            # exhausted.
+            # Extract values from the lists
             val1: int = l1.val if l1 else 0
             val2: int = l2.val if l2 else 0
 
-            # Sum the values with the carry, calculate the new carry and the
-            # digit to store.
-            carry, out = divmod(val1 + val2 + carry, 10)
+            # Calculate the new carry and digit
+            carry, val = divmod(val1 + val2 + carry, 10)
 
-            # Append the calculated digit to the result list.
-            current.next = ListNode(out)
+            # Append the new digit to the result list
+            current.next = ListNode(val)
 
-            # Move to the next node in the result list.
+            # Move to the next node in the result list and the input lists
             current = current.next
-
-            # Move to the next nodes in the input lists, if available.
             l1 = l1.next if l1 else None
             l2 = l2.next if l2 else None
 
