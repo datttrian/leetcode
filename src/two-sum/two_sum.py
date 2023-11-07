@@ -7,7 +7,7 @@ class Solution:
         Find two indices in an integer array whose values sum up to a given
         target number.
 
-        The function iterates through the list of numbers, using a hash table
+        The function iterates through the list of numbers, using a dictionary
         to store the numbers and their corresponding indices. For each number,
         it checks whether there is a complement in the table (i.e., a number
         which added to the current number equals the target). If such a
