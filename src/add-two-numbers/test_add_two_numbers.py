@@ -1,10 +1,10 @@
 import pytest
-from typing import List
+from typing import List, Optional
 from add_two_numbers import ListNode, Solution
 
 
 # Helper function to convert a list to a ListNode chain
-def to_listnode(numbers: List[int]) -> ListNode | None:
+def to_listnode(numbers: List[int]) -> Optional[ListNode]:
     dummy_root = ListNode(0)
     ptr = dummy_root
     for number in numbers:
