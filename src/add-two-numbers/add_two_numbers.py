@@ -25,6 +25,13 @@ class Solution:
         significant digit. The function computes the sum digit by digit, taking
         care to manage the carry from the sum that exceeds 9.
 
+        The method uses a dummy head node to simplify the handling of the edge
+        case where a new digit is added (e.g., when the sum of the highest
+        digits plus a carry results in a new digit). The function iterates
+        through both lists until all digits have been processed. In each
+        iteration, it adds the digits along with the carry from the previous
+        iteration.
+
         Args:
             l1 (Optional[ListNode]): The head node of the first linked list.
             l2 (Optional[ListNode]): The head node of the second linked list.
@@ -32,13 +39,6 @@ class Solution:
         Returns:
             Optional[ListNode]: The head node of the linked list that
             represents the sum.
-
-        The method uses a dummy head node to simplify the handling of the edge
-        case where a new digit is added (e.g., when the sum of the highest
-        digits plus a carry results in a new digit). The function iterates
-        through both lists until all digits have been processed. In each
-        iteration, it adds the digits along with the carry from the previous
-        iteration.
 
         Complexity:
         - Time: O(max(n, m)), where n and m are number of nodes in the first
