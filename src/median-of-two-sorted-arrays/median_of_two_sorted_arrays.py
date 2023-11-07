@@ -41,19 +41,29 @@ class Solution:
             j = half_point - i - 2  # Corresponding index in B
 
             # Calculate partition values, taking care of edges
-            Aleft = A[i] if i >= 0 else float('-infinity')
-            Aright = A[i + 1] if (i + 1) < len(A) else float('infinity')
-            Bleft = B[j] if j >= 0 else float('-infinity')
-            Bright = B[j + 1] if (j + 1) < len(B) else float('infinity')
+            leftBoundaryOfA = A[i] if i >= 0 else float('-infinity')
+            rightBoundaryOfA = (
+                A[i + 1] if (i + 1) < len(A) else float('infinity')
+            )
+            leftBoundaryOfB = B[j] if j >= 0 else float('-infinity')
+            rightBoundaryOfB = (
+                B[j + 1] if (j + 1) < len(B) else float('infinity')
+            )
 
             # Check if the partition is correct
-            if Aleft <= Bright and Bleft <= Aright:
+            if (
+                leftBoundaryOfA <= rightBoundaryOfB
+                and leftBoundaryOfB <= rightBoundaryOfA
+            ):
                 # Return the middle value for odd total length
                 if total_length % 2:
-                    return min(Aright, Bright)
+                    return min(rightBoundaryOfA, rightBoundaryOfB)
                 # Return average of two middle values for even total length
-                return (max(Aleft, Bleft) + min(Aright, Bright)) / 2
-            elif Aleft > Bright:
+                return (
+                    max(leftBoundaryOfA, leftBoundaryOfB)
+                    + min(rightBoundaryOfA, rightBoundaryOfB)
+                ) / 2
+            elif leftBoundaryOfA > rightBoundaryOfB:
                 right_index = i - 1  # Move left in A
             else:
                 left_index = i + 1  # Move right in A
