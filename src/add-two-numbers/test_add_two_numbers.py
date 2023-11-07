@@ -14,7 +14,7 @@ def to_listnode(numbers: List[int]) -> Optional[ListNode]:
 
 
 # Helper function to convert a ListNode chain to a list
-def to_list(head: ListNode | None) -> List[int]:
+def to_list(head: Optional[ListNode]) -> List[int]:
     numbers: List[int] = []
     while head:
         numbers.append(head.val)
