@@ -26,12 +26,12 @@ class Solution:
         care to manage the carry from the sum that exceeds 9.
 
         Args:
-            l1 (ListNode | None): The head node of the first linked list.
-            l2 (ListNode | None): The head node of the second linked list.
+            l1 (Optional[ListNode]): The head node of the first linked list.
+            l2 (Optional[ListNode]): The head node of the second linked list.
 
         Returns:
-            ListNode | None: The head node of the linked list that represents
-            the sum.
+            Optional[ListNode]: The head node of the linked list that
+            represents the sum.
 
         The method uses a dummy head node to simplify the handling of the edge
         case where a new digit is added (e.g., when the sum of the highest
