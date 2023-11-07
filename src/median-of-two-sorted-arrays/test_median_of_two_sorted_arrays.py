@@ -11,11 +11,6 @@ from median_of_two_sorted_arrays import Solution
         ([0, 0], [0, 0], 0.0),
         ([], [1], 1.0),
         ([2], [], 2.0),
-        # (
-        #     [],
-        #     [],
-        #     None,
-        # ),  # This case needs special handling in the function itself.
     ],
 )
 def test_findMedianSortedArrays(
