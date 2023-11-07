@@ -4,7 +4,8 @@ from typing import List, Dict
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         """
-        Find two numbers such that they add up to a specific target number.
+        Find two indices in an integer array whose values sum up to a given
+        target number.
 
         The function iterates through the list of numbers, using a hash table
         to store the numbers and their corresponding indices. For each number,
