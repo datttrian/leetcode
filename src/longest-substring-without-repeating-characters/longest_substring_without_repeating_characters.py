@@ -47,7 +47,7 @@ class Solution:
                 # the current character
                 left = char_index_map[char] + 1
 
-            # Update the character's lastest index in the dictionary
+            # Update the character's latest index in the dictionary
             char_index_map[char] = right
 
             # Update the maximum length if the current window size is larger
