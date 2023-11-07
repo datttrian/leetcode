@@ -1,4 +1,4 @@
-The code snippet you've provided defines a method `lengthOfLongestSubstring` within a `Solution` class that calculates the length of the longest substring without repeating characters in a given string `s`. It uses the sliding window approach, where a window is a range of characters that does not contain any duplicates. Here's how it works, step by step, with the example string `s = "abcabcbb"`:
+`lengthOfLongestSubstring` calculates the length of the longest substring without repeating characters in a given string `s`. It uses the sliding window approach, where a window is a range of characters that does not contain any duplicates. Here's how it works, step by step, with the example string `s = "abcabcbb"`:
 
 1. **Initialization**:
    - A dictionary `char_index_map` is created to keep track of the most recent index where each character occurs.
