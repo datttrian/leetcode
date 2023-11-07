@@ -24,10 +24,8 @@ class Solution:
             float: The median of the two sorted arrays.
 
         Complexity:
-            Time: O(log(min(m, n))), where m and n are the lengths of the two
-            arrays.
-            This is because the binary search is performed on the smaller
-            array.
+            Time: O(log(min(m, n))), because the binary search is performed on
+            the smaller array.
             Space: O(1), as the solution uses constant extra space.
         """
         # Make sure A is the smaller array to apply binary search on it.
