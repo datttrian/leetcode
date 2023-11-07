@@ -30,7 +30,7 @@ class Solution:
         Complexity:
         - Time: O(n), where n is the number of elements in `nums`. The
         function iterates through the list only once.
-        - Space: O(n), for the hash table used to store the number indices.
+        - Space: O(n), for the dictionary used to store the number indices.
         """
         # Create a dictionary to store the numbers and their indices
         num_dict: Dict[int, int] = {}
