@@ -28,7 +28,7 @@ class Solution:
             the smaller array.
             Space: O(1), as the solution uses constant extra space.
         """
-        # Assign nums1 and nums2 to A and B with A being the smaller array
+        # Assign nums1 and nums to A and B with len(A) <= len(B)
         A, B = (nums1, nums2) if len(nums1) <= len(nums2) else (nums2, nums1)
 
         # Calculate the total length of both arrays and the middle index
