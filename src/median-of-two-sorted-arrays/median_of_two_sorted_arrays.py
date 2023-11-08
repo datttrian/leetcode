@@ -38,7 +38,7 @@ class Solution:
         # Initialize the binary search on the smaller array A
         left_index, right_index = 0, len(A) - 1
 
-        # Initialize a binary search to find the correct partition
+        # Perform a binary search to find the correct partition
         while True:
             # Find the index i in array A such that it is close to the median
             i = (left_index + right_index) // 2
@@ -58,7 +58,7 @@ class Solution:
                 if total_length % 2:
                     return min(Aright, Bright)
 
-                # Fir even total length, the median is the average of the two
+                # For even total length, the median is the average of the two
                 # middle elements
                 return (max(Aleft, Bleft) + min(Aright, Bright)) / 2
 
