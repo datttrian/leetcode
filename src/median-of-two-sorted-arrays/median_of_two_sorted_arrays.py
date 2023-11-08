@@ -57,17 +57,14 @@ class Solution:
                 # For odd total length, the median is the first middle element
                 if total_length % 2:
                     return min(Aright, Bright)
-
                 # For even total length, the median is the average of the two
                 # middle elements
                 return (max(Aleft, Bleft) + min(Aright, Bright)) / 2
-
             # If elements on the left side of A are greater, move the
-            # partition to the left
+            # partition left
             elif Aleft > Bright:
-                right_index = i - 1
-
+                right_index = i - 1  # Move partition left in A
             # If elements on the left side of B are greater, move the
-            # partition to the right
+            # partition right
             else:
-                left_index = i + 1
+                left_index = i + 1  # Move partition right in A
