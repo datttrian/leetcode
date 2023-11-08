@@ -27,7 +27,7 @@ So, the median of `[1, 3]` and `[2]` is `2`.
 This process involves continually narrowing the search space by shifting the partition in the smaller array (`A`) until the partition satisfies the conditions where every element on the left side of the partition is less than or equal to every element on the right side of the partition. The median is then found based on whether the total number of elements is odd or even. If it's odd, the median is the first middle element on the right side of the partition. If it's even, it's the average of the two middle elements, one from each side of the partition.
 
 
-Alright, let's tackle a more complex example to illustrate the process in greater depth. Consider `nums1 = [1, 5, 8]` and `nums2 = [4, 6, 9]`. We want to find the median of these two arrays as if they were merged.
+Consider `nums1 = [1, 5, 8]` and `nums2 = [4, 6, 9]`. We want to find the median of these two arrays as if they were merged.
 
 Here is how the `findMedianSortedArrays` function would process these arrays:
 
