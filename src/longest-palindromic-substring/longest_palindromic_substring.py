@@ -1,73 +1,43 @@
-from typing import List
-
-
 class Solution:
-    def findMedianSortedArrays(
-        self,
-        nums1: List[int],
-        nums2: List[int],
-    ) -> float:
-        """
-        Find the median of two sorted arrays.
+    def longestPalindrome(self, s: str) -> str:
+        if not s:
+            return ''
 
-        This function takes two sorted arrays and finds their median as if
-        they were part of the same sorted array. It uses a binary search
-        algorithm to find the correct partition between the arrays that would
-        form a merged sorted array, and calculates the median from the
-        elements around the partition.
+        n = len(s)
+        # Create a table to store whether a substring is a palindrome or not.
+        is_palindrome = [[False] * n for _ in range(n)]
 
-        Args:
-            nums1 (List[int]): The first sorted array.
-            nums2 (List[int]): The second sorted array.
+        start = (
+            0  # Start index of the longest palindromic substring found so far.
+        )
+        max_length = (
+            1  # Length of the longest palindromic substring found so far.
+        )
 
-        Returns:
-            float: The median of the two sorted arrays.
+        # All substrings of length 1 are palindromes.
+        for i in range(n):
+            is_palindrome[i][i] = True
 
-        Complexity:
-            Time: O(log(min(m, n))), because the binary search is performed on
-            the smaller array.
-            Space: O(1), as the solution uses constant extra space.
-        """
-        # Assign nums1 and nums to A and B with len(A) <= len(B)
-        A, B = (nums1, nums2) if len(nums1) <= len(nums2) else (nums2, nums1)
+        # Check for palindromes of length 2.
+        for i in range(n - 1):
+            if s[i] == s[i + 1]:
+                is_palindrome[i][i + 1] = True
+                start = i
+                max_length = 2
 
-        # Calculate the total length of both arrays and the middle index
-        total_length = len(A) + len(B)
-        half_point = total_length // 2
+        # Check for palindromes of length 3 or more.
+        for length in range(3, n + 1):
+            for i in range(n - length + 1):
+                j = i + length - 1  # Ending index of the current substring.
 
-        # Initialize the binary search on the smaller array A
-        left_index, right_index = 0, len(A) - 1
+                # Check if the current substring is a palindrome and its inner
+                # substring is also a palindrome.
+                if s[i] == s[j] and is_palindrome[i + 1][j - 1]:
+                    is_palindrome[i][j] = True
 
-        # Perform a binary search to find the correct partition
-        while True:
-            # Find the index i in array A such that it is close to the median
-            i = (left_index + right_index) // 2
-            # Find the corresponding index j in array B using half_point
-            j = half_point - i - 2
+                    # Update the longest palindromic substring if necessary.
+                    if length > max_length:
+                        start = i
+                        max_length = length
 
-            # Determine the edge values around the partition to compare
-            # -infinity and +infinity as defaults for out-of-bound indices
-            Aleft = A[i] if i >= 0 else float('-infinity')
-            Aright = A[i + 1] if (i + 1) < len(A) else float('infinity')
-            Bleft = B[j] if j >= 0 else float('-infinity')
-            Bright = B[j + 1] if (j + 1) < len(B) else float('infinity')
-
-            # Check if we have found a valid partition
-            if Aleft <= Bright and Bleft <= Aright:
-                # For odd total length, the median is the first middle element
-                if total_length % 2:
-                    return min(Aright, Bright)
-
-                # For even total length, the median is the average of the two
-                # middle elements
-                return (max(Aleft, Bleft) + min(Aright, Bright)) / 2
-
-            # If elements on the left side of A are greater, move the
-            # partition to the left
-            elif Aleft > Bright:
-                right_index = i - 1
-
-            # If elements on the left side of B are greater, move the
-            # partition to the right
-            else:
-                left_index = i + 1
+        return s[start : start + max_length]
