@@ -1,4 +1,4 @@
-Certainly! Let's walk through the function with an example input string `s = "cbbd"` to understand how the `longestPalindrome` function computes the longest palindromic substring.
+Here's how it works, step by step, with the example string `s = "cbbd"`.
 
 1. **Initialization**:
    - The length `n` of the string `"cbbd"` is 4.
