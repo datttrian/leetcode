@@ -1,5 +1,40 @@
 class Solution:
     def longestPalindrome(self, s: str) -> str:
+        """
+        Find the longest palindromic substring in the input string.
+
+        This method utilizes dynamic programming to efficiently determine the
+        longest palindromic substring in the given string. It constructs a
+        table to store whether a substring is a palindrome or not, allowing it
+        to avoid redundant computations.
+
+        Args:
+            s (str): The input string in which to find the longest palindromic
+                     substring.
+
+        Returns:
+            str: The longest palindromic substring found in the input string.
+
+        Example:
+        >>> solution = Solution()
+        >>> solution.longestPalindrome("babad")
+        'bab'  # 'aba' is also a valid answer.
+
+        Note:
+        - The method handles empty input strings gracefully, returning an empty
+          string.
+        - In case of multiple valid answers, this method returns the one with
+          the earliest occurrence in the input string.
+
+        Complexity:
+            Time: O(n), where n is the length of the string. The function
+            iterates through the string once with constant-time operations at
+            each step.
+            Space: O(min(m, n)), where m is the size of the character set and
+            n is the length of the string. In the worst case, the whole string
+            might be stored in the dictionary, but typically the size is
+            limited by the character set.
+        """
         if not s:
             return ''
 
