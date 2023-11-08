@@ -1,37 +1,61 @@
-Let's use the provided code to add the numbers 564 (which is represented in reverse order as the linked list 4 -> 6 -> 5) and 243 (represented in reverse order as 3 -> 4 -> 2). When added together, they equal 807, which should be represented in reverse as 7 -> 0 -> 8.
+The `findMedianSortedArrays` function in the `Solution` class calculates the median of two sorted arrays, efficiently handling the cases where the arrays are of different lengths and the median might not be a direct member of either array. This implementation uses binary search, which is particularly efficient with time complexity `O(log(min(m, n)))`, where `m` and `n` are the lengths of the two input arrays. Here is a step-by-step explanation using two arrays as examples:
 
-Here's the step-by-step process that the code would follow:
+Assume `nums1 = [1, 3]` and `nums2 = [2]`.
 
 1. **Initialization**:
-   - `carry` is set to 0.
-   - A new `ListNode` is created and assigned to `head`. `current` is also pointed to this dummy node.
+   - Check which array is smaller; in this case, `nums1` is smaller (`m <= n`), so `A = nums1` and `B = nums2`.
+   - Calculate the total length `total_length = 3` and `half_point = 1`.
 
-2. **First Iteration**:
-   - `l1` points to 4, `l2` points to 3.
-   - `val1` is 4, `val2` is 3.
-   - `carry, out` = `divmod(4 + 3 + 0, 10)` which gives `(0, 7)`.
-   - `current.next` is set to a new `ListNode` with value 7.
-   - `current` is moved to `current.next`.
-   - `l1` is moved to `l1.next` (now points to 6), and `l2` is moved to `l2.next` (now points to 4).
+2. **Binary Search**:
+   - Start with a binary search on the smaller array `A`.
+   - Initialize the binary search indices `left_index = 0` and `right_index = len(A) - 1 = 1`.
 
-3. **Second Iteration**:
-   - `l1` now points to 6, `l2` now points to 4.
-   - `val1` is 6, `val2` is 4.
-   - `carry, out` = `divmod(6 + 4 + 0, 10)` which gives `(1, 0)`.
-   - `current.next` is set to a new `ListNode` with value 0.
-   - `current` is moved to `current.next`.
-   - `l1` is moved to `l1.next` (now points to 5), and `l2` is moved to `l2.next` (now points to 2).
+3. **First Iteration**:
+   - Calculate `i = (0 + 1) // 2 = 0` and `j = 1 - 0 - 2 = -1`.
+   - Determine the edge values around the partition:
+     - `Aleft = A[0] = 1`
+     - `Aright = A[1] = 3`
+     - `Bleft = float('-infinity')` (because `j = -1` is out of bounds)
+     - `Bright = B[0] = 2`
+   - The conditions for a correct partition are met because `Aleft <= Bright` and `Bleft <= Aright`.
 
-4. **Third Iteration**:
-   - `l1` now points to 5, `l2` now points to 2.
-   - `val1` is 5, `val2` is 2.
-   - `carry, out` = `divmod(5 + 2 + 1, 10)` which gives `(0, 8)`.
-   - `current.next` is set to a new `ListNode` with value 8.
-   - `current` is moved to `current.next`.
-   - Both `l1` and `l2` will now be moved to `None` as there are no more nodes in the lists.
+4. **Median Calculation**:
+   - Since `total_length % 2 != 0`, the median is the first middle element from the right, which is `min(Aright, Bright) = min(3, 2) = 2`.
 
-5. **Finalization**:
-   - The loop ends as `l1`, `l2`, and `carry` are all `None` or zero.
-   - The `head` node's `next` is returned, which points to the head of the new linked list representing the sum: (7 -> 0 -> 8).
+So, the median of `[1, 3]` and `[2]` is `2`.
 
-The final linked list represents the number 807, reversed as required by the problem statement. In this case, no new node for an additional digit was required since the sum of the numbers did not result in a longer number than the inputs.
+This process involves continually narrowing the search space by shifting the partition in the smaller array (`A`) until the partition satisfies the conditions where every element on the left side of the partition is less than or equal to every element on the right side of the partition. The median is then found based on whether the total number of elements is odd or even. If it's odd, the median is the first middle element on the right side of the partition. If it's even, it's the average of the two middle elements, one from each side of the partition.
+
+
+Alright, let's tackle a more complex example to illustrate the process in greater depth. Consider `nums1 = [1, 5, 8]` and `nums2 = [4, 6, 9]`. We want to find the median of these two arrays as if they were merged.
+
+Here is how the `findMedianSortedArrays` function would process these arrays:
+
+1. **Initialization**:
+   - Since `nums1` has length 3 and `nums2` has length 3, either can be `A` or `B`. We'll choose `A = nums1` and `B = nums2`.
+   - The total length `total_length = 6` and the `half_point = 3`.
+
+2. **Binary Search**:
+   - Start the binary search with `left_index = 0` and `right_index = len(A) - 1 = 2`.
+
+3. **First Iteration**:
+   - Compute `i = (left_index + right_index) // 2 = (0 + 2) // 2 = 1` (middle of `A`).
+   - Compute `j = half_point - i - 2 = 3 - 1 - 2 = 0` (corresponding index in `B`).
+   - The edge values are:
+     - `Aleft = A[1 - 1] = A[0] = 1`
+     - `Aright = A[1 + 1] = A[2] = 8`
+     - `Bleft = B[0 - 1] = float('-infinity')` (since `j = 0`, `j - 1` is out of bounds)
+     - `Bright = B[0 + 1] = B[1] = 6`
+
+   - Check if we have found a valid partition:
+     - `Aleft <= Bright` is `True` because `1 <= 6`.
+     - `Bleft <= Aright` is `True` because `-infinity <= 8`.
+
+4. **Median Calculation**:
+   - Since the total number of elements in both arrays is even (`total_length % 2 == 0`), the median will be the average of the two middle elements.
+   - The middle elements are `Aleft` and `Bright` because we need one element from the left and one from the right of the partition.
+   - The median is `(max(Aleft, Bleft) + min(Aright, Bright)) / 2 = (max(1, -infinity) + min(8, 6)) / 2 = (1 + 6) / 2 = 7 / 2 = 3.5`.
+
+So, the median of `[1, 5, 8]` and `[4, 6, 9]` is `3.5`.
+
+It is important to note that if the binary search determined that the partition was not correct (for example, if `Aleft > Bright`), the search would continue by updating the `left_index` or `right_index` to narrow down the range until the correct partition is found.
