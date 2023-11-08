@@ -1,6 +1,6 @@
 # LeetCode
 
-|                   Problem                                                                                                 | Time Complexity                            | Space Complexity                          |Difficulty |
+|Problem                                                                                                                    | Time Complexity                            | Space Complexity                          |Difficulty |
 |---------------------------------------------------------------------------------------------------------------------------|--------------------------------------------|-------------------------------------------|-----------|
 |[Two Sum](https://github.com/datttrian/leetcode/tree/main/src/two-sum)                                                     |O(n)                                        |O(n)                                       |Easy       |
 |[Add Two Numbers](https://github.com/datttrian/leetcode/tree/main/src/add-two-numbers)                                     |O(max(n, m))                                |O(max(n, m))                               |Medium     |
