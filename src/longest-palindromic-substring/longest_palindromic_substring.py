@@ -15,6 +15,13 @@ class Solution:
         Returns:
             str: The longest palindromic substring found in the input string.
 
+        Complexity:
+            - Time: O(n^2) where 'n' is the length of the input string 's'.
+              The most time-consuming part of the algorithm is constructing
+              the 'is_palindrome' table.
+            - Space: O(n^2) due to the 'is_palindrome' table, which stores the
+              results for all possible substrings.
+
         Example:
         >>> solution = Solution()
         >>> solution.longestPalindrome("babad")
@@ -25,15 +32,6 @@ class Solution:
           string.
         - In case of multiple valid answers, this method returns the one with
           the earliest occurrence in the input string.
-
-        Complexity:
-            Time: O(n), where n is the length of the string. The function
-            iterates through the string once with constant-time operations at
-            each step.
-            Space: O(min(m, n)), where m is the size of the character set and
-            n is the length of the string. In the worst case, the whole string
-            might be stored in the dictionary, but typically the size is
-            limited by the character set.
         """
         if not s:
             return ''
