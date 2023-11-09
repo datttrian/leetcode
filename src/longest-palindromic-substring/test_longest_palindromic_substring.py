@@ -6,7 +6,8 @@ class TestSolution:
     @pytest.mark.parametrize(
         ('input_str', 'expected_output'),
         [
-            ('acda', 'a'),
+            ('babad', 'bab'),
+            ('ac', 'a'),
             ('cbbd', 'bb'),
             ('a', 'a'),
             ('abcda', 'a'),
