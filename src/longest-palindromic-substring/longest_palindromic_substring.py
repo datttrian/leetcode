@@ -22,11 +22,6 @@ class Solution:
             - Space: O(n^2) due to the 'is_palindrome' table, which stores the
               results for all possible substrings.
 
-        Example:
-        >>> solution = Solution()
-        >>> solution.longestPalindrome("babad")
-        'bab'  # 'aba' is also a valid answer.
-
         Note:
         - The method handles empty input strings gracefully, returning an empty
           string.
