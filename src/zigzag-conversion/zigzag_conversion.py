@@ -25,15 +25,17 @@ class Solution:
             space required to store the zigzag pattern across numRows which
             collectively will not exceed the length of the input string.
         """
-        # Edge case: When the zigzag pattern is not applicable, return
-        # original string
+        # Edge case: When the zigzag patter in not applicable, return original
+        # string
         if numRows == 1 or numRows >= len(s):
             return s
 
         # Initialize a list of strings to represent each row of the zigzag
         # pattern
         rows = [''] * numRows
-        current_row = 0  # Start at the first row
+
+        # Start at the first row
+        current_row = 0
 
         # This flag indicates whether we are moving down or up in the zigzag
         going_down = False
