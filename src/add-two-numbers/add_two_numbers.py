@@ -42,7 +42,7 @@ class Solution:
 
         Complexity:
         - Time: O(max(n, m)), where n and m are number of nodes in the first
-        and second linked list .
+        and second linked list.
         - Space: O(max(n, m)), since we may need to store the sum in a new
         linked list, the space required for the new list is at most the length
         of the longer input list plus one additional node for a potential
