@@ -35,6 +35,7 @@ class Solution:
 
         # Initialize the left boundary of the current window
         left: int = 0
+
         # Initialize the length of the longest substring found
         max_length: int = 0
 
