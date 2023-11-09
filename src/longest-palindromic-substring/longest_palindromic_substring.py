@@ -25,8 +25,11 @@ class Solution:
             Space: O(1), as the space used does not depend on the size of the
             input string and only a constant amount of extra space is used.
         """
-        res = ''  # The result string to hold the longest palindrome found
-        resLen = 0  # The length of the longest palindrome found
+        # String to hold the longest palindrome found
+        res = ''
+
+        # The length of the longest palindrome found
+        resLen = 0
 
         for i in range(len(s)):
             # Check for palindrome of odd length by setting both left and
