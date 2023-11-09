@@ -4,6 +4,11 @@ class Solution:
         Convert a string into a specific zigzag pattern on numRows and reads
         it line by line.
 
+        The function simulates writing this string in a zigzag pattern (like
+        the letters of a sawtooth shape) and reads it line by line. This is
+        particularly useful for encryption algorithms like the rail fence
+        cipher.
+
         Args:
             s (str): The input string to be written in the zigzag pattern.
             numRows (int): The number of rows in the zigzag pattern.
@@ -12,10 +17,13 @@ class Solution:
             str: The string as it is read line by line after being written in
             a zigzag pattern.
 
-        The function simulates writing this string in a zigzag pattern (like
-        the letters of a sawtooth shape) and reads it line by line. This is
-        particularly useful for encryption algorithms like the rail fence
-        cipher.
+        Complexity:
+            Time: O(n), where n is the length of the input string, since the
+            function iterates over all characters once.
+
+            Space: O(n), where n is the length of the input string, due to the
+            space required to store the zigzag pattern across numRows which
+            collectively will not exceed the length of the input string.
         """
         # Edge case: When the zigzag pattern is not applicable, return
         # original string
