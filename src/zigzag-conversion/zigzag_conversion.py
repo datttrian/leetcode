@@ -1,53 +1,47 @@
-from typing import List, Dict
-
-
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
+    def convert(self, s: str, numRows: int) -> str:
         """
-        Find two indices in an integer array whose values sum up to a given
-        target number.
+        Convert a string into a specific zigzag pattern on numRows and reads
+        it line by line.
 
-        The function iterates through the list of numbers, using a dictionary
-        to store the numbers and their corresponding indices. For each number,
-        it checks whether there is a complement in the table (i.e., a number
-        which added to the current number equals the target). If such a
-        complement is found, the function returns a list containing the indices
-        of the two numbers. If no two numbers add up to the target, the
-        function returns an empty list.
-
-        Parameters:
-        - nums (List[int]): List of integers to search within.
-        - target (int): The target sum to find.
+        Args:
+            s (str): The input string to be written in the zigzag pattern.
+            numRows (int): The number of rows in the zigzag pattern.
 
         Returns:
-        - List[int]: A list containing the indices of the two numbers that add
-        up to the target.
+            str: The string as it is read line by line after being written in
+            a zigzag pattern.
 
-        Raises:
-        - This function assumes that there is exactly one solution, and it
-        does not handle the case where no solution exists.
-
-        Complexity:
-        - Time: O(n), where n is the number of elements in `nums`. The
-        function iterates through the list only once.
-        - Space: O(n), for the dictionary used to store the number indices.
+        The function simulates writing this string in a zigzag pattern (like
+        the letters of a sawtooth shape) and reads it line by line. This is
+        particularly useful for encryption algorithms like the rail fence
+        cipher.
         """
-        # Create a dictionary to store the numbers and their indices
-        num_dict: Dict[int, int] = {}
+        # Edge case: When the zigzag pattern is not applicable, return
+        # original string
+        if numRows == 1 or numRows >= len(s):
+            return s
 
-        # Iterate over the list of numbers
-        for i, num in enumerate(nums):
-            # Calculate the complement of the current number
-            complement = target - num
+        # Initialize a list of strings to represent each row of the zigzag
+        # pattern
+        rows = [''] * numRows
+        current_row = 0  # Start at the first row
 
-            # If the complement is in the dictionary, we have found a pair
-            if complement in num_dict:
-                # Return the indices of the two numbers adding up to the target
-                return [num_dict[complement], i]
+        # This flag indicates whether we are moving down or up in the zigzag
+        going_down = False
 
-            # Store the number and its index in the dictionary
-            num_dict[num] = i
+        # Iterate over each character in the string
+        for char in s:
+            # Append the character to the string corresponding to the current
+            # row
+            rows[current_row] += char
 
-        # If no solution is found, this line will not be executed because the
-        # problem statement guarantees at least one solution
-        return []
+            # If we are at the top or bottom of a zigzag, reverse the direction
+            if current_row == 0 or current_row == numRows - 1:
+                going_down = not going_down
+
+            # Move to the next row in the zigzag pattern
+            current_row += 1 if going_down else -1
+
+        # Concatenate all rows to form the final zigzag pattern string
+        return ''.join(rows)
