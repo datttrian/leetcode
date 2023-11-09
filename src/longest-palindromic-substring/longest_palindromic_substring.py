@@ -39,8 +39,8 @@ class Solution:
                 if (r - l + 1) > resLen:
                     res = s[l : r + 1]
                     resLen = r - l + 1
-                l -= 1  # Expand to the left
-                r += 1  # Expand to the right
+                l -= 1
+                r += 1
 
             # Check for palindrome of even length by setting left at i and
             # right at i + 1
@@ -50,7 +50,7 @@ class Solution:
                     res = s[l : r + 1]
                     resLen = r - l + 1
 
-                l -= 1  # Expand to the left
-                r += 1  # Expand to the right
+                l -= 1
+                r += 1
 
         return res  # Return the longest palindrome
