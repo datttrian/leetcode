@@ -11,6 +11,6 @@
 |[Reverse Integer](https://github.com/datttrian/leetcode/tree/main/src/reverse-integer)                                     |O(n)                                        |O(n)                                       |Medium     |
 |[String to Integer (atoi)](https://github.com/datttrian/leetcode/tree/main/src/string-to-integer-atoi)                     |O(n)                                        |O(1)                                       |Medium     |
 |[Palindrome Number](https://github.com/datttrian/leetcode/tree/main/src/palindrome-number)                                 |O(log10(x))                                 |O(1)                                       |Medium     |
-|[Regular Expression Matching](https://github.com/datttrian/leetcode/tree/main/src/palindrome-number)                                 |O(log10(x))                                 |O(1)                                       |Medium     |
+|[Regular Expression Matching](https://github.com/datttrian/leetcode/tree/main/src/regular-expression-matching)                                 |O(log10(x))                                 |O(1)                                       |Medium     |
 
 <!-- |[Next Permutation](https://github.com/datttrian/leetcode/tree/main/src/longest-substring-without-repeating-characters)     |O(n)                                        |O(1)                                       | -->
