@@ -21,7 +21,8 @@ class Solution:
         Complexity:
         Time: O(n), where n is the number of digits in x. This is because the
         method converts the integer to a string and iterates over its
-        characters. Space: O(n), as it creates a string of length n for the
+        characters.
+        Space: O(n), as it creates a string of length n for the
         reversal process.
 
         Example:
