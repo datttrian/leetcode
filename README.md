@@ -9,6 +9,6 @@
 |[Longest Palindromic Substring](https://github.com/datttrian/leetcode/tree/main/src/longest-palindromic-substring)         |O(n^2)                                      |O(1)                                       |Medium     |
 |[Zigzag Conversion](https://github.com/datttrian/leetcode/tree/main/src/zigzag-conversion)                                 |O(n)                                        |O(n)                                       |Medium     |
 |[Reverse Integer](https://github.com/datttrian/leetcode/tree/main/src/reverse-integer)                                     |O(n)                                        |O(n)                                       |Medium     |
-|[String to Integer (atoi)](https://github.com/datttrian/leetcode/tree/main/src/string-to-integer-atoi)                     |O(n)                                        |O(n)                                       |Medium     |
+|[String to Integer (atoi)](https://github.com/datttrian/leetcode/tree/main/src/string-to-integer-atoi)                     |O(n)                                        |O(1)                                       |Medium     |
 
 <!-- |[Next Permutation](https://github.com/datttrian/leetcode/tree/main/src/longest-substring-without-repeating-characters)     |O(n)                                        |O(1)                                       | -->
