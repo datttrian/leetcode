@@ -1,6 +1,6 @@
+from typing import List
 import pytest
 from container_with_most_water import Solution
-from typing import List
 
 
 class TestSolution:
@@ -12,6 +12,6 @@ class TestSolution:
             ([1, 2, 1], 2),
         ],
     )
-    def test_maxArea(self, height: List[int], expected):
+    def test_maxArea(self, height: List[int], expected: int):
         solution = Solution()
         assert solution.maxArea(height) == expected
