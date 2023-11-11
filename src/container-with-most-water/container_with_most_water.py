@@ -35,18 +35,32 @@ class Solution:
         >>> solution.maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7])
         49
         """
+        # Initialize variables to keep track of maximum water volume and
+        # pointers for two walls.
         max_water = 0
         left = 0
         right = len(height) - 1
 
+        # Continue the loop until the pointers meet.
         while left < right:
+            # Calculate the height of the smaller wall between the two
+            # pointers.
             h = min(height[left], height[right])
+
+            # Calculate the width between the two walls.
             w = right - left
+
+            # Update the maximum water volume if the current configuration
+            # yields more water.
             max_water = max(max_water, h * w)
 
+            # Move the pointer pointing to the smaller wall inward, as that
+            # may lead to a larger area.
             if height[left] < height[right]:
                 left += 1
             else:
                 right -= 1
 
+        # Return the maximum water volume calculated for the given array of
+        # wall heights.
         return max_water
