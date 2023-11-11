@@ -22,10 +22,10 @@ class Solution:
         result = ''
 
         # Iterate through the symbols and values
-        for i in range(len(symbols)):
+        for symbol, value in zip(symbols, values):
             # Repeat the symbol as many times as it fits in the number
-            while num >= values[i]:
-                result += symbols[i]
-                num -= values[i]
+            while num >= value:
+                result += symbol
+                num -= value
 
         return result
