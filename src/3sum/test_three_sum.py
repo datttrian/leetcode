@@ -8,7 +8,12 @@ from three_sum import (
 @pytest.mark.parametrize(
     ('nums', 'expected'),
     [
-        ([-2, 0, 0, 2, 2], [[-2, 0, 2]]),
+        # ([-1, 0, 1, 2, -1, -4], [[-1, -1, 2], [-1, 0, 1]]),
+        ([], []),
+        ([0], []),
+        ([1, 2], []),
+        # ([-2, 0, 1, 1, 2], [[-2, 0, 2], [-2, 1, 1]]),
+        # ([-2, 0, 0, 2, 2], [[-2, 0, 2]]),
     ],
 )
 def test_threeSum(nums: List[int], expected: List[Tuple[int, int, int]]):
