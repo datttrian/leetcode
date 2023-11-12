@@ -1,6 +1,6 @@
 from typing import List
 import pytest
-from two_sum import Solution
+from three_sum import Solution
 
 
 @pytest.mark.parametrize(
