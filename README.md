@@ -16,6 +16,6 @@
 |[Integer to Roman](https://github.com/datttrian/leetcode/tree/main/src/integer-to-roman)                                                                  |O(13 * log(num))                            |O(1)                                       |Medium     |
 |[Roman to Integer](https://github.com/datttrian/leetcode/tree/main/src/roman-to-integer)                                                                  |O(n)                                        |O(1)                                       |Medium     |
 |[Longest Common Prefix](https://github.com/datttrian/leetcode/tree/main/src/longest-common-prefix)                                                        |O(n)                                        |O(1)                                       |Medium     |
-|[Longest Common Prefix](https://github.com/datttrian/leetcode/tree/main/src/longest-common-prefix)                                                        |O(n)                                        |O(1)                                       |Medium     |
+|[3Sum](https://github.com/datttrian/leetcode/tree/main/src/longest-common-prefix)                                                        |O(n)                                        |O(1)                                       |Medium     |
 
 <!-- |[Next Permutation](https://github.com/datttrian/leetcode/tree/main/src/longest-substring-without-repeating-characters)     |O(n)                                        |O(1)                                       | -->
