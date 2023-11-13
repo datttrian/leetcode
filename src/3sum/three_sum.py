@@ -1,24 +1,29 @@
 from typing import List, Tuple
 
+
 class Solution:
     def threeSum(self, nums: List[int]) -> List[Tuple[int, int, int]]:
         """
-        Find all unique triplets in the given list of integers that sum up to zero.
+        Find all unique triplets in the given list of integers that sum up to
+        zero.
 
-        This method employs a two-pointer approach on a sorted list of integers to efficiently
-        locate unique triplets (a, b, c) where a + b + c = 0. The algorithm avoids duplicate
-        triplets and ensures uniqueness within each triplet.
+        This method employs a two-pointer approach on a sorted list of
+        integers to efficiently locate unique triplets (a, b, c) where a + b +
+        c = 0. The algorithm avoids duplicate triplets and
+        ensures uniqueness within each triplet.
 
         Args:
             nums (List[int]): A list of integers.
 
         Returns:
-            List[Tuple[int, int, int]]: A list of tuples representing unique triplets,
-            where each triplet (a, b, c) satisfies the condition a + b + c = 0.
+            List[Tuple[int, int, int]]: A list of tuples representing unique
+            triplets, where each triplet (a, b, c) satisfies the condition a +
+            b + c = 0.
 
         Note:
-            The input list is sorted in non-decreasing order to facilitate the two-pointer approach.
-            The algorithm avoids duplicate triplets and elements within a triplet.
+            The input list is sorted in non-decreasing order to facilitate the
+            two-pointer approach. The algorithm avoids duplicate triplets and
+            elements within a triplet.
 
         Example:
             >>> solution = Solution()
