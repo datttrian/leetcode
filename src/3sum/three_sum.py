@@ -25,6 +25,18 @@ class Solution:
             two-pointer approach. The algorithm avoids duplicate triplets and
             elements within a triplet.
 
+        Complexity:
+            Time:
+                The time complexity is O(n^2), where n is the length of the
+                input list. The dominant factor is the two-pointer traversal
+                within the nested loop.
+
+            Space:
+                The space complexity is O(1), as the algorithm uses only a
+                constant amount of additional space for variables and does not
+                rely on auxiliary data structures.
+
+
         Example:
             >>> solution = Solution()
             >>> nums = [-1, 0, 1, 2, -1, -4]
