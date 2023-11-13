@@ -32,23 +32,39 @@ class Solution:
             [(-1, -1, 2), (-1, 0, 1)]
 
         """
-        # Implementation of the 3Sum problem using a two-pointer approach
+        # Sort the input list to facilitate the two-pointer approach
         nums.sort()
+
+        # Initialize the result list to store unique triplets
         result: List[Tuple[int, int, int]] = []
 
+        # Iterate through the sorted list, considering each element as the
+        # potential first element of the triplet
         for i in range(len(nums) - 2):
+            # Avoid duplicates for the first element of the triplet
             if i > 0 and nums[i] == nums[i - 1]:
                 continue
 
+            # Initialize left and right pointers for the remaining elements in
+            # the list
             left, right = i + 1, len(nums) - 1
+
+            # Use a two-pointer approach to find the other two elements that
+            # sum to zero
             while left < right:
                 total = nums[i] + nums[left] + nums[right]
+
+                # Adjust pointers based on the sum
                 if total < 0:
                     left += 1
                 elif total > 0:
                     right -= 1
                 else:
+                    # Found a triplet, add it to the result list
                     result.append((nums[i], nums[left], nums[right]))
+
+                    # Skip duplicates for the second and third elements of the
+                    # triplet
                     while left < right and nums[left] == nums[left + 1]:
                         left += 1
                     while left < right and nums[right] == nums[right - 1]:
@@ -56,4 +72,5 @@ class Solution:
                     left += 1
                     right -= 1
 
+        # Return the list of unique triplets that sum to zero
         return result
