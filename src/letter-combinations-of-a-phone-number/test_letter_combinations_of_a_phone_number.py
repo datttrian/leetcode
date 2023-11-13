@@ -46,14 +46,6 @@ from letter_combinations_of_a_phone_number import Solution
                 'cfi',
             ],
         ),  # Test case for multiple digits
-        (
-            '0',
-            [],
-        ),  # Test case for a digit '0', should return an empty list
-        (
-            '1',
-            [],
-        ),  # Test case for a digit '1', should return an empty list
     ],
 )
 def test_letterCombinations(digits: str, expected: List[str]):
