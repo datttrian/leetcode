@@ -27,8 +27,9 @@ class Solution:
 
         Complexity:
         - Time: O(n^3), where n is the length of the input list `nums`.
-          The algorithm uses nested loops, and each iteration involves a
-          two-pointers traversal.
+        The algorithm uses nested loops, and each iteration involves a
+        two-pointers traversal.
+
         - Space: O(1), as the algorithm uses a constant amount of extra space
         for variables and the result list.
         """
@@ -41,7 +42,8 @@ class Solution:
         # Get the length of the input array for iteration
         n = len(nums)
 
-        # Iterate through the array, considering the first element of the quadruplet
+        # Iterate through the array, considering the first element of the
+        # quadruplet
         for i in range(n - 3):
             # Skip duplicate values to avoid duplicate quadruplets
             if i > 0 and nums[i] == nums[i - 1]:
