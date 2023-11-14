@@ -37,9 +37,16 @@ class Solution:
         - Space: O(4^n), as the space complexity is also exponential due to
         the number of combinations generated.
         """
+        # If the input string of digits is empty, there are no possible
+        # combinations,
+        # so return an empty list.
         if not digits:
             return []
 
+        # Define a mapping of digits to their corresponding sets of letters on
+        # a phone keypad.
+        # This mapping is essential for generating letter combinations based
+        # on the given digits.
         phone_map = {
             '2': 'abc',
             '3': 'def',
@@ -50,6 +57,7 @@ class Solution:
             '8': 'tuv',
             '9': 'wxyz',
         }
+
         # Initialize the combinations list with an empty string as a starting
         # point
         combinations = ['']
