@@ -19,5 +19,6 @@
 |[3Sum](https://github.com/datttrian/leetcode/tree/main/src/3sum)                                                                                          |O(n^2)                                      |O(1)                                       |Medium     |
 |[3Sum Closest](https://github.com/datttrian/leetcode/tree/main/src/3sum-closest)                                                                          |O(n^2)                                      |O(1)                                       |Medium     |
 |[Letter Combinations of a Phone Number](https://github.com/datttrian/leetcode/tree/main/src/letter-combinations-of-a-phone-number)                        |O(4^n)                                      |O(4^n)                                     |Medium     |
+|[4Sum](https://github.com/datttrian/leetcode/tree/main/src/4sum)                        |O(n^3)                                      |O(1)                                     |Medium     |
 
 <!-- |[Next Permutation](https://github.com/datttrian/leetcode/tree/main/src/longest-substring-without-repeating-characters)     |O(n)                                        |O(1)                                       | -->
