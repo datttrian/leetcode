@@ -8,9 +8,11 @@ class Solution:
         to the target.
 
         The algorithm employs a two-pointers approach along with sorting to
-        efficiently explore and eliminate duplicate combinations. It iterates through the sorted array, selecting
-        pairs of elements and using two pointers to find the remaining two elements that sum up
-        to the target. Duplicate combinations are skipped to ensure the uniqueness of the results.
+        efficiently explore and eliminate duplicate combinations. It iterates
+        through the sorted array, selecting pairs of elements and using two
+        pointers to find the remaining two elements that sum up to the target.
+        Duplicate combinations are skipped to ensure the uniqueness of the
+        results.
 
         Parameters:
         - nums (List[int]): The input list of integers.
