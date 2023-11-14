@@ -1,37 +1,33 @@
-# Letter Combinations of a Phone Number
+# 4Sum
 
-Given a string containing digits from `2-9` inclusive, return all
-possible letter combinations that the number could represent. Return the
-answer in **any order**.
+Given an array `nums` of `n` integers, return *an array of all the
+**unique** quadruplets* `[nums[a], nums[b], nums[c], nums[d]]` such
+that:
 
-A mapping of digits to letters (just like on the telephone buttons) is
-given below. Note that 1 does not map to any letters.
+- `0 <= a, b, c, d < n`
+- `a`, `b`, `c`, and `d` are **distinct**.
+- `nums[a] + nums[b] + nums[c] + nums[d] == target`
 
-![](https://assets.leetcode.com/uploads/2022/03/15/1200px-telephone-keypad2svg.png)
+You may return the answer in **any order**.
 
  
 
 **Example 1:**
 
-    Input: digits = "23"
-        Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+    Input: nums = [1,0,-1,0,-2,2], target = 0
+        Output: [[-2,-1,1,2],[-2,0,0,2],[-1,0,0,1]]
         
 
 **Example 2:**
 
-    Input: digits = ""
-        Output: []
-        
-
-**Example 3:**
-
-    Input: digits = "2"
-        Output: ["a","b","c"]
+    Input: nums = [2,2,2,2,2], target = 8
+        Output: [[2,2,2,2]]
         
 
  
 
 **Constraints:**
 
-- `0 <= digits.length <= 4`
-- `digits[i]` is a digit in the range `['2', '9']`.
+- `1 <= nums.length <= 200`
+- `-10`^(`9`)` <= nums[i] <= 10`^(`9`)
+- `-10`^(`9`)` <= target <= 10`^(`9`)
