@@ -24,10 +24,10 @@ class Solution:
         - None
 
         Complexity:
-        - Time: O(N * M * log(N)), where N is the number of strings in the
-        input list, and M is the average length of the strings. The sorting
+        - Time: O(n * m * log(n)), where n is the number of strings in the
+        input list, and m is the average length of the strings. The sorting
         step dominates the time complexity.
-        - Space: O(M), where M is the length of the common prefix. The space
+        - Space: O(m), where m is the length of the common prefix. The space
         complexity is determined by the list storing the common prefix
         characters.
         """
