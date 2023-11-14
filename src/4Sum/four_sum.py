@@ -49,13 +49,15 @@ class Solution:
             if i > 0 and nums[i] == nums[i - 1]:
                 continue
 
-            # Iterate through the array, considering the second element of the quadruplet
+            # Iterate through the array, considering the second element of the
+            # quadruplet
             for j in range(i + 1, n - 2):
                 # Skip duplicate values to avoid duplicate quadruplets
                 if j > i + 1 and nums[j] == nums[j - 1]:
                     continue
 
-                # Initialize pointers for the remaining two elements of the quadruplet
+                # Initialize pointers for the remaining two elements of the
+                # quadruplet
                 left, right = j + 1, n - 1
 
                 # Use two pointers approach to find the remaining elements
