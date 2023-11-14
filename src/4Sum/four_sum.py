@@ -19,15 +19,18 @@ class Solution:
         - target (int): The target sum that the quadruplets should achieve.
 
         Returns:
-        List[List[int]]: A list of lists, each representing a unique quadruplet that sums up to the target.
+        List[List[int]]: A list of lists, each representing a unique
+        quadruplet that sums up to the target.
 
         Raises:
         (No specific exceptions are raised)
 
         Complexity:
         - Time: O(n^3), where n is the length of the input list `nums`.
-          The algorithm uses nested loops, and each iteration involves a two-pointers traversal.
-        - Space: O(1), as the algorithm uses a constant amount of extra space for variables and the result list.
+          The algorithm uses nested loops, and each iteration involves a
+          two-pointers traversal.
+        - Space: O(1), as the algorithm uses a constant amount of extra space
+        for variables and the result list.
         """
         # Sort the input array to simplify the solution
         nums.sort()
