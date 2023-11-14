@@ -68,7 +68,7 @@ class Solution:
                     if curr_sum == target:
                         # Append the quadruplet to the result list
                         result.append(
-                            [nums[i], nums[j], nums[left], nums[right]]
+                            [nums[i], nums[j], nums[left], nums[right]],
                         )
 
                         # Skip duplicate values for the remaining two elements
@@ -81,7 +81,8 @@ class Solution:
                         left += 1
                         right -= 1
                     elif curr_sum < target:
-                        # Adjust the pointers based on the comparison with the target
+                        # Adjust the pointers based on the comparison with the
+                        # target
                         left += 1
                     else:
                         right -= 1
