@@ -36,11 +36,9 @@ class Solution:
             if slow is not None:
                 slow = slow.next
 
-        if slow is not None:
-            slow = slow.next
-
         # Remove the nth node from the end
         if slow is not None:
-            slow = slow.next
+            if slow.next is not None:
+                slow.next = slow.next.next
 
         return dummy.next
