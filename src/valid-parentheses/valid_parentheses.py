@@ -53,8 +53,7 @@ class Solution:
         Complexity:
         - Time: O(n), where n is the length of the input string.
         - Space: O(n), where n is the maximum number of opening brackets that
-        can be
-          stored in the stack.
+        can be stored in the stack.
         """
         # Initialize an empty stack to keep track of opening brackets.
         stack: List[str] = []
