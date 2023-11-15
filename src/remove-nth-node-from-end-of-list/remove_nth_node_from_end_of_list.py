@@ -41,4 +41,5 @@ class Solution:
             if slow.next is not None:
                 slow.next = slow.next.next
 
+        # Return the modified list starting from the dummy node's next
         return dummy.next
