@@ -1,7 +1,6 @@
-import pytest
 from typing import List
-
-from four_sum import Solution  # Assuming your file is named four_sum.py
+import pytest
+from four_sum import Solution
 
 
 @pytest.mark.parametrize(
