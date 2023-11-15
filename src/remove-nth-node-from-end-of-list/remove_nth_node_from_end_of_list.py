@@ -17,6 +17,40 @@ class Solution:
         head: Optional[ListNode],
         n: int,
     ) -> Optional[ListNode]:
+        """
+        Summary:
+        Removes the Nth node from the end of a linked list.
+
+        Description:
+        Given the head of a linked list and an integer n, the function removes
+        the Nth node from the end of the list and returns the updated head.
+        The algorithm uses two pointers, a slow and a fast pointer, to
+        traverse the list efficiently.
+
+        Algorithm:
+        1. Create a dummy node to handle edge cases.
+        2. Initialize two pointers, slow and fast, to the dummy node.
+        3. Move the fast pointer n + 1 steps ahead to create a gap between
+        slow and fast.
+        4. Move both pointers until the fast pointer reaches the end of the
+        list.
+        5. Update pointers to remove the Nth node from the end.
+        6. Return the updated head of the linked list.
+
+        Parameters:
+        - head (Optional[ListNode]): The head of the linked list.
+        - n (int): The position of the node to be removed from the end.
+
+        Returns:
+        - Optional[ListNode]: The head of the linked list after removal.
+
+        Raises:
+        - No explicit exceptions are raised.
+
+        Complexity:
+        - Time: O(N), where N is the number of nodes in the linked list.
+        - Space: O(1), as the algorithm uses a constant amount of extra space.
+        """
         # Create a dummy node to handle edge cases
         dummy = ListNode(0)
         dummy.next = head
