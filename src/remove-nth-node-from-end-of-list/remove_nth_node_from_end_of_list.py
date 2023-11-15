@@ -41,6 +41,8 @@ class Solution:
         # Remove the Nth node from the end
         if slow and slow.next:
             assert slow.next is not None  # assert that slow.next is not None
-            slow.next = slow.next.next
+            slow.next = (
+                slow.next.next
+            )  # Remove the Nth node by updating pointers
 
-        return dummy.next
+        return dummy.next  # Return the updated head of the linked list
