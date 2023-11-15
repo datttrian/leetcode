@@ -21,5 +21,5 @@
 |[Letter Combinations of a Phone Number](https://github.com/datttrian/leetcode/tree/main/src/letter-combinations-of-a-phone-number)                        |O(4^n)                                      |O(4^n)                                     |Medium     |
 |[4Sum](https://github.com/datttrian/leetcode/tree/main/src/4sum)                                                                                          |O(n^3)                                      |O(1)                                       |Medium     |
 |[Remove Nth Node From End of List](https://github.com/datttrian/leetcode/tree/main/src/remove-nth-node-from-end-of-list)                                  |O(n)                                        |O(1)                                       |Medium     |
-|[Valid Parentheses](https://github.com/datttrian/leetcode/tree/main/src/valid-parentheses)                                  |                                        |                                       |Medium     |
+|[Valid Parentheses](https://github.com/datttrian/leetcode/tree/main/src/valid-parentheses)                                  |                                        |                                       |Easy      |
 
