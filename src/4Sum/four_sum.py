@@ -26,7 +26,7 @@ class Solution:
         (No specific exceptions are raised)
 
         Complexity:
-        - Time: O(n^3), where n is the length of the input list `nums`.
+        - Time: O(N^3), where N is the length of the input list `nums`.
         The algorithm uses nested loops, and each iteration involves a
         two-pointers traversal.
 
