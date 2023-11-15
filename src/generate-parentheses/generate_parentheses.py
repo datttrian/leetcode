@@ -40,9 +40,9 @@ class Solution:
         No explicit exceptions are raised.
 
         Complexity:
-        - Time: O(4^n / sqrt(n)) where n is the number of pairs, as each valid
-        combination can have up to 2n characters,
-          and at each step, we make two recursive calls.
+        - Time: O(4^n / sqrt(n)), as each valid
+        combination can have up to 2n characters, and at each step, we make
+        two recursive calls.
         - Space: O(4^n / sqrt(n)) as there can be a total of 4^n / sqrt(n)
         valid combinations in the output list.
         """
