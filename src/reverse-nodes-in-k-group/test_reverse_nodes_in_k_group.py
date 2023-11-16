@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, List
 import pytest
 from reverse_nodes_in_k_group import Solution, ListNode
 
@@ -28,4 +28,12 @@ def test_reverseKGroup(
 ):
     solution = Solution()
     result = solution.reverseKGroup(head, k)
-    assert result == expected
+    assert list_node_to_list(result) == list_node_to_list(expected)
+
+
+def list_node_to_list(node: Optional[ListNode]) -> List[int]:
+    result: List[int] = []
+    while node:
+        result.append(node.val)
+        node = node.next
+    return result
