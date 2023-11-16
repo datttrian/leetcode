@@ -29,20 +29,23 @@ class Solution:
             if count == k:
                 # Reverse the inner linked list
                 pre, cur = end, start
+
+                # Standard reversing
                 for _ in range(k):
                     if cur is not None:
                         cur.next, cur, pre = (
                             pre,
                             cur.next,
                             cur,
-                        )  # Standard reversing
+                        )
 
+                # Connect two k-groups
                 if start is not None:
                     jump.next, jump, start = (
                         pre,
                         start,
                         end,
-                    )  # Connect two k-groups
+                    )
             else:
                 # If the size of the remaining nodes is less than k, return
                 # the modified list
