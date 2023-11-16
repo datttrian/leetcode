@@ -25,6 +25,9 @@ class Solution:
             second.next = first
             current.next = second
 
-            current.next = current.next.next
+            current = current.next
+
+            if current.next is not None:
+                current = current.next
 
         return dummy.next
