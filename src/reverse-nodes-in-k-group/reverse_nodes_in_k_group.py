@@ -26,8 +26,9 @@ class Solution:
             while end and count < k:
                 end = end.next
                 count += 1
+
+            # Reverse the inner linked list
             if count == k:
-                # Reverse the inner linked list
                 pre, cur = end, start
 
                 # Standard reversing
