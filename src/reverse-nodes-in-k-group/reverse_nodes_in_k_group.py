@@ -46,7 +46,8 @@ class Solution:
                         start,
                         end,
                     )
+
+            # If the size of the remaining nodes is less than k, return
+            # the modified list
             else:
-                # If the size of the remaining nodes is less than k, return
-                # the modified list
                 return dummy.next
