@@ -17,6 +17,24 @@ class Solution:
         head: Optional[ListNode],
         k: int,
     ) -> Optional[ListNode]:
+        """
+        Reverse nodes in k-group in a linked list.
+
+        Args:
+        - head (Optional[ListNode]): The head of the linked list.
+        - k (int): The size of each group to be reversed.
+
+        Returns:
+        - Optional[ListNode]: The head of the modified linked list.
+
+        Raises:
+        - None
+
+        Complexity:
+        - Time: O(N), where N is the number of nodes in the linked list.
+        - Space: O(1), as the reversal is done in-place without using
+        additional space.
+        """
         dummy = jump = ListNode(0)
         dummy.next = start = end = head
 
