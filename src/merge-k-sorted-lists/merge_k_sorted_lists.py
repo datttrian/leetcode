@@ -11,11 +11,12 @@ class ListNode:
         self.val: int = val
         self.next: Optional[ListNode] = next_node
 
- 
+
 class Solution:
-    def mergeKLists(self,
-                    lists: List[Optional[ListNode]]) -> Optional[ListNode]:
-        
+    def mergeKLists(
+        self,
+        lists: List[Optional[ListNode]],
+    ) -> Optional[ListNode]:
         heap: List[tuple[int, int, ListNode]] = []
         for i, l in enumerate(lists):
             if l:
@@ -32,4 +33,4 @@ class Solution:
             if node.next:
                 heapq.heappush(heap, (node.next.val, i, node.next))
 
-        return dummy.next        
+        return dummy.next
