@@ -65,7 +65,7 @@ class Solution:
 
         Complexity:
         ------------
-        - Time: O(N log k), where N is the total number of elements in all
+        - Time: O(n log k), where n is the total number of elements in all
         lists, and k is the number of input lists.
         - Space: O(k), where k is the number of input lists, for the min heap.
         """
