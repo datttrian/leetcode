@@ -36,7 +36,7 @@ class Solution:
     - None
 
     Complexity:
-    - Time: O(N), where N is the number of nodes in the linked list.
+    - Time: O(n), where n is the number of nodes in the linked list.
     - Space: O(1), as the algorithm uses a constant amount of extra space.
     """
 
