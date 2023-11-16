@@ -66,8 +66,8 @@ class Solution:
         Complexity:
         ------------
         - Time: O(n log k), where n is the total number of elements in all
-        lists, and k is the number of input lists.
-        - Space: O(k), where k is the number of input lists, for the min heap.
+        lists.
+        - Space: O(k), for the min heap.
         """
         # Initialize a min heap to store tuples (value, index, ListNode)
         heap: List[tuple[int, int, ListNode]] = []
