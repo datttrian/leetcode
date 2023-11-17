@@ -57,3 +57,56 @@ Given an integer, convert it to a roman numeral.
 **Constraints:**
 
 - `1 <= num <= 3999`
+
+
+
+# Intuition
+The goal is to convert an integer to a Roman numeral. This solution uses a greedy algorithm that iteratively subtracts the largest possible values from the input integer. It employs a predefined set of Roman numeral symbols and their corresponding values to construct the resulting Roman numeral.
+
+# Approach
+1. Define the symbols and their corresponding values in lists (`symbols` and `values`).
+2. Initialize an empty string (`result`) to store the Roman numeral.
+3. Iterate through the symbols and values simultaneously using `zip`.
+4. In each iteration, repeat the current symbol as many times as it fits in the number, and subtract the corresponding value from the number.
+5. Return the constructed Roman numeral.
+
+# Time Complexity
+The time complexity is O(13 * log(num)), where "num" is the input integer. The algorithm iterates through the set of symbols, and in the worst case, the while loop may run log(num) times for each symbol.
+
+# Space Complexity
+The space complexity is O(1) as the space required for the algorithm is constant regardless of the input size. It primarily uses the "result" string and the predefined sets of symbols and values.
+
+# Code
+```python
+class Solution:
+    def intToRoman(self, num: int) -> str:
+        # Define the symbols and their values
+        symbols = [
+            'M',
+            'CM',
+            'D',
+            'CD',
+            'C',
+            'XC',
+            'L',
+            'XL',
+            'X',
+            'IX',
+            'V',
+            'IV',
+            'I',
+        ]
+        values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+
+        # Initialize an empty string to store the Roman numeral
+        result = ''
+
+        # Iterate through the symbols and values
+        for symbol, value in zip(symbols, values):
+            # Repeat the symbol as many times as it fits in the number
+            while num >= value:
+                result += symbol
+                num -= value
+
+        return result
+```
