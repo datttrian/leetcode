@@ -59,3 +59,52 @@ If all assertions pass, then your solution will be **accepted**.
 - `1 <= nums.length <= 3 * 10`^(`4`)
 - `-100 <= nums[i] <= 100`
 - `nums` is sorted in **non-decreasing** order.
+
+
+# Intuition
+The intuition behind this solution is to iterate through the sorted list and maintain a pointer that represents the index where the next unique element should be placed. If the current element is different from the previous one, it is placed at the designated index, and the pointer is incremented. This approach takes advantage of the fact that the input list is already sorted.
+
+# Approach
+1. Initialize a pointer 'k' to 1 (since the first element is always unique).
+2. Iterate through the list starting from index 1.
+3. If the current element is different from the previous one, place it at index 'k' and increment 'k'.
+4. After the iteration, truncate the list to the length 'k'.
+5. Return the value of 'k', which represents the new length of the list without duplicates.
+
+# Complexity
+- Time complexity: O(n), where n is the length of the input list 'nums'. The algorithm iterates through the list once.
+- Space complexity: O(1), as the modification is done in-place, and the algorithm uses constant space.
+
+# Code
+```python
+from typing import List
+
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        """
+        Removes duplicates from a sorted list in-place and returns the new length.
+
+        Parameters:
+        - nums (List[int]): A sorted list of integers with possible duplicate elements.
+
+        Returns:
+        - int: The length of the modified list without duplicates.
+        """
+        # Check if the input list is empty
+        if not nums:
+            return 0
+
+        # Initialize the pointer 'k' to 1 (the first element is always unique)
+        k = 1
+
+        # Iterate through the list starting from index 1
+        for i in range(1, len(nums)):
+            # If the current element is different from the previous one
+            if nums[i] != nums[i - 1]:
+                # Place it at index 'k' and increment 'k'
+                nums[k] = nums[i]
+                k += 1
+
+        # Truncate the list to the length 'k' and return 'k'
+        return k
+```
