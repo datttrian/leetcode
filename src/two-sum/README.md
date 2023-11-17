@@ -1,7 +1,7 @@
 # Two Sum
 
 
-Given an array of integers `nums` and an integer `target`, return
+Given an array of integers `nums` and an integer `target`, return
 *indices of the two numbers such that they add up to `target`*.
 
 You may assume that each input would have ***exactly* one solution**,
@@ -9,7 +9,7 @@ and you may not use the *same* element twice.
 
 You can return the answer in any order.
 
- 
+ 
 
 **Example 1:**
 
@@ -30,7 +30,7 @@ You can return the answer in any order.
         Output: [0,1]
         
 
- 
+ 
 
 **Constraints:**
 
@@ -39,10 +39,10 @@ You can return the answer in any order.
 - `-10`^(`9`)` <= target <= 10`^(`9`)
 - **Only one valid answer exists.**
 
- 
+ 
 
-**Follow-up: **Can you come up with an algorithm that is less than
-`O(n`^(`2`)`)`  time complexity?
+**Follow-up: **Can you come up with an algorithm that is less than
+`O(n`^(`2`)`)`  time complexity?
 
 # Intuition
 The problem requires finding two indices in an integer array whose values sum up to a given target number. One intuitive approach is to iterate through the array and, for each element, check if there is another element in the array whose sum with the current element equals the target. To improve efficiency, we can use a dictionary to store the numbers and their corresponding indices as we iterate through the array.
@@ -66,35 +66,6 @@ from typing import List, Dict
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        """
-        Find two indices in an integer array whose values sum up to a given
-        target number.
-
-        The function iterates through the list of numbers, using a dictionary
-        to store the numbers and their corresponding indices. For each number,
-        it checks whether there is a complement in the table (i.e., a number
-        which added to the current number equals the target). If such a
-        complement is found, the function returns a list containing the indices
-        of the two numbers. If no two numbers add up to the target, the
-        function returns an empty list.
-
-        Parameters:
-        - nums (List[int]): List of integers to search within.
-        - target (int): The target sum to find.
-
-        Returns:
-        - List[int]: A list containing the indices of the two numbers that add
-        up to the target.
-
-        Raises:
-        - This function assumes that there is exactly one solution, and it
-        does not handle the case where no solution exists.
-
-        Complexity:
-        - Time: O(n), where n is the number of elements in `nums`. The
-        function iterates through the list only once.
-        - Space: O(n), for the dictionary used to store the number indices.
-        """
         # Create a dictionary to store the numbers and their indices
         num_dict: Dict[int, int] = {}
 
