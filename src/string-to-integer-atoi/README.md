@@ -83,3 +83,58 @@ The algorithm for `myAtoi(string s)` is as follows:
 - `0 <= s.length <= 200`
 - `s` consists of English letters (lower-case and upper-case), digits
   (`0-9`), `' '`, `'+'`, `'-'`, and `'.'`.
+
+
+# Intuition
+The problem is to convert the initial portion of a string to a 32-bit signed integer. The approach is to iterate through the string, handling optional leading white spaces, an optional sign, and numerical characters. Non-numeric characters are ignored, and the function stops processing upon encountering them. The function also handles integer overflow and underflow by clamping the result to the range of 32-bit signed integers.
+
+# Approach
+1. Define the range of a 32-bit signed integer: `INT_MAX` (2^31 - 1) and `INT_MIN` (-2^31).
+2. Initialize variables: `i` for iterating through the string, `n` for the length of the string, `sign` to keep track of the sign, and `result` to store the converted integer.
+3. Skip leading whitespace by incrementing `i` while `s[i]` is a space character.
+4. Check for the sign:
+   - If `s[i]` is '-' or '+', update `sign` accordingly and increment `i`.
+5. Convert numbers and stop at the first non-digit:
+   - While `i` is less than `n` and `s[i]` is a digit, convert the digit to an integer.
+   - Check for overflow/underflow and clamp the result if necessary. This check prevents overflow during the calculation.
+   - Update `result` by multiplying it by 10 and adding the digit.
+   - Increment `i`.
+6. Return `sign * result`.
+
+# Complexity
+- Time complexity: O(n), where n is the length of the string. The function iterates through the string once.
+- Space complexity: O(1), as it uses a constant amount of space.
+
+# Code
+```python
+class Solution:
+    def myAtoi(self, s: str) -> int:
+        INT_MAX = 2**31 - 1
+        INT_MIN = -(2**31)
+        i = 0
+        n = len(s)
+        sign = 1
+        result = 0
+
+        # Skip leading whitespace
+        while i < n and s[i] == ' ':
+            i += 1
+
+        # Check for sign
+        if i < n and s[i] in ['-', '+']:
+            sign = -1 if s[i] == '-' else 1
+            i += 1
+
+        # Convert numbers and stop at the first non-digit
+        while i < n and s[i].isdigit():
+            digit = int(s[i])
+
+            # Check for overflow/underflow and clamp if necessary
+            if result > (INT_MAX - digit) // 10:
+                return INT_MAX if sign == 1 else INT_MIN
+
+            result = result * 10 + digit
+            i += 1
+
+        return sign * result
+```
