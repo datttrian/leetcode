@@ -7,36 +7,13 @@ class Solution:
         Find two indices in an integer array whose values sum up to a given
         target number.
 
-        The function uses a hash table to store the numbers and their
-        corresponding indices. It iterates through the list of numbers only
-        once, checking for each number whether there is a complement in the
-        hash table (i.e., a number which, when added to the current number,
-        equals the target). If such a complement is found, the function
-        immediately returns a list containing the indices of the two numbers.
-        If no two numbers add up to the target, the function returns an empty
-        list.
-
-        Parameters:
-        - nums (List[int]): List of integers to search within.
-        - target (int): The target sum to find.
-
-        Returns:
-        - List[int]: A list containing the indices of the two numbers that add
-        up to the target.
-
-        Raises:
-        - This function assumes that there is exactly one solution, and it
-        does not handle the case where no solution exists.
-
-        Algorithm:
-        - Create a dictionary (`num_dict`) to store the numbers and their
-        indices.
-        - Iterate over the list of numbers.
-        - For each number, calculate the complement of the current number by
-        subtracting it from the target.
-        - If the complement is in the dictionary, return the indices of the
-        two numbers adding up to the target.
-        - If no solution is found, return an empty list.
+        The problem requires finding two indices in an integer array whose
+        values sum up to a given target number. One intuitive approach is to
+        iterate through the array and, for each element, check if there is
+        another element in the array whose sum with the current element equals
+        the target. To improve efficiency, we can use a dictionary to store
+        the numbers and their corresponding indices as we iterate through the
+        array.
 
         Complexity:
         - Time: O(n), where n is the number of elements in `nums`. The
