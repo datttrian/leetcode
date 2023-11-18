@@ -18,37 +18,23 @@ class Solution:
         l2: Optional[ListNode],
     ) -> Optional[ListNode]:
         """
-        Add two numbers represented as linked lists and return the sum.
+        Add two numbers represented by linked lists and returns the sum as a
+        linked list.
 
-        Each node in the input lists contains a single digit, and the digits
-        are stored in reverse order, with the head node representing the least
-        significant digit. The function computes the sum digit by digit, taking
-        care to manage the carry from the sum that exceeds 9.
-
-        The method uses a dummy head node to simplify the handling of the edge
-        case where a new digit is added (e.g., when the sum of the highest
-        digits plus a carry results in a new digit). The function iterates
-        through both lists until all digits have been processed. In each
-        iteration, it adds the digits along with the carry from the previous
-        iteration.
-
-        Args:
-            l1 (Optional[ListNode]): The head node of the first linked list.
-            l2 (Optional[ListNode]): The head node of the second linked list.
+        Parameters:
+        - l1 (Optional[ListNode]): The head of the first linked list
+        representing the first number.
+        - l2 (Optional[ListNode]): The head of the second linked list
+        representing the second number.
 
         Returns:
-            Optional[ListNode]: The head node of the linked list that
-            represents the sum.
+        - Optional[ListNode]: The head of the resulting linked list
+        representing the sum of the two numbers.
 
-        Complexity:
-        - Time: O(max(n, m)), where n and m are number of nodes in the first
-        and second linked list.
-        - Space: O(max(n, m)), since we may need to store the sum in a new
-        linked list, the space required for the new list is at most the length
-        of the longer input list plus one additional node for a potential
-        carry-over.
+        Raises:
+        - None: No specific exceptions are raised by this function.
         """
-        # Initialize a dummy head node to simplify cases requiring new node
+        # Initialize a dummy head node to simplify cases requiring a new node
         head: ListNode = ListNode()
 
         # Start with the current node pointing to the dummy head
@@ -57,7 +43,7 @@ class Solution:
         # Initialize carry to zero
         carry: int = 0
 
-        # Loop until both lists are exhausted and there is no carry
+        # Loop until both lists are exhausted, and there is no carry
         while l1 or l2 or carry:
             # Extract values from the lists
             val1: int = l1.val if l1 else 0
