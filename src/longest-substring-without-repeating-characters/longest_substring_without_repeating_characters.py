@@ -4,31 +4,17 @@ from typing import Dict
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         """
-        Compute the length of the longest substring without repeating
-        characters.
+        Find the length of the longest substring without repeating characters.
 
-        This function uses a sliding window approach to find the maximum
-        length of a substring without duplicate characters in a given string.
-        It iterates through the string, using a dictionary to store the most
-        recent index of each character encountered. When a repeat character is
-        found, the left boundary of the window is moved to one past the last
-        occurrence of that character.
-
-        Args:
-            s (str): The input string to be evaluated.
+        Parameters:
+        - s (str): The input string.
 
         Returns:
-            int: The length of the longest substring without repeating
-            characters.
+        - int: The length of the longest substring without repeating
+        characters.
 
-        Complexity:
-            Time: O(n), where n is the length of the string. The function
-            iterates through the string once with constant-time operations at
-            each step.
-            Space: O(min(m, n)), where m is the size of the character set and
-            n is the length of the string. In the worst case, the whole string
-            might be stored in the dictionary, but typically the size is
-            limited by the character set.
+        Raises:
+        - None: No specific exceptions are raised by this function.
         """
         # Dictionary to store the most recent index of each character
         char_index_map: Dict[str, int] = {}
