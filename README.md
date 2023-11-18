@@ -28,5 +28,6 @@
 |24 |[Swap Nodes in Pairs](src/swap-nodes-in-pairs)                                                            |O(n)                                        |O(1)                                       |Medium     |
 |25 |[Reverse Nodes in k-Group](src/reverse-nodes-in-k-group)                                                  |O(n)                                        |O(1)                                       |Hard       |
 |26 |[Remove Duplicates from Sorted Array](src/remove-duplicates-from-sorted-array)                            |O(n)                                        |O(1)                                       |Easy       |
-|2 |[Remove Element](src/remove-element)                            |                                        |                                       |Easy       |
-|26 |[Find the Index of the First Occurrence in a String](src/find-the-index-of-the-first-occurrence-in-a-string)                            |                                        |                                       |Easy       |
+|27 |[Remove Element](src/remove-element)                            |                                        |                                       |Easy       |
+|28 |[Find the Index of the First Occurrence in a String](src/find-the-index-of-the-first-occurrence-in-a-string)                            |                                        |                                       |Easy       |
+|29 |[Divide Two Integers](src/divide-two-integers)                            |                                        |                                       |Medium       |
