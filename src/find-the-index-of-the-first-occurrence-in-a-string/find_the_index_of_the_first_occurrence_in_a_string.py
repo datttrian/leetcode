@@ -1,13 +1,9 @@
-from typing import List
-
-
 class Solution:
-    def removeElement(self, nums: List[int], val: int) -> int:
-        i = 0
+    def strStr(self, haystack: str, needle: str) -> int:
+        if not needle:
+            return 0
 
-        for _, num in enumerate(nums):
-            if num != val:
-                nums[i] = num
-                i += 1
-
-        return i
+        if needle in haystack:
+            return haystack.index(needle)
+        else:
+            return -1
