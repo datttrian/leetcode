@@ -10,23 +10,15 @@ class Solution:
         """
         Find the median of two sorted arrays.
 
-        This function takes two sorted arrays and finds their median as if
-        they were part of the same sorted array. It uses a binary search
-        algorithm to find the correct partition between the arrays that would
-        form a merged sorted array, and calculates the median from the
-        elements around the partition.
-
-        Args:
-            nums1 (List[int]): The first sorted array.
-            nums2 (List[int]): The second sorted array.
+        Parameters:
+        - nums1 (List[int]): The first sorted array.
+        - nums2 (List[int]): The second sorted array.
 
         Returns:
-            float: The median of the two sorted arrays.
+        - float: The median of the combined sorted arrays.
 
-        Complexity:
-            Time: O(log(min(m, n))), because the binary search is performed on
-            the smaller array.
-            Space: O(1), as the solution uses constant extra space.
+        Raises:
+        - None: No specific exceptions are raised by this function.
         """
         # Assign nums1 and nums to A and B with len(A) <= len(B)
         A, B = (nums1, nums2) if len(nums1) <= len(nums2) else (nums2, nums1)
