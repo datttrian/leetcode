@@ -41,10 +41,13 @@
 		],
 		"settings": {
 				"git.autofetch": true,
+				"gitdoc.enabled": true,
 				"gitdoc.commitMessageFormat": "ccc, LLL d, y, h:mm a '+00:00'",
 				"git.postCommitCommand": "push",
-				"gitdoc.enabled": true,
-				"git.autofetchPeriod": 3000
+    			"git.autofetchPeriod": 3000,
+    			"gitdoc.autoCommitDelay": 0,
+    			"gitdoc.autoPullDelay": 0,
+    			"gitdoc.autoPushDelay": 0,
 			}
     }
   }
