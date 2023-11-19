@@ -19,4 +19,7 @@
         "--ignore=D100,D101,D102,D103,D107,E203,W503,D400,D205"
     ],
     "python.analysis.typeCheckingMode": "strict",
+    "gitdoc.autoCommitDelay": 0,
+    "gitdoc.autoPullDelay": 0,
+    "gitdoc.autoPushDelay": 0,
 }
