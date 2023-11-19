@@ -8,7 +8,7 @@
     "git.autofetch": true,
     "gitdoc.commitMessageFormat": "ccc, LLL d, y, h:mm a '+00:00'",
     "git.postCommitCommand": "push",
-    "git.autofetchPeriod": 360,
+    "git.autofetchPeriod": 1000,
     "gitdoc.autoCommitDelay": 3000,
     "gitdoc.autoPullDelay": 3000,
     "gitdoc.enabled": true,
