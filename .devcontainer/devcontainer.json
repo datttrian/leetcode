@@ -38,7 +38,14 @@
 		"VisualStudioExptTeam.intellicode-api-usage-examples",
 		"VisualStudioExptTeam.vscodeintellicode",
 		"vsls-contrib.gitdoc"
-		]
+		],
+		"settings": {
+				"git.autofetch": true,
+				"gitdoc.commitMessageFormat": "ccc, LLL d, y, h:mm a '+00:00'",
+				"git.postCommitCommand": "push",
+				"gitdoc.enabled": true,
+				"git.autofetchPeriod": 3000
+			}
     }
   }
 }
