@@ -8,9 +8,7 @@
     "git.autofetch": true,
     "gitdoc.commitMessageFormat": "ccc, LLL d, y, h:mm a '+00:00'",
     "git.postCommitCommand": "push",
-    "git.autofetchPeriod": 1000,
-    "gitdoc.autoCommitDelay": 3000,
-    "gitdoc.autoPullDelay": 3000,
+    "git.autofetchPeriod": 3000,
     "gitdoc.enabled": true,
     "black-formatter.args": [
         "--line-length=79",
@@ -21,5 +19,4 @@
         "--ignore=D100,D101,D102,D103,D107,E203,W503,D400,D205"
     ],
     "python.analysis.typeCheckingMode": "strict",
-    
 }
