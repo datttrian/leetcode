@@ -32,6 +32,6 @@
 |28 |[Find the Index of the First Occurrence in a String](src/find-the-index-of-the-first-occurrence-in-a-string)                            |                                        |                                       |Easy       |
 |29 |[Divide Two Integers](src/divide-two-integers)                            |                                        |                                       |Medium       |
 |30 |[Substring with Concatenation of All Words](src/substring-with-concatenation-of-all-words)                            |                                        |                                       |Hard       |
-|30 |[Next Permutation](src/next-permutation)                            |                                        |                                       |Medium       |
-|30 |[Longest Valid Parentheses](src/longest-valid-parentheses)                            |                                        |                                       |Hard       |
-|31 |[Search in Rotated Sorted Array](src/search-in-rotated-sorted-array)                            |                                        |                                       |Medium       |
+|31 |[Next Permutation](src/next-permutation)                            |                                        |                                       |Medium       |
+|32 |[Longest Valid Parentheses](src/longest-valid-parentheses)                            |                                        |                                       |Hard       |
+|33 |[Search in Rotated Sorted Array](src/search-in-rotated-sorted-array)                            |                                        |                                       |Medium       |
