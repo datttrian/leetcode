@@ -33,10 +33,3 @@
 |29 |[Divide Two Integers](src/divide-two-integers)                            |                                        |                                       |Medium       |
 |30 |[Substring with Concatenation of All Words](src/substring-with-concatenation-of-all-words)                            |                                        |                                       |Hard       |
 |30 |[Substring with Concatenation of All Words](src/substring-with-concatenation-of-all-words)                            |                                        |                                       |Hard       |
-
-|30 |[Substring with Concatenation of All Words](src/substring-with-concatenation-of-all-words)                            |                                        |                                       |Hard       |
-|30 |[Substring with Concatenation of All Words](src/substring-with-concatenation-of-all-words)                            |                                        |                                       |Hard       |
-|30 |[Substring with Concatenation of All Words](src/substring-with-concatenation-of-all-words)                            |                                        |                                       |Hard       |
-|30 |[Substring with Concatenation of All Words](src/substring-with-concatenation-of-all-words)                            |                                        |                                       |Hard       |
-|30 |[Substring with Concatenation of All Words](src/substring-with-concatenation-of-all-words)                            |                                        |                                       |Hard       |
-|30 |[Substring with Concatenation of All Words](src/substring-with-concatenation-of-all-words)                            |                                        |                                       |Hard       |
