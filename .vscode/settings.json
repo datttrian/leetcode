@@ -1,15 +1,15 @@
 {
+    "gitdoc.enabled": true,
+    "git.autofetch": true,
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
     "python.formatting.provider": "none",
-    "git.autofetch": true,
-    "gitdoc.commitMessageFormat": "ccc, LLL d, y, h:mm a '+00:00'",
-    "git.postCommitCommand": "push",
-    "git.autofetchPeriod": 3000,
-    "gitdoc.enabled": true,
+    
+
+    
     "black-formatter.args": [
         "--line-length=79",
         "--skip-string-normalization"
@@ -19,7 +19,4 @@
         "--ignore=D100,D101,D102,D103,D107,E203,W503,D400,D205"
     ],
     "python.analysis.typeCheckingMode": "strict",
-    "gitdoc.autoCommitDelay": 0,
-    "gitdoc.autoPullDelay": 0,
-    "gitdoc.autoPushDelay": 0,
 }
