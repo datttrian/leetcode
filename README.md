@@ -34,3 +34,4 @@
 |30 |[Substring with Concatenation of All Words](src/substring-with-concatenation-of-all-words)                            |                                        |                                       |Hard       |
 |30 |[Next Permutation](src/next-permutation)                            |                                        |                                       |Medium       |
 |30 |[Longest Valid Parentheses](src/longest-valid-parentheses)                            |                                        |                                       |Hard       |
+|31 |[Search in Rotated Sorted Array](src/search-in-rotated-sorted-array)                            |                                        |                                       |Medium       |
