@@ -41,3 +41,4 @@
 |37 |[Sudoku Solver](src/sudoku-solver)                            |                                        |                                       |Hard       |
 |38 |[Count and Say](src/count-and-say)                            |                                        |                                       |Medium       |
 |39 |[Combination Sum](src/combination-sum)                            |                                        |                                       |Medium       |
+|40 |[Combination Sum II](src/combination-sum-ii)                            |                                        |                                       |Medium       |
