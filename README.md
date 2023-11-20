@@ -37,6 +37,7 @@
 |33 |[Search in Rotated Sorted Array](src/search-in-rotated-sorted-array)                            |                                        |                                       |Medium       |
 |34 |[Find First and Last Position of Element in Sorted Array](src/find-first-and-last-position-of-element-in-sorted-array)                            |                                        |                                       |Medium       |
 |35 |[Search Insert Position](src/search-insert-position)                            |                                        |                                       |Easy       |
-|35 |[Valid Sudoku](src/valid-sudoku)                            |                                        |                                       |Medium       |
-|36 |[Sudoku Solver](src/sudoku-solver)                            |                                        |                                       |Hard       |
-|36 |[Count and Say](src/count-and-say)                            |                                        |                                       |Medium       |
+|36 |[Valid Sudoku](src/valid-sudoku)                            |                                        |                                       |Medium       |
+|37 |[Sudoku Solver](src/sudoku-solver)                            |                                        |                                       |Hard       |
+|38 |[Count and Say](src/count-and-say)                            |                                        |                                       |Medium       |
+|39 |[Combination Sum](src/combination-sum)                            |                                        |                                       |Medium       |
