@@ -3,32 +3,43 @@ from typing import List
 
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
-        # Check each row
-        for i in range(9):
-            row_set: set[str] = set()
-            for j in range(9):
-                if board[i][j] != '.':
-                    if board[i][j] in row_set:
+        def is_valid_line(line: List[str]) -> bool:
+            line_set: set[str] = set()
+            for cell in line:
+                if cell != '.':
+                    if cell in line_set:
                         return False
-                    row_set.add(board[i][j])
+                    line_set.add(cell)
+            return True
 
-        # Check each column
-        for j in range(9):
-            col_set: set[str] = set()
+        def is_valid_board_lines(board: List[List[str]]) -> bool:
             for i in range(9):
-                if board[i][j] != '.':
-                    if board[i][j] in col_set:
-                        return False
-                    col_set.add(board[i][j])
+                if not is_valid_line(board[i]) or not is_valid_line(
+                    [board[j][i] for j in range(9)],
+                ):
+                    return False
+            return True
 
-        # Check each 3x3 sub-box
-        for box in range(9):
+        def is_valid_box(
+            board: List[List[str]],
+            start_row: int,
+            start_col: int,
+        ) -> bool:
             box_set: set[str] = set()
-            for i in range(box // 3 * 3, box // 3 * 3 + 3):
-                for j in range(box % 3 * 3, box % 3 * 3 + 3):
-                    if board[i][j] != '.':
-                        if board[i][j] in box_set:
+            for i in range(start_row, start_row + 3):
+                for j in range(start_col, start_col + 3):
+                    cell = board[i][j]
+                    if cell != '.':
+                        if cell in box_set:
                             return False
-                        box_set.add(board[i][j])
+                        box_set.add(cell)
+            return True
 
-        return True
+        def is_valid_board_boxes(board: List[List[str]]) -> bool:
+            for i in range(0, 9, 3):
+                for j in range(0, 9, 3):
+                    if not is_valid_box(board, i, j):
+                        return False
+            return True
+
+        return is_valid_board_lines(board) and is_valid_board_boxes(board)
