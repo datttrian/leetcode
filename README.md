@@ -43,3 +43,4 @@
 |39 |[Combination Sum](src/combination-sum)                            |                                        |                                       |Medium       |
 |40 |[Combination Sum II](src/combination-sum-ii)                            |                                        |                                       |Medium       |
 |41 |[First Missing Positive](src/first-missing-positive)                            |                                        |                                       |Hard       |
+|42 |[Trapping Rain Water](src/trapping-rain-water)                            |                                        |                                       |Hard       |
