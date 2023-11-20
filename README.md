@@ -35,3 +35,4 @@
 |31 |[Next Permutation](src/next-permutation)                            |                                        |                                       |Medium       |
 |32 |[Longest Valid Parentheses](src/longest-valid-parentheses)                            |                                        |                                       |Hard       |
 |33 |[Search in Rotated Sorted Array](src/search-in-rotated-sorted-array)                            |                                        |                                       |Medium       |
+|34 |[Find First and Last Position of Element in Sorted Array](src/find-first-and-last-position-of-element-in-sorted-array)                            |                                        |                                       |Medium       |
