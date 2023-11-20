@@ -1,14 +1,12 @@
-import itertools
+import re
 
 
 class Solution:
     def countAndSay(self, n: int) -> str:
-        result = '1'
+        s: str = '1'
         for _ in range(n - 1):
-            v = ''
-            for digit, group in itertools.groupby(result):
-                count = len(list(group))
-                v += '%i%s' % (count, digit)
-            result = v
-
-        return result
+            s = ''.join(
+                str(len(group)) + digit
+                for group, digit in re.findall(r'((.)\2*)', s)  # type: ignore
+            )  # type: ignore
+        return s
