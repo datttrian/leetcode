@@ -39,3 +39,4 @@
 |35 |[Search Insert Position](src/search-insert-position)                            |                                        |                                       |Easy       |
 |35 |[Valid Sudoku](src/valid-sudoku)                            |                                        |                                       |Medium       |
 |36 |[Sudoku Solver](src/sudoku-solver)                            |                                        |                                       |Hard       |
+|36 |[Count and Say](src/count-and-say)                            |                                        |                                       |Medium       |
