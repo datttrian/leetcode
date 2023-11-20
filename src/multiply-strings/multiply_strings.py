@@ -11,9 +11,9 @@ class Solution:
         result: List[int] = [0] * (len(num1) + len(num2))
 
         # Perform the multiplication digit by digit
-        for i in range(len(num1)):
-            for j in range(len(num2)):
-                result[i + j] += int(num1[i]) * int(num2[j])
+        for i, digit1 in enumerate(num1):
+            for j, digit2 in enumerate(num2):
+                result[i + j] += int(digit1) * int(digit2)
                 result[i + j + 1] += result[i + j] // 10
                 result[i + j] %= 10
 
