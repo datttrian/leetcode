@@ -42,3 +42,4 @@
 |38 |[Count and Say](src/count-and-say)                            |                                        |                                       |Medium       |
 |39 |[Combination Sum](src/combination-sum)                            |                                        |                                       |Medium       |
 |40 |[Combination Sum II](src/combination-sum-ii)                            |                                        |                                       |Medium       |
+|41 |[First Missing Positive](src/first-missing-positive)                            |                                        |                                       |Hard       |
