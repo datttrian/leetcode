@@ -38,3 +38,4 @@
 |34 |[Find First and Last Position of Element in Sorted Array](src/find-first-and-last-position-of-element-in-sorted-array)                            |                                        |                                       |Medium       |
 |35 |[Search Insert Position](src/search-insert-position)                            |                                        |                                       |Easy       |
 |35 |[Valid Sudoku](src/valid-sudoku)                            |                                        |                                       |Medium       |
+|36 |[Sudoku Solver](src/sudoku-solver)                            |                                        |                                       |Hard       |
