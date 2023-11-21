@@ -60,3 +60,4 @@
 |56 |[Merge Intervals](src/merge-intervals)                            |                                        |                                       |Medium       |
 |57 |[Insert Interval](src/insert-interval)                            |                                        |                                       |Medium       |
 |58 |[Length of Last Word](src/length-of-last-word)                            |                                        |                                       |Easy       |
+|59 |[Spiral Matrix II](src/spiral-matrix-ii)                            |                                        |                                       |Medium       |
