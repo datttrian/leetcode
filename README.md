@@ -54,6 +54,8 @@
 |50 |[Pow(x, n)](src/powx-n)                            |                                        |                                       |Medium       |
 |51 |[N-Queens](src/n-queens)                            |                                        |                                       |Hard       |
 |52 |[N-Queens II](src/n-queens-ii)                            |                                        |                                       |Hard       |
-|52 |[Maximum Subarray](src/maximum-subarray)                            |                                        |                                       |Medium       |
-|53 |[Spiral Matrix](src/spiral-matrix)                            |                                        |                                       |Medium       |
-|53 |[Jump Game](src/jump-game)                            |                                        |                                       |Medium       |
+|53 |[Maximum Subarray](src/maximum-subarray)                            |                                        |                                       |Medium       |
+|54 |[Spiral Matrix](src/spiral-matrix)                            |                                        |                                       |Medium       |
+|55 |[Jump Game](src/jump-game)                            |                                        |                                       |Medium       |
+|56 |[Merge Intervals](src/merge-intervals)                            |                                        |                                       |Medium       |
+|57 |[Insert Interval](src/insert-interval)                            |                                        |                                       |Medium       |
