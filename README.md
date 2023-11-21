@@ -56,3 +56,4 @@
 |52 |[N-Queens II](src/n-queens-ii)                            |                                        |                                       |Hard       |
 |52 |[Maximum Subarray](src/maximum-subarray)                            |                                        |                                       |Medium       |
 |53 |[Spiral Matrix](src/spiral-matrix)                            |                                        |                                       |Medium       |
+|53 |[Jump Game](src/jump-game)                            |                                        |                                       |Medium       |
