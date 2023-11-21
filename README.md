@@ -51,6 +51,7 @@
 |47 |[Permutations II](src/permutations-ii)                            |                                        |                                       |Medium       |
 |48 |[Rotate Image](src/rotate-image)                            |                                        |                                       |Medium       |
 |49 |[Group Anagrams](src/group-anagrams)                            |                                        |                                       |Medium       |
-|49 |[Pow(x, n)](src/powx-n)                            |                                        |                                       |Medium       |
-|50 |[N-Queens](src/n-queens)                            |                                        |                                       |Hard       |
-|51 |[N-Queens II](src/n-queens-ii)                            |                                        |                                       |Hard       |
+|50 |[Pow(x, n)](src/powx-n)                            |                                        |                                       |Medium       |
+|51 |[N-Queens](src/n-queens)                            |                                        |                                       |Hard       |
+|52 |[N-Queens II](src/n-queens-ii)                            |                                        |                                       |Hard       |
+|52 |[Maximum Subarray](src/maximum-subarray)                            |                                        |                                       |Medium       |
