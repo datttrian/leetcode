@@ -63,4 +63,5 @@
 |59 |[Spiral Matrix II](src/spiral-matrix-ii)                            |                                        |                                       |Medium       |
 |60 |[Permutation Sequence](src/permutation-sequence)                            |                                        |                                       |Hard       |
 |61 |[Rotate List](src/rotate-list)                            |                                        |                                       |Medium       |
-|61 |[Unique Paths](src/unique-paths)                            |                                        |                                       |Medium       |
+|62 |[Unique Paths](src/unique-paths)                            |                                        |                                       |Medium       |
+|63 |[Unique Paths II](src/unique-paths-ii)                            |                                        |                                       |Medium       |
