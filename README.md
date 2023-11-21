@@ -52,3 +52,4 @@
 |48 |[Rotate Image](src/rotate-image)                            |                                        |                                       |Medium       |
 |49 |[Group Anagrams](src/group-anagrams)                            |                                        |                                       |Medium       |
 |49 |[Pow(x, n)](src/powx-n)                            |                                        |                                       |Medium       |
+|50 |[N-Queens](src/n-queens)                            |                                        |                                       |Hard       |
