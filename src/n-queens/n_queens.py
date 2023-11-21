@@ -3,29 +3,47 @@ from typing import List
 
 class Solution:
     def solveNQueens(self, n: int) -> List[List[str]]:
-        def backtrack(i: int) -> None:
-            if i == n:
-                res.append(list(board))
-            for j in range(n):
-                if (
-                    j not in cols
-                    and j - i not in diag
-                    and j + i not in off_diag
-                ):
-                    cols.add(j)
-                    diag.add(j - i)
-                    off_diag.add(j + i)
-                    board.append('.' * (j) + 'Q' + '.' * (n - j - 1))
-                    backtrack(i + 1)
-                    board.pop()
-                    off_diag.remove(j + i)
-                    diag.remove(j - i)
-                    cols.remove(j)
+        def is_safe(board: List[List[str]], row: int, col: int) -> bool:
+            # Check if there is a queen in the same column
+            for i in range(row):
+                if board[i][col] == 'Q':
+                    return False
 
-        res: List[List[str]] = []
-        board: List[str] = []  # Changed the type to List[str]
-        cols: set[int] = set()  # Assuming column indices are integers
-        diag: set[int] = set()
-        off_diag: set[int] = set()
-        backtrack(0)
-        return res
+            # Check upper left diagonal
+            for i, j in zip(range(row, -1, -1), range(col, -1, -1)):
+                if board[i][j] == 'Q':
+                    return False
+
+            # Check upper right diagonal
+            for i, j in zip(range(row, -1, -1), range(col, n)):
+                if board[i][j] == 'Q':
+                    return False
+
+            return True
+
+        def create_board() -> List[List[str]]:
+            return [['.' for _ in range(n)] for _ in range(n)]
+
+        def format_solution(board: List[List[str]]) -> List[str]:
+            return [''.join(row) for row in board]
+
+        def solve(
+            board: List[List[str]],
+            row: int,
+            solutions: List[List[str]],
+        ) -> None:
+            if row == n:
+                solutions.append(format_solution(board))
+                return
+
+            for col in range(n):
+                if is_safe(board, row, col):
+                    board[row][col] = 'Q'
+                    solve(board, row + 1, solutions)
+                    board[row][col] = '.'
+
+        # Initialize the chessboard
+        chessboard = create_board()
+        solutions: List[List[str]] = []
+        solve(chessboard, 0, solutions)
+        return solutions
