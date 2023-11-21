@@ -3,40 +3,29 @@ from typing import List
 
 class Solution:
     def solveNQueens(self, n: int) -> List[List[str]]:
-        def is_valid(board: List[int], row: int, col: int) -> bool:
-            for i in range(row):
+        def backtrack(i: int) -> None:
+            if i == n:
+                res.append(list(board))
+            for j in range(n):
                 if (
-                    board[i] == col
-                    or board[i] - i == col - row
-                    or board[i] + i == col + row
+                    j not in cols
+                    and j - i not in diag
+                    and j + i not in off_diag
                 ):
-                    return False
-            return True
+                    cols.add(j)
+                    diag.add(j - i)
+                    off_diag.add(j + i)
+                    board.append('.' * (j) + 'Q' + '.' * (n - j - 1))
+                    backtrack(i + 1)
+                    board.pop()
+                    off_diag.remove(j + i)
+                    diag.remove(j - i)
+                    cols.remove(j)
 
-        def place_queens(row: int) -> None:
-            if row == n:
-                result.append(
-                    [
-                        ''.join(
-                            [
-                                'Q' if col == board[row] else '.'
-                                for col in range(n)
-                            ],
-                        )
-                        for row in range(n)
-                    ],
-                )
-                return
-
-            for col in range(n):
-                if is_valid(board, row, col):
-                    board[row] = col
-                    place_queens(row + 1)
-                    board[row] = -1
-
-        result: List[List[str]] = []
-        board: List[int] = [
-            -1,
-        ] * n
-        place_queens(0)
-        return result
+        res: List[List[str]] = []
+        board: List[str] = []  # Changed the type to List[str]
+        cols: set[int] = set()  # Assuming column indices are integers
+        diag: set[int] = set()
+        off_diag: set[int] = set()
+        backtrack(0)
+        return res

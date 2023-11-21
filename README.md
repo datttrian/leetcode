@@ -53,3 +53,4 @@
 |49 |[Group Anagrams](src/group-anagrams)                            |                                        |                                       |Medium       |
 |49 |[Pow(x, n)](src/powx-n)                            |                                        |                                       |Medium       |
 |50 |[N-Queens](src/n-queens)                            |                                        |                                       |Hard       |
+|51 |[N-Queens II](src/n-queens-ii)                            |                                        |                                       |Hard       |
