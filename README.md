@@ -61,4 +61,5 @@
 |57 |[Insert Interval](src/insert-interval)                            |                                        |                                       |Medium       |
 |58 |[Length of Last Word](src/length-of-last-word)                            |                                        |                                       |Easy       |
 |59 |[Spiral Matrix II](src/spiral-matrix-ii)                            |                                        |                                       |Medium       |
-|60 |[Permutation Sequence](src/permutation-sequence)                            |                                        |                                       |Medium       |
+|60 |[Permutation Sequence](src/permutation-sequence)                            |                                        |                                       |Hard       |
+|61 |[Rotate List](src/rotate-list)                            |                                        |                                       |Medium       |
