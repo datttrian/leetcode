@@ -47,4 +47,7 @@
 |43 |[Multiply Strings](src/multiply-strings)                            |                                        |                                       |Medium       |
 |44 |[Wildcard Matching](src/wildcard-matching)                            |                                        |                                       |Hard       |
 |45 |[Jump Game II](src/jump-game-ii)                            |                                        |                                       |Medium       |
-|46 |[Permutations](src/permutations)                            |                                        |                                       |Medium       |
+|46 |[Permutations](src/permutations-i)                            |                                        |                                       |Medium       |
+|47 |[Permutations II](src/permutations-ii)                            |                                        |                                       |Medium       |
+|48 |[Rotate Image](src/rotate-image)                            |                                        |                                       |Medium       |
+|49 |[Group Anagrams](src/group-anagrams)                            |                                        |                                       |Medium       |
