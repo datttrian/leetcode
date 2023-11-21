@@ -15,11 +15,11 @@ from wildcard_matching import Solution
         ('', '*', True),
         ('abc', '****', True),
         ('abc', '*?*', True),
-        # ('abc', '*?a', False),
+        ('abc', '*?a', False),
         ('abc', '*?d', False),
         ('abc', '*?*d', False),
         ('abc', '*?*c', True),
-        ('abc', '*?*a', True),
+        # ('abc', '*?*a', True),
         ('abc', 'a?c', True),
     ],
 )
