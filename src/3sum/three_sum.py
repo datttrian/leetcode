@@ -1,8 +1,5 @@
-from typing import List, Tuple
-
-
 class Solution:
-    def threeSum(self, nums: List[int]) -> List[Tuple[int, int, int]]:
+    def threeSum(self, nums: list[int]) -> list[tuple[int, int, int]]:
         """
         Find all unique triplets in the given list of integers that sum up to
         zero.
@@ -48,7 +45,7 @@ class Solution:
         nums.sort()
 
         # Initialize the result list to store unique triplets
-        result: List[Tuple[int, int, int]] = []
+        result: list[tuple[int, int, int]] = []
 
         # Iterate through the sorted list, considering each element as the
         # potential first element of the triplet

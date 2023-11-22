@@ -1,4 +1,3 @@
-from typing import List, Tuple
 import pytest
 from three_sum import Solution
 
@@ -17,6 +16,6 @@ from three_sum import Solution
         ([1, 1, 1, 1], []),
     ],
 )
-def test_threeSum(nums: List[int], expected: List[Tuple[int, int, int]]):
+def test_threeSum(nums: list[int], expected: list[tuple[int, int, int]]):
     solution = Solution()
     assert solution.threeSum(nums) == expected
