@@ -73,3 +73,4 @@
 |69 |[Sqrt(x)](src/sqrtx)                            |                                        |                                       |Easy       |
 |70 |[Climbing Stairs](src/climbing-stairs)                            |                                        |                                       |Easy       |
 |71 |[Simplify Path](src/simplify-path)                            |                                        |                                       |Medium       |
+|72 |[Edit Distance](src/edit-distance)                            |                                        |                                       |Medium       |
