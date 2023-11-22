@@ -1,9 +1,6 @@
-from typing import List
-
-
 class Solution:
     def addBinary(self, a: str, b: str) -> str:
-        result: List[str] = []
+        result: list[str] = []
         carry = 0
 
         i, j = len(a) - 1, len(b) - 1
