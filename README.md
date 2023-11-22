@@ -67,6 +67,7 @@
 |63 |[Unique Paths II](src/unique-paths-ii)                            |                                        |                                       |Medium       |
 |64 |[Minimum Path Sum](src/minimum-path-sum)                            |                                        |                                       |Medium       |
 |65 |[Valid Number](src/valid-number)                            |                                        |                                       |Hard       |
-|65 |[Plus One](src/plus-one)                            |                                        |                                       |Easy       |
-|65 |[Add Binary](src/add-binary)                            |                                        |                                       |Easy       |
-|65 |[Text Justification](src/text-justification)                            |                                        |                                       |Hard       |
+|66 |[Plus One](src/plus-one)                            |                                        |                                       |Easy       |
+|67 |[Add Binary](src/add-binary)                            |                                        |                                       |Easy       |
+|68 |[Text Justification](src/text-justification)                            |                                        |                                       |Hard       |
+|68 |[Sqrt(x)](src/sqrtx)                            |                                        |                                       |Easy       |
