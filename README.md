@@ -76,3 +76,4 @@
 |72 |[Edit Distance](src/edit-distance)                            |                                        |                                       |Medium       |
 |73 |[Set Matrix Zeroes](src/set-matrix-zeroes)                            |                                        |                                       |Medium       |
 |74 |[Search a 2D Matrix](src/search-a-2d-matrix)                            |                                        |                                       |Medium       |
+|75 |[Sort Colors](src/sort-colors)                            |                                        |                                       |Medium       |
