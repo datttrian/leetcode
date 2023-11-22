@@ -74,3 +74,4 @@
 |70 |[Climbing Stairs](src/climbing-stairs)                            |                                        |                                       |Easy       |
 |71 |[Simplify Path](src/simplify-path)                            |                                        |                                       |Medium       |
 |72 |[Edit Distance](src/edit-distance)                            |                                        |                                       |Medium       |
+|73 |[Set Matrix Zeroes](src/set-matrix-zeroes)                            |                                        |                                       |Medium       |
