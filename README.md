@@ -68,3 +68,4 @@
 |64 |[Minimum Path Sum](src/minimum-path-sum)                            |                                        |                                       |Medium       |
 |65 |[Valid Number](src/valid-number)                            |                                        |                                       |Hard       |
 |65 |[Plus One](src/plus-one)                            |                                        |                                       |Easy       |
+|65 |[Add Binary](src/add-binary)                            |                                        |                                       |Easy       |
