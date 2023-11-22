@@ -72,3 +72,4 @@
 |68 |[Text Justification](src/text-justification)                            |                                        |                                       |Hard       |
 |69 |[Sqrt(x)](src/sqrtx)                            |                                        |                                       |Easy       |
 |70 |[Climbing Stairs](src/climbing-stairs)                            |                                        |                                       |Easy       |
+|71 |[Simplify Path](src/simplify-path)                            |                                        |                                       |Medium       |
