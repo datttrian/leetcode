@@ -66,3 +66,4 @@
 |62 |[Unique Paths](src/unique-paths)                            |                                        |                                       |Medium       |
 |63 |[Unique Paths II](src/unique-paths-ii)                            |                                        |                                       |Medium       |
 |64 |[Minimum Path Sum](src/minimum-path-sum)                            |                                        |                                       |Medium       |
+|65 |[Valid Number](src/valid-number)                            |                                        |                                       |Hard       |
