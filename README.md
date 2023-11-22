@@ -70,4 +70,5 @@
 |66 |[Plus One](src/plus-one)                            |                                        |                                       |Easy       |
 |67 |[Add Binary](src/add-binary)                            |                                        |                                       |Easy       |
 |68 |[Text Justification](src/text-justification)                            |                                        |                                       |Hard       |
-|68 |[Sqrt(x)](src/sqrtx)                            |                                        |                                       |Easy       |
+|69 |[Sqrt(x)](src/sqrtx)                            |                                        |                                       |Easy       |
+|70 |[Climbing Stairs](src/climbing-stairs)                            |                                        |                                       |Easy       |
