@@ -84,3 +84,5 @@
 |80 |[Remove Duplicates from Sorted Array II](src/remove-duplicates-from-sorted-array-ii)                            |                                        |                                       |Medium       |
 |81 |[Search in Rotated Sorted Array II](src/search-in-rotated-sorted-array-ii)                            |                                        |                                       |Medium       |
 |82 |[Remove Duplicates from Sorted List II](src/remove-duplicates-from-sorted-list-ii)                            |                                        |                                       |Medium       |
+|83 |[Remove Duplicates from Sorted List](src/remove-duplicates-from-sorted-list)                            |                                        |                                       |Easy       |
+|84 |[Largest Rectangle in Histogram](src/largest-rectangle-in-histogram)                            |                                        |                                       |Hard       |
