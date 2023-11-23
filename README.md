@@ -88,3 +88,4 @@
 |84 |[Largest Rectangle in Histogram](src/largest-rectangle-in-histogram)                            |                                        |                                       |Hard       |
 |85 |[Maximal Rectangle](src/maximal-rectangle)                            |                                        |                                       |Hard       |
 |86 |[Partition List](src/partition-list)                            |                                        |                                       |Medium       |
+|86 |[Scramble String](src/scramble-string)                            |                                        |                                       |Hard       |
