@@ -78,3 +78,4 @@
 |74 |[Search a 2D Matrix](src/search-a-2d-matrix)                            |                                        |                                       |Medium       |
 |75 |[Sort Colors](src/sort-colors)                            |                                        |                                       |Medium       |
 |76 |[Minimum Window Substring](src/minimum-window-substring)                            |                                        |                                       |Hard       |
+|77 |[Combinations](src/combinations)                            |                                        |                                       |Medium       |
