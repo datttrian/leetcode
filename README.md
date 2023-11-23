@@ -86,4 +86,5 @@
 |82 |[Remove Duplicates from Sorted List II](src/remove-duplicates-from-sorted-list-ii)                            |                                        |                                       |Medium       |
 |83 |[Remove Duplicates from Sorted List](src/remove-duplicates-from-sorted-list)                            |                                        |                                       |Easy       |
 |84 |[Largest Rectangle in Histogram](src/largest-rectangle-in-histogram)                            |                                        |                                       |Hard       |
-|84 |[Maximal Rectangle](src/maximal-rectangle)                            |                                        |                                       |Hard       |
+|85 |[Maximal Rectangle](src/maximal-rectangle)                            |                                        |                                       |Hard       |
+|86 |[Partition List](src/partition-list)                            |                                        |                                       |Medium       |
