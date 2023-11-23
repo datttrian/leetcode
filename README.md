@@ -82,3 +82,5 @@
 |78 |[Subsets](src/subsets)                            |                                        |                                       |Medium       |
 |79 |[Word Search](src/word-search)                            |                                        |                                       |Medium       |
 |80 |[Remove Duplicates from Sorted Array II](src/remove-duplicates-from-sorted-array-ii)                            |                                        |                                       |Medium       |
+|81 |[Search in Rotated Sorted Array II](src/search-in-rotated-sorted-array-ii)                            |                                        |                                       |Medium       |
+|82 |[Remove Duplicates from Sorted List II](src/remove-duplicates-from-sorted-list-ii)                            |                                        |                                       |Medium       |
