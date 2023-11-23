@@ -79,3 +79,4 @@
 |75 |[Sort Colors](src/sort-colors)                            |                                        |                                       |Medium       |
 |76 |[Minimum Window Substring](src/minimum-window-substring)                            |                                        |                                       |Hard       |
 |77 |[Combinations](src/combinations)                            |                                        |                                       |Medium       |
+|77 |[Subsets](src/subsets)                            |                                        |                                       |Medium       |
