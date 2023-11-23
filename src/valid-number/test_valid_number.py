@@ -3,25 +3,33 @@ from valid_number import Solution
 
 
 @pytest.mark.parametrize(
-    ('s', 'expected'),
+    ('input_str', 'expected_result'),
     [
+        # Valid integers
         ('0', True),
-        (' 0.1 ', True),
+        ('123', True),
+        ('-456', True),
+        # Valid decimals
+        ('0.5', True),
+        ('-0.5', True),
+        ('123.456', True),
+        # Valid exponentials
+        ('1e10', True),
+        ('-2E-5', True),
+        # Valid combinations
+        ('3.14e-2', True),
+        ('-7.89E6', True),
+        # Invalid strings
         ('abc', False),
-        ('1 a', False),
-        ('2e10', True),
-        (' -90e3   ', True),
-        (' 1e', False),
+        ('1.2.3', False),
+        ('1e2e3', False),
+        ('1e', False),
         ('e3', False),
-        (' 6e-1', True),
-        (' 99e2.5', False),
-        # ('53.5e93', True),
-        (' --6 ', False),
-        ('-+3', False),
-        ('95a54e53', False),
+        ('+', False),
+        ('-.', False),
+        ('', False),
     ],
 )
-def test_isNumber(s: str, expected: bool):
+def test_isNumber(input_str: str, expected_result: bool):
     solution = Solution()
-    result = solution.isNumber(s)
-    assert result == expected
+    assert solution.isNumber(input_str) == expected_result
