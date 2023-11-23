@@ -90,3 +90,4 @@
 |86 |[Partition List](src/partition-list)                            |                                        |                                       |Medium       |
 |87 |[Scramble String](src/scramble-string)                            |                                        |                                       |Hard       |
 |88 |[Merge Sorted Array](src/merge-sorted-array)                            |                                        |                                       |Easy       |
+|88 |[Gray Code](src/gray-code)                            |                                        |                                       |Medium       |
