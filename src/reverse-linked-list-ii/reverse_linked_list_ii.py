@@ -27,14 +27,14 @@ class Solution:
 
         # Move to the node just before the reversal starts
         for _ in range(left - 1):
-            if pre.next is not None:
+            if pre.next:
                 pre = pre.next
 
         # Reverse the nodes from left to right
         current = pre.next
         prev = None
         for _ in range(right - left + 1):
-            if current and current.next:
+            if current:
                 temp = current.next
                 current.next = prev
                 prev = current
@@ -43,6 +43,6 @@ class Solution:
         # Connect the reversed portion back to the original list
         if pre.next:
             pre.next.next = current
-            pre.next = prev
+        pre.next = prev
 
         return dummy.next
