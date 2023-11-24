@@ -92,3 +92,4 @@
 |88 |[Merge Sorted Array](src/merge-sorted-array)                            |                                        |                                       |Easy       |
 |89 |[Gray Code](src/gray-code)                            |                                        |                                       |Medium       |
 |90 |[Subsets II](src/subsets-ii)                            |                                        |                                       |Medium       |
+|91 |[Decode Ways](src/decode-ways)                            |                                        |                                       |Medium       |
