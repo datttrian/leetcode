@@ -100,3 +100,4 @@
 |96 |[Unique Binary Search Trees](src/unique-binary-search-trees)                            |                                        |                                       |Medium       |
 |97 |[Interleaving String](src/interleaving-string)                            |                                        |                                       |Medium       |
 |98 |[Validate Binary Search Tree](src/validate-binary-search-tree)                            |                                        |                                       |Medium       |
+|99 |[Recover Binary Search Tree](src/recover-binary-search-tree)                            |                                        |                                       |Medium       |
