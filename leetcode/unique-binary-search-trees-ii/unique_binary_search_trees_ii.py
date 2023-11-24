@@ -6,8 +6,8 @@ class TreeNode:
     def __init__(
         self,
         val: int = 0,
-        left: Union['TreeNode', None] = None,
-        right: Union['TreeNode', None] = None,
+        left: 'typing.Type[TreeNode]' = None,
+        right: 'typing.Type[TreeNode]' = None,
     ):
         self.val = val
         self.left = left
