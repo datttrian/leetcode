@@ -1,80 +1,62 @@
-# Two Sum
+# Interleaving String
 
 
-Given an array of integers `nums` and an integer `target`, return
-*indices of the two numbers such that they add up to `target`*.
+Given strings `s1`, `s2`, and `s3`, find whether `s3` is formed by an
+**interleaving** of `s1` and `s2`.
 
-You may assume that each input would have ***exactly* one solution**,
-and you may not use the *same* element twice.
+An **interleaving** of two strings `s` and `t` is a configuration where
+`s` and `t` are divided into `n` and `m`
 
-You can return the answer in any order.
+substrings
 
- 
+respectively, such that:
+
+- `s = s`_(`1`)` + s`_(`2`)` + ... + s`_(`n`)
+- `t = t`_(`1`)` + t`_(`2`)` + ... + t`_(`m`)
+- `|n - m| <= 1`
+- The **interleaving** is
+  `s`_(`1`)` + t`_(`1`)` + s`_(`2`)` + t`_(`2`)` + s`_(`3`)` + t`_(`3`)` + ...`
+  or
+  `t`_(`1`)` + s`_(`1`)` + t`_(`2`)` + s`_(`2`)` + t`_(`3`)` + s`_(`3`)` + ...`
+
+**Note:** `a + b` is the concatenation of strings `a` and `b`.
+
+ 
 
 **Example 1:**
 
-    Input: nums = [2,7,11,15], target = 9
-        Output: [0,1]
-        Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+![](https://assets.leetcode.com/uploads/2020/09/02/interleave.jpg)
+
+    Input: s1 = "aabcc", s2 = "dbbca", s3 = "aadbbcbcac"
+        Output: true
+        Explanation: One way to obtain s3 is:
+        Split s1 into s1 = "aa" + "bc" + "c", and s2 into s2 = "dbbc" + "a".
+        Interleaving the two splits, we get "aa" + "dbbc" + "bc" + "a" + "c" = "aadbbcbcac".
+        Since s3 can be obtained by interleaving s1 and s2, we return true.
         
 
 **Example 2:**
 
-    Input: nums = [3,2,4], target = 6
-        Output: [1,2]
+    Input: s1 = "aabcc", s2 = "dbbca", s3 = "aadbbbaccc"
+        Output: false
+        Explanation: Notice how it is impossible to interleave s2 with any other string to obtain s3.
         
 
 **Example 3:**
 
-    Input: nums = [3,3], target = 6
-        Output: [0,1]
+    Input: s1 = "", s2 = "", s3 = ""
+        Output: true
         
 
- 
+ 
 
 **Constraints:**
 
-- `2 <= nums.length <= 10`^(`4`)
-- `-10`^(`9`)` <= nums[i] <= 10`^(`9`)
-- `-10`^(`9`)` <= target <= 10`^(`9`)
-- **Only one valid answer exists.**
+- `0 <= s1.length, s2.length <= 100`
+- `0 <= s3.length <= 200`
+- `s1`, `s2`, and `s3` consist of lowercase English letters.
 
- 
+ 
 
-**Follow-up: **Can you come up with an algorithm that is less than
-`O(n`^(`2`)`)`  time complexity?
-
-# Intuition
-The problem requires finding two indices in an integer array whose values sum up to a given target number. One intuitive approach is to iterate through the array and, for each element, check if there is another element in the array whose sum with the current element equals the target. To improve efficiency, we can use a dictionary to store the numbers and their corresponding indices as we iterate through the array.
-
-# Approach
-1. Initialize an empty dictionary (`num_dict`) to store numbers and their indices.
-2. Iterate through the list of numbers (`nums`) using the `enumerate` function to keep track of the current index.
-3. For each number in the list, calculate the complement (the difference between the target and the current number).
-4. Check if the complement is already in the dictionary. If it is, return a list containing the indices of the two numbers that add up to the target.
-5. If the complement is not in the dictionary, store the current number and its index in the dictionary.
-6. If no solution is found during the iteration, return an empty list.
-
-# Complexity
-- Time complexity: O(n), where n is the number of elements in `nums`. The function iterates through the list only once.
-- Space complexity: O(n), for the dictionary used to store the number indices.
-
-# Code
-```python
-from typing import List, Dict
-
-
-class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        num_dict: Dict[int, int] = {}
-
-        for i, num in enumerate(nums):
-            complement = target - num
-
-            if complement in num_dict:
-                return [num_dict[complement], i]
-
-            num_dict[num] = i
-
-        return []
-```
+**Follow up:** Could you solve it using only `O(s2.length)` additional
+memory space?
