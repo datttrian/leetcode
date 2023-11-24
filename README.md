@@ -94,3 +94,4 @@
 |90 |[Subsets II](src/subsets-ii)                            |                                        |                                       |Medium       |
 |91 |[Decode Ways](src/decode-ways)                            |                                        |                                       |Medium       |
 |92 |[Reverse Linked List II](src/reverse-linked-list-ii)                            |                                        |                                       |Medium       |
+|93 |[Restore IP Addresses](src/restore-ip-addresses)                            |                                        |                                       |Medium       |
