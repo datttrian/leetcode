@@ -1,45 +1,63 @@
-from typing import Optional, List
-from recover_binary_search_tree import Solution, TreeNode
+from typing import Optional
 import pytest
-
-
-def inorder_traversal(root: Optional['TreeNode']) -> List[int]:
-    """Helper function to perform in-order traversal and return values in a list."""
-    result: List[int] = []
-    stack: List[Optional['TreeNode']] = []
-    current: TreeNode | None = root
-
-    while stack or current:
-        while current:
-            stack.append(current)
-            current = current.left
-
-        current = stack.pop()
-        if current:
-            result.append(current.val)
-            current = current.right
-
-    return result
+from recover_binary_search_tree import Solution, TreeNode
 
 
 @pytest.mark.parametrize(
-    'tree: Optional[TreeNode | None], expected: List[int]',
+    'root_values, expected_values',
     [
-        (TreeNode(1, TreeNode(3), TreeNode(2)), [1, 2, 3]),  # Correct BST
+        (None, None),  # Test case with an empty tree
+        ([5], [5]),  # Test case with a tree containing a single node
         (
-            TreeNode(3, TreeNode(1), TreeNode(4, TreeNode(2))),
-            [1, 2, 3, 4],
-        ),  # Misplaced nodes: 3, 1
-        (TreeNode(2, TreeNode(3, TreeNode(1))), [1, 2, 3]),  # Correct BST
+            [1, 2, 3],
+            [3, 2, 1],
+        ),  # Test case with a sorted tree where two nodes are swapped
         (
-            TreeNode(3, TreeNode(1), TreeNode(2, TreeNode(4))),
-            [1, 2, 3, 4],
-        ),  # Misplaced nodes: 2, 1
-        (None, []),  # Empty tree
-        # Add more test cases as needed
+            [3, 1, 2],
+            [2, 1, 3],
+        ),  # Test case with an unsorted tree where two nodes are swapped
+        (
+            [4, 7, 2, 1, 3, 6, 5],
+            [6, 7, 2, 1, 3, 4, 5],
+        ),  # Test case with a complex tree where multiple nodes are swapped
     ],
 )
-def test_recoverTree(tree: Optional[TreeNode], expected: List[int]):
-    solution = Solution()
-    solution.recoverTree(tree)
-    assert inorder_traversal(tree) == expected
+def test_recoverTree(
+    solution: Solution,
+    root_values: Optional[list[Optional[int]]],
+    expected_values: Optional[list[Optional[int]]],
+):
+    root = create_tree(root_values)
+    solution.recoverTree(root)
+    assert tree_values(root) == expected_values
+
+
+def create_tree(values: Optional[list[Optional[int]]]) -> Optional[TreeNode]:
+    if not values:
+        return None
+    nodes = [TreeNode(val) if val is not None else None for val in values]
+    for i, node in enumerate(nodes):
+        if node:
+            left_child_idx = 2 * i + 1
+            right_child_idx = 2 * i + 2
+            if left_child_idx < len(nodes):
+                node.left = nodes[left_child_idx]
+            if right_child_idx < len(nodes):
+                node.right = nodes[right_child_idx]
+    return nodes[0]
+
+
+def tree_values(root: Optional[TreeNode]) -> list[Optional[int]]:
+    values: list[Optional[int]] = []
+    if not root:
+        return values
+    stack: list[Optional[TreeNode]] = [root]
+    while stack:
+        node: Optional[TreeNode] = stack.pop()
+        if node:
+            values.append(node.val)
+            stack.append(node.right)
+            stack.append(node.left)
+        else:
+            values.append(None)
+    return values
