@@ -6,7 +6,7 @@ class TreeNode:
     def __init__(
         self,
         val: int = 0,
-        left: 'TreeNode' | None = None,
+        left: Union['TreeNode', None] = None,
         right: Union['TreeNode', None] = None,
     ):
         self.val = val
