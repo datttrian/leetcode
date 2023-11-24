@@ -23,7 +23,7 @@ def inorder_traversal(root: Optional['TreeNode']) -> List[int]:
 
 
 @pytest.mark.parametrize(
-    'tree: Optional[TreeNode], expected: List[int]',
+    'tree: Optional[TreeNode | None], expected: List[int]',
     [
         (TreeNode(1, TreeNode(3), TreeNode(2)), [1, 2, 3]),  # Correct BST
         (
