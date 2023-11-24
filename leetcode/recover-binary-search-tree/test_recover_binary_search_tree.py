@@ -23,11 +23,11 @@ from recover_binary_search_tree import Solution, TreeNode
     ],
 )
 def test_recoverTree(
-    solution: Solution,
     root_values: Optional[list[Optional[int]]],
     expected_values: Optional[list[Optional[int]]],
 ):
     root = create_tree(root_values)
+    solution = Solution()
     solution.recoverTree(root)
     assert tree_values(root) == expected_values
 
