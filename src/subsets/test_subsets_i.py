@@ -1,5 +1,5 @@
 import pytest
-from subsets_ import Solution
+from subsets_i import Solution
 
 
 @pytest.mark.parametrize(
