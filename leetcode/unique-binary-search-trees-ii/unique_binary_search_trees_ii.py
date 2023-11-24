@@ -1,4 +1,4 @@
-from typing import Union
+from typing import Optional
 
 
 # Definition for a binary tree node.
@@ -6,8 +6,8 @@ class TreeNode:
     def __init__(
         self,
         val: int = 0,
-        left: 'TreeNode' | None = None,
-        right: Union['TreeNode', None] = None,
+        left: Optional['TreeNode'] = None,
+        right: Optional['TreeNode'] = None,
     ):
         self.val = val
         self.left = left
