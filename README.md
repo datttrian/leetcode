@@ -97,3 +97,4 @@
 |93 |[Restore IP Addresses](src/restore-ip-addresses)                            |                                        |                                       |Medium       |
 |94 |[Binary Tree Inorder Traversal](src/binary-tree-inorder-traversal)                            |                                        |                                       |Easy       |
 |95 |[Unique Binary Search Trees II](src/unique-binary-search-trees-ii)                            |                                        |                                       |Medium       |
+|96 |[Unique Binary Search Trees](src/unique-binary-search-trees)                            |                                        |                                       |Medium       |
