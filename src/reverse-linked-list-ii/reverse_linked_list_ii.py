@@ -43,6 +43,6 @@ class Solution:
         # Connect the reversed portion back to the original list
         if pre.next:
             pre.next.next = current
-        pre.next = prev
+            pre.next = prev
 
         return dummy.next
