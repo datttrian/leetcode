@@ -45,8 +45,8 @@
 |41  |[First Missing Positive](src/first-missing-positive)                                                                   |O(n)                                        |O(1)                                       |Hard       |
 |42  |[Trapping Rain Water](src/trapping-rain-water)                                                                         |O(n)                                        |O(1)                                       |Hard       |
 |43  |[Multiply Strings](src/multiply-strings)                                                                               |O(m * n)                                    |O(m + n)                                   |Medium     |
-|44  |[Wildcard Matching](src/wildcard-matching)                            |                                        |                                       |Hard       |
-|45  |[Jump Game II](src/jump-game-ii)                            |                                        |                                       |Medium       |
+|44  |[Wildcard Matching](src/wildcard-matching)                                                                             |O(m * n)                                    |O(m * n)                                   |Hard       |
+|45  |[Jump Game II](src/jump-game-ii)                                                                                       |O(n)                                        |O(1)                                       |Medium     |
 |46  |[Permutations](src/permutations-i)                            |                                        |                                       |Medium       |
 |47  |[Permutations II](src/permutations-ii)                            |                                        |                                       |Medium       |
 |48  |[Rotate Image](src/rotate-image)                            |                                        |                                       |Medium       |
