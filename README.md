@@ -57,7 +57,7 @@
 |53  |[Maximum Subarray](src/maximum-subarray)                                                                               |O(n)                   |O(1)              |Medium     |
 |54  |[Spiral Matrix](src/spiral-matrix)                                                                                     |O(n)                   |O(1)              |Medium     |
 |55  |[Jump Game](src/jump-game)                                                                                             |O(n)                   |O(1)              |Medium     |
-|56  |[Merge Intervals](src/merge-intervals)                            |                                        |                                       |Medium       |
+|56  |[Merge Intervals](src/merge-intervals)                                                                                 |O(n * log(n))          |O(1)              |Medium     |
 |57  |[Insert Interval](src/insert-interval)                            |                                        |                                       |Medium       |
 |58  |[Length of Last Word](src/length-of-last-word)                            |                                        |                                       |Easy       |
 |59  |[Spiral Matrix II](src/spiral-matrix-ii)                            |                                        |                                       |Medium       |
