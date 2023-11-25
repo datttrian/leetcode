@@ -38,13 +38,13 @@
 |34  |[Find First and Last Position of Element in Sorted Array](src/find-first-and-last-position-of-element-in-sorted-array) |O(log n)                                    |O(1)                                       |Medium     |
 |35  |[Search Insert Position](src/search-insert-position)                                                                   |O(log n)                                    |O(1)                                       |Easy       |
 |36  |[Valid Sudoku](src/valid-sudoku)                                                                                       |O(1)                                        |O(1)                                       |Medium     |
-|37  |[Sudoku Solver](src/sudoku-solver)                                                                                     |O(9^(m*n))                                  |O(1)                                       |Hard       |
+|37  |[Sudoku Solver](src/sudoku-solver)                                                                                     |O(9^(m * n))                                |O(1)                                       |Hard       |
 |38  |[Count and Say](src/count-and-say)                                                                                     |O(n)                                        |O(1)                                       |Medium     |
 |39  |[Combination Sum](src/combination-sum)                                                                                 |O(2^n)                                      |O(1)                                       |Medium     |
 |40  |[Combination Sum II](src/combination-sum-ii)                                                                           |O(2^n)                                      |O(1)                                       |Medium     |
-|41  |[First Missing Positive](src/first-missing-positive)                            |                                        |                                       |Hard       |
-|42  |[Trapping Rain Water](src/trapping-rain-water)                            |                                        |                                       |Hard       |
-|43  |[Multiply Strings](src/multiply-strings)                            |                                        |                                       |Medium       |
+|41  |[First Missing Positive](src/first-missing-positive)                                                                   |O(n)                                        |O(1)                                       |Hard       |
+|42  |[Trapping Rain Water](src/trapping-rain-water)                                                                         |O(n)                                        |O(1)                                       |Hard       |
+|43  |[Multiply Strings](src/multiply-strings)                                                                               |O(m * n)                                    |O(m + n)                                   |Medium     |
 |44  |[Wildcard Matching](src/wildcard-matching)                            |                                        |                                       |Hard       |
 |45  |[Jump Game II](src/jump-game-ii)                            |                                        |                                       |Medium       |
 |46  |[Permutations](src/permutations-i)                            |                                        |                                       |Medium       |
