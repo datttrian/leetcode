@@ -52,17 +52,17 @@
 |48  |[Rotate Image](src/rotate-image)                                                                                       |O(n^2)                 |O(1)              |Medium     |
 |49  |[Group Anagrams](src/group-anagrams)                                                                                   |O(m * n * log(n))      |O(k * n)          |Medium     |
 |50  |[Pow(x, n)](src/powx-n)                                                                                                |O(log(n))              |O(1)              |Medium     |
-|51  |[N-Queens](src/n-queens)                                                                                               |O(n!)                  |O(n^2)            |Medium     |
-|52  |[N-Queens II](src/n-queens-ii)                                                                                         |O(n!)                  |O(n^2)            |Medium     |
+|51  |[N-Queens](src/n-queens)                                                                                               |O(n!)                  |O(n^2)            |Hard       |
+|52  |[N-Queens II](src/n-queens-ii)                                                                                         |O(n!)                  |O(n^2)            |Hard       |
 |53  |[Maximum Subarray](src/maximum-subarray)                                                                               |O(n)                   |O(1)              |Medium     |
 |54  |[Spiral Matrix](src/spiral-matrix)                                                                                     |O(n)                   |O(1)              |Medium     |
 |55  |[Jump Game](src/jump-game)                                                                                             |O(n)                   |O(1)              |Medium     |
 |56  |[Merge Intervals](src/merge-intervals)                                                                                 |O(n * log(n))          |O(1)              |Medium     |
-|57  |[Insert Interval](src/insert-interval)                            |                                        |                                       |Medium       |
-|58  |[Length of Last Word](src/length-of-last-word)                            |                                        |                                       |Easy       |
-|59  |[Spiral Matrix II](src/spiral-matrix-ii)                            |                                        |                                       |Medium       |
-|60  |[Permutation Sequence](src/permutation-sequence)                            |                                        |                                       |Hard       |
-|61  |[Rotate List](src/rotate-list)                            |                                        |                                       |Medium       |
+|57  |[Insert Interval](src/insert-interval)                                                                                 |O(n)                   |O(1)              |Medium     |
+|58  |[Length of Last Word](src/length-of-last-word)                                                                         |O(n)                   |O(1)              |Easy       |
+|59  |[Spiral Matrix II](src/spiral-matrix-ii)                                                                               |O(n^2)                 |O(n^2)            |Medium     |
+|60  |[Permutation Sequence](src/permutation-sequence)                                                                       |O(n^2)                 |O(n)              |Hard       |
+|61  |[Rotate List](src/rotate-list)                                                                                         |O(n)                   |O(1)              |Medium     |
 |62  |[Unique Paths](src/unique-paths)                            |                                        |                                       |Medium       |
 |63  |[Unique Paths II](src/unique-paths-ii)                            |                                        |                                       |Medium       |
 |64  |[Minimum Path Sum](src/minimum-path-sum)                            |                                        |                                       |Medium       |
