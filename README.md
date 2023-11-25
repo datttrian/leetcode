@@ -91,12 +91,12 @@
 |87  |[Scramble String](src/scramble-string)                                                                                 |O(n^4)                 |O(n^3)            |Hard       |
 |88  |[Merge Sorted Array](src/merge-sorted-array)                                                                           |O(m + n)               |O(1)              |Easy       |
 |89  |[Gray Code](src/gray-code)                                                                                             |O(2^n)                 |O(2^n)            |Medium     |
-|90  |[Subsets II](src/subsets-ii)                                                                                           |                                        |                                       |Medium       |
-|91  |[Decode Ways](src/decode-ways)                                                                                         |                                        |                                       |Medium       |
-|92  |[Reverse Linked List II](src/reverse-linked-list-ii)                                                                   |                                        |                                       |Medium       |
-|93  |[Restore IP Addresses](src/restore-ip-addresses)                                                                       |                                        |                                       |Medium       |
-|94  |[Binary Tree Inorder Traversal](src/binary-tree-inorder-traversal)                                                     |                                        |                                       |Easy       |
-|95  |[Unique Binary Search Trees II](src/unique-binary-search-trees-ii)                                                     |                                        |                                       |Medium       |
+|90  |[Subsets II](src/subsets-ii)                                                                                           |O(2^n)                 |O(2^n)            |Medium     |
+|91  |[Decode Ways](src/decode-ways)                                                                                         |O(n)                   |O(n)              |Medium     |
+|92  |[Reverse Linked List II](src/reverse-linked-list-ii)                                                                   |O(n)                   |O(1)              |Medium     |
+|93  |[Restore IP Addresses](src/restore-ip-addresses)                                                                       |O(3^n)                 |O(3^n)            |Medium     |
+|94  |[Binary Tree Inorder Traversal](src/binary-tree-inorder-traversal)                                                     |O(n)                   |O(n)              |Easy       |
+|95  |[Unique Binary Search Trees II](src/unique-binary-search-trees-ii)                                                     |O(4^n / n^(3/2))       |O(4^n / sqrt(n))  |Medium     |
 |96  |[Unique Binary Search Trees](src/unique-binary-search-trees)                                                           |                                        |                                       |Medium       |
 |97  |[Interleaving String](src/interleaving-string)                                                                         |                                        |                                       |Medium       |
 |98  |[Validate Binary Search Tree](src/validate-binary-search-tree)                                                         |                                        |                                       |Medium       |
