@@ -97,8 +97,8 @@
 |93  |[Restore IP Addresses](src/restore-ip-addresses)                                                                       |O(3^n)                 |O(3^n)            |Medium     |
 |94  |[Binary Tree Inorder Traversal](src/binary-tree-inorder-traversal)                                                     |O(n)                   |O(n)              |Easy       |
 |95  |[Unique Binary Search Trees II](src/unique-binary-search-trees-ii)                                                     |O(4^n / n^(3/2))       |O(4^n / sqrt(n))  |Medium     |
-|96  |[Unique Binary Search Trees](src/unique-binary-search-trees)                                                           |                                        |                                       |Medium       |
-|97  |[Interleaving String](src/interleaving-string)                                                                         |                                        |                                       |Medium       |
-|98  |[Validate Binary Search Tree](src/validate-binary-search-tree)                                                         |                                        |                                       |Medium       |
-|99  |[Recover Binary Search Tree](src/recover-binary-search-tree)                                                           |                                        |                                       |Medium       |
-|100 |[Same Tree](src/same-tree)                                                                                             |                                        |                                       |Easy       |
+|96  |[Unique Binary Search Trees](src/unique-binary-search-trees)                                                           |O(n^2)                 |O(n)              |Medium     |
+|97  |[Interleaving String](src/interleaving-string)                                                                         |O(n^2)                 |O(n)              |Medium     |
+|98  |[Validate Binary Search Tree](src/validate-binary-search-tree)                                                         |O(n)                   |O(n) \| O(log(n)) |Medium     |
+|99  |[Recover Binary Search Tree](src/recover-binary-search-tree)                                                           |O(n)                   |O(1)              |Medium     |
+|100 |[Same Tree](src/same-tree)                                                                                             |O(min(m, n))           |O(min(m, n))      |Easy       |
