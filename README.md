@@ -74,31 +74,31 @@
 |70  |[Climbing Stairs](src/climbing-stairs)                                                                                 |O(n)                   |O(n)              |Easy       |
 |71  |[Simplify Path](src/simplify-path)                                                                                     |O(n)                   |O(n)              |Medium     |
 |72  |[Edit Distance](src/edit-distance)                                                                                     |O(m * n)               |O(m * n)          |Medium     |
-|73  |[Set Matrix Zeroes](src/set-matrix-zeroes)                            |                                        |                                       |Medium       |
-|74  |[Search a 2D Matrix](src/search-a-2d-matrix)                            |                                        |                                       |Medium       |
-|75  |[Sort Colors](src/sort-colors)                            |                                        |                                       |Medium       |
-|76  |[Minimum Window Substring](src/minimum-window-substring)                            |                                        |                                       |Hard       |
-|77  |[Combinations](src/combinations)                            |                                        |                                       |Medium       |
-|78  |[Subsets](src/subsets)                            |                                        |                                       |Medium       |
-|79  |[Word Search](src/word-search)                            |                                        |                                       |Medium       |
-|80  |[Remove Duplicates from Sorted Array II](src/remove-duplicates-from-sorted-array-ii)                            |                                        |                                       |Medium       |
-|81  |[Search in Rotated Sorted Array II](src/search-in-rotated-sorted-array-ii)                            |                                        |                                       |Medium       |
-|82  |[Remove Duplicates from Sorted List II](src/remove-duplicates-from-sorted-list-ii)                            |                                        |                                       |Medium       |
-|83  |[Remove Duplicates from Sorted List](src/remove-duplicates-from-sorted-list)                            |                                        |                                       |Easy       |
-|84  |[Largest Rectangle in Histogram](src/largest-rectangle-in-histogram)                            |                                        |                                       |Hard       |
-|85  |[Maximal Rectangle](src/maximal-rectangle)                            |                                        |                                       |Hard       |
-|86  |[Partition List](src/partition-list)                            |                                        |                                       |Medium       |
-|87  |[Scramble String](src/scramble-string)                            |                                        |                                       |Hard       |
-|88  |[Merge Sorted Array](src/merge-sorted-array)                            |                                        |                                       |Easy       |
-|89  |[Gray Code](src/gray-code)                            |                                        |                                       |Medium       |
-|90  |[Subsets II](src/subsets-ii)                            |                                        |                                       |Medium       |
-|91  |[Decode Ways](src/decode-ways)                            |                                        |                                       |Medium       |
-|92  |[Reverse Linked List II](src/reverse-linked-list-ii)                            |                                        |                                       |Medium       |
-|93  |[Restore IP Addresses](src/restore-ip-addresses)                            |                                        |                                       |Medium       |
-|94  |[Binary Tree Inorder Traversal](src/binary-tree-inorder-traversal)                            |                                        |                                       |Easy       |
-|95  |[Unique Binary Search Trees II](src/unique-binary-search-trees-ii)                            |                                        |                                       |Medium       |
-|96  |[Unique Binary Search Trees](src/unique-binary-search-trees)                            |                                        |                                       |Medium       |
-|97  |[Interleaving String](src/interleaving-string)                            |                                        |                                       |Medium       |
-|98  |[Validate Binary Search Tree](src/validate-binary-search-tree)                            |                                        |                                       |Medium       |
-|99  |[Recover Binary Search Tree](src/recover-binary-search-tree)                            |                                        |                                       |Medium       |
-|100 |[Same Tree](src/same-tree)                            |                                        |                                       |Easy       |
+|73  |[Set Matrix Zeroes](src/set-matrix-zeroes)                                                                             |O(m * n)               |O(1)              |Medium     |
+|74  |[Search a 2D Matrix](src/search-a-2d-matrix)                                                                           |O(log(m * n))          |O(1)              |Medium     |
+|75  |[Sort Colors](src/sort-colors)                                                                                         |O(n)                   |O(1)              |Medium     |
+|76  |[Minimum Window Substring](src/minimum-window-substring)                                                               |O(m + n)               |O(n)              |Hard       |
+|77  |[Combinations](src/combinations)                                                                                       |O(C(n, k))             |O(C(n, k))        |Medium     |
+|78  |[Subsets](src/subsets)                                                                                                 |O(2^n)                 |O(2^n)            |Medium     |
+|79  |[Word Search](src/word-search)                                                                                         |                                        |                                       |Medium       |
+|80  |[Remove Duplicates from Sorted Array II](src/remove-duplicates-from-sorted-array-ii)                                   |                                        |                                       |Medium       |
+|81  |[Search in Rotated Sorted Array II](src/search-in-rotated-sorted-array-ii)                                             |                                        |                                       |Medium       |
+|82  |[Remove Duplicates from Sorted List II](src/remove-duplicates-from-sorted-list-ii)                                     |                                        |                                       |Medium       |
+|83  |[Remove Duplicates from Sorted List](src/remove-duplicates-from-sorted-list)                                           |                                        |                                       |Easy       |
+|84  |[Largest Rectangle in Histogram](src/largest-rectangle-in-histogram)                                                   |                                        |                                       |Hard       |
+|85  |[Maximal Rectangle](src/maximal-rectangle)                                                                             |                                        |                                       |Hard       |
+|86  |[Partition List](src/partition-list)                                                                                   |                                        |                                       |Medium       |
+|87  |[Scramble String](src/scramble-string)                                                                                 |                                        |                                       |Hard       |
+|88  |[Merge Sorted Array](src/merge-sorted-array)                                                                           |                                        |                                       |Easy       |
+|89  |[Gray Code](src/gray-code)                                                                                             |                                        |                                       |Medium       |
+|90  |[Subsets II](src/subsets-ii)                                                                                           |                                        |                                       |Medium       |
+|91  |[Decode Ways](src/decode-ways)                                                                                         |                                        |                                       |Medium       |
+|92  |[Reverse Linked List II](src/reverse-linked-list-ii)                                                                   |                                        |                                       |Medium       |
+|93  |[Restore IP Addresses](src/restore-ip-addresses)                                                                       |                                        |                                       |Medium       |
+|94  |[Binary Tree Inorder Traversal](src/binary-tree-inorder-traversal)                                                     |                                        |                                       |Easy       |
+|95  |[Unique Binary Search Trees II](src/unique-binary-search-trees-ii)                                                     |                                        |                                       |Medium       |
+|96  |[Unique Binary Search Trees](src/unique-binary-search-trees)                                                           |                                        |                                       |Medium       |
+|97  |[Interleaving String](src/interleaving-string)                                                                         |                                        |                                       |Medium       |
+|98  |[Validate Binary Search Tree](src/validate-binary-search-tree)                                                         |                                        |                                       |Medium       |
+|99  |[Recover Binary Search Tree](src/recover-binary-search-tree)                                                           |                                        |                                       |Medium       |
+|100 |[Same Tree](src/same-tree)                                                                                             |                                        |                                       |Easy       |
