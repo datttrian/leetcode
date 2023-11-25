@@ -38,8 +38,8 @@
 |34  |[Find First and Last Position of Element in Sorted Array](src/find-first-and-last-position-of-element-in-sorted-array) |O(log n)                                    |O(1)                                       |Medium     |
 |35  |[Search Insert Position](src/search-insert-position)                                                                   |O(log n)                                    |O(1)                                       |Easy       |
 |36  |[Valid Sudoku](src/valid-sudoku)                                                                                       |O(1)                                        |O(1)                                       |Medium     |
-|37  |[Sudoku Solver](src/sudoku-solver)                            |                                        |                                       |Hard       |
-|38  |[Count and Say](src/count-and-say)                            |                                        |                                       |Medium       |
+|37  |[Sudoku Solver](src/sudoku-solver)                                                                                     |O(e^n)                                      |O(1)                                       |Hard       |
+|38  |[Count and Say](src/count-and-say)                                                                                     |O(n)                                        |O(1)                                       |Medium     |
 |39  |[Combination Sum](src/combination-sum)                            |                                        |                                       |Medium       |
 |40  |[Combination Sum II](src/combination-sum-ii)                            |                                        |                                       |Medium       |
 |41  |[First Missing Positive](src/first-missing-positive)                            |                                        |                                       |Hard       |
