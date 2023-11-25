@@ -56,7 +56,7 @@
 |52  |[N-Queens II](src/n-queens-ii)                                                                                         |O(n!)                  |O(n^2)            |Medium     |
 |53  |[Maximum Subarray](src/maximum-subarray)                                                                               |O(n)                   |O(1)              |Medium     |
 |54  |[Spiral Matrix](src/spiral-matrix)                                                                                     |O(n)                   |O(1)              |Medium     |
-|55  |[Jump Game](src/jump-game)                            |                                        |                                       |Medium       |
+|55  |[Jump Game](src/jump-game)                                                                                             |O(n)                   |O(1)              |Medium     |
 |56  |[Merge Intervals](src/merge-intervals)                            |                                        |                                       |Medium       |
 |57  |[Insert Interval](src/insert-interval)                            |                                        |                                       |Medium       |
 |58  |[Length of Last Word](src/length-of-last-word)                            |                                        |                                       |Easy       |
