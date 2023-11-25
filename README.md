@@ -51,7 +51,7 @@
 |47  |[Permutations II](src/permutations-ii)                                                                                 |O(n! * n)                                   |O(n)                                       |Medium     |
 |48  |[Rotate Image](src/rotate-image)                                                                                       |O(n^2)                                      |O(1)                                       |Medium     |
 |49  |[Group Anagrams](src/group-anagrams)                                                                                   |O(m * n * log(n))                           |O(k * n)                                   |Medium     |
-|50  |[Pow(x, n)](src/powx-n)                            |                                        |                                       |Medium       |
+|50  |[Pow(x, n)](src/powx-n)                                                                                                |O(log(n))                                   |O(1)                                       |Medium     |
 |51  |[N-Queens](src/n-queens)                            |                                        |                                       |Hard       |
 |52  |[N-Queens II](src/n-queens-ii)                            |                                        |                                       |Hard       |
 |53  |[Maximum Subarray](src/maximum-subarray)                            |                                        |                                       |Medium       |
