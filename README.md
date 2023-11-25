@@ -73,7 +73,7 @@
 |69  |[Sqrt(x)](src/sqrtx)                                                                                                   |O(log(n))              |O(1)              |Easy       |
 |70  |[Climbing Stairs](src/climbing-stairs)                                                                                 |O(n)                   |O(n)              |Easy       |
 |71  |[Simplify Path](src/simplify-path)                                                                                     |O(n)                   |O(n)              |Medium     |
-|72  |[Edit Distance](src/edit-distance)                            |                                        |                                       |Medium       |
+|72  |[Edit Distance](src/edit-distance)                                                                                     |O(m * n)               |O(m * n)          |Medium     |
 |73  |[Set Matrix Zeroes](src/set-matrix-zeroes)                            |                                        |                                       |Medium       |
 |74  |[Search a 2D Matrix](src/search-a-2d-matrix)                            |                                        |                                       |Medium       |
 |75  |[Sort Colors](src/sort-colors)                            |                                        |                                       |Medium       |
