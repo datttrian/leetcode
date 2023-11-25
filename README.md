@@ -80,17 +80,17 @@
 |76  |[Minimum Window Substring](src/minimum-window-substring)                                                               |O(m + n)               |O(n)              |Hard       |
 |77  |[Combinations](src/combinations)                                                                                       |O(C(n, k))             |O(C(n, k))        |Medium     |
 |78  |[Subsets](src/subsets)                                                                                                 |O(2^n)                 |O(2^n)            |Medium     |
-|79  |[Word Search](src/word-search)                                                                                         |                                        |                                       |Medium       |
-|80  |[Remove Duplicates from Sorted Array II](src/remove-duplicates-from-sorted-array-ii)                                   |                                        |                                       |Medium       |
-|81  |[Search in Rotated Sorted Array II](src/search-in-rotated-sorted-array-ii)                                             |                                        |                                       |Medium       |
-|82  |[Remove Duplicates from Sorted List II](src/remove-duplicates-from-sorted-list-ii)                                     |                                        |                                       |Medium       |
-|83  |[Remove Duplicates from Sorted List](src/remove-duplicates-from-sorted-list)                                           |                                        |                                       |Easy       |
-|84  |[Largest Rectangle in Histogram](src/largest-rectangle-in-histogram)                                                   |                                        |                                       |Hard       |
-|85  |[Maximal Rectangle](src/maximal-rectangle)                                                                             |                                        |                                       |Hard       |
-|86  |[Partition List](src/partition-list)                                                                                   |                                        |                                       |Medium       |
-|87  |[Scramble String](src/scramble-string)                                                                                 |                                        |                                       |Hard       |
-|88  |[Merge Sorted Array](src/merge-sorted-array)                                                                           |                                        |                                       |Easy       |
-|89  |[Gray Code](src/gray-code)                                                                                             |                                        |                                       |Medium       |
+|79  |[Word Search](src/word-search)                                                                                         |O(m * n * 3^k)         |O(n)              |Medium     |
+|80  |[Remove Duplicates from Sorted Array II](src/remove-duplicates-from-sorted-array-ii)                                   |O(n)                   |O(1)              |Medium     |
+|81  |[Search in Rotated Sorted Array II](src/search-in-rotated-sorted-array-ii)                                             |O(n)                   |O(1)              |Medium     |
+|82  |[Remove Duplicates from Sorted List II](src/remove-duplicates-from-sorted-list-ii)                                     |O(n)                   |O(1)              |Medium     |
+|83  |[Remove Duplicates from Sorted List](src/remove-duplicates-from-sorted-list)                                           |O(n)                   |O(1)              |Easy       |
+|84  |[Largest Rectangle in Histogram](src/largest-rectangle-in-histogram)                                                   |O(n)                   |O(n)              |Hard       |
+|85  |[Maximal Rectangle](src/maximal-rectangle)                                                                             |O(n^2)                 |O(n)              |Hard       |
+|86  |[Partition List](src/partition-list)                                                                                   |O(n)                   |O(1)              |Medium     |
+|87  |[Scramble String](src/scramble-string)                                                                                 |O(n^4)                 |O(n^3)            |Hard       |
+|88  |[Merge Sorted Array](src/merge-sorted-array)                                                                           |O(m + n)               |O(1)              |Easy       |
+|89  |[Gray Code](src/gray-code)                                                                                             |O(2^n)                 |O(2^n)            |Medium     |
 |90  |[Subsets II](src/subsets-ii)                                                                                           |                                        |                                       |Medium       |
 |91  |[Decode Ways](src/decode-ways)                                                                                         |                                        |                                       |Medium       |
 |92  |[Reverse Linked List II](src/reverse-linked-list-ii)                                                                   |                                        |                                       |Medium       |
