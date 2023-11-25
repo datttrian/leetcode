@@ -15,6 +15,8 @@ class Solution:
         The Roman numeral input is assumed to be valid, and no error handling
         is implemented for invalid inputs.
         """
+
+        # Dictionary mapping Roman numerals to their corresponding integer values
         roman_dict = {
             'I': 1,
             'V': 5,
@@ -24,15 +26,23 @@ class Solution:
             'D': 500,
             'M': 1000,
         }
+
+        # Initialize result and keep track of the previous value
         result = 0
         prev_value = 0
 
+        # Iterate through the string in reverse order
         for char in reversed(s):
             current_value = roman_dict[char]
+
+            # If the current value is less than the previous value, subtract it; otherwise, add it
             if current_value < prev_value:
                 result -= current_value
             else:
                 result += current_value
+
+            # Update the previous value for the next iteration
             prev_value = current_value
 
+        # Return the final result
         return result
