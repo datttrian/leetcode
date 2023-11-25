@@ -17,7 +17,7 @@ class Solution:
         """
 
         # Dictionary mapping Roman numerals to their corresponding integer values
-        roman_dict = {
+        roman_dict: dict[str, int] = {
             'I': 1,
             'V': 5,
             'X': 10,
@@ -28,12 +28,12 @@ class Solution:
         }
 
         # Initialize result and keep track of the previous value
-        result = 0
-        prev_value = 0
+        result: int = 0
+        prev_value: int = 0
 
         # Iterate through the string in reverse order
         for char in reversed(s):
-            current_value = roman_dict[char]
+            current_value: int = roman_dict[char]
 
             # If the current value is less than the previous value, subtract it; otherwise, add it
             if current_value < prev_value:
