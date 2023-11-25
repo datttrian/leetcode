@@ -52,7 +52,7 @@
 |48  |[Rotate Image](src/rotate-image)                                                                                       |O(n^2)                 |O(1)              |Medium     |
 |49  |[Group Anagrams](src/group-anagrams)                                                                                   |O(m * n * log(n))      |O(k * n)          |Medium     |
 |50  |[Pow(x, n)](src/powx-n)                                                                                                |O(log(n))              |O(1)              |Medium     |
-|51  |[N-Queens](src/n-queens)                            |                                        |                                       |Hard       |
+|51  |[N-Queens](src/n-queens)                                                                                               |O(n!)                  |O(n^2)            |Medium     |
 |52  |[N-Queens II](src/n-queens-ii)                            |                                        |                                       |Hard       |
 |53  |[Maximum Subarray](src/maximum-subarray)                            |                                        |                                       |Medium       |
 |54  |[Spiral Matrix](src/spiral-matrix)                            |                                        |                                       |Medium       |
