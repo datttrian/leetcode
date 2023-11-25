@@ -71,7 +71,7 @@
 |67  |[Add Binary](src/add-binary)                                                                                           |O(max(m,n))            |O(max(m,n))       |Easy       |
 |68  |[Text Justification](src/text-justification)                                                                           |O(n)                   |O(n)              |Hard       |
 |69  |[Sqrt(x)](src/sqrtx)                                                                                                   |O(log(n))              |O(1)              |Easy       |
-|70  |[Climbing Stairs](src/climbing-stairs)                            |                                        |                                       |Easy       |
+|70  |[Climbing Stairs](src/climbing-stairs)                                                                                 |O(n)                   |O(1)              |Easy       |
 |71  |[Simplify Path](src/simplify-path)                            |                                        |                                       |Medium       |
 |72  |[Edit Distance](src/edit-distance)                            |                                        |                                       |Medium       |
 |73  |[Set Matrix Zeroes](src/set-matrix-zeroes)                            |                                        |                                       |Medium       |
