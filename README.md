@@ -63,9 +63,9 @@
 |59  |[Spiral Matrix II](src/spiral-matrix-ii)                                                                               |O(n^2)                 |O(n^2)            |Medium     |
 |60  |[Permutation Sequence](src/permutation-sequence)                                                                       |O(n^2)                 |O(n)              |Hard       |
 |61  |[Rotate List](src/rotate-list)                                                                                         |O(n)                   |O(1)              |Medium     |
-|62  |[Unique Paths](src/unique-paths)                            |                                        |                                       |Medium       |
-|63  |[Unique Paths II](src/unique-paths-ii)                            |                                        |                                       |Medium       |
-|64  |[Minimum Path Sum](src/minimum-path-sum)                            |                                        |                                       |Medium       |
+|62  |[Unique Paths](src/unique-paths)                                                                                       |O(m * n)               |O(m * n)          |Medium     |
+|63  |[Unique Paths II](src/unique-paths-ii)                                                                                 |O(m * n)               |O(m * n)          |Medium     |
+|64  |[Minimum Path Sum](src/minimum-path-sum)                                                                               |O(m * n)               |O(1)              |Medium     |
 |65  |[Valid Number](src/valid-number)                            |                                        |                                       |Hard       |
 |66  |[Plus One](src/plus-one)                            |                                        |                                       |Easy       |
 |67  |[Add Binary](src/add-binary)                            |                                        |                                       |Easy       |
