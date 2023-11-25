@@ -101,3 +101,4 @@
 |97 |[Interleaving String](src/interleaving-string)                            |                                        |                                       |Medium       |
 |98 |[Validate Binary Search Tree](src/validate-binary-search-tree)                            |                                        |                                       |Medium       |
 |99 |[Recover Binary Search Tree](src/recover-binary-search-tree)                            |                                        |                                       |Medium       |
+|99 |[Same Tree]                            |                                        |                                       |Easy       |
