@@ -48,9 +48,9 @@
 |44  |[Wildcard Matching](src/wildcard-matching)                                                                             |O(m * n)                                    |O(m * n)                                   |Hard       |
 |45  |[Jump Game II](src/jump-game-ii)                                                                                       |O(n)                                        |O(1)                                       |Medium     |
 |46  |[Permutations](src/permutations-i)                                                                                     |O(n!)                                       |O(n)                                       |Medium     |
-|47  |[Permutations II](src/permutations-ii)                            |                                        |                                       |Medium       |
-|48  |[Rotate Image](src/rotate-image)                            |                                        |                                       |Medium       |
-|49  |[Group Anagrams](src/group-anagrams)                            |                                        |                                       |Medium       |
+|47  |[Permutations II](src/permutations-ii)                                                                                 |O(n! * n)                                   |O(n)                                       |Medium     |
+|48  |[Rotate Image](src/rotate-image)                                                                                       |O(n^2)                                      |O(1)                                       |Medium     |
+|49  |[Group Anagrams](src/group-anagrams)                                                                                   |O(m * n * log(n))                           |O(k * n)                                   |Medium     |
 |50  |[Pow(x, n)](src/powx-n)                            |                                        |                                       |Medium       |
 |51  |[N-Queens](src/n-queens)                            |                                        |                                       |Hard       |
 |52  |[N-Queens II](src/n-queens-ii)                            |                                        |                                       |Hard       |
