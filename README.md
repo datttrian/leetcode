@@ -66,7 +66,7 @@
 |62  |[Unique Paths](src/unique-paths)                                                                                       |O(m * n)               |O(m * n)          |Medium     |
 |63  |[Unique Paths II](src/unique-paths-ii)                                                                                 |O(m * n)               |O(m * n)          |Medium     |
 |64  |[Minimum Path Sum](src/minimum-path-sum)                                                                               |O(m * n)               |O(1)              |Medium     |
-|65  |[Valid Number](src/valid-number)                            |                                        |                                       |Hard       |
+|65  |[Valid Number](src/valid-number)                                                                                       |O(n)                   |O(1)              |Medium     |
 |66  |[Plus One](src/plus-one)                            |                                        |                                       |Easy       |
 |67  |[Add Binary](src/add-binary)                            |                                        |                                       |Easy       |
 |68  |[Text Justification](src/text-justification)                            |                                        |                                       |Hard       |
