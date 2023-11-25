@@ -53,9 +53,9 @@
 |49  |[Group Anagrams](src/group-anagrams)                                                                                   |O(m * n * log(n))      |O(k * n)          |Medium     |
 |50  |[Pow(x, n)](src/powx-n)                                                                                                |O(log(n))              |O(1)              |Medium     |
 |51  |[N-Queens](src/n-queens)                                                                                               |O(n!)                  |O(n^2)            |Medium     |
-|52  |[N-Queens II](src/n-queens-ii)                            |                                        |                                       |Hard       |
-|53  |[Maximum Subarray](src/maximum-subarray)                            |                                        |                                       |Medium       |
-|54  |[Spiral Matrix](src/spiral-matrix)                            |                                        |                                       |Medium       |
+|52  |[N-Queens II](src/n-queens-ii)                                                                                         |O(n!)                  |O(n^2)            |Medium     |
+|53  |[Maximum Subarray](src/maximum-subarray)                                                                               |O(n)                   |O(1)              |Medium     |
+|54  |[Spiral Matrix](src/spiral-matrix)                                                                                     |O(n)                   |O(1)              |Medium     |
 |55  |[Jump Game](src/jump-game)                            |                                        |                                       |Medium       |
 |56  |[Merge Intervals](src/merge-intervals)                            |                                        |                                       |Medium       |
 |57  |[Insert Interval](src/insert-interval)                            |                                        |                                       |Medium       |
