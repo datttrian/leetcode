@@ -36,7 +36,7 @@
 |32  |[Longest Valid Parentheses](src/longest-valid-parentheses)                                                             |O(n)                                        |O(n)                                       |Hard       |
 |33  |[Search in Rotated Sorted Array](src/search-in-rotated-sorted-array)                                                   |O(log n)                                    |O(1)                                       |Medium     |
 |34  |[Find First and Last Position of Element in Sorted Array](src/find-first-and-last-position-of-element-in-sorted-array) |O(log n)                                    |O(1)                                       |Medium     |
-|35  |[Search Insert Position](src/search-insert-position)                            |                                        |                                       |Easy       |
+|35  |[Search Insert Position](src/search-insert-position)                                                                   |O(log n)                                    |O(1)                                       |Easy       |
 |36  |[Valid Sudoku](src/valid-sudoku)                            |                                        |                                       |Medium       |
 |37  |[Sudoku Solver](src/sudoku-solver)                            |                                        |                                       |Hard       |
 |38  |[Count and Say](src/count-and-say)                            |                                        |                                       |Medium       |
