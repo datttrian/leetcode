@@ -1,5 +1,5 @@
-from string_to_integer_atoi import Solution
 import pytest
+from string_to_integer_atoi import Solution
 
 
 @pytest.mark.parametrize(

@@ -1,4 +1,5 @@
 from typing import Optional
+
 import pytest
 from recover_binary_search_tree import Solution, TreeNode
 

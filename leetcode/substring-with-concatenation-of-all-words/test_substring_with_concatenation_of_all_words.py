@@ -1,6 +1,7 @@
+from typing import List
+
 import pytest
 from substring_with_concatenation_of_all_words import Solution
-from typing import List
 
 
 @pytest.mark.parametrize(

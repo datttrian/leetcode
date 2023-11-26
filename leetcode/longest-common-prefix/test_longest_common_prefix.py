@@ -1,6 +1,7 @@
+from typing import List
+
 import pytest
 from longest_common_prefix import Solution
-from typing import List
 
 
 @pytest.mark.parametrize(

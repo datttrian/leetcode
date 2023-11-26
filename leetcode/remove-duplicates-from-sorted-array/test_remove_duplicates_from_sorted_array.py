@@ -1,4 +1,5 @@
 from typing import List
+
 import pytest
 from remove_duplicates_from_sorted_array import Solution
 

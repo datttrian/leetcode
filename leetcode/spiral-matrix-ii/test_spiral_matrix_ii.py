@@ -1,4 +1,5 @@
 from typing import List
+
 import pytest
 from spiral_matrix_ii import Solution
 

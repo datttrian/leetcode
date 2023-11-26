@@ -1,6 +1,7 @@
+from typing import List
+
 import pytest
 from next_permutation import Solution
-from typing import List
 
 
 @pytest.mark.parametrize(

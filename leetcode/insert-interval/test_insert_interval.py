@@ -1,4 +1,5 @@
 from typing import List
+
 import pytest
 from insert_interval import Solution
 

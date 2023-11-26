@@ -1,4 +1,5 @@
 from typing import List
+
 import pytest
 from first_missing_positive import Solution
 

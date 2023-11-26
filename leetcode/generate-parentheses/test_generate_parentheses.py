@@ -1,5 +1,6 @@
-import pytest
 from typing import List
+
+import pytest
 from generate_parentheses import Solution
 
 

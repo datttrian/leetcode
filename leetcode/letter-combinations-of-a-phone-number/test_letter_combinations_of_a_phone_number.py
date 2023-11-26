@@ -1,5 +1,6 @@
-import pytest
 from typing import List
+
+import pytest
 from letter_combinations_of_a_phone_number import Solution
 
 

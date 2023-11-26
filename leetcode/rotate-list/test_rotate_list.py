@@ -1,6 +1,7 @@
-from typing import Optional, List
+from typing import List, Optional
+
 import pytest
-from rotate_list import Solution, ListNode
+from rotate_list import ListNode, Solution
 
 
 def list_to_linked_list(lst: List[int]) -> Optional[ListNode]:

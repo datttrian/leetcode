@@ -1,4 +1,5 @@
 from typing import List
+
 import pytest
 from search_insert_position import Solution
 

@@ -1,6 +1,7 @@
-from typing import Optional, List
+from typing import List, Optional
+
 import pytest
-from swap_nodes_in_pairs import Solution, ListNode
+from swap_nodes_in_pairs import ListNode, Solution
 
 
 @pytest.mark.parametrize(

@@ -1,5 +1,5 @@
-from validate_binary_search_tree import Solution, TreeNode
 import pytest
+from validate_binary_search_tree import Solution, TreeNode
 
 
 @pytest.mark.parametrize(

@@ -1,6 +1,7 @@
-from typing import Optional, List
+from typing import List, Optional
+
 import pytest
-from reverse_nodes_in_k_group import Solution, ListNode
+from reverse_nodes_in_k_group import ListNode, Solution
 
 
 @pytest.mark.parametrize(

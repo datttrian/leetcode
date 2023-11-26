@@ -1,4 +1,5 @@
 from typing import List
+
 import pytest
 from three_sum_closest import Solution
 

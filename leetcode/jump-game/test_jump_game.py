@@ -1,4 +1,5 @@
 from typing import List
+
 import pytest
 from jump_game import Solution
 

@@ -1,7 +1,7 @@
 import pytest
-from integer_to_roman import (
+from integer_to_roman import (  # Assuming your solution is in a module named solution_module
     Solution,
-)  # Assuming your solution is in a module named solution_module
+)
 
 
 @pytest.mark.parametrize(

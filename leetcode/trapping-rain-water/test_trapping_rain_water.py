@@ -1,4 +1,5 @@
 from typing import List
+
 import pytest
 from trapping_rain_water import Solution
 

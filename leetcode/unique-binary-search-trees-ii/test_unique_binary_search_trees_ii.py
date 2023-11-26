@@ -1,4 +1,5 @@
-from typing import Union, List
+from typing import List, Union
+
 import pytest
 from unique_binary_search_trees_ii import Solution, TreeNode
 

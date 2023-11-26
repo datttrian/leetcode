@@ -1,6 +1,7 @@
 from typing import List, Optional
+
 import pytest
-from merge_two_sorted_lists import Solution, ListNode
+from merge_two_sorted_lists import ListNode, Solution
 
 
 # Helper function to convert a list to a linked list

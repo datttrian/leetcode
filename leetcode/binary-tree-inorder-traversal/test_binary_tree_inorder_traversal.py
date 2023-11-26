@@ -1,4 +1,5 @@
 from typing import Optional
+
 import pytest
 from binary_tree_inorder_traversal import Solution, TreeNode
 

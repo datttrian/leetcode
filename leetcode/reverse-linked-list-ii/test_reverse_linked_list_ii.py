@@ -1,6 +1,7 @@
 from typing import Optional
+
 import pytest
-from reverse_linked_list_ii import Solution, ListNode
+from reverse_linked_list_ii import ListNode, Solution
 
 
 # Helper function to convert a list to a linked list

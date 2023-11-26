@@ -1,5 +1,5 @@
-from interleaving_string import Solution
 import pytest
+from interleaving_string import Solution
 
 
 @pytest.mark.parametrize(

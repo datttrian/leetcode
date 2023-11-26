@@ -1,4 +1,5 @@
 from typing import List
+
 import pytest
 from maximum_subarray import Solution
 

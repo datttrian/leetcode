@@ -1,6 +1,7 @@
+from typing import List
+
 import pytest
 from search_in_rotated_sorted_array import Solution
-from typing import List
 
 
 @pytest.mark.parametrize(

@@ -1,6 +1,7 @@
 from typing import Optional
+
 import pytest
-from partition_list import Solution, ListNode
+from partition_list import ListNode, Solution
 
 
 # Helper function to convert a list to a linked list

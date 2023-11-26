@@ -1,4 +1,5 @@
 from typing import List
+
 import pytest
 from group_anagrams import Solution
 

@@ -1,4 +1,5 @@
 from typing import List
+
 import pytest
 from minimum_path_sum import Solution
 

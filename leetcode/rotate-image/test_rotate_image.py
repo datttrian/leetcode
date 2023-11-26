@@ -1,4 +1,5 @@
 from typing import List
+
 import pytest
 from rotate_image import Solution
 

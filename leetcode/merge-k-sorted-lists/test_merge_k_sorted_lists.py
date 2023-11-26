@@ -1,6 +1,7 @@
 from typing import List, Optional
+
 import pytest
-from merge_k_sorted_lists import Solution, ListNode
+from merge_k_sorted_lists import ListNode, Solution
 
 
 @pytest.mark.parametrize(

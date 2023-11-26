@@ -1,6 +1,7 @@
 from typing import List, Optional
+
 import pytest
-from remove_nth_node_from_end_of_list import Solution, ListNode
+from remove_nth_node_from_end_of_list import ListNode, Solution
 
 
 # Helper function to convert a list to a linked list

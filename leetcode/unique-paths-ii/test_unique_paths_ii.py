@@ -1,4 +1,5 @@
 from typing import List
+
 import pytest
 from unique_paths_ii import Solution
 

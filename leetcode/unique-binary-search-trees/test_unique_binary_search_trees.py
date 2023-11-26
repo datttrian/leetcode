@@ -1,5 +1,5 @@
-from unique_binary_search_trees import Solution
 import pytest
+from unique_binary_search_trees import Solution
 
 
 @pytest.mark.parametrize(

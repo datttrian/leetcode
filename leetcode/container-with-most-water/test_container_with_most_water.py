@@ -1,4 +1,5 @@
 from typing import List
+
 import pytest
 from container_with_most_water import Solution
 
