@@ -14,7 +14,7 @@ class TreeNode:
         self.right = right
 
 
-class Solution(object):
+class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
         """
         :type root: TreeNode
