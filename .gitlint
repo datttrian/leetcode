@@ -31,11 +31,11 @@ min-length=1
 
 # Make sure that commit body contain task id at the end
 [body-match-regex]
-regex=(?:\n|^)Task: PYCAMP-\d+\Z
+regex=(?:\n|^)Task: LEETCODE-\d+\Z
 
 # Make sure that committer set work's email
 [author-valid-email]
-regex=[^@]+@saritasa.com
+regex=[^@]+@gmail.com
 
 # Ignore rules if it's work in progress commit
 [ignore-by-title]
