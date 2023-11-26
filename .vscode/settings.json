@@ -7,7 +7,8 @@
         "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
-        "source.organizeImports": true,
+            "source.organizeImports": true,
+        },
     },
     "python.formatting.provider": "none",
     "black-formatter.args": [
@@ -24,34 +25,27 @@
     "gitdoc.autoPullDelay": 0,
     "gitdoc.autoPushDelay": 0,
     "gitdoc.commitMessageFormat": "ccc, LLL d, y, h:mm a '+00:00'",
-
     // Show vertical line after 79 to visualize end of line
     "editor.rulers": [
         79
     ],
-
     // Improve brackets displaying
     "editor.bracketPairColorization.enabled": true,
-
     // Disable pylance type checking because we want to use mypy for this
     "python.analysis.typeCheckingMode": "off",
-
     // Display inline hints for types of returned values
     "python.analysis.inlayHints.functionReturnTypes": true,
-
     // Enable linting by flake8 and mypy
     "python.linting.flake8Enabled": true,
     "python.linting.mypyEnabled": true,
-
     // Enable using pytest for testing
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
-
     // Make links in gitlens popups clickable
     "gitlens.autolinks": [
-      {
-        "prefix": "PYCAMP-",
-        "url": "https://saritasa.atlassian.net/browse/PYCAMP-<num>"
-      }
-    ]
+        {
+            "prefix": "PYCAMP-",
+            "url": "https://saritasa.atlassian.net/browse/PYCAMP-<num>"
+        }
+    ],
 }
