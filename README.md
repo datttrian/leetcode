@@ -1,6 +1,6 @@
 # LeetCode
 
-[![Build Status](https://github.com/datttrian/leetcode/actions/workflows/lint.yml/badge.svg)](https://github.com/datttrian/leetcode/actions/workflows/lint.yml)
+[![Build Status](https://github.com/datttrian/leetcode/actions/workflows/checks.yml/badge.svg)](https://github.com/datttrian/leetcode/actions/workflows/checks.yml)
 
 |No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
 |----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
