@@ -2,8 +2,8 @@
 
 [![Build Status](https://github.com/datttrian/leetcode/actions/workflows/lint.yml/badge.svg)](https://github.com/datttrian/leetcode/actions/workflows/lint.yml)
 
-|No. |Problem                                                                                                                |Time Complexity        |Space Complexity  |Difficulty |
-|----|-----------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
+|No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
+|----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
 |13  |[Roman to Integer](leetcode/roman-to-integer)                                                                               |O(n)                   |O(1)              |Easy       |
 |26  |[Remove Duplicates from Sorted Array](leetcode/remove-duplicates-from-sorted-array)                                         |O(n)                   |O(1)              |Easy       |
 |27  |[Remove Element](leetcode/remove-element)                                                                                   |O(n)                   |O(1)              |Easy       |
@@ -12,8 +12,12 @@
 |66  |[Plus One](leetcode/plus-one)                                                                                               |O(n)                   |O(1)              |Easy       |
 |83  |[Remove Duplicates from Sorted List](leetcode/remove-duplicates-from-sorted-list)                                           |O(n)                   |O(1)              |Easy       |
 
-|No. |Problem                                                                                                                |Time Complexity        |Space Complexity  |Difficulty |
-|----|-----------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
+|No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
+|----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
+|36  |[Valid Sudoku](leetcode/valid-sudoku)                                                                                       |O(1)                   |O(1)              |Medium     |
+
+|No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
+|----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
 |8   |[String to Integer (atoi)](leetcode/string-to-integer-atoi)                                                                 |O(n)                   |O(1)              |Medium     |
 |11  |[Container With Most Water](leetcode/container-with-most-water)                                                             |O(n)                   |O(1)              |Medium     |
 |19  |[Remove Nth Node From End of List](leetcode/remove-nth-node-from-end-of-list)                                               |O(n)                   |O(1)              |Medium     |
@@ -35,16 +39,16 @@
 |92  |[Reverse Linked List II](leetcode/reverse-linked-list-ii)                                                                   |O(n)                   |O(1)              |Medium     |
 |99  |[Recover Binary Search Tree](leetcode/recover-binary-search-tree)                                                           |O(n)                   |O(1)              |Medium     |
 
-|No. |Problem                                                                                                                |Time Complexity        |Space Complexity  |Difficulty |
-|----|-----------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
+|No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
+|----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
 |21  |[Merge Two Sorted Lists](leetcode/merge-two-sorted-lists)                                                                   |O(m + n)               |O(1)              |Easy       |
 |88  |[Merge Sorted Array](leetcode/merge-sorted-array)                                                                           |O(m + n)               |O(1)              |Easy       |
 |9   |[Palindrome Number](leetcode/palindrome-number)                                                                             |O(log(n))              |O(1)              |Easy       |
 |35  |[Search Insert Position](leetcode/search-insert-position)                                                                   |O(log(n))              |O(1)              |Easy       |
 |69  |[Sqrt(x)](leetcode/sqrtx)                                                                                                   |O(log(n))              |O(1)              |Easy       |
 
-|No. |Problem                                                                                                                |Time Complexity        |Space Complexity  |Difficulty |
-|----|-----------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
+|No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
+|----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
 |5   |[Longest Palindromic Substring](leetcode/longest-palindromic-substring)                                                     |O(n^2)                 |O(1)              |Medium     |
 |12  |[Integer to Roman](leetcode/integer-to-roman)                                                                               |O(13 * log(num))       |O(1)              |Medium     |
 |15  |[3Sum](leetcode/3sum)                                                                                                       |O(n^2)                 |O(1)              |Medium     |
@@ -53,7 +57,6 @@
 |29  |[Divide Two Integers](leetcode/divide-two-integers)                                                                         |O(m/n)                 |O(1)              |Medium     |
 |33  |[Search in Rotated Sorted Array](leetcode/search-in-rotated-sorted-array)                                                   |O(log n)               |O(1)              |Medium     |
 |34  |[Find First and Last Position of Element in Sorted Array](leetcode/find-first-and-last-position-of-element-in-sorted-array) |O(log n)               |O(1)              |Medium     |
-|36  |[Valid Sudoku](leetcode/valid-sudoku)                                                                                       |O(1)                   |O(1)              |Medium     |
 |39  |[Combination Sum](leetcode/combination-sum)                                                                                 |O(2^n)                 |O(1)              |Medium     |
 |40  |[Combination Sum II](leetcode/combination-sum-ii)                                                                           |O(2^n)                 |O(1)              |Medium     |
 |48  |[Rotate Image](leetcode/rotate-image)                                                                                       |O(n^2)                 |O(1)              |Medium     |
@@ -63,8 +66,8 @@
 |73  |[Set Matrix Zeroes](leetcode/set-matrix-zeroes)                                                                             |O(m * n)               |O(1)              |Medium     |
 |74  |[Search a 2D Matrix](leetcode/search-a-2d-matrix)                                                                           |O(log(m * n))          |O(1)              |Medium     |
 
-|No. |Problem                                                                                                                |Time Complexity        |Space Complexity  |Difficulty |
-|----|-----------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
+|No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
+|----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
 |1   |[Two Sum](leetcode/two-sum)                                                                                                 |O(n)                   |O(n)              |Easy       |
 |14  |[Longest Common Prefix](leetcode/longest-common-prefix)                                                                     |O(n * m * log(n))      |O(m)              |Easy       |
 |20  |[Valid Parentheses](leetcode/valid-parentheses)                                                                             |O(n)                   |O(n)              |Easy       |
@@ -73,8 +76,8 @@
 |94  |[Binary Tree Inorder Traversal](leetcode/binary-tree-inorder-traversal)                                                     |O(n)                   |O(n)              |Easy       |
 |100 |[Same Tree](leetcode/same-tree)                                                                                             |O(min(m, n))           |O(min(m, n))      |Easy       |
 
-|No. |Problem                                                                                                                |Time Complexity        |Space Complexity  |Difficulty |
-|----|-----------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
+|No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
+|----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
 |2   |[Add Two Numbers](leetcode/add-two-numbers)                                                                                 |O(max(n, m))           |O(max(n, m))      |Medium     |
 |3   |[Longest Substring Without Repeating Characters](leetcode/longest-substring-without-repeating-characters)                   |O(n)                   |O(min(m, n))      |Medium     |
 |4   |[Median of Two Sorted Arrays](leetcode/median-of-two-sorted-arrays)                                                         |O(log(min(m, n)))      |O(1)              |Hard       |
