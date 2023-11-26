@@ -25,5 +25,7 @@ jobs:
       - name: Run Python tests
         run: poetry run pytest
       - name: Run Python lints
-        run: poetry run pylint leetcode/two-sum/two_sum.py
+        run: find leetcode/ -name '*.py' ! -name 'test_*.py' -exec poetry run pylint {} \;
+
+
       
