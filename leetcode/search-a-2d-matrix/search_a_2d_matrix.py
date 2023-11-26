@@ -15,6 +15,7 @@ class Solution:
 
             if mid_element < target:
                 left = mid + 1
+
             right = mid - 1
 
         return False

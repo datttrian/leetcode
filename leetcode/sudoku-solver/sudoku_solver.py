@@ -1,13 +1,10 @@
-from typing import List
-
-
 class Solution:
-    def solveSudoku(self, board: List[List[str]]) -> None:
+    def solveSudoku(self, board: list[list[str]]) -> None:
         """Do not return anything, modify board in-place instead."""
 
         def is_valid(num: str, row: int, col: int) -> bool:
             for i in range(9):
-                if board[row][i] == num or board[i][col] == num:
+                if num in (board[row][i], board[i][col]):
                     return False
 
             start_row, start_col = 3 * (row // 3), 3 * (col // 3)
