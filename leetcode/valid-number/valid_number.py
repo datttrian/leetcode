@@ -2,23 +2,20 @@ class Solution:
     def isNumber(self, s: str) -> bool:
         num, exp, sign, dec = False, False, False, False
         for c in s:
-            if c >= '0' and c <= '9':
+            if '0' <= c <= '9':
                 num = True
-            elif c == 'e' or c == 'E':
+            elif c in ('e', 'E'):
                 if exp or not num:
                     return False
-                else:
-                    exp, num, sign, dec = True, False, False, False
-            elif c == '+' or c == '-':
+                exp, num, sign, dec = True, False, False, False
+            elif c in ('+', '-'):
                 if sign or num or dec:
                     return False
-                else:
-                    sign = True
+                sign = True
             elif c == '.':
                 if dec or exp:
                     return False
-                else:
-                    dec = True
+                dec = True
             else:
                 return False
         return num
