@@ -24,7 +24,9 @@ disable:too-few-public-methods,
         unsupported-binary-operation,
         keyword-arg-before-vararg,
         logging-fstring-interpolation,
-
+        # Docstring
+        missing-class-docstring,
+        missing-function-docstring
 [FORMAT]
 # Maximum number of characters on a single line.
 max-line-length=79
