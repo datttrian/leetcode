@@ -10,7 +10,7 @@ updates:
     schedule:
       interval: "daily"
 
-  - package-ecosystem: "poetry"
+  - package-ecosystem: "pip"
     directory: "/"
     schedule:
       interval: "daily"
