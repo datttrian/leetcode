@@ -28,5 +28,4 @@ class Solution:
 
         if first_occurrence <= last_occurrence:
             return [first_occurrence, last_occurrence]
-        else:
-            return [-1, -1]
+        return [-1, -1]
