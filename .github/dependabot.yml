@@ -1,0 +1,21 @@
+version: 1
+updates:
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "poetry"
+    directory: "/requirements"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "poetry"
+    directory: "/"
+    schedule:
+      interval: "daily"

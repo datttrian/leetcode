@@ -1,0 +1,29 @@
+name: Build Status
+
+on:
+  - push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ""
+      - uses: actions/setup-node@v3.8.1
+        with:
+          node-version: "v18.18.0"
+          registry-url: "https://registry.npmjs.org"
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+      - name: Install Python dependencies
+        run: |
+          poetry update
+          poetry install
+      - name: Run Python tests
+        run: poetry run pytest
+      - name: Run Python lints
+        run: poetry run pylint leetcode/two-sum/two_sum.py
+      
