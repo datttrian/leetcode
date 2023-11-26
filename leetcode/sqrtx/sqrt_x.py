@@ -1,6 +1,6 @@
 class Solution:
     def mySqrt(self, x: int) -> int:
-        if x == 0 or x == 1:
+        if x in (0, 1):
             return x
 
         left, right = 1, x // 2
@@ -11,7 +11,7 @@ class Solution:
 
             if mid_squared == x:
                 return mid
-            elif mid_squared < x:
+            if mid_squared < x:
                 left = mid + 1
             else:
                 right = mid - 1
