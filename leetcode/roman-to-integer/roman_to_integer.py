@@ -41,7 +41,7 @@ class Solution:
 
             # When the next number is smaller than the previous one
             if current_value < prev_value:
-                # it is substraced from the total
+                # it is substracted from the total
                 result -= current_value
             else:
                 # When the next number is bigger or equal to the current number
