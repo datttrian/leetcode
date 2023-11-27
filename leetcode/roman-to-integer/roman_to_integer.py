@@ -10,9 +10,9 @@ class Solution:
             "M": 1000,
         }
         res = 0
-        for i in range(len(s)):
-            if i + 1 < len(s) and roman[s[i]] < roman[s[i + 1]]:
-                res -= roman[s[i]]
+        for i, current_char in enumerate(s):
+            if i + 1 < len(s) and roman[current_char] < roman[s[i + 1]]:
+                res -= roman[current_char]
             else:
-                res += roman[s[i]]
+                res += roman[current_char]
         return res
