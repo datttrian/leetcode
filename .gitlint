@@ -6,7 +6,7 @@
 #
 # Explanation, reasons, notes
 #
-# Task: PYCAMP-123
+# Task: Problem
 [general]
 ignore=body-is-missing
 ignore-merge-commits=true
