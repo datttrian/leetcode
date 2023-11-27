@@ -62,25 +62,23 @@ Given a roman numeral, convert it to an integer.
 - It is **guaranteed** that `s` is a valid roman numeral in the range
   `[1, 3999]`.
 
-# Intuition
-The problem involves converting a Roman numeral string to an integer. The Roman numerals have a specific set of characters, and their values follow a certain pattern. One common approach is to iterate through the string from right to left, keeping track of the running total.
+## Intuition
+The problem involves converting a Roman numeral to an integer. One common strategy is to iterate through the Roman numeral string from right to left, adding the corresponding values to the result. If a smaller numeral appears before a larger one, it subtracts its value instead.
 
-# Approach
+## Approach
 1. Create a dictionary (`roman_dict`) to map each Roman numeral character to its corresponding integer value.
-2. Initialize a variable `result` to store the final integer value.
-3. Initialize a variable `prev_value` to store the value of the previous Roman numeral character.
-4. Iterate through the string from right to left.
-   - For each character, get its integer value from the dictionary.
-   - If the current value is less than the previous value, subtract it from the result.
-   - Otherwise, add it to the result.
-   - Update `prev_value` for the next iteration.
-5. Return the final result.
+2. Initialize `result` to 0 and `prev_value` to 0. These variables will be used to keep track of the running total and the value of the previous numeral, respectively.
+3. Iterate through the reversed Roman numeral string.
+4. For each character, get its integer value from the dictionary.
+5. If the current value is less than the previous value, subtract it from the result. Otherwise, add it to the result.
+6. Update `prev_value` for the next iteration.
+7. Return the final result.
 
-# Complexity
-- Time complexity: O(n), where n is the length of the input string. The algorithm iterates through the string once.
-- Space complexity: O(1), as the dictionary and a few variables are used, and their space requirements do not depend on the input size.
+## Complexity
+- Time complexity: O(n), where n is the length of the input string `s`. The algorithm iterates through each character in the string once.
+- Space complexity: O(1), as the space required is constant. The dictionary and a few integer variables do not depend on the size of the input.
 
-# Code
+## Code
 ```python
 class Solution:
     def romanToInt(self, s: str) -> int:
@@ -93,11 +91,10 @@ class Solution:
             "D": 500,
             "M": 1000,
         }
-
         result = 0
         prev_value = 0
 
-        for char in reversed(s):
+        for _, char in enumerate(reversed(s)):
             current_value = roman_dict[char]
 
             if current_value < prev_value:
@@ -108,5 +105,4 @@ class Solution:
             prev_value = current_value
 
         return result
-
 ```
