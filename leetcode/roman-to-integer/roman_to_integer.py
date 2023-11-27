@@ -23,8 +23,8 @@ class Solution:
         int: The integer equivalent of the input Roman numeral.
 
         Raises:
-        - None since It is **guaranteed** that `s` is a valid roman numeral in
-        the range `[1, 3999]`.
+        - None since It is guaranteed that s is a valid roman numeral in the
+        range [1, 3999].
         """
         # Dictionary to map Roman numerals to their corresponding values
         roman_dict = {
