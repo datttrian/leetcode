@@ -63,29 +63,35 @@ Given a roman numeral, convert it to an integer.
   `[1, 3999]`.
 
 # Intuition
-The problem involves converting a Roman numeral string to an integer. Roman numerals have specific rules for representation, such as additive and subtractive combinations. The given code seems to implement a solution using a dictionary to map Roman numeral characters to their corresponding values. The approach appears to be iterating through the string in reverse order and updating the result based on the current and previous values.
+The problem involves converting a Roman numeral string to an integer. The Roman numerals have a specific set of characters, and their values follow a certain pattern. One common approach is to iterate through the string from right to left, keeping track of the running total.
 
 # Approach
-The approach used in the code is to iterate through the Roman numeral string in reverse order. For each character, the corresponding value is obtained from the dictionary. If the current value is less than the previous value, it indicates a subtractive combination, and the result is decremented; otherwise, it is an additive combination, and the result is incremented. The final result is returned.
+1. Create a dictionary (`roman_dict`) to map each Roman numeral character to its corresponding integer value.
+2. Initialize a variable `result` to store the final integer value.
+3. Initialize a variable `prev_value` to store the value of the previous Roman numeral character.
+4. Iterate through the string from right to left.
+   - For each character, get its integer value from the dictionary.
+   - If the current value is less than the previous value, subtract it from the result.
+   - Otherwise, add it to the result.
+   - Update `prev_value` for the next iteration.
+5. Return the final result.
 
 # Complexity
 - Time complexity: O(n), where n is the length of the input string. The algorithm iterates through the string once.
-- Space complexity: O(1), as the space required is constant. The dictionary and a few variables are used regardless of the input size.
-
-The time complexity is linear because the algorithm processes each character in the input string once. The space complexity is constant because the size of the data structures used (dictionary and variables) does not depend on the size of the input.
+- Space complexity: O(1), as the dictionary and a few variables are used, and their space requirements do not depend on the input size.
 
 # Code
 ```python
 class Solution:
     def romanToInt(self, s: str) -> int:
         roman_dict = {
-            'I': 1,
-            'V': 5,
-            'X': 10,
-            'L': 50,
-            'C': 100,
-            'D': 500,
-            'M': 1000,
+            "I": 1,
+            "V": 5,
+            "X": 10,
+            "L": 50,
+            "C": 100,
+            "D": 500,
+            "M": 1000,
         }
         result = 0
         prev_value = 0
@@ -100,5 +106,3 @@ class Solution:
 
         return result
 ```
-
-The code looks correct and follows a clear logic for converting Roman numerals to integers. The use of a dictionary for quick value lookup and the iteration through the string in reverse order are appropriate for this problem.
