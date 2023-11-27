@@ -12,8 +12,7 @@
     },
     "python.formatting.provider": "none",
     "black-formatter.args": [
-        "--line-length=79",
-        "--skip-string-normalization"
+        "--line-length=79"
     ],
     "flake8.importStrategy": "fromEnvironment",
     "flake8.args": [
