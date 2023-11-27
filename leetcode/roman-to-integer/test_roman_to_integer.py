@@ -15,6 +15,15 @@ from roman_to_integer import Solution
     ],
 )
 def test_roman_to_int(s: str, expected: int) -> None:
+    """Test the romanToInt function from the Solution class.
+
+    Args:
+    - s (str): Roman numeral input.
+    - expected (int): Expected integer output.
+
+    Returns:
+    - None
+    """
     solution = Solution()
     result = solution.romanToInt(s)
     assert result == expected
