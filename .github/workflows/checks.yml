@@ -22,10 +22,7 @@ jobs:
         run: |
           poetry update
           poetry install
-      - name: Run Python tests
-        run: poetry run pytest
-      - name: Run Python lints
-        run: find leetcode/ -name '*.py' ! -name 'test_*.py' -exec poetry run pylint {} \;
-
-
-      
+      - name: Run tests
+        run: ./tests.sh
+      - name: Check style
+        run: ./style.sh
