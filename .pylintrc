@@ -26,6 +26,7 @@ disable:too-few-public-methods,
         logging-fstring-interpolation,
         # Docstring
         missing-class-docstring,
+        # Pylint E0401
         import-error
 
 [FORMAT]
