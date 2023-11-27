@@ -1,5 +1,13 @@
 class Solution:
     def intToRoman(self, num: int) -> str:
+        """Convert an integer to a Roman numeral.
+
+        Args:
+        - num (int): The integer to be converted.
+
+        Returns:
+        str: The Roman numeral representation of the input integer.
+        """
         sym_list = [
             ("I", 1),
             ("IV", 4),
