@@ -27,10 +27,14 @@ disable:too-few-public-methods,
         # Docstring
         missing-class-docstring,
         missing-function-docstring
+
 [FORMAT]
 # Maximum number of characters on a single line.
 max-line-length=79
 ignore-long-lines=<?https?://
+
+# Naming style to be enforced
+method-naming-style=camelCase
 
 [REPORTS]
 score=yes
