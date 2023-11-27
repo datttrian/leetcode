@@ -41,11 +41,4 @@
     // Enable using pytest for testing
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
-    // Make links in gitlens popups clickable
-    "gitlens.autolinks": [
-        {
-            "prefix": "PYCAMP-",
-            "url": "https://saritasa.atlassian.net/browse/PYCAMP-<num>"
-        }
-    ],
 }
