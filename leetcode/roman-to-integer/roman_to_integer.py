@@ -19,9 +19,6 @@ class Solution:
         Returns:
         int: The integer equivalent of the input Roman numeral.
 
-        Returns:
-        int: The integer equivalent of the input Roman numeral.
-
         Raises:
         - None since It is guaranteed that s is a valid roman numeral in the
         range [1, 3999].

@@ -93,16 +93,20 @@ class Solution:
             "D": 500,
             "M": 1000,
         }
+
         result = 0
         prev_value = 0
 
         for char in reversed(s):
             current_value = roman_dict[char]
+
             if current_value < prev_value:
                 result -= current_value
             else:
                 result += current_value
+
             prev_value = current_value
 
         return result
+
 ```
