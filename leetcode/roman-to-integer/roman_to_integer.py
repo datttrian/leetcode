@@ -1,6 +1,6 @@
 class Solution:
     def romanToInt(self, s: str) -> int:
-        roman = {
+        roman_dict = {
             "I": 1,
             "V": 5,
             "X": 10,
@@ -9,10 +9,15 @@ class Solution:
             "D": 500,
             "M": 1000,
         }
-        res = 0
-        for i, current_char in enumerate(s):
-            if i + 1 < len(s) and roman[current_char] < roman[s[i + 1]]:
-                res -= roman[current_char]
+        result = 0
+        prev_value = 0
+
+        for char in reversed(s):
+            current_value = roman_dict[char]
+            if current_value < prev_value:
+                result -= current_value
             else:
-                res += roman[current_char]
-        return res
+                result += current_value
+            prev_value = current_value
+
+        return result
