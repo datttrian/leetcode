@@ -13,7 +13,7 @@ from integer_to_roman import Solution
         # Add more test cases as needed
     ],
 )
-def test_intToRoman(num: int, expected_roman: str) -> None:
+def test_int_to_roman(num: int, expected_roman: str) -> None:
     solution = Solution()
     result = solution.intToRoman(num)
     assert result == expected_roman

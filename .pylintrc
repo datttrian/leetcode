@@ -37,7 +37,7 @@ ignore-long-lines=<?https?://
 # Naming style to be enforced
 method-naming-style=camelCase
 argument-naming-style=any
-function-naming-style=camelCase
+function-naming-style=snake_case
 
 [REPORTS]
 score=yes
