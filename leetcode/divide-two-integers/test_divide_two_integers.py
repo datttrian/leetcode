@@ -23,6 +23,16 @@ from divide_two_integers import Solution
     ],
 )
 def test_divide(dividend: int, divisor: int, expected_result: int) -> None:
+    """Test the divide method of the Solution class.
+
+    Args:
+    - dividend (int): The dividend.
+    - divisor (int): The divisor.
+    - expected_result (int): The expected result of the division.
+
+    Returns:
+    None
+    """
     solution = Solution()
     result = solution.divide(dividend, divisor)
     assert result == expected_result
