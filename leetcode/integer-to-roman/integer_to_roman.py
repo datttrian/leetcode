@@ -1,6 +1,23 @@
 class Solution:
     def intToRoman(self, num: int) -> str:
-        # Dictionary in descending order including more than one symbol values
+        """Convert an integer to a Roman numeral string.
+
+        The integer is converted into its Roman numeral representation based
+        on the rules of Roman numeral construction. The conversion is achieved
+        by iterating through a dictionary of integer-symbol pairs in descending
+        order, subtracting the largest possible values from the input number.
+
+        Args:
+            num (int): An integer in the range [1, 3999] to be converted to
+            a Roman numeral.
+
+        Returns:
+            str: The Roman numeral representation of the input integer.
+
+        Raises:
+            None: It is guaranteed that num is within the valid range.
+        """
+        # Dictionary mapping integer values to Roman numeral symbols
         roman_extend_dict = {
             1000: "M",
             900: "CM",
@@ -17,10 +34,10 @@ class Solution:
             1: "I",
         }
 
-        # Variable to store the final Roman string
+        # Variable to store the final Roman numeral string
         result = ""
 
-        # Iterate through the dictionary
+        # Iterate through the dictionary in descending order
         for value, symbol in roman_extend_dict.items():
             # Determine how many times the value can be subtracted from num
             count, num = divmod(num, value)
@@ -28,5 +45,5 @@ class Solution:
             # Append the corresponding Roman numeral to the result string
             result += symbol * count
 
-        # Return the final Roman string
+        # Return the final Roman numeral string
         return result
