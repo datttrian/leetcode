@@ -11,6 +11,7 @@
 |13  |[Roman to Integer](leetcode/roman-to-integer)                                                                               |O(n)                   |O(1)              |Easy       |
 |12  |[Integer to Roman](leetcode/integer-to-roman)                                                                               |O(1)                   |O(1)              |Medium     |
 |9   |[Palindrome Number](leetcode/integer-to-roman)                                                                              |O(log(n))              |O(1)              |Easy       |
+|29  |Divide Two Integers                                                                         |O(m/n)                 |O(1)              |Medium     |
 
 ## Arrays & Hashing
 
@@ -67,7 +68,6 @@
 |15  |3Sum                                                                                                       |O(n^2)                 |O(1)              |Medium     |
 |16  |3Sum Closest                                                                                       |O(n^2)                 |O(1)              |Medium     |
 |18  |4Sum                                                                                                       |O(n^3)                 |O(1)              |Medium     |
-|29  |Divide Two Integers                                                                         |O(m/n)                 |O(1)              |Medium     |
 |33  |Search in Rotated Sorted Array                                                   |O(log n)               |O(1)              |Medium     |
 |34  |Find First and Last Position of Element in Sorted Array |O(log n)               |O(1)              |Medium     |
 |39  |Combination Sum                                                                                 |O(2^n)                 |O(1)              |Medium     |

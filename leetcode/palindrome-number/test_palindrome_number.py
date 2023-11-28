@@ -13,6 +13,14 @@ from palindrome_number import Solution
         [123456, False],
     ],
 )
-def test_isPalindrome(input_num: int, expected: bool) -> None:
+def test_is_palindrome(input_num: int, expected: bool) -> None:
+    """Test the isPalindrome function from the Solution class.
+
+    Args:
+    - x (int): Input number.
+
+    Returns:
+    - None
+    """
     solution = Solution()
     assert solution.isPalindrome(input_num) == expected
