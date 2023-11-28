@@ -11,7 +11,7 @@
 |13  |[Roman to Integer](leetcode/roman-to-integer)                                                                               |O(n)                   |O(1)              |Easy       |
 |12  |[Integer to Roman](leetcode/integer-to-roman)                                                                               |O(1)                   |O(1)              |Medium     |
 |9   |[Palindrome Number](leetcode/integer-to-roman)                                                                              |O(log(n))              |O(1)              |Easy       |
-|29  |[Divide Two Integers](leetcode/divide-two-integers)                                                                         |O(m/n)                 |O(1)              |Medium     |
+|29  |[Divide Two Integers](leetcode/divide-two-integers)                                                                         |O(n)                   |O(1)              |Medium     |
 
 ## Arrays & Hashing
 
