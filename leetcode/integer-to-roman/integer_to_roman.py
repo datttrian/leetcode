@@ -3,8 +3,9 @@ class Solution:
         """Convert an integer to a Roman numeral string.
 
         The integer is converted into its Roman numeral representation based
-        on the rules of Roman numeral construction. The conversion is achieved
-        by iterating through a dictionary of integer-symbol pairs in descending
+        on the extended dictionary includes pairs that represent combinations
+        of symbols that indicate subtraction. The conversion is achieved by
+        iterating through a dictionary of integer-symbol pairs in descending
         order, subtracting the largest possible values from the input number.
 
         Args:
