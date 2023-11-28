@@ -28,5 +28,5 @@ class Solution:
             # Append the corresponding Roman numeral to the result string
             result += symbol * count
 
-        # Return the final Roman numeral representation
+        # Return the final Roman string
         return result
