@@ -2,8 +2,8 @@ class Solution:
     def isPalindrome(self, x: int) -> bool:
         """Check if an integer is a palindrome.
 
-        The determination is achieved by reversing its digits and comparing
-        the reversed number with the original.
+        The determination is achieved by reversing the input number digits and
+        comparing the reversed number with the original.
 
         Args:
             x (int): The integer to be checked for palindromicity.
