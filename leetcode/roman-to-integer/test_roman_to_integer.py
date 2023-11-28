@@ -2,7 +2,6 @@ import pytest
 from roman_to_integer import Solution
 
 
-# Test cases
 @pytest.mark.parametrize(
     ["s", "expected"],
     [
@@ -25,11 +24,6 @@ from roman_to_integer import Solution
             3999,
         ],
         ["", 0],  # Empty string case.
-        [
-            "MMMMCMXCIX",
-            4999,
-        ],  # Case with an invalid Roman numeral (exceeds the limit of 3999).
-        # Add more test cases as needed
     ],
 )
 def test_roman_to_int(s: str, expected: int) -> None:

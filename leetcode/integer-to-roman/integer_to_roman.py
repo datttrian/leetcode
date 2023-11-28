@@ -1,32 +1,22 @@
 class Solution:
     def intToRoman(self, num: int) -> str:
-        """Convert an integer to a Roman numeral.
-
-        Args:
-        - num (int): The integer to be converted.
-
-        Returns:
-        str: The Roman numeral representation of the input integer.
-        """
-        sym_list = [
-            ("I", 1),
-            ("IV", 4),
-            ("V", 5),
-            ("IX", 9),
-            ("X", 10),
-            ("XL", 40),
-            ("L", 50),
-            ("XC", 90),
-            ("C", 100),
-            ("CD", 400),
-            ("D", 500),
-            ("CM", 900),
-            ("M", 1000),
-        ]
+        sym_dict = {
+            1000: "M",
+            900: "CM",
+            500: "D",
+            400: "CD",
+            100: "C",
+            90: "XC",
+            50: "L",
+            40: "XL",
+            10: "X",
+            9: "IX",
+            5: "V",
+            4: "IV",
+            1: "I",
+        }
         res = ""
-        for sym, val in reversed(sym_list):
-            if num // val:
-                count = num // val
-                res += sym * count
-                num = num % val
+        for val, sym in sym_dict.items():
+            count, num = divmod(num, val)
+            res += sym * count
         return res
