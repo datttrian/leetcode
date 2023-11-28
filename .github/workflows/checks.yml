@@ -16,8 +16,6 @@ jobs:
         with:
           node-version: "v18.18.0"
           registry-url: "https://registry.npmjs.org"
-      - name: Install Poetry
-        uses: snok/install-poetry@v1
       - name: Install Python dependencies
         run: |
           poetry update
