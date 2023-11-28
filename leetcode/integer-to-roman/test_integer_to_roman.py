@@ -5,12 +5,17 @@ from integer_to_roman import Solution
 @pytest.mark.parametrize(
     ["num", "expected_roman"],
     [
-        [1, "I"],
-        [4, "IV"],
-        [9, "IX"],
+        [3, "III"],
         [58, "LVIII"],
+        [1, "I"],
+        [9, "IX"],
+        [444, "CDXLIV"],
         [1994, "MCMXCIV"],
-        # Add more test cases as needed
+        [90, "XC"],
+        [40, "XL"],
+        [140, "CXL"],
+        [3999, "MMMCMXCIX"],
+        [0, ""],
     ],
 )
 def test_int_to_roman(num: int, expected_roman: str) -> None:
