@@ -57,3 +57,51 @@ Given an integer, convert it to a roman numeral.
 **Constraints:**
 
 - `1 <= num <= 3999`
+
+
+# Intuition
+The problem involves converting an integer to a Roman numeral. The given solution uses a dictionary `roman_extend_dict` to map the integer values to their corresponding Roman numeral symbols. The approach appears to iterate through the dictionary in descending order of values and repeatedly divides the given number by the current value to determine the count of symbols needed.
+
+# Approach
+1. Define a dictionary `roman_extend_dict` that maps integer values to Roman numeral symbols.
+2. Initialize an empty string `result` to store the final Roman numeral.
+3. Iterate through the dictionary in descending order of values.
+4. In each iteration, use the `divmod` function to find the quotient and remainder when dividing the given number by the current value.
+5. Append the corresponding Roman numeral symbol repeated by the quotient to the result string.
+6. Update the given number to be the remainder for the next iteration.
+7. Repeat the process until the given number becomes zero.
+8. Return the final result.
+
+# Complexity
+- Time complexity: O(1) since the number of iterations is constant, determined by the number of keys in the dictionary.
+- Space complexity: O(1) since the dictionary and result string have fixed sizes.
+
+# Code
+```python
+class Solution:
+    def intToRoman(self, num: int) -> str:
+        roman_extend_dict = {
+            1000: "M",
+            900: "CM",
+            500: "D",
+            400: "CD",
+            100: "C",
+            90: "XC",
+            50: "L",
+            40: "XL",
+            10: "X",
+            9: "IX",
+            5: "V",
+            4: "IV",
+            1: "I",
+        }
+
+        result = ""
+
+        for value, symbol in roman_extend_dict.items():
+            count, num = divmod(num, value)
+
+            result += symbol * count
+
+        return result
+```
