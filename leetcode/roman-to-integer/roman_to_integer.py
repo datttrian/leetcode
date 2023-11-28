@@ -2,9 +2,9 @@ class Solution:
     def romanToInt(self, s: str) -> int:
         """Convert a Roman numeral string to an integer.
 
-        The conversion is achieved by processing the numeral string
+        The conversion is achieved by iterating through the input string
         from right to left, convert the character to number value, add
-        or substract the number to the result based on Rules of Roman Numerals
+        or subtract the number to the result based on Rules of Roman Numerals
 
         Args:
             s (str): A Roman numeral string consisting of uppercase letters.
@@ -16,7 +16,7 @@ class Solution:
         Raises:
             None: It is guaranteed that s is a valid Roman numeral.
         """
-        # Dictionary of roman symbol and their integer values
+        # Dictionary of roman symbols and their values
         roman_dict = {
             "I": 1,
             "V": 5,
