@@ -1,6 +1,6 @@
 class Solution:
     def intToRoman(self, num: int) -> str:
-        sym_dict = {
+        roman_extend_dict = {
             1000: "M",
             900: "CM",
             500: "D",
@@ -15,8 +15,8 @@ class Solution:
             4: "IV",
             1: "I",
         }
-        res = ""
-        for val, sym in sym_dict.items():
-            count, num = divmod(num, val)
-            res += sym * count
-        return res
+        result = ""
+        for value, symbol in roman_extend_dict.items():
+            count, num = divmod(num, value)
+            result += symbol * count
+        return result
