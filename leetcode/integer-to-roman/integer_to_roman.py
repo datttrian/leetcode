@@ -17,7 +17,7 @@ class Solution:
         Raises:
             None: It is guaranteed that num is within the valid range.
         """
-        # Dictionary mapping integer values to Roman numeral symbols
+        # Dictionary of extended roman symbols and their values
         roman_extend_dict = {
             1000: "M",
             900: "CM",
