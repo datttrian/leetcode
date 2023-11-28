@@ -9,7 +9,7 @@
 |No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
 |----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
 |13  |[Roman to Integer](leetcode/roman-to-integer)                                                                               |O(n)                   |O(1)              |Easy       |
-|12  |[Integer to Roman](leetcode/integer-to-roman)                                                                               |O(13 * log(num))       |O(1)              |Medium     |
+|12  |[Integer to Roman](leetcode/integer-to-roman)                                                                               |O(1)                   |O(1)              |Medium     |
 
 ## Arrays & Hashing
 
