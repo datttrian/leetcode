@@ -21,7 +21,7 @@ class Solution:
         # Variable to store the reversed number
         reversed_num = 0
 
-        # Save the original number for comparison
+        # Variable to save the original number for comparison
         original_num = x
 
         # Reverse the digits of the number
