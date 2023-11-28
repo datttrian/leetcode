@@ -4,9 +4,10 @@ class Solution:
 
         The integer is converted into its Roman numeral representation based
         on the extended dictionary includes pairs that represent combinations
-        of symbols that indicate subtraction. The conversion is achieved by
-        iterating through a dictionary of integer-symbol pairs in descending
-        order, subtracting the largest possible values from the input number.
+        of symbols that indicate subtraction in descending order. The
+        conversion is achieved by iterating through a dictionary of
+        integer-symbol pairs, subtracting the largest possible values from the
+        input number.
 
         Args:
             num (int): An integer in the range [1, 3999] to be converted to
