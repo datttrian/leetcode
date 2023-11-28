@@ -16,7 +16,7 @@ class Solution:
             None: It is guaranteed that s is a valid roman numeral in the
             range [1, 3999].
         """
-        # Dictionary of roman numerals and their integer values
+        # Dictionary of roman symbol and their integer values
         roman_dict = {
             "I": 1,
             "V": 5,
@@ -33,9 +33,9 @@ class Solution:
         # Variable to keep track of the previous value during iteration
         prev_value = 0
 
-        # Iterate through the reversed Roman numeral string
+        # Iterate through the reversed Roman string
         for _, char in enumerate(reversed(s)):
-            # Retrieve the integer value of the current Roman numeral
+            # Retrieve the integer value of the current Roman symbol
             current_value = roman_dict[char]
 
             # When the next number is smaller than the previous one

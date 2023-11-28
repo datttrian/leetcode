@@ -1,5 +1,6 @@
 class Solution:
     def intToRoman(self, num: int) -> str:
+        # Dictionary in descending order including more than one symbol values
         roman_extend_dict = {
             1000: "M",
             900: "CM",
@@ -15,8 +16,17 @@ class Solution:
             4: "IV",
             1: "I",
         }
+
+        # Variable to store the final Roman string
         result = ""
+
+        # Iterate through the dictionary
         for value, symbol in roman_extend_dict.items():
+            # Determine how many times the value can be subtracted from num
             count, num = divmod(num, value)
+
+            # Append the corresponding Roman numeral to the result string
             result += symbol * count
+
+        # Return the final Roman numeral representation
         return result
