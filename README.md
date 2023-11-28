@@ -10,6 +10,7 @@
 |----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
 |13  |[Roman to Integer](leetcode/roman-to-integer)                                                                               |O(n)                   |O(1)              |Easy       |
 |12  |[Integer to Roman](leetcode/integer-to-roman)                                                                               |O(1)                   |O(1)              |Medium     |
+|9   |Palindrome Number                                                                             |O(log(n))              |O(1)              |Easy       |
 
 ## Arrays & Hashing
 
@@ -57,7 +58,6 @@
 |----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
 |21  |Merge Two Sorted Lists                                                                   |O(m + n)               |O(1)              |Easy       |
 |88  |Merge Sorted Array                                                                           |O(m + n)               |O(1)              |Easy       |
-|9   |Palindrome Number                                                                             |O(log(n))              |O(1)              |Easy       |
 |35  |Search Insert Position                                                                   |O(log(n))              |O(1)              |Easy       |
 |69  |Sqrt(x)                                                                                                   |O(log(n))              |O(1)              |Easy       |
 
