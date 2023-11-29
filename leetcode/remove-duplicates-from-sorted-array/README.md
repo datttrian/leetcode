@@ -108,3 +108,34 @@ class Solution:
         # Truncate the list to the length 'k' and return 'k'
         return k
 ```
+
+
+# Intuition
+The problem involves removing duplicates from a sorted array, and the initial thoughts might revolve around iterating through the array while keeping track of unique elements.
+
+# Approach
+1. Initialize two pointers, `left_pointer` and `right_pointer`.
+2. Iterate through the array starting from the second element (`right_pointer`).
+3. Compare the current element with the previous one.
+4. If the current element is different, update the element at the `left_pointer` position with the current element.
+5. Increment the `left_pointer`.
+6. Continue this process until the entire array is traversed.
+7. The updated `left_pointer` indicates the length of the modified array without duplicates.
+8. Return the length.
+
+# Complexity
+- Time complexity: O(n), where n is the length of the input array. The algorithm iterates through each element once.
+- Space complexity: O(1), as the space required is constant. The modifications are made in-place without using additional space.
+
+# Code
+```python
+class Solution:
+    def removeDuplicates(self, nums: list[int]) -> int:
+        left_pointer = 1
+
+        for right_pointer in range(1, len(nums)):
+            if nums[right_pointer] != nums[right_pointer - 1]:
+                nums[left_pointer] = nums[right_pointer]
+                left_pointer += 1
+        return left_pointer
+```
