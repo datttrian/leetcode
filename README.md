@@ -17,7 +17,7 @@
 
 |No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
 |----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
-|26  |Remove Duplicates from Sorted Array                                                                                         |O(n)                   |O(1)              |Easy       |
+|26  |Remove Duplicates from Sorted Array                                                                                         |O(n log n)                   |O(1)              |Easy       |
 
 ## Two Pointers
 
