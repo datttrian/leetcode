@@ -10,10 +10,14 @@
 |----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
 |13  |[Roman to Integer](leetcode/roman-to-integer)                                                                               |O(n)                   |O(1)              |Easy       |
 |12  |[Integer to Roman](leetcode/integer-to-roman)                                                                               |O(1)                   |O(1)              |Medium     |
-|9   |[Palindrome Number](leetcode/palindrome-number)                                                                             |O(log(n))              |O(1)              |Easy       |
-|29  |[Divide Two Integers](leetcode/divide-two-integers)                                                                         |O(log(n))              |O(1)              |Medium     |
+|9   |[Palindrome Number](leetcode/palindrome-number)                                                                             |O(log n)              |O(1)              |Easy       |
+|29  |[Divide Two Integers](leetcode/divide-two-integers)                                                                         |O(log n)              |O(1)              |Medium     |
 
 ## Arrays & Hashing
+
+|No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
+|----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
+|26  |Remove Duplicates from Sorted Array                                                                                         |O(n)                   |O(1)              |Easy       |
 
 ## Two Pointers
 
@@ -61,8 +65,8 @@
 |----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
 |21  |Merge Two Sorted Lists                                                                   |O(m + n)               |O(1)              |Easy       |
 |88  |Merge Sorted Array                                                                           |O(m + n)               |O(1)              |Easy       |
-|35  |Search Insert Position                                                                   |O(log(n))              |O(1)              |Easy       |
-|69  |Sqrt(x)                                                                                                   |O(log(n))              |O(1)              |Easy       |
+|35  |Search Insert Position                                                                   |O(log n)              |O(1)              |Easy       |
+|69  |Sqrt(x)                                                                                                   |O(log n)              |O(1)              |Easy       |
 
 |No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
 |----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
@@ -75,8 +79,8 @@
 |39  |Combination Sum                                                                                 |O(2^n)                 |O(1)              |Medium     |
 |40  |Combination Sum II                                                                           |O(2^n)                 |O(1)              |Medium     |
 |48  |Rotate Image                                                                                       |O(n^2)                 |O(1)              |Medium     |
-|50  |Pow(x, n)                                                                                                |O(log(n))              |O(1)              |Medium     |
-|56  |Merge Intervals                                                                                 |O(n * log(n))          |O(1)              |Medium     |
+|50  |Pow(x, n)                                                                                                |O(log n)              |O(1)              |Medium     |
+|56  |Merge Intervals                                                                                 |O(n * log n)          |O(1)              |Medium     |
 |64  |Minimum Path Sum                                                                               |O(m * n)               |O(1)              |Medium     |
 |73  |Set Matrix Zeroes                                                                             |O(m * n)               |O(1)              |Medium     |
 |74  |Search a 2D Matrix                                                                           |O(log(m * n))          |O(1)              |Medium     |
@@ -84,7 +88,7 @@
 |No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
 |----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
 |1   |Two Sum                                                                                                 |O(n)                   |O(n)              |Easy       |
-|14  |Longest Common Prefix                                                                     |O(n * m * log(n))      |O(m)              |Easy       |
+|14  |Longest Common Prefix                                                                     |O(n * m * log n)      |O(m)              |Easy       |
 |20  |Valid Parentheses                                                                             |O(n)                   |O(n)              |Easy       |
 |67  |Add Binary                                                                                           |O(max(m,n))            |O(max(m,n))       |Easy       |
 |70  |Climbing Stairs                                                                                 |O(n)                   |O(n)              |Easy       |
@@ -112,7 +116,7 @@
 |44  |Wildcard Matching                                                                             |O(m * n)               |O(m * n)          |Hard       |
 |46  |Permutations                                                                                     |O(n!)                  |O(n)              |Medium     |
 |47  |Permutations II                                                                                 |O(n! * n)              |O(n)              |Medium     |
-|49  |Group Anagrams                                                                                   |O(m * n * log(n))      |O(k * n)          |Medium     |
+|49  |Group Anagrams                                                                                   |O(m * n * log n)      |O(k * n)          |Medium     |
 |51  |N-Queens                                                                                               |O(n!)                  |O(n^2)            |Hard       |
 |52  |N-Queens II                                                                                         |O(n!)                  |O(n^2)            |Hard       |
 |59  |Spiral Matrix II                                                                               |O(n^2)                 |O(n^2)            |Medium     |
@@ -136,4 +140,4 @@
 |95  |Unique Binary Search Trees II                                                     |O(4^n / n^(3/2))       |O(4^n / sqrt(n))  |Medium     |
 |96  |Unique Binary Search Trees                                                           |O(n^2)                 |O(n)              |Medium     |
 |97  |Interleaving String                                                                         |O(n^2)                 |O(n)              |Medium     |
-|98  |Validate Binary Search Tree                                                         |O(n)                   |O(n) \| O(log(n)) |Medium     |
+|98  |Validate Binary Search Tree                                                         |O(n)                   |O(n) \| O(log n) |Medium     |
