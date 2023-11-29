@@ -1,5 +1,22 @@
 class Solution:
     def divide(self, dividend: int, divisor: int) -> int:
+        """Divide two integers and return the quotient.
+
+        The division is performed using long division, taking into account
+        the sign of the dividend and divisor. The function handles edge
+        cases such as division by zero and ensures that the result is within
+        the 32-bit signed integer range.
+
+        Args:
+            dividend (int): The integer to be divided.
+            divisor (int): The integer by which the dividend is divided.
+
+        Returns:
+            int: The quotient of the division.
+
+        Raises:
+            None: The function is designed to handle all valid inputs.
+        """
         # Define constants for maximum and minimum 32-bit signed integers
         INT_MAX = 2**31 - 1
         INT_MIN = -(2**31)
