@@ -14,6 +14,9 @@
 |29  |[Divide Two Integers](leetcode/divide-two-integers)                                                                         |O(n)                   |O(1)              |Medium     |
 
 ## Arrays & Hashing
+|No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
+|----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
+|11  |Container With Most Water                                                                                                   |O(n)                   |O(1)              |Medium     |
 
 ## Two Pointers
 
@@ -21,7 +24,6 @@
 
 |No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
 |----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
-|26  |Remove Duplicates from Sorted Array                                         |O(n)                   |O(1)              |Easy       |
 |27  |Remove Element                                                                                   |O(n)                   |O(1)              |Easy       |
 |28  |Find the Index of the First Occurrence in a String           |O(n)                   |O(1)              |Easy       |
 |58  |Length of Last Word                                                                         |O(n)                   |O(1)              |Easy       |
@@ -35,7 +37,6 @@
 |No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
 |----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
 |8   |String to Integer (atoi)                                                                 |O(n)                   |O(1)              |Medium     |
-|11  |Container With Most Water                                                             |O(n)                   |O(1)              |Medium     |
 |19  |Remove Nth Node From End of List                                               |O(n)                   |O(1)              |Medium     |
 |24  |Swap Nodes in Pairs                                                                         |O(n)                   |O(1)              |Medium     |
 |31  |Next Permutation                                                                               |O(n)                   |O(1)              |Medium     |
