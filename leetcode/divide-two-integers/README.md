@@ -39,3 +39,16 @@ store integers within the **32-bit** signed integer range:
 
 - `-2`^(`31`)` <= dividend, divisor <= 2`^(`31`)` - 1`
 - `divisor != 0`
+
+
+# Intuition
+Looks like we're dealing with division here. The code probably handles edge cases like division by zero and overflows.
+
+# Approach
+The approach seems to be a classic long division method, but implemented in a way that avoids repeated subtraction. Instead, it uses bit manipulation to find the closest multiple of the divisor in each iteration.
+
+# Complexity
+- Time complexity: O(\log n), where n is the absolute value of the dividend.
+- Space complexity: O(1), as there's no extra space used that scales with the input.
+
+Seems like a solid implementation! Anything specific you'd like to discuss about it?
