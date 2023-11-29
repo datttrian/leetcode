@@ -18,12 +18,12 @@ class Solution:
             None: The function is designed to handle all valid inputs.
         """
         # Define constants for maximum and minimum 32-bit signed integers
-        INT_MAX = 2**31 - 1
-        INT_MIN = -(2**31)
+        int_max = 2**31 - 1
+        int_min = -(2**31)
 
         # Handle division by zero
         if divisor == 0:
-            return INT_MAX if dividend > 0 else INT_MIN
+            return int_max if dividend > 0 else int_min
 
         # Handle case where dividend is zero
         if dividend == 0:
@@ -56,4 +56,4 @@ class Solution:
         quotient *= sign
 
         # Ensure the result is within the 32-bit signed integer range
-        return min(max(quotient, INT_MIN), INT_MAX)
+        return min(max(quotient, int_min), int_max)
