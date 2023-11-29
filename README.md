@@ -17,7 +17,6 @@
 
 |No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
 |----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
-|11  |Container With Most Water                                                                                                   |O(n)                   |O(1)              |Medium     |
 |26  |Remove Duplicates from Sorted Array                                                                                         |O(n)                   |O(1)              |Easy       |
 
 ## Two Pointers
