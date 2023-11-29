@@ -2,7 +2,7 @@
 
 [![Build Status](https://github.com/datttrian/leetcode/actions/workflows/checks.yml/badge.svg)](https://github.com/datttrian/leetcode/actions/workflows/checks.yml)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-
+![coded by humans](https://img.shields.io/badge/coded%20by%20humans-99%25-blue)
 
 ## Math & Geometry
 
