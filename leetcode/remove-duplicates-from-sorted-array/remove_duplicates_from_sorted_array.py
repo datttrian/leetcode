@@ -1,5 +1,5 @@
 class Solution:
-    def remove_duplicates(self, nums: list[int]) -> int:
+    def removeDuplicates(self, nums: list[int]) -> int:
         left_pointer = 1
 
         for right_pointer in range(1, len(nums)):
