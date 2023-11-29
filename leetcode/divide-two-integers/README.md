@@ -50,5 +50,3 @@ The approach seems to be a classic long division method, but implemented in a wa
 # Complexity
 - Time complexity: O(\log n), where n is the absolute value of the dividend.
 - Space complexity: O(1), as there's no extra space used that scales with the input.
-
-Seems like a solid implementation! Anything specific you'd like to discuss about it?
