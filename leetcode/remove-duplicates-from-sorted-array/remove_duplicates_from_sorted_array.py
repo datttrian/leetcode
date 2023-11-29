@@ -1,5 +1,17 @@
 class Solution:
     def removeDuplicates(self, nums: list[int]) -> int:
+        """Remove duplicates from a sorted array in-place, and return the
+        length of the updated array.
+
+        Args:
+        - nums (List[int]): The sorted array with possible duplicates.
+
+        Returns:
+        int: The length of the array without duplicates.
+
+        Raises:
+        None
+        """
         # Initialize the left pointer to 1
         left_pointer = 1
 
