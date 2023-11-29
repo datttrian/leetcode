@@ -1,37 +1,40 @@
 class Solution:
     def divide(self, dividend: int, divisor: int) -> int:
-        """Perform integer division of the given dividend by the divisor.
+        # Constants for 32-bit integer range
+        INT_MAX = 2**31 - 1
+        INT_MIN = -(2**31)
 
-        This method calculates the integer division of the given dividend by
-        the divisor. It handles cases such as division by 1, division by -1,
-        and general integer division.
-
-        Args:
-        - dividend (int): The number to be divided.
-        - divisor (int): The number by which the dividend is divided.
-
-        Returns:
-        int: The result of the integer division.
-        """
-        int_max = 2**31 - 1
-        int_min = -(2**31)
-
+        # Handle special cases
+        if divisor == 0:
+            return INT_MAX if dividend > 0 else INT_MIN
         if dividend == 0:
             return 0
-        if divisor == 1:
-            return min(max(int_min, dividend), int_max)
-        if divisor == -1:
-            return min(max(int_min, -dividend), int_max)
 
-        negative = (dividend < 0) != (divisor < 0)
+        # Determine the sign of the result
+        sign = -1 if (dividend < 0) ^ (divisor < 0) else 1
 
-        dividend = abs(dividend)
-        divisor = abs(divisor)
+        # Convert both dividend and divisor to positive values
+        dividend, divisor = abs(dividend), abs(divisor)
 
+        # Initialize quotient
         quotient = 0
 
+        # Bitwise division
         while dividend >= divisor:
-            dividend -= divisor
-            quotient += 1
+            # Use left shift to find the largest multiple of divisor that can
+            # be subtracted from dividend
+            temp_divisor, multiple = divisor, 1
+            while dividend >= (temp_divisor << 1):
+                temp_divisor <<= 1
+                multiple <<= 1
 
-        return -quotient if negative else quotient
+            # Subtract the multiple of divisor from dividend and update the
+            # quotient
+            dividend -= temp_divisor
+            quotient += multiple
+
+        # Apply the sign to the quotient
+        quotient *= sign
+
+        # Handle overflow
+        return min(max(quotient, INT_MIN), INT_MAX)
