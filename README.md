@@ -6,7 +6,7 @@
 
 | No. | Name                                                                 | Approaches                                                                                                                                                                                                                               |Optimal Complexity |
 | ----| ---------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
-| 9   | [Palindrome Number](https://leetcode.com/problems/palindrome-number/)|[Arrays](leetcode/palindrome-number/array), [Two Pointers](leetcode/palindrome-number/two_pointers), [Stack](leetcode/palindrome-number/stack), [Linked List](leetcode/palindrome-number/linked_list), [Math](leetcode/palindrome-number/math)|O(log n), O(1)     |
+| 9   | [Palindrome Number](https://leetcode.com/problems/palindrome-number/)|[Arrays](leetcode/palindrome-number/array), [Two Pointers](leetcode/palindrome-number/two_pointers), [Stack](leetcode/palindrome-number/stack), [Linked List](leetcode/palindrome-number/linked_list), [Math](leetcode/palindrome-number/math)|[O(log n), O(1)]((leetcode/palindrome-number/math))     |
 
 <!-- ## Math & Geometry
 
