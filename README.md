@@ -32,23 +32,13 @@
 
 ## Math & Geometry
 
+|No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
+|----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
 |13  |[Roman to Integer](leetcode/roman-to-integer)                                                                               |O(n)                   |O(1)              |Easy       |
 |12  |[Integer to Roman](leetcode/integer-to-roman)                                                                               |O(1)                   |O(1)              |Medium     |
 |9   |[Palindrome Number](leetcode/palindrome-number)                                                                             |O(log n)               |O(1)              |Easy       |
 |29  |[Divide Two Integers](leetcode/divide-two-integers)                                                                         |O(log n)               |O(1)              |Medium     |
 
-
-## Arrays & Hashing
-
-|No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
-|----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
-|26  |Remove Duplicates from Sorted Array                                                                                         |O(n log n)                   |O(1)              |Easy       |
-
-## Two Pointers
-
-|No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
-|----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
-|26  |Remove Duplicates from Sorted Array                                                                                         |O(n)                   |O(1)              |Easy       |
 
 ## Others
 
