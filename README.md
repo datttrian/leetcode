@@ -4,6 +4,12 @@
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 <!-- ![coded by humans](https://img.shields.io/badge/coded%20by%20humans-99%25-blue) -->
 
+| Problem No. | Arrays & Hashing           | Two Pointers               | Sliding Window | Stack                      | Binary Search | Linked List                | Trees | Tries | Heap / Priority Queue | Backtracking | Graphs | Advanced Graphs | 1-D Dynamic Programming | 2-D Dynamic Programming | Greedy | Intervals | Math & Geometry     | Bit Manipulation |
+| ----------- | -------------------------- | -------------------------- | -------------- | -------------------------- | ------------- | -------------------------- | ----- | ----- | --------------------- | ------------ | ------ | --------------- | ----------------------- | ----------------------- | ------ | --------- | ------------------- | ---------------- |
+| 9           | (O(log10(x)), O(log10(x))) | (O(log10(x)), O(log10(x))) |                | (O(log10(x)), O(log10(x))) |               | (O(log10(x)), O(log10(x))) |       |       |                       |              |        |                 |                         |                         |        |           | (O(log10(x)), O(1)) |
+
+
+
 ## Math & Geometry
 
 |No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
