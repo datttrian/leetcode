@@ -1,16 +1,20 @@
 class Solution:
     def removeDuplicates(self, nums: list[int]) -> int:
-        """Remove duplicates from a sorted array in-place, and return the
-        length of the updated array.
+        """Remove duplicates from a sorted array in-place.
+
+        The function uses a two-pointer approach to iterate through the array.
+        The left pointer represents the position for the unique elements, and
+        the right pointer iterates through the array to identify and eliminate
+        duplicates.
 
         Args:
-        - nums (List[int]): The sorted array with possible duplicates.
+            nums (List[int]): A sorted list of integers.
 
         Returns:
-        int: The length of the array without duplicates.
+            int: The length of the array after removing duplicates.
 
         Raises:
-        None
+            None: The function is designed to handle all valid inputs.
         """
         # Initialize the left pointer to 1
         left_pointer = 1
