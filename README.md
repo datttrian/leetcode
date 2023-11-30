@@ -4,20 +4,39 @@
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 <!-- ![coded by humans](https://img.shields.io/badge/coded%20by%20humans-99%25-blue) -->
 
-| Problem No. | Arrays & Hashing           | Two Pointers               | Sliding Window | Stack                      | Binary Search | Linked List                | Trees | Tries | Heap / Priority Queue | Backtracking | Graphs | Advanced Graphs | 1-D Dynamic Programming | 2-D Dynamic Programming | Greedy | Intervals | Math & Geometry     | Bit Manipulation |
-| ----------- | -------------------------- | -------------------------- | -------------- | -------------------------- | ------------- | -------------------------- | ----- | ----- | --------------------- | ------------ | ------ | --------------- | ----------------------- | ----------------------- | ------ | --------- | ------------------- | ---------------- |
-| 9           | (O(log10(x)), O(log10(x))) | (O(log10(x)), O(log10(x))) |                | (O(log10(x)), O(log10(x))) |               | (O(log10(x)), O(log10(x))) |       |       |                       |              |        |                 |                         |                         |        |           | (O(log10(x)), O(1)) |
-
-
-
-## Math & Geometry
+## Arrays & Hashing
 
 |No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
 |----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
+|9   |[Palindrome Number](leetcode/palindrome-number)                                                                             |O(log n)               |O(log n)          |Easy       |
+|26  |Remove Duplicates from Sorted Array                                                                                         |O(n log n)             |O(1)              |Easy       |
+
+## Two Pointers
+
+|No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
+|----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
+|9   |[Palindrome Number](leetcode/palindrome-number)                                                                             |O(log n)               |O(log n)          |Easy       |
+|26  |Remove Duplicates from Sorted Array                                                                                         |O(n log n)             |O(1)              |Easy       |
+
+## Stack
+
+|No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
+|----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
+|9   |[Palindrome Number](leetcode/palindrome-number)                                                                             |O(log n)               |O(log n)          |Easy       |
+
+## Linked List
+
+|No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
+|----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
+|9   |[Palindrome Number](leetcode/palindrome-number)                                                                             |O(log n)               |O(log n)          |Easy       |
+
+## Math & Geometry
+
 |13  |[Roman to Integer](leetcode/roman-to-integer)                                                                               |O(n)                   |O(1)              |Easy       |
 |12  |[Integer to Roman](leetcode/integer-to-roman)                                                                               |O(1)                   |O(1)              |Medium     |
-|9   |[Palindrome Number](leetcode/palindrome-number)                                                                             |O(log n)              |O(1)              |Easy       |
-|29  |[Divide Two Integers](leetcode/divide-two-integers)                                                                         |O(log n)              |O(1)              |Medium     |
+|9   |[Palindrome Number](leetcode/palindrome-number)                                                                             |O(log n)               |O(1)              |Easy       |
+|29  |[Divide Two Integers](leetcode/divide-two-integers)                                                                         |O(log n)               |O(1)              |Medium     |
+
 
 ## Arrays & Hashing
 
