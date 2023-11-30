@@ -4,9 +4,9 @@
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 <!-- ![coded by humans](https://img.shields.io/badge/coded%20by%20humans-99%25-blue) -->
 
-| No. | Name                                                                 |Approaches                                                                                                                                                                                                                               |Optimal Complexity |
-| ----| ---------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
-| 9   | [Palindrome Number](https://leetcode.com/problems/palindrome-number/)|[Arrays](leetcode/palindrome-number/array), [Two Pointers](leetcode/palindrome-number/two_pointers), [Stack]((leetcode/palindrome-number/stack)), [Linked List](leetcode/palindrome-number/linked_list), [Math]((leetcode/palindrome-number/math))|O(log n), O(1)     |
+| No. | Name                                                                 |Approaches                                                                                                                                                                                                                                    |Optimal Complexity |
+| ----| ---------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ ---|-------------------|
+| 9   | [Palindrome Number](https://leetcode.com/problems/palindrome-number/)|[Arrays](leetcode/palindrome-number/array), [Two Pointers](leetcode/palindrome-number/two_pointers), [Stack](leetcode/palindrome-number/stack), [Linked List](leetcode/palindrome-number/linked_list), [Math](leetcode/palindrome-number/math)|O(log n), O(1)     |
 
 <!-- ## Math & Geometry
 
