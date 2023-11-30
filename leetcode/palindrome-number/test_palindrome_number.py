@@ -1,5 +1,5 @@
 import pytest
-from array.palindrome_number import Solution
+from arrayss.palindrome_number import Solution
 
 
 @pytest.mark.parametrize(
