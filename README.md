@@ -8,7 +8,7 @@
 | ----| ---------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 9   | [Palindrome Number](https://leetcode.com/problems/palindrome-number/)|[Arrays](leetcode/palindrome-number/array), [Two Pointers](leetcode/palindrome-number/two_pointers), [Stack](leetcode/palindrome-number/stack), [Linked List](leetcode/palindrome-number/linked_list), [Math](leetcode/palindrome-number/math)|
 
-<!-- ## Math & Geometry
+## Math & Geometry
 
 |No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
 |----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
@@ -144,4 +144,4 @@
 |95  |Unique Binary Search Trees II                                                     |O(4^n / n^(3/2))       |O(4^n / sqrt(n))  |Medium     |
 |96  |Unique Binary Search Trees                                                           |O(n^2)                 |O(n)              |Medium     |
 |97  |Interleaving String                                                                         |O(n^2)                 |O(n)              |Medium     |
-|98  |Validate Binary Search Tree                                                         |O(n)                   |O(n) \| O(log n) |Medium     | -->
+|98  |Validate Binary Search Tree                                                         |O(n)                   |O(n) \| O(log n) |Medium     |
