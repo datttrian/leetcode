@@ -3,27 +3,31 @@
 For the Arrays & Hashing approach, you can convert the integer into an array of digits and then check if the array is a palindrome. Here's a Python implementation:
 
 ```python
-def isPalindrome(x):
-    # Convert the integer to an array of digits
-    digits = []
-    temp_x = abs(x)
-    while temp_x > 0:
-        digits.append(temp_x % 10)
-        temp_x //= 10
-    
-    # Check if the array is a palindrome
-    return digits == digits[::-1]
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        # Handle negative numbers and numbers ending with 0
+        if x < 0 or (x % 10 == 0 and x != 0):
+            return False
 
-# Test cases
-print(isPalindrome(121))   # Output: True
-print(isPalindrome(-121))  # Output: False
-print(isPalindrome(10))    # Output: False
+        # Convert the integer to an array of digits
+        digits = []
+        while x > 0:
+            digit = x % 10
+            x //= 10
+            digits.append(digit)
+
+        # Check for palindrome using array operations
+        n = len(digits)
+        for i in range(n // 2):
+            if digits[i] != digits[n - 1 - i]:
+                return False
+
+        return True
 ```
 
 Explanation:
-1. We convert the integer `x` to its absolute value (`temp_x`) to handle negative numbers.
-2. We extract the digits of `temp_x` and append them to the `digits` array.
-3. Finally, we check if the `digits` array is equal to its reverse (`digits[::-1]`), indicating whether the original integer is a palindrome.
+1. We extract the digits of `temp_x` and append them to the `digits` array.
+2. We check for palindrome using array operations
 
 This solution has a time complexity of O(log10(x)), where x is the input integer, as we are essentially extracting its digits. The space complexity is O(log10(x)) as well, considering the space required for the `digits` array.
 
@@ -65,40 +69,40 @@ This solution has a time complexity of O(log10(x)), where x is the input integer
 
 # Stack
 
-For the Stack approach, we can use a stack to reverse the digits of the integer, and then compare the reversed digits with the original integer. Here's a Python implementation:
+One way to check if an integer is a palindrome without converting it to a string is by using a stack. Here's a simple Python code for that:
 
 ```python
-def isPalindrome(x):
-    # Convert the integer to an array of digits
-    digits = []
-    temp_x = abs(x)
-    while temp_x > 0:
-        digits.append(temp_x % 10)
-        temp_x //= 10
+def is_palindrome(x):
+    # Handle negative numbers
+    if x < 0:
+        return False
     
-    # Use a stack to reverse the digits
+    # Initialize a stack
     stack = []
-    for digit in digits:
+    original_x = x
+    
+    # Push digits onto the stack
+    while x > 0:
+        digit = x % 10
         stack.append(digit)
+        x //= 10
     
-    # Check if the reversed digits are equal to the original digits
-    while digits:
-        if digits.pop() != stack.pop():
+    # Pop digits from the stack and compare with original number
+    while original_x > 0 and stack:
+        digit = stack.pop()
+        if digit != original_x % 10:
             return False
+        original_x //= 10
     
-    return True
+    # If the stack is empty, it's a palindrome
+    return not stack
 
-# Test cases
-print(isPalindrome(121))   # Output: True
-print(isPalindrome(-121))  # Output: False
-print(isPalindrome(10))    # Output: False
+# Example usage:
+print(is_palindrome(121))  # Output: True
+print(is_palindrome(-121))  # Output: False
+print(is_palindrome(10))  # Output: False
+
 ```
-
-Explanation:
-1. We convert the integer `x` to its absolute value (`temp_x`) and extract its digits into the `digits` array.
-2. We use a stack to reverse the order of the digits, pushing each digit onto the stack.
-3. We compare the digits in the `digits` array with the digits popped from the stack. If at any point they are not equal, we return False.
-4. If the loop completes without returning False, we return True.
 
 This solution has a time complexity of O(log10(x)), where x is the input integer, as we are essentially extracting and comparing its digits. The space complexity is O(log10(x)), considering the space required for the `digits` array and the stack.
 
@@ -108,52 +112,35 @@ For the Linked List approach, we can convert the integer into a linked list and 
 
 ```python
 class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
+    def __init__(self, value=0, next=None):
+        self.value = value
         self.next = next
 
-def isPalindrome(x):
-    # Convert the integer to an array of digits
-    digits = []
-    temp_x = abs(x)
-    while temp_x > 0:
-        digits.append(temp_x % 10)
-        temp_x //= 10
-    
-    # Create a linked list from the digits
-    head = ListNode(digits[0])
-    current = head
-    for digit in digits[1:]:
-        current.next = ListNode(digit)
-        current = current.next
-    
-    # Reverse the second half of the linked list
-    slow = head
-    fast = head
-    while fast and fast.next:
-        slow = slow.next
-        fast = fast.next.next
-    
-    # Compare the first half with the reversed second half
-    first_half = head
-    second_half = reverse_linked_list(slow)
-    while second_half:
-        if first_half.val != second_half.val:
-            return False
-        first_half = first_half.next
-        second_half = second_half.next
-    
-    return True
 
-def reverse_linked_list(head):
-    prev = None
-    current = head
-    while current:
-        next_node = current.next
-        current.next = prev
-        prev = current
-        current = next_node
-    return prev
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        # Handle negative numbers
+        if x < 0:
+            return False
+
+        # Create a linked list from the digits of the number
+        head = None
+        original_x = x
+        while x > 0:
+            digit = x % 10
+            x //= 10
+            head = ListNode(digit, head)
+
+        # Traverse the linked list to compare with original number
+        current = head
+        while original_x > 0 and current:
+            if current.value != original_x % 10:
+                return False
+            current = current.next
+            original_x //= 10
+
+        # If the linked list is empty, it's a palindrome
+        return not current
 
 # Test cases
 print(isPalindrome(121))   # Output: True
