@@ -3,15 +3,14 @@ class Solution:
         if x < 0 or (x % 10 == 0 and x != 0):
             return False
 
-        digits = []
-        while x > 0:
-            digit = x % 10
-            x //= 10
-            digits.append(digit)
+        str_x = str(x)
 
-        n = len(digits)
-        for i in range(n // 2):
-            if digits[i] != digits[n - 1 - i]:
+        left, right = 0, len(str_x) - 1
+
+        while left < right:
+            if str_x[left] != str_x[right]:
                 return False
+            left += 1
+            right -= 1
 
         return True
