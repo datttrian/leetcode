@@ -56,7 +56,7 @@ The space complexity of this solution is O(log10(x)) because we are converting t
 ```python
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        if x < 0:
+        if x < 0 or (x % 10 == 0 and x != 0):
             return False
 
         stack = []
@@ -94,7 +94,7 @@ class ListNode:
 
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        if x < 0:
+        if x < 0 or (x % 10 == 0 and x != 0):
             return False
 
         head = None
