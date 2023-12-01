@@ -89,11 +89,9 @@ class ListNode:
 
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        # Handle negative numbers
         if x < 0:
             return False
 
-        # Create a linked list from the digits of the number
         head = None
         original_x = x
         while x > 0:
@@ -101,7 +99,6 @@ class Solution:
             x //= 10
             head = ListNode(digit, head)
 
-        # Traverse the linked list to compare with original number
         current = head
         while original_x > 0 and current:
             if current.value != original_x % 10:
@@ -109,23 +106,13 @@ class Solution:
             current = current.next
             original_x //= 10
 
-        # If the linked list is empty, it's a palindrome
         return not current
 
-# Test cases
-print(isPalindrome(121))   # Output: True
-print(isPalindrome(-121))  # Output: False
-print(isPalindrome(10))    # Output: False
 ```
 
-Explanation:
-1. We convert the integer `x` to its absolute value (`temp_x`) and extract its digits into the `digits` array.
-2. We create a linked list from the digits.
-3. We find the middle of the linked list using the slow and fast pointer technique.
-4. We reverse the second half of the linked list.
-5. We compare the first half with the reversed second half to determine if the original integer is a palindrome.
+The time complexity of this solution is O(n), where n is the number of digits in the input x. This is because we iterate through the digits of x twice - once to create the linked list and once to compare the values.
 
-This solution has a time complexity of O(log10(x)), where x is the input integer, as we are essentially extracting and manipulating its digits. The space complexity is O(log10(x)), considering the space required for the linked list.
+The space complexity is also O(n) because we create a linked list to store the digits of x. The space required is proportional to the number of digits in x.
 
 # Math & Geometry
 
