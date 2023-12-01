@@ -1,22 +1,5 @@
 import pytest
-from array_hashing import Solution as ArraySolution
-from linked_list import Solution as LinkedListSolution
-from stack import Solution as StackSolution
-from math_geometry import Solution as MathSolution
-from two_pointers import Solution as TwoPointers
-
-
-@pytest.fixture(
-    params=[
-        ArraySolution,
-        StackSolution,
-        LinkedListSolution,
-        MathSolution,
-        TwoPointers,
-    ],
-)
-def solution(request):
-    return request.param()
+from palindrome_number import Solution
 
 
 @pytest.mark.parametrize(
@@ -30,19 +13,14 @@ def solution(request):
         [123456, False],
     ],
 )
-def test_is_palindrome(
-    solution: object,
-    input_num: int,
-    expected: bool,
-) -> None:
-    """Test the isPalindrome function from the given Solution class.
+def test_is_palindrome(input_num: int, expected: bool) -> None:
+    """Test the isPalindrome function from the Solution class.
 
     Args:
-    - solution (object): Instance of the Solution class.
-    - input_num (int): Input number.
-    - expected (bool): Expected result.
+    - x (int): Input number.
 
     Returns:
     - None
     """
+    solution = Solution()
     assert solution.isPalindrome(input_num) == expected
