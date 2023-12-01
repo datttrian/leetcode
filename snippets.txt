@@ -1,7 +1,6 @@
 git pull --tags origin main --rebase
 
 set -xe
-
 poetry run isort leetcode --check-only
 poetry run flake8 leetcode --show-source
 poetry run pylint leetcode
@@ -9,6 +8,4 @@ poetry run mypy leetcode
 
 # pytest --cache-clear --junitxml=pytest.xml --cov=leetcode leetcode/ | tee pytest-coverage.txt
 poetry run pytest --cache-clear --junitxml=pytest.xml leetcode/ | tee pytest-coverage.txt
-
-
 pip install requirements.txt
