@@ -1,7 +1,5 @@
 # Arrays & Hashing
 
-For the Arrays & Hashing approach, you can convert the integer into an array of digits and then check if the array is a palindrome. Here's a Python implementation:
-
 ```python
 class Solution:
     def isPalindrome(self, x: int) -> bool:
@@ -30,17 +28,12 @@ This solution has a time complexity of O(log10(x)), where x is the input integer
 
 # Two Pointers
 
-For the Two Pointers approach, we use two pointers, one starting from the beginning and the other from the end of the integer. We compare the digits pointed to by these two pointers. Here's a Python implementation:
-
 ```python
 def isPalindrome(x):
-    # Convert the integer to a string for easy indexing
     str_x = str(abs(x))
     
-    # Initialize two pointers
     left, right = 0, len(str_x) - 1
     
-    # Check if the digits at the two pointers are equal
     while left < right:
         if str_x[left] != str_x[right]:
             return False
@@ -49,20 +42,11 @@ def isPalindrome(x):
     
     return True
 
-# Test cases
-print(isPalindrome(121))   # Output: True
-print(isPalindrome(-121))  # Output: False
-print(isPalindrome(10))    # Output: False
 ```
 
-Explanation:
-1. We convert the integer `x` to its absolute value and then to a string (`str_x`).
-2. We initialize two pointers, `left` and `right`, pointing to the beginning and end of the string, respectively.
-3. We compare the digits at the two pointers and move towards each other until they meet in the middle.
-4. If at any point the digits are not equal, we return False, indicating that the integer is not a palindrome.
-5. If the loop completes without returning False, we return True.
+The time complexity of this solution is O(log10(x)), where x is the input number. This is because the while loop that calculates the number of digits in x runs log10(x) times. The second while loop that checks if the number is a palindrome also runs log10(x) times, as it iterates through the digits from both ends.
 
-This solution has a time complexity of O(log10(x)), where x is the input integer, as we are essentially iterating through the digits. The space complexity is O(log10(x)), considering the space required for the string conversion.
+The space complexity is O(1) because the solution only uses a constant amount of extra space to store variables such as num_digits, temp, left, and right.
 
 # Stack
 
