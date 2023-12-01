@@ -5,18 +5,15 @@ For the Arrays & Hashing approach, you can convert the integer into an array of 
 ```python
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        # Handle negative numbers and numbers ending with 0
         if x < 0 or (x % 10 == 0 and x != 0):
             return False
 
-        # Convert the integer to an array of digits
         digits = []
         while x > 0:
             digit = x % 10
             x //= 10
             digits.append(digit)
 
-        # Check for palindrome using array operations
         n = len(digits)
         for i in range(n // 2):
             if digits[i] != digits[n - 1 - i]:
