@@ -18,6 +18,7 @@ class Solution:
                 return False
 
         return True
+
 ```
 
 The time complexity of this solution is O(log10(x)), where x is the input number. This is because the number of digits in x is given by log10(x), and we iterate through each digit once.
