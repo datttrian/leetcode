@@ -116,34 +116,22 @@ The space complexity is also O(n) because we create a linked list to store the d
 
 # Math & Geometry
 
-For the Math & Geometry approach, we can use mathematical operations to reverse the digits of the integer and then compare the reversed digits with the original integer. Here's a Python implementation:
-
 ```python
-def isPalindrome(x):
-    # Handle negative numbers
-    if x < 0:
-        return False
-    
-    # Reverse the digits using mathematical operations
-    reversed_x = 0
-    original_x = x
-    while x > 0:
-        digit = x % 10
-        reversed_x = reversed_x * 10 + digit
-        x //= 10
-    
-    # Check if the reversed digits are equal to the original digits
-    return original_x == reversed_x
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if x < 0 or (x % 10 == 0 and x != 0):
+            return False
+        
+        reversed_num = 0
+        original_num = x
 
-# Test cases
-print(isPalindrome(121))   # Output: True
-print(isPalindrome(-121))  # Output: False
-print(isPalindrome(10))    # Output: False
+        while x > 0:
+            x, digit = divmod(x, 10)
+            reversed_num = reversed_num * 10 + digit
+
+        return reversed_num == original_num
+
 ```
+The time complexity of this solution is O(log10(x)), where x is the input number. This is because in each iteration of the while loop, we divide the number by 10, reducing its size by a factor of 10. Therefore, the number of iterations required is equal to the number of digits in the input number, which is log10(x).
 
-Explanation:
-1. We handle negative numbers by returning False, as palindromes cannot be negative.
-2. We reverse the digits using mathematical operations by repeatedly extracting the last digit (`digit`) and building the reversed number (`reversed_x`).
-3. We check if the reversed digits are equal to the original digits.
-
-This solution has a time complexity of O(log10(x)), where x is the input integer, as we are essentially extracting and manipulating its digits. The space complexity is O(1), as we use a constant amount of space for variables.
+The space complexity of this solution is O(1) because we only use a constant amount of extra space to store the reversed number and the original number.
