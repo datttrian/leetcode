@@ -1,6 +1,6 @@
 class Solution:
     def romanToInt(self, s: str) -> int:
-        roman_values = {
+        roman_dict = {
             "I": 1,
             "V": 5,
             "X": 10,
@@ -10,12 +10,17 @@ class Solution:
             "M": 1000,
         }
 
-        total = 0
+        result = 0
+        stack: list[int] = []
 
-        for i in range(len(s)):
-            if i < len(s) - 1 and roman_values[s[i]] < roman_values[s[i + 1]]:
-                total -= roman_values[s[i]]
-            else:
-                total += roman_values[s[i]]
+        for char in s:
+            current_value = roman_dict[char]
 
-        return total
+            while stack and current_value > stack[-1]:
+                result -= stack.pop()
+
+            stack.append(current_value)
+
+        result += sum(stack)
+
+        return result
