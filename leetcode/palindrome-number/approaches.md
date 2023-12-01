@@ -20,11 +20,9 @@ class Solution:
         return True
 ```
 
-Explanation:
-1. We extract the digits of `temp_x` and append them to the `digits` array.
-2. We check for palindrome using array operations
+The time complexity of this solution is O(log10(x)), where x is the input number. This is because the number of digits in x is given by log10(x), and we iterate through each digit once.
 
-This solution has a time complexity of O(log10(x)), where x is the input integer, as we are essentially extracting its digits. The space complexity is O(log10(x)) as well, considering the space required for the `digits` array.
+The space complexity is O(log10(x)) as well, because we store each digit in a list. The size of the list is proportional to the number of digits in x.
 
 # Two Pointers
 
