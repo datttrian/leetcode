@@ -48,38 +48,27 @@ The space complexity is O(1) because the solution only uses a constant amount of
 
 # Stack
 
-One way to check if an integer is a palindrome without converting it to a string is by using a stack. Here's a simple Python code for that:
-
 ```python
-def is_palindrome(x):
-    # Handle negative numbers
-    if x < 0:
-        return False
-    
-    # Initialize a stack
-    stack = []
-    original_x = x
-    
-    # Push digits onto the stack
-    while x > 0:
-        digit = x % 10
-        stack.append(digit)
-        x //= 10
-    
-    # Pop digits from the stack and compare with original number
-    while original_x > 0 and stack:
-        digit = stack.pop()
-        if digit != original_x % 10:
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if x < 0:
             return False
-        original_x //= 10
-    
-    # If the stack is empty, it's a palindrome
-    return not stack
 
-# Example usage:
-print(is_palindrome(121))  # Output: True
-print(is_palindrome(-121))  # Output: False
-print(is_palindrome(10))  # Output: False
+        stack = []
+        original_x = x
+
+        while x > 0:
+            digit = x % 10
+            stack.append(digit)
+            x //= 10
+
+        while original_x > 0 and stack:
+            digit = stack.pop()
+            if digit != original_x % 10:
+                return False
+            original_x //= 10
+
+        return not stack
 
 ```
 
