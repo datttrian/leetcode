@@ -77,6 +77,7 @@ class Solution:
 
         return not stack
 
+
 ```
 
 The time complexity of this solution is O(log10(x)), where x is the input number. This is because in the first while loop, we divide the number by 10 in each iteration until it becomes 0, which takes log10(x) iterations. In the second while loop, we pop elements from the stack until it becomes empty, which also takes log10(x) iterations in the worst case.
