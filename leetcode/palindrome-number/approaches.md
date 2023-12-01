@@ -132,6 +132,7 @@ class Solution:
         return reversed_num == original_num
 
 ```
+
 The time complexity of this solution is O(log10(x)), where x is the input number. This is because in each iteration of the while loop, we divide the number by 10, reducing its size by a factor of 10. Therefore, the number of iterations required is equal to the number of digits in the input number, which is log10(x).
 
 The space complexity of this solution is O(1) because we only use a constant amount of extra space to store the reversed number and the original number.
