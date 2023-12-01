@@ -55,3 +55,51 @@ Alright, let's break it down by the mentioned techniques:
     - Not directly applicable. Bit manipulation is more suitable for binary representation and bitwise operations.
 
 For this problem, I'd suggest focusing on the Greedy approach as it aligns well with the nature of Roman numerals.
+
+## Arrays & Hashing
+
+```python
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        roman_values = {'I': 1, 'V': 5, 'X': 10, 'L': 50,
+                        'C': 100, 'D': 500, 'M': 1000}
+
+        total = 0
+
+        for i in range(len(s)):
+            if i < len(s) - 1 and roman_values[s[i]] < roman_values[s[i + 1]]:
+                total -= roman_values[s[i]]
+            else:
+                total += roman_values[s[i]]
+
+        return total
+        
+```
+
+The time complexity of this solution is O(n), where n is the length of the input string. This is because we iterate through the string once to calculate the total value.
+
+The space complexity is O(1) because we only use a constant amount of space to store the roman_values dictionary and the total variable. The space used does not depend on the size of the input string.
+
+## Sliding Window
+
+
+
+## Stack
+
+
+
+## Tries
+
+
+
+## Backtracking
+
+
+
+## Greedy
+
+
+
+## Math & Geometry
+
+
