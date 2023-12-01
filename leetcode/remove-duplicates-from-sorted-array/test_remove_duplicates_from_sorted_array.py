@@ -1,5 +1,5 @@
 import pytest
-from arrays_hashing import Solution
+from remove_duplicates_from_sorted_array import Solution
 
 
 @pytest.mark.parametrize(
