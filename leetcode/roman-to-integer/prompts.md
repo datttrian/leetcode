@@ -90,17 +90,17 @@ class Solution:
         roman_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
 
         result = 0
-        prev_value = 0
+        stack = []
 
-        for char in reversed(s):
+        for char in s:
             current_value = roman_dict[char]
 
-            if current_value < prev_value:
-                result -= current_value
-            else:
-                result += current_value
+            while stack and current_value > stack[-1]:
+                result -= stack.pop()
 
-            prev_value = current_value
+            stack.append(current_value)
+
+        result += sum(stack)
 
         return result
 
@@ -108,7 +108,7 @@ class Solution:
 
 The time complexity of this solution is O(n), where n is the length of the input string. This is because we iterate through each character in the string once.
 
-The space complexity is O(1) because we only use a constant amount of extra space to store the roman_dict, result, and prev_value variables. The space used does not depend on the size of the input string.
+The space complexity is O(n) as well. In the worst case, the stack can contain all the characters in the string, resulting in a space complexity of O(n).
 
 ## Tries
 
