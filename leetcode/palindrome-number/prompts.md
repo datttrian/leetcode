@@ -89,10 +89,17 @@ The space complexity of this solution is O(log10(x)), as we need to store the di
 For the Linked List approach, we can convert the integer into a linked list and check if the linked list is a palindrome. However, since the problem specifies not converting the integer to a string, we'll create a linked list by reversing the second half of the digits and then comparing it with the first half. Here's a Python implementation:
 
 ```python
+from typing import Optional
+
+
 class ListNode:
-    def __init__(self, value=0, next=None):
-        self.value = value
-        self.next = next
+    def __init__(
+        self,
+        val: int = 0,
+        next_node: "Optional[ListNode]" = None,
+    ) -> None:
+        self.value: int = val
+        self.next: Optional[ListNode] = next_node
 
 
 class Solution:
@@ -115,6 +122,7 @@ class Solution:
             original_x //= 10
 
         return not current
+
 
 ```
 
