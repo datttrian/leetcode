@@ -42,9 +42,10 @@ def isPalindrome(x):
 
 ```
 
-The time complexity of this solution is O(log10(x)), where x is the input number. This is because the while loop that calculates the number of digits in x runs log10(x) times. The second while loop that checks if the number is a palindrome also runs log10(x) times, as it iterates through the digits from both ends.
+The time complexity of this solution is O(log10(x)) because we are converting the integer x to a string, which takes O(log10(x)) time. Then, we iterate through half of the string, which takes O(log10(x)/2) time. Therefore, the overall time complexity is O(log10(x)).
 
-The space complexity is O(1) because the solution only uses a constant amount of extra space to store variables such as num_digits, temp, left, and right.
+The space complexity of this solution is O(log10(x)) because we are converting the integer x to a string, which requires O(log10(x)) space.
+
 
 # Stack
 
