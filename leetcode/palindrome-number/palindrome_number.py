@@ -3,14 +3,18 @@ class Solution:
         if x < 0 or (x % 10 == 0 and x != 0):
             return False
 
-        str_x = str(x)
+        stack = []
+        original_x = x
 
-        left, right = 0, len(str_x) - 1
+        while x > 0:
+            digit = x % 10
+            stack.append(digit)
+            x //= 10
 
-        while left < right:
-            if str_x[left] != str_x[right]:
+        while original_x > 0 and stack:
+            digit = stack.pop()
+            if digit != original_x % 10:
                 return False
-            left += 1
-            right -= 1
+            original_x //= 10
 
-        return True
+        return not stack
