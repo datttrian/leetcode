@@ -4,12 +4,12 @@
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 <!-- ![coded by humans](https://img.shields.io/badge/coded%20by%20humans-99%25-blue) -->
 
-|No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
+<!-- |No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
 |----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
 |13  |[Roman to Integer](leetcode/roman-to-integer)                                                                               |O(n)                   |O(1)              |Easy       |
 |12  |[Integer to Roman](leetcode/integer-to-roman)                                                                               |O(1)                   |O(1)              |Medium     |
 |9   |[Palindrome Number](leetcode/palindrome-number)                                                                             |O(log n)              |O(1)              |Easy       |
-|29  |[Divide Two Integers](leetcode/divide-two-integers)                                                                         |O(log n)              |O(1)              |Medium     |
+|29  |[Divide Two Integers](leetcode/divide-two-integers)                                                                         |O(log n)              |O(1)              |Medium     | -->
 
 ## Math & Geometry
 
