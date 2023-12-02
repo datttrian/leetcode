@@ -6,9 +6,9 @@
 
 ## Math & Geometry
 
-|No. |Problem                                                                                                                     |Complexity       |Difficulty |
-|----|----------------------------------------------------------------------------------------------------------------------------|-----------------|-----------|
-|9   |[Palindrome Number](https://leetcode.com/problems/palindrome-number/)                                                       |[O(log n), O(1)](leetcode/palindrome-number/)   |Easy       |
+|Problem                                                                                                                     |Complexity       |Difficulty |
+|----------------------------------------------------------------------------------------------------------------------------|-----------------|-----------|
+|[9. Palindrome Number](https://leetcode.com/problems/palindrome-number/)                                                       |[O(log n), O(1)](leetcode/palindrome-number/)   |Easy       |
 
 
 ## Arrays & Hashing
