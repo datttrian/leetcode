@@ -34,11 +34,14 @@ class Solution:
         values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
         symbols = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
 
+        value_to_symbol = dict(zip(values, symbols))
+
         result = ""
-        for i in range(len(values)):
-            while num >= values[i]:
-                result += symbols[i]
-                num -= values[i]
+
+        for value in values:
+            while num >= value:
+                num -= value
+                result += value_to_symbol[value]
 
         return result
 
@@ -53,12 +56,13 @@ class Solution:
         symbols = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
 
         result = ""
-        i, j = 0, 0
+        i = 0
+        j = 0
 
-        while i < len(values) and j < len(symbols):
-            while num >= values[i]:
-                result += symbols[j]
-                num -= values[i]
+        while num > 0:
+            count, num = divmod(num, values[i])
+            result += symbols[j] * count
+
             i += 1
             j += 1
 
