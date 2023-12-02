@@ -131,7 +131,45 @@ The space complexity is O(n) as well. In the worst case, the stack can contain a
 
 ## Backtracking
 
+```python
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        roman_dict = {
+            "I": 1,
+            "V": 5,
+            "X": 10,
+            "L": 50,
+            "C": 100,
+            "D": 500,
+            "M": 1000,
+        }
 
+        def backtrack(index, current_value):
+            if index == len(s):
+                return current_value
+
+            if (
+                index < len(s) - 1
+                and roman_dict[s[index]] < roman_dict[s[index + 1]]
+            ):
+                return backtrack(
+                    index + 2,
+                    current_value
+                    - roman_dict[s[index]]
+                    + roman_dict[s[index + 1]],
+                )
+            else:
+                return backtrack(
+                    index + 1, current_value + roman_dict[s[index]]
+                )
+
+        return backtrack(0, 0)
+
+```
+
+The time complexity of this solution is O(n), where n is the length of the input string. This is because we iterate through each character in the string once.
+
+The space complexity is O(1) because we only use a constant amount of extra space to store the roman_dict dictionary and the variables used in the backtrack function.
 
 ## Greedy
 
