@@ -204,4 +204,36 @@ The space complexity is O(1) because we only use a constant amount of space to s
 
 ## Math & Geometry
 
+```python
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        roman_dict = {
+            "I": 1,
+            "V": 5,
+            "X": 10,
+            "L": 50,
+            "C": 100,
+            "D": 500,
+            "M": 1000,
+        }
 
+        result = 0
+        prev_value = 0
+
+        for _, char in enumerate(reversed(s)):
+            current_value = roman_dict[char]
+
+            if current_value < prev_value:
+                result -= current_value
+            else:
+                result += current_value
+
+            prev_value = current_value
+
+        return result
+
+```
+
+The time complexity of this solution is O(n), where n is the length of the input string. This is because we iterate through the string once in the for loop.
+
+The space complexity is O(1) because we only use a constant amount of extra space to store the roman_dict, result, and prev_value variables.
