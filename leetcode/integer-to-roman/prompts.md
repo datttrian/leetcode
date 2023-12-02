@@ -146,6 +146,8 @@ class Solution:
 
 ```
 
+The time complexity of this solution is O(1) because the number of iterations in the for loop is constant, regardless of the input size. The space complexity is also O(1) because the size of the input does not affect the amount of memory used by the algorithm.
+
 ## Math & Geometry
 
 ```python
