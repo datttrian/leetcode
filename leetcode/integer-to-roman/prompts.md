@@ -4,7 +4,21 @@
 class Solution:
     def intToRoman(self, num: int) -> str:
         values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
-        symbols = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
+        symbols = [
+            "M",
+            "CM",
+            "D",
+            "CD",
+            "C",
+            "XC",
+            "L",
+            "XL",
+            "X",
+            "IX",
+            "V",
+            "IV",
+            "I",
+        ]
 
         value_to_symbol = dict(zip(values, symbols))
 
@@ -17,7 +31,10 @@ class Solution:
 
         return result
 
+
 ```
+
+The time complexity of this solution is O(1) because the number of iterations in the for loop is constant. The space complexity is also O(1) because the size of the input does not affect the amount of space used.
 
 ## Two Pointers
 
@@ -25,7 +42,21 @@ class Solution:
 class Solution:
     def intToRoman(self, num: int) -> str:
         values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
-        symbols = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
+        symbols = [
+            "M",
+            "CM",
+            "D",
+            "CD",
+            "C",
+            "XC",
+            "L",
+            "XL",
+            "X",
+            "IX",
+            "V",
+            "IV",
+            "I",
+        ]
 
         result = ""
         i = 0
@@ -40,7 +71,10 @@ class Solution:
 
         return result
 
+
 ```
+
+The time complexity of this solution is O(1) because the while loop will iterate a constant number of times, regardless of the input value of num. The space complexity is also O(1) because the size of the input does not affect the amount of memory used by the algorithm.
 
 ## Stack
 
@@ -111,3 +145,7 @@ class Solution:
         return result
 
 ```
+
+The time complexity of this solution is O(1) because the input number is limited to a range of 1 to 3999, which means the loop will iterate a maximum of 13 times. Therefore, the time complexity is constant.
+
+The space complexity is also O(1) because the space used by the solution does not depend on the input size. The dictionary and the result string have a fixed size and do not grow with the input.
