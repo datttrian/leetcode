@@ -79,61 +79,13 @@ class Solution:
         symbols = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
 
         result = []
-        
-        for i in range(len(values)):
-            while num >= values[i]:
-                result.append(symbols[i])
-                num -= values[i]
 
-        return ''.join(result)
+        for value, symbol in zip(values, symbols):
+            while num >= value:
+                num -= value
+                result.append(symbol)
 
-```
-
-## Trees
-
-
-
-## Backtracking
-
-```python
-class Solution:
-    def intToRoman(self, num: int) -> str:
-        def backtrack(remaining, current):
-            if remaining == 0:
-                result.append(current)
-                return
-            for i in range(len(values)):
-                if remaining >= values[i]:
-                    backtrack(remaining - values[i], current + symbols[i])
-
-        values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
-        symbols = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
-
-        result = []
-        backtrack(num, '')
-
-        return result[0] if result else ''
-
-```
-
-## 1-D Dynamic Programming
-
-```python
-class Solution:
-    def intToRoman(self, num: int) -> str:
-        values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
-        symbols = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
-
-        result = [""] * (num + 1)
-
-        for i in range(1, num + 1):
-            min_length = float('inf')
-            for j in range(len(values)):
-                if i >= values[j] and len(result[i - values[j]]) < min_length:
-                    min_length = len(result[i - values[j]])
-                    result[i] = symbols[j] + result[i - values[j]]
-
-        return result[num]
+        return "".join(result)
 
 ```
 
@@ -158,4 +110,32 @@ class Solution:
 
 ## Math & Geometry
 
+```python
+class Solution:
+    def intToRoman(self, num: int) -> str:
+        roman_extend_dict = {
+            1000: "M",
+            900: "CM",
+            500: "D",
+            400: "CD",
+            100: "C",
+            90: "XC",
+            50: "L",
+            40: "XL",
+            10: "X",
+            9: "IX",
+            5: "V",
+            4: "IV",
+            1: "I",
+        }
 
+        result = ""
+
+        for value, symbol in roman_extend_dict.items():
+            count, num = divmod(num, value)
+
+            result += symbol * count
+
+        return result
+
+```
