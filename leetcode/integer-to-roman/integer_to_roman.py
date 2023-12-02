@@ -1,27 +1,49 @@
 class Solution:
     def intToRoman(self, num: int) -> str:
-        values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
-        symbols = [
-            "M",
-            "CM",
-            "D",
-            "CD",
-            "C",
-            "XC",
-            "L",
-            "XL",
-            "X",
-            "IX",
-            "V",
-            "IV",
-            "I",
-        ]
+        """Convert an integer to a Roman numeral string.
 
-        result = []
+        The conversion is achieved by iterating through the extended
+        dictionary includes pairs that represent combinations of symbols that
+        indicate subtraction in descending order, subtracting the largest
+        possible values from the input number.
 
-        for value, symbol in zip(values, symbols):
-            while num >= value:
-                num -= value
-                result.append(symbol)
+        Args:
+            num (int): An integer in the range [1, 3999] to be converted to
+            a Roman numeral.
 
-        return "".join(result)
+        Returns:
+            str: The Roman numeral representation of the input integer.
+
+        Raises:
+            None: It is guaranteed that num is within the valid range.
+        """
+        # Dictionary of extended roman symbols and their values
+        roman_extend_dict = {
+            1000: "M",
+            900: "CM",
+            500: "D",
+            400: "CD",
+            100: "C",
+            90: "XC",
+            50: "L",
+            40: "XL",
+            10: "X",
+            9: "IX",
+            5: "V",
+            4: "IV",
+            1: "I",
+        }
+
+        # Variable to store the final Roman numeral string
+        result = ""
+
+        # Iterate through the dictionary in descending order
+        for value, symbol in roman_extend_dict.items():
+            # Determine how many times the value can be subtracted from num
+            count, num = divmod(num, value)
+
+            # Append the corresponding Roman numeral to the result string
+            result += symbol * count
+
+        # Return the final Roman numeral string
+        return result
