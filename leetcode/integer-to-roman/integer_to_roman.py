@@ -17,15 +17,13 @@ class Solution:
             "I",
         ]
 
+        value_to_symbol = dict(zip(values, symbols))
+
         result = ""
-        i = 0
-        j = 0
 
-        while num > 0:
-            count, num = divmod(num, values[i])
-            result += symbols[j] * count
-
-            i += 1
-            j += 1
+        for value in values:
+            while num >= value:
+                num -= value
+                result += value_to_symbol[value]
 
         return result
