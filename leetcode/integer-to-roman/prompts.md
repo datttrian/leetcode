@@ -95,6 +95,8 @@ class Solution:
 
 ```
 
+The time complexity of this solution is O(1) because the number of iterations in the for loop is constant, regardless of the value of the input num. The space complexity is also O(1) because the size of the result list does not depend on the input size.
+
 ## Greedy
 
 ```python
