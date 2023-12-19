@@ -1,4 +1,4 @@
-astroid==3.0.2
+astroid==2.15.8
 dill==0.3.7
 exceptiongroup==1.2.0
 flake8==6.1.0
