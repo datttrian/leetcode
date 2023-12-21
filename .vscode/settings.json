@@ -20,7 +20,7 @@
     ],
     "python.analysis.typeCheckingMode": "strict",
     "git.autofetchPeriod": 180,
-    "gitdoc.autoCommitDelay": 0,
+    "gitdoc.autoCommitDelay": 0, // 600000
     "gitdoc.autoPullDelay": 0,
     "gitdoc.autoPushDelay": 0,
     "gitdoc.commitMessageFormat": "ccc, LLL d, y, h:mm a '+00:00'",
