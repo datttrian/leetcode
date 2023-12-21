@@ -32,7 +32,7 @@ class Solution:
 
             # If the current value is less than the previous value
             if current_value < prev_value:
-                
+                # Subtract it from the result
                 result -= current_value
             else:
                 # Otherwise, add the current value to the result
