@@ -1,7 +1,6 @@
 class Solution:
     def romanToInt(self, s: str) -> int:
-        """
-        Convert a Roman numeral to an integer.
+        """Convert a Roman numeral to an integer.
 
         Parameters:
         s (str): A string representing a Roman numeral.
