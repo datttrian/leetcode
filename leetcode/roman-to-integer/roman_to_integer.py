@@ -1,5 +1,14 @@
 class Solution:
     def romanToInt(self, s: str) -> int:
+        """
+        Convert a Roman numeral to an integer.
+
+        Parameters:
+        s (str): A string representing a Roman numeral.
+
+        Returns:
+        int: The integer representation of the Roman numeral.
+        """
         roman_dict = {
             "I": 1,
             "V": 5,
