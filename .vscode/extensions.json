@@ -1,0 +1,23 @@
+{
+    "recommendations": [
+        "GitHub.copilot",
+        "GitHub.codespaces",
+        "GitHub.vscode-github-actions",
+        "ms-vscode-remote.remote-containers",
+        "vsls-contrib.gitdoc",
+        "donjayamanne.python-environment-manager",
+        "KevinRose.vsc-python-indent",
+        "ms-python.black-formatter",
+        "ms-python.pylint",
+        "ms-python.python",
+        "ms-python.flake8",
+        "ms-python.mypy-type-checker",
+        "ms-python.vscode-pylance",
+        "njpwerner.autodocstring",
+        "VisualStudioExptTeam.intellicode-api-usage-examples",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "PKief.material-icon-theme",
+        "rvest.vs-code-prettier-eslint",
+        "streetsidesoftware.code-spell-checker"
+    ]
+}

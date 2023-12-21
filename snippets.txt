@@ -9,3 +9,4 @@ poetry run mypy leetcode
 # pytest --cache-clear --junitxml=pytest.xml --cov=leetcode leetcode/ | tee pytest-coverage.txt
 poetry run pytest --cache-clear --junitxml=pytest.xml leetcode/ | tee pytest-coverage.txt
 pip install requirements.txt
+pip install --upgrade pylint pylint_pytest
