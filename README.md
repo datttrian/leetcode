@@ -12,7 +12,7 @@
 |9   |[Palindrome Number](leetcode/palindrome-number)                                                                             |O(log n)              |O(1)              |Easy       |
 |29  |[Divide Two Integers](leetcode/divide-two-integers)                                                                         |O(log n)              |O(1)              |Medium     | -->
 
-## Math & Geometry
+<!-- ## Math & Geometry
 
 |No. |Difficulty|Problem                                                                                                                     |Complexity                                      |
 |----|----------|----------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
@@ -148,4 +148,4 @@
 |95  |Unique Binary Search Trees II                                                     |O(4^n / n^(3/2))       |O(4^n / sqrt(n))  |Medium     |
 |96  |Unique Binary Search Trees                                                           |O(n^2)                 |O(n)              |Medium     |
 |97  |Interleaving String                                                                         |O(n^2)                 |O(n)              |Medium     |
-|98  |Validate Binary Search Tree                                                         |O(n)                   |O(n) \| O(log n) |Medium     |
+|98  |Validate Binary Search Tree                                                         |O(n)                   |O(n) \| O(log n) |Medium     | -->
