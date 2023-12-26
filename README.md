@@ -5,7 +5,7 @@
 [![Build Status](https://github.com/datttrian/leetcode/actions/workflows/checks.yml/badge.svg)](https://github.com/datttrian/leetcode/actions/workflows/checks.yml)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
-<!-- <!-- |No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
+<!-- |No. |Problem                                                                                                                     |Time Complexity        |Space Complexity  |Difficulty |
 |----|----------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|-----------|
 |13  |[Roman to Integer](leetcode/roman-to-integer)                                                                               |O(n)                   |O(1)              |Easy       |
 |12  |[Integer to Roman](leetcode/integer-to-roman)                                                                               |O(1)                   |O(1)              |Medium     |
@@ -148,4 +148,4 @@
 |95  |Unique Binary Search Trees II                                                     |O(4^n / n^(3/2))       |O(4^n / sqrt(n))  |Medium     |
 |96  |Unique Binary Search Trees                                                           |O(n^2)                 |O(n)              |Medium     |
 |97  |Interleaving String                                                                         |O(n^2)                 |O(n)              |Medium     |
-|98  |Validate Binary Search Tree                                                         |O(n)                   |O(n) \| O(log n) |Medium     | -->
+|98  |Validate Binary Search Tree                                                         |O(n)                   |O(n) \| O(log n) |Medium     |
