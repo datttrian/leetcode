@@ -39,3 +39,56 @@ store integers within the **32-bit** signed integer range:
 
 - `-2`^(`31`)` <= dividend, divisor <= 2`^(`31`)` - 1`
 - `divisor != 0`
+
+
+# Intuition
+This problem revolves around efficiently dividing two integers, with a key focus on optimizing the process through bit manipulation. The approach carefully considers the sign of the result to handle cases where the dividend and divisor have different signs.
+
+# Approach
+1. Define constants for maximum and minimum integer values.
+2. Check for special cases: division by zero and if the dividend is zero.
+3. Determine the sign of the result based on the signs of the dividend and divisor.
+4. Take the absolute values of the dividend and divisor for easier manipulation.
+5. Initialize the quotient to 0.
+6. Use a loop to perform the division:
+   - Find the largest multiple of the divisor that can be subtracted from the current dividend.
+   - Subtract this multiple and update the quotient.
+7. Adjust the sign of the quotient and ensure it doesn't exceed the integer limits.
+8. Return the final quotient.
+
+# Complexity
+- Time complexity: O(log n), where n is the absolute value of the dividend. The algorithm essentially performs binary division, repeatedly halving the dividend.
+- Space complexity: O(1), as the space required is constant.
+
+# Code
+```python
+class Solution:
+    def divide(self, dividend: int, divisor: int) -> int:
+        INT_MAX = 2**31 - 1
+        INT_MIN = -(2**31)
+
+        if divisor == 0:
+            return INT_MAX if dividend > 0 else INT_MIN
+        if dividend == 0:
+            return 0
+
+        sign = -1 if (dividend < 0) ^ (divisor < 0) else 1
+
+        dividend, divisor = abs(dividend), abs(divisor)
+
+        quotient = 0
+
+        while dividend >= divisor:
+            temp_divisor, multiple = divisor, 1
+            
+            while dividend >= (temp_divisor << 1):
+                temp_divisor <<= 1
+                multiple <<= 1
+
+            dividend -= temp_divisor
+            quotient += multiple
+
+        quotient *= sign
+
+        return min(max(quotient, INT_MIN), INT_MAX)
+```
