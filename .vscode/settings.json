@@ -19,11 +19,6 @@
         "--ignore=D100,D101,D102,D103,D107,E203,W503,D400,D205,D415"
     ],
     "python.analysis.typeCheckingMode": "strict",
-    "git.autofetchPeriod": 180,
-    "gitdoc.autoCommitDelay": 0,
-    "gitdoc.autoPullDelay": 0,
-    "gitdoc.autoPushDelay": 0,
-    "gitdoc.commitMessageFormat": "ccc, LLL d, y, h:mm a '+00:00'",
     // Show vertical line after 79 to visualize end of line
     "editor.rulers": [
         79
