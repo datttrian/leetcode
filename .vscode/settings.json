@@ -1,6 +1,5 @@
 {
     "git.autofetch": true,
-    "git.autofetchPeriod": 180,
     "gitdoc.enabled": true,
     "gitdoc.autoCommitDelay": 0,
     "gitdoc.autoPullDelay": 0,
