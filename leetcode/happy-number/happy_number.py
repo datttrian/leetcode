@@ -4,7 +4,7 @@ class Solution:
             return sum(int(digit) ** 2 for digit in str(num))
 
         slow, fast = n, sum_squared_digits(n)
-        while fast != 1 and fast not in (1, slow):
+        while fast not in (1, slow):
             slow = sum_squared_digits(slow)
             fast = sum_squared_digits(sum_squared_digits(fast))
         return fast == 1
