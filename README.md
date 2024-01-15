@@ -9,6 +9,6 @@
 
 |Difficulty|Problem                                                                                                                     |Complexity                                      |
 |----------|----------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
-|Easy      |[202. Happy Number](https://leetcode.com/problems/happy-number)                                                             |[O(), O()](leetcode/happy-number)   |
+|Easy      |[202. Happy Number](https://leetcode.com/problems/happy-number)                                                             |[O(), O()](leetcode/happy-number)               |
 |Medium    |[Integer to Roman](https://leetcode.com/problems/integer-to-roman/)                                                    |[O(1), O(1)](leetcode/integer-to-roman/)   |
 |Easy      |[Roman to Integer](https://leetcode.com/problems/roman-to-integer/)                                                    |[O(n), O(1)](leetcode/roman-to-integer/)   |
