@@ -15,15 +15,6 @@ from happy_number import Solution
     ],
 )
 def test_is_happy(n: int, expected: bool) -> None:
-    """Test the isHappy function from the Solution class.
-
-    Args:
-    - n (int): Integer input.
-    - expected (bool): Expected boolean output.
-
-    Returns:
-    - None
-    """
     solution = Solution()
     result = solution.isHappy(n)
     assert result == expected
