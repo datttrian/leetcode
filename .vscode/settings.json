@@ -1,5 +1,4 @@
 {
-    
     "git.autofetch": true,
     "git.autofetchPeriod": 180,
     "gitdoc.enabled": true,
