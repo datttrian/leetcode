@@ -1,7 +1,6 @@
 import pytest
-from valid_parentheses import (  # Import the Solution class from your module
-    Solution,
-)
+from valid_parentheses import \
+    Solution  # Import the Solution class from your module
 
 
 @pytest.mark.parametrize(
