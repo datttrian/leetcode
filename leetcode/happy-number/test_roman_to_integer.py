@@ -1,5 +1,5 @@
 import pytest
-from recursive import Solution
+from hashset import Solution
 
 
 @pytest.mark.parametrize(
