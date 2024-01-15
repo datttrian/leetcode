@@ -1,44 +1,38 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/universal
 {
-	"name": "poetry3-poetry-pyenv",
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
-	// 👇 Features to add to the Dev Container. More info: https://containers.dev/implementors/features.
-	// "features": {},
-	// 👇 Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-	// 👇 Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "",
-	// 👇 Configure tool-specific properties.
-	// "customizations": {
-	// 	"vscode": {
-	// 		"extensions": [
-	// 			"ms-python.python",
-	// 			"njpwerner.autodocstring"
-	// 		]
-	// 	}
-	// },
-	// 👇 Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+	"name": "Default Linux Universal",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/universal:2-linux",
 	"customizations": {
-    "vscode": {
-      "extensions": [
-		"donjayamanne.python-environment-manager",
-		"KevinRose.vsc-python-indent",
-		"ms-python.black-formatter",
-		"ms-python.pylint",
-		"ms-python.python",
-		"ms-python.flake8",
-		"ms-python.mypy-type-checker",
-		"ms-python.vscode-pylance",
-		"njpwerner.autodocstring",
-		"PKief.material-icon-theme",
-		"rvest.vs-code-prettier-eslint",
-		"streetsidesoftware.code-spell-checker",
-		"VisualStudioExptTeam.intellicode-api-usage-examples",
-		"VisualStudioExptTeam.vscodeintellicode",
-		"vsls-contrib.gitdoc"
-		]
-    }
-  }
+		"vscode": {
+			"extensions": [
+				"donjayamanne.python-environment-manager",
+				"KevinRose.vsc-python-indent",
+				"ms-python.black-formatter",
+				"ms-python.pylint",
+				"ms-python.python",
+				"ms-python.flake8",
+				"ms-python.mypy-type-checker",
+				"ms-python.vscode-pylance",
+				"njpwerner.autodocstring",
+				"PKief.material-icon-theme",
+				"rvest.vs-code-prettier-eslint",
+				"streetsidesoftware.code-spell-checker",
+				"VisualStudioExptTeam.intellicode-api-usage-examples",
+				"VisualStudioExptTeam.vscodeintellicode",
+				"vsls-contrib.gitdoc"
+			]
+		}
+	}
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "uname -a",
+	// Configure tool-specific properties.
+	// "customizations": {},
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
 }
