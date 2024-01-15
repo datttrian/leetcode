@@ -1,19 +1,17 @@
 class Solution:
     def isHappy(self, n: int) -> bool:
-        def is_happy_recursive(n: int, seen: set[int]) -> bool:
-            if n == 1:
+        def get_next(num: int) -> int:
+            return sum(int(digit) ** 2 for digit in str(num))
+
+        def is_happy_recursive(num: int, seen: set[int]) -> bool:
+            if num == 1:
                 return True
-            if n in seen:
+            if num in seen:
                 return False
-            seen.add(n)
-            return is_happy_recursive(get_next(n), seen)
 
-        def get_next(number: int) -> int:
-            total_sum = 0
-            while number > 0:
-                number, digit = divmod(number, 10)
-                total_sum += digit**2
-            return total_sum
+            seen.add(num)
+            next_num = get_next(num)
+            return is_happy_recursive(next_num, seen)
 
-        seen: set[int] = set()
-        return is_happy_recursive(n, seen)
+        seen_set: set[int] = set()
+        return is_happy_recursive(n, seen_set)
