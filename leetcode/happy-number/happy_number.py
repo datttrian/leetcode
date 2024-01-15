@@ -1,15 +1,10 @@
 class Solution:
     def isHappy(self, n: int) -> bool:
-        def get_next(number: int) -> int:
-            total_sum = 0
-            while number > 0:
-                number, digit = divmod(number, 10)
-                total_sum += digit**2
-            return total_sum
+        def get_next(num: int) -> int:
+            return sum(int(digit) ** 2 for digit in str(num))
 
-        seen = set()
-        while n != 1 and n not in seen:
-            seen.add(n)
-            n = get_next(n)
-
-        return n == 1
+        current, next_num = n, get_next(n)
+        while next_num != 1 and current != next_num:
+            current = get_next(current)
+            next_num = get_next(get_next(next_num))
+        return next_num == 1

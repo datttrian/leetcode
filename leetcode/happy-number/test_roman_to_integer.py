@@ -1,5 +1,5 @@
 import pytest
-from recursive import Solution
+from happy_number import Solution
 
 
 @pytest.mark.parametrize(
