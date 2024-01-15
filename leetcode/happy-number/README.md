@@ -28,7 +28,7 @@ Return `true` *if* `n` *is a happy number, and* `false` *if not*.
 **Example 2:**
 
     Input: n = 2
-        Output: false
+    Output: false
         
 
  
