@@ -13,13 +13,7 @@
 |9   |[Palindrome Number](leetcode/palindrome-number)                                                                             |O(log n)              |O(1)              |Easy       |
 |29  |[Divide Two Integers](leetcode/divide-two-integers)                                                                         |O(log n)              |O(1)              |Medium     | -->
 
-## Math & Geometry
 
-|No. |Difficulty|Problem                                                                                                                     |Complexity                                      |
-|----|----------|----------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
-| 9  |Easy      |[Palindrome Number](https://leetcode.com/problems/palindrome-number/)                                                    |[O(log n), O(1)](leetcode/palindrome-number/)   |
-|12  |Medium    |[Integer to Roman](https://leetcode.com/problems/integer-to-roman/)                                                    |[O(1), O(1)](leetcode/integer-to-roman/)   |
-|13  |Easy      |[Roman to Integer](https://leetcode.com/problems/roman-to-integer/)                                                    |[O(n), O(1)](leetcode/roman-to-integer/)   |
 
 
 ## Arrays & Hashing
