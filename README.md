@@ -9,4 +9,4 @@
 
 |Difficulty|Problem                                                                                                                     |Complexity                                      |
 |----------|----------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
-|Easy      |[202. Happy Number](https://leetcode.com/problems/happy-number)                                                             |[O(), O()](leetcode/happy-number)               |
+|Easy      |[202. Happy Number](https://leetcode.com/problems/happy-number/solutions/4572443/hashing-o-log-n-o-1/)                                                             |[O(), O()](leetcode/happy-number)               |
