@@ -1,51 +1,33 @@
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        """
-        Determine whether a given integer is a palindrome.
+        """Check if an integer is a palindrome.
 
-        A palindrome is a number that reads the same backward as forward.
+        The determination is achieved by reversing the input number digits and
+        comparing the reversed number with the original.
 
-        Parameters:
-        - x (int): The integer to be checked for palindrome property.
+        Args:
+            x (int): The integer to be checked for palindromicity.
 
         Returns:
-        bool: True if the input integer is a palindrome, False otherwise.
+            bool: True if the integer is a palindrome, False otherwise.
 
-        Special cases:
-        - Negative numbers are not palindromes.
-        - Numbers ending with 0 (except 0 itself) are not palindromes.
-
-        Time Complexity:
-        O(log10(x)) - The number of iterations in the while loop is
-        proportional to the number of digits in the input integer.
-
-        Space Complexity:
-        O(1) - Constant space is used to store the reversed number and the
-        original number.
-
-        Example:
-        ```
-        solution = Solution()
-        result = solution.isPalindrome(121)
-        print(result)  # Output: True
-        ```
+        Raises:
+            None: It is guaranteed that the input is an integer.
         """
-        # Special cases: Negative numbers and numbers ending with 0 are not
-        # palindromes
+        # Check if the number is negative or ends with zero except 0
         if x < 0 or (x % 10 == 0 and x != 0):
             return False
 
-        # Initialize variables to store the reversed number and the original
-        # number
+        # Variable to store the reversed number
         reversed_num = 0
+
+        # Variable to save the original number for comparison
         original_num = x
 
-        # Reverse the digits of the original number
+        # Reverse the digits of the number
         while x > 0:
-            digit = x % 10
+            x, digit = divmod(x, 10)
             reversed_num = reversed_num * 10 + digit
-            x //= 10
 
-        # Check if the reversed number equals the original number, indicating
-        # a palindrome
+        # Check if the reversed number is equal to the original number
         return reversed_num == original_num

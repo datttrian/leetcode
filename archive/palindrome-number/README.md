@@ -34,46 +34,33 @@ Given an integer `x`, return `true` *if* `x` *is a* ***palindrome*** *, and* `fa
 **Follow up:** Could you solve it without converting the integer to a
 string?
 
+
 # Intuition
-The problem is to determine whether a given integer is a palindrome. A palindrome is a number that reads the same backward as forward. The approach is to reverse the digits of the original number and check if the reversed number equals the original number.
+The problem involves determining whether an integer is a palindrome. A palindrome is a number that reads the same backward as forward. The approach involves reversing the given integer and comparing it with the original to check for equality.
 
 # Approach
-1. Special cases: Negative numbers and numbers ending with 0 are not palindromes. Return False in such cases.
-2. Initialize variables to store the reversed number (`reversed_num`) and the original number (`original_num`).
-3. Reverse the digits of the original number using a while loop:
-   - Extract the last digit (`digit`) from the original number.
-   - Update `reversed_num` by multiplying it by 10 and adding the digit.
-   - Remove the last digit from the original number (`x //= 10`).
-4. Check if the reversed number equals the original number, indicating a palindrome.
-5. Return True if the number is a palindrome; otherwise, return False.
+1. Check for special cases: If the input integer is negative or ends with a zero (except for zero itself), it cannot be a palindrome, and we return False.
+2. Initialize `reversed_num` to 0 and `original_num` to the input integer.
+3. Use a while loop to reverse the digits of the input integer and store the result in `reversed_num`.
+4. Compare the reversed integer with the original integer. If they are equal, the number is a palindrome, and we return True; otherwise, return False.
 
-# Time Complexity
-O(log10(x)) - The number of iterations in the while loop is proportional to the number of digits in the input integer.
-
-# Space Complexity
-O(1) - Constant space is used to store the reversed number and the original number.
+# Complexity
+- Time complexity: O(log10(n)), where n is the input integer. The number of digits in the integer is proportional to log10(n).
+- Space complexity: O(1), as only a constant amount of extra space is used.
 
 # Code
 ```python
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        # Special cases: Negative numbers and numbers ending with 0 are not
-        # palindromes
         if x < 0 or (x % 10 == 0 and x != 0):
             return False
-
-        # Initialize variables to store the reversed number and the original
-        # number
+        
         reversed_num = 0
         original_num = x
 
-        # Reverse the digits of the original number
         while x > 0:
-            digit = x % 10
+            x, digit = divmod(x, 10)
             reversed_num = reversed_num * 10 + digit
-            x //= 10
 
-        # Check if the reversed number equals the original number, indicating
-        # a palindrome
         return reversed_num == original_num
 ```

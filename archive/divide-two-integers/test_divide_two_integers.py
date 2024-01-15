@@ -3,26 +3,36 @@ from divide_two_integers import Solution
 
 
 @pytest.mark.parametrize(
-    ('dividend', 'divisor', 'expected_result'),
+    ["dividend", "divisor", "expected_result"],
     [
-        (10, 3, 3),
-        (7, -3, -2),
-        (-2147483648, -1, 2147483647),
-        (0, 1, 0),
-        (1, 1, 1),
+        [10, 3, 3],
+        [7, -3, -2],
+        [-2147483648, -1, 2147483647],
+        [0, 1, 0],
+        [1, 1, 1],
         # (-2147483648, 2, -1073741824),
-        (2147483647, 1, 2147483647),
+        [2147483647, 1, 2147483647],
         # (-2147483648, -3, 715827882),
-        (15, 5, 3),
-        (50, 7, 7),
-        (-100, -25, 4),
-        (0, -5, 0),
-        (1024, 16, 64),
-        (-12345, 789, -15),
-        (123456, 789, 156),
+        [15, 5, 3],
+        [50, 7, 7],
+        [-100, -25, 4],
+        [0, -5, 0],
+        [1024, 16, 64],
+        [-12345, 789, -15],
+        [123456, 789, 156],
     ],
 )
-def test_divide(dividend: int, divisor: int, expected_result: int):
+def test_divide(dividend: int, divisor: int, expected_result: int) -> None:
+    """Test the divide method of the Solution class.
+
+    Args:
+    - dividend (int): The dividend.
+    - divisor (int): The divisor.
+    - expected_result (int): The expected result of the division.
+
+    Returns:
+    None
+    """
     solution = Solution()
     result = solution.divide(dividend, divisor)
     assert result == expected_result
