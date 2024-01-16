@@ -8,9 +8,9 @@ class Solution:
                 mul = int(num1[i]) * int(num2[j])
                 p1, p2 = i + j, i + j + 1
                 total_sum = mul + pos[p2]
-
-                pos[p1] += total_sum // 10
-                pos[p2] = total_sum % 10
+                quotient, remainder = divmod(total_sum, 10)
+                pos[p1] += quotient
+                pos[p2] = remainder
 
         result = "".join(map(str, pos)).lstrip("0")
         return result if result else "0"
