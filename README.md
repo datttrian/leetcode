@@ -10,3 +10,4 @@
 |Difficulty|Problem                                                                                                                     |Complexity                                      |
 |----------|----------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
 |Easy      |[202. Happy Number](https://leetcode.com/problems/happy-number/solutions/4572602/o-log-n-o-1/)                                                             |[O(log n), O(1)](leetcode/happy-number)               |
+|Easy      |[66. Plus One](https://leetcode.com/problems/plus-one/solutions/4577752/o-n-o-n/)                                                             |[O(log n), O(1)](leetcode/happy-number)               |
