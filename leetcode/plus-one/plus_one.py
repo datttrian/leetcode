@@ -1,10 +1,15 @@
 class Solution:
-    def isHappy(self, n: int) -> bool:
-        def sum_squared_digits(num: int) -> int:
-            return sum(int(digit) ** 2 for digit in str(num))
+    def plusOne(self, digits: list[int]) -> list[int]:
+        n = len(digits)
 
-        slow, fast = n, sum_squared_digits(n)
-        while fast not in (1, slow):
-            slow = sum_squared_digits(slow)
-            fast = sum_squared_digits(sum_squared_digits(fast))
-        return fast == 1
+        for i in range(n - 1, -1, -1):
+            if digits[i] < 9:
+                digits[i] += 1
+                return digits
+
+            digits[i] = 0
+
+        new_number = [0] * (n + 1)
+        new_number[0] = 1
+
+        return new_number

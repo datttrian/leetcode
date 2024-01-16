@@ -9,7 +9,7 @@ from happy_number import Solution
         [2, False],  # Basic case with a non-happy number.
         [1, True],  # Minimal input case.
         [7, True],  # Another basic case with a happy number.
-        [1111111, True],  # Case with a large non-happy number.
+        [1111111, True],  # Case with a large happy number.
         [44, True],  # Case with a large happy number.
         [0, False],  # Edge case with zero.
     ],
