@@ -3,7 +3,7 @@ from powx_n import Solution
 
 
 @pytest.mark.parametrize(
-    ('x', 'n', 'expected'),
+    ("x", "n", "expected"),
     [
         (2.0, 10, 1024.0),
         # (2.1, 3, 9.261),
@@ -16,7 +16,7 @@ from powx_n import Solution
         (-2.0, 9, -512.0),
     ],
 )
-def test_myPow(x: float, n: int, expected: float):
+def test_powx_n(x: float, n: int, expected: float) -> None:
     solution = Solution()
     result = solution.myPow(x, n)
     # assert result == pytest.approx(expected, rel=1e-5)
