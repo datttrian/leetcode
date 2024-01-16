@@ -3,10 +3,10 @@ class Solution:
         if n < 0:
             x = 1 / x
             n = -n
-        powx: float = 1
+        pow_x: float = 1
         while n:
             if n & 1:
-                powx *= x
+                pow_x *= x
             x *= x
             n >>= 1
-        return powx
+        return pow_x
