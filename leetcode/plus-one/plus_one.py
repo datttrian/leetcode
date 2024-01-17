@@ -9,7 +9,7 @@ class Solution:
 
             digits[i] = 0
 
-        new_number = [0] * (n + 1)
-        new_number[0] = 1
+        new_digits = [0] * (n + 1)
+        new_digits[0] = 1
 
-        return new_number
+        return new_digits
