@@ -9,11 +9,12 @@ class Solution:
         for i1, digit1 in enumerate(num1):
             for i2, digit2 in enumerate(num2):
                 digit = int(digit1) * int(digit2)
-                result[i1 + i2] += digit
-                result[i1 + i2 + 1] += result[i1 + i2] // 10
-                result[i1 + i2] = result[i1 + i2] % 10
+                carry, remainder = divmod(result[i1 + i2] + digit, 10)
+                result[i1 + i2] = remainder
+                result[i1 + i2 + 1] += carry
 
         result, begin = result[::-1], 0
         while begin < len(result) and result[begin] == 0:
             begin += 1
+
         return "".join(map(str, result[begin:]))

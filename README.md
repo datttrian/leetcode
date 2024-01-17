@@ -10,5 +10,6 @@
 |Difficulty|Problem                                                                                                                     |Complexity                                      |
 |----------|----------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
 |Easy      |[202. Happy Number](https://leetcode.com/problems/happy-number/solutions/4572602/o-log-n-o-1/)                              |[O(log n), O(1)](leetcode/happy-number)         |
-|Easy      |[50. Pow(x, n)](https://leetcode.com/problems/powx-n/solutions/4577797/o-log-n-o-1/)                                        |[O(log n), O(1)](leetcode/powx-n)               |
 |Easy      |[66. Plus One](https://leetcode.com/problems/plus-one/solutions/4577752/o-n-o-n/)                                           |[O(n), O(n)](leetcode/plus-one)                 |
+|Medium    |[50. Pow(x, n)](https://leetcode.com/problems/powx-n/solutions/4577797/o-log-n-o-1/)                                        |[O(log n), O(1)](leetcode/powx-n)               |
+|Medium    |[43. Multiply Strings](https://leetcode.com/problems/multiply-strings/solutions/4577895/o-m-n-o-m-n/)                       |[O(m * n), O(m + n)](leetcode/multiply-strings) |
