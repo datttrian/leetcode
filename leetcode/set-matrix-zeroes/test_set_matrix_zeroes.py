@@ -3,7 +3,7 @@ from set_matrix_zeroes import Solution
 
 
 @pytest.mark.parametrize(
-    ('matrix', 'expected'),
+    ("matrix", "expected"),
     [
         (
             [
@@ -77,7 +77,9 @@ from set_matrix_zeroes import Solution
         ),
     ],
 )
-def test_setZeroes(matrix: list[list[int]], expected: list[list[int]]):
+def test_set_matrix_zeroes(
+    matrix: list[list[int]], expected: list[list[int]]
+) -> None:
     solution = Solution()
     solution.setZeroes(matrix)
     assert matrix == expected
