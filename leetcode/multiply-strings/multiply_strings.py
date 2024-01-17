@@ -1,16 +1,19 @@
 class Solution:
     def multiply(self, num1: str, num2: str) -> str:
-        m, n = len(num1), len(num2)
-        pos = [0] * (m + n)
+        if "0" in [num1, num2]:
+            return "0"
 
-        for i in range(m - 1, -1, -1):
-            for j in range(n - 1, -1, -1):
-                mul = int(num1[i]) * int(num2[j])
-                p1, p2 = i + j, i + j + 1
-                total_sum = mul + pos[p2]
-                quotient, remainder = divmod(total_sum, 10)
-                pos[p1] += quotient
-                pos[p2] = remainder
+        result = [0] * (len(num1) + len(num2))
+        num1, num2 = num1[::-1], num2[::-1]
 
-        result = "".join(map(str, pos)).lstrip("0")
-        return result if result else "0"
+        for i1, digit1 in enumerate(num1):
+            for i2, digit2 in enumerate(num2):
+                digit = int(digit1) * int(digit2)
+                result[i1 + i2] += digit
+                result[i1 + i2 + 1] += result[i1 + i2] // 10
+                result[i1 + i2] = result[i1 + i2] % 10
+
+        result, begin = result[::-1], 0
+        while begin < len(result) and result[begin] == 0:
+            begin += 1
+        return "".join(map(str, result[begin:]))
