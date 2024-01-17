@@ -5,7 +5,7 @@ from rotate_image import Solution
 
 
 @pytest.mark.parametrize(
-    ('matrix', 'expected'),
+    ("matrix", "expected"),
     [
         ([[1, 2, 3], [4, 5, 6], [7, 8, 9]], [[7, 4, 1], [8, 5, 2], [9, 6, 3]]),
         (
@@ -16,7 +16,7 @@ from rotate_image import Solution
         ([[1, 2], [3, 4]], [[3, 1], [4, 2]]),
     ],
 )
-def test_rotate(matrix: List[List[int]], expected: None):
+def test_rotate(matrix: List[List[int]], expected: None) -> None:
     solution = Solution()
     solution.rotate(matrix)
     assert matrix == expected
