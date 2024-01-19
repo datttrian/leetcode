@@ -1,4 +1,6 @@
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/datttrian/leetcode)
+[![Build Status](https://github.com/datttrian/leetcode/actions/workflows/checks.yml/badge.svg)](https://github.com/datttrian/leetcode/actions/workflows/checks.yml)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
 # Blind 75
 
@@ -11,9 +13,6 @@
 |Medium    |[54. Spiral Matrix](https://leetcode.com/problems/spiral-matrix/solutions/4590643/o-m-n-o-1/.   )                           |[O(m * n), O(1)](leetcode/spiral-matrix)        |
 
 # NeetCode 150
-
-[![Build Status](https://github.com/datttrian/leetcode/actions/workflows/checks.yml/badge.svg)](https://github.com/datttrian/leetcode/actions/workflows/checks.yml)
-[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
 ## Math & Geometry
 
