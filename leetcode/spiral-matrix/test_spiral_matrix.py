@@ -16,7 +16,7 @@ from spiral_matrix import Solution
         ([[1, 2, 3, 4]], [1, 2, 3, 4]),
     ],
 )
-def test_spiralOrder(matrix: list[list[int]], expected: list[int]) -> None:
+def test_spiral_matrix(matrix: list[list[int]], expected: list[int]) -> None:
     solution = Solution()
     result = solution.spiralOrder(matrix)
     assert result == expected
