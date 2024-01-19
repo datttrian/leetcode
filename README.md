@@ -1,4 +1,5 @@
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/datttrian/leetcode)
+
 [![Build Status](https://github.com/datttrian/leetcode/actions/workflows/checks.yml/badge.svg)](https://github.com/datttrian/leetcode/actions/workflows/checks.yml)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
