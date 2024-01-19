@@ -1,5 +1,9 @@
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/datttrian/leetcode)
 
+# Basics
+
+
+
 # [NeetCode 150](https://neetcode.io/practice)
 
 [![Build Status](https://github.com/datttrian/leetcode/actions/workflows/checks.yml/badge.svg)](https://github.com/datttrian/leetcode/actions/workflows/checks.yml)
