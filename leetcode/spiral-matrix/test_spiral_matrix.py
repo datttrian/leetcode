@@ -1,11 +1,9 @@
-from typing import List
-
 import pytest
 from spiral_matrix import Solution
 
 
 @pytest.mark.parametrize(
-    ('matrix', 'expected'),
+    ("matrix", "expected"),
     [
         ([[1, 2, 3], [4, 5, 6], [7, 8, 9]], [1, 2, 3, 6, 9, 8, 7, 4, 5]),
         (
@@ -18,7 +16,7 @@ from spiral_matrix import Solution
         ([[1, 2, 3, 4]], [1, 2, 3, 4]),
     ],
 )
-def test_spiralOrder(matrix: List[List[int]], expected: List[int]):
+def test_spiralOrder(matrix: list[list[int]], expected: list[int]) -> None:
     solution = Solution()
     result = solution.spiralOrder(matrix)
     assert result == expected

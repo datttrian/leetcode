@@ -1,19 +1,34 @@
 class Solution:
     def spiralOrder(self, matrix: list[list[int]]) -> list[int]:
-        result: list[int] = []
+        res: list[int] = []
 
-        while matrix:
-            result += matrix.pop(0)
+        if not matrix or not matrix[0]:
+            return res
 
-            if matrix and matrix[0]:
-                for row in matrix:
-                    result.append(row.pop())
+        row_begin, row_end, col_begin, col_end = (
+            0,
+            len(matrix) - 1,
+            0,
+            len(matrix[0]) - 1,
+        )
 
-            if matrix:
-                result += matrix.pop()[::-1]
+        while row_begin <= row_end and col_begin <= col_end:
+            for j in range(col_begin, col_end + 1):
+                res.append(matrix[row_begin][j])
+            row_begin += 1
 
-            if matrix and matrix[0]:
-                for row in matrix[::-1]:
-                    result.append(row.pop(0))
+            for j in range(row_begin, row_end + 1):
+                res.append(matrix[j][col_end])
+            col_end -= 1
 
-        return result
+            if row_begin <= row_end:
+                for j in range(col_end, col_begin - 1, -1):
+                    res.append(matrix[row_end][j])
+                row_end -= 1
+
+            if col_begin <= col_end:
+                for j in range(row_end, row_begin - 1, -1):
+                    res.append(matrix[j][col_begin])
+                col_begin += 1
+
+        return res

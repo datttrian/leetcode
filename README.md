@@ -8,6 +8,7 @@
 |----------|----------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
 |Medium    |[48. Rotate Image](https://leetcode.com/problems/rotate-image/solutions/4584106/o-n-2-o-1/)                                 |[O(n^2), O(1)](leetcode/rotate-image)           |
 |Medium    |[73. Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/solutions/4584134/o-m-n-o-1/)                       |[O(m * n), O(1)](leetcode/set-matrix-zeroes)    |
+|Medium    |[54. Spiral Matrix](https://leetcode.com/problems/set-matrix-zeroes/solutions/4584134/o-m-n-o-1/)                           |[O(m * n), O(1)](leetcode/set-matrix-zeroes)    |
 
 # NeetCode 150
 
