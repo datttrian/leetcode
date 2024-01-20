@@ -1,43 +1,36 @@
 {
-    "git.autofetch": true,
-    "gitdoc.enabled": true,
-    "gitdoc.autoCommitDelay": 60000,
-    "gitdoc.autoPullDelay": 0,
-    "gitdoc.autoPushDelay": 0,
-    "gitdoc.commitMessageFormat": "ccc, LLL d, y, h:mm a '+00:00'",
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
-
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter",
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": "explicit"
-        },
-    },
-    "python.formatting.provider": "none",
-    "black-formatter.args": [
-        "--line-length=79"
-    ],
-    "flake8.importStrategy": "fromEnvironment",
-    "flake8.args": [
-        "--ignore=D100,D101,D102,D103,D107,E203,W503,D400,D205,D415"
-    ],
-    "python.analysis.typeCheckingMode": "strict",
-    // Show vertical line after 79 to visualize end of line
-    "editor.rulers": [
-        79
-    ],
-    // Improve brackets displaying
-    "editor.bracketPairColorization.enabled": true,
-    // Disable pylance type checking because we want to use mypy for this
-    "python.analysis.typeCheckingMode": "off",
-    // Display inline hints for types of returned values
-    "python.analysis.inlayHints.functionReturnTypes": true,
-    // Enable linting by flake8 and mypy
-    "python.linting.flake8Enabled": true,
-    "python.linting.mypyEnabled": true,
-    // Enable using pytest for testing
-    "python.testing.unittestEnabled": false,
-    "python.testing.pytestEnabled": true,
+  "git.autofetch":true,
+  "gitdoc.enabled":true,
+  "gitdoc.autoCommitDelay":60000,
+  "gitdoc.autoPullDelay":0,
+  "gitdoc.autoPushDelay":0,
+  "gitdoc.commitMessageFormat":"ccc, LLL d, y, h:mm a '+00:00'",
+  "editor.formatOnPaste":true,
+  "editor.formatOnSave":true,
+  "[python]":{
+    "editor.defaultFormatter":"ms-python.black-formatter",
+    "editor.formatOnSave":true,
+    "editor.codeActionsOnSave":{
+      "source.organizeImports":"explicit"
+    }
+  },
+  "python.formatting.provider":"none",
+  "black-formatter.args":[
+    "--line-length=79"
+  ],
+  "flake8.importStrategy":"fromEnvironment",
+  "flake8.args":[
+    "--ignore=D100,D101,D102,D103,D107,E203,W503,D400,D205,D415"
+  ],
+  "python.analysis.typeCheckingMode":"strict",
+  "editor.rulers":[
+    79
+  ],
+  "editor.bracketPairColorization.enabled":true,
+  "python.analysis.typeCheckingMode":"off",
+  "python.analysis.inlayHints.functionReturnTypes":true,
+  "python.linting.flake8Enabled":true,
+  "python.linting.mypyEnabled":true,
+  "python.testing.unittestEnabled":false,
+  "python.testing.pytestEnabled":true
 }
