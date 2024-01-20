@@ -26,7 +26,6 @@
     79
   ],
   "editor.bracketPairColorization.enabled":true,
-  "python.analysis.typeCheckingMode":"off",
   "python.analysis.inlayHints.functionReturnTypes":true,
   "python.linting.flake8Enabled":true,
   "python.linting.mypyEnabled":true,
