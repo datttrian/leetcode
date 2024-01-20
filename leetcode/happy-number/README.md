@@ -12,8 +12,6 @@ A **happy number** is a number defined by the following process:
 
 Return `true` *if* `n` *is a happy number, and* `false` *if not*.
 
- 
-
 **Example 1:**
 
     Input: n = 19
@@ -24,15 +22,11 @@ Return `true` *if* `n` *is a happy number, and* `false` *if not*.
     6^2 + 8^2 = 100
     1^2 + 0^2 + 0^2 = 1
         
-
 **Example 2:**
 
     Input: n = 2
     Output: false
         
-
- 
-
 **Constraints:**
 
 - `1 <= n <= 2`<sup>`31`</sup>` - 1`
