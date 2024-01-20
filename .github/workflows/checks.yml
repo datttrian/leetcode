@@ -1,27 +1,33 @@
-name: Build Status
+---
+name: Lint
 
-on:
-  - push
+on:  # yamllint disable-line rule:truthy
+  push: null
+  pull_request: null
 
 jobs:
   build:
+    name: Lint
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: read
+      # To report GitHub Actions status checks
+      statuses: write
+
     steps:
-      - uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Checkout code
+        uses: actions/checkout@v4
         with:
-          python-version: ""
-      # - name: Install Poetry
-      #   uses: snok/install-poetry@v1
-      # - name: Install Python dependencies
-      #   run: |
-      #     poetry update
-      #     poetry install
-      - name: Install dependencies
-        run: |
-          pip install --requirement  requirements.txt
-      - name: Run tests
-        run: ./tests.sh
-      - name: Check style
-        run: ./style.sh
+          # super-linter needs the full git history to get the
+          # list of files that changed across commits
+          fetch-depth: 0
+
+      - name: Super-linter
+        uses: super-linter/super-linter@v5.7.2  # x-release-please-version
+        env:
+          DEFAULT_BRANCH: main
+          # To report GitHub Actions status checks
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+...
