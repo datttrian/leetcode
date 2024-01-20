@@ -14,4 +14,6 @@ python -m isort leetcode
 
 
 docker pull github/super-linter:latest
+docker run -e RUN_LOCAL=true -e USE_FIND_ALGORITHM=true -e VALIDATE_MARKDOWN=false -v "$(pwd)":/tmp/lint github/super-linter
+
 docker run -e RUN_LOCAL=true -v "$(pwd)":/tmp/lint github/super-linter
