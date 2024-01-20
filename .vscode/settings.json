@@ -5,7 +5,6 @@
   "gitdoc.autoPullDelay":0,
   "gitdoc.autoPushDelay":0,
   "gitdoc.commitMessageFormat":"ccc, LLL d, y, h:mm a '+00:00'",
-  "editor.formatOnPaste":true,
   "editor.formatOnSave":true,
   "[python]":{
     "editor.defaultFormatter":"ms-python.black-formatter",
