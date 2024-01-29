@@ -6,13 +6,10 @@
   "gitdoc.autoPushDelay":0,
   "gitdoc.commitMessageFormat":"ccc, LLL d, y, h:mm a '+00:00'",
   "editor.formatOnSave":true,
-  "[python]":{
+  "[python]": {
     "editor.defaultFormatter":"ms-python.black-formatter",
-    "editor.formatOnSave":true,
-    "editor.codeActionsOnSave":{
-      "source.organizeImports":"explicit"
-    }
   },
+  
   "python.formatting.provider":"none",
   "black-formatter.args":[
     "--line-length=79"
@@ -30,5 +27,6 @@
   "python.linting.flake8Enabled":true,
   "python.linting.mypyEnabled":true,
   "python.testing.unittestEnabled":false,
-  "python.testing.pytestEnabled":true
+  "python.testing.pytestEnabled":true,
+  "files.insertFinalNewline": true
 }
