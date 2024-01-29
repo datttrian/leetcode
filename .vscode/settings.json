@@ -5,9 +5,13 @@
   "gitdoc.autoPullDelay":0,
   "gitdoc.autoPushDelay":0,
   "gitdoc.commitMessageFormat":"ccc, LLL d, y, h:mm a '+00:00'",
-  "editor.formatOnSave":true,
+  "editor.formatOnSfave": true,
   "[python]": {
-    "editor.defaultFormatter":"ms-python.black-formatter",
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.tabSize": 2
   },
   
   "python.formatting.provider":"none",

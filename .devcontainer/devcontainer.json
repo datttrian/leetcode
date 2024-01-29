@@ -10,6 +10,7 @@
         "donjayamanne.python-environment-manager",
         "KevinRose.vsc-python-indent",
         "ms-python.black-formatter",
+        "EditorConfig.EditorConfig",
         "ms-python.pylint",
         "ms-python.python",
         "ms-python.flake8",
