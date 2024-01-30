@@ -3,7 +3,7 @@ from three_sum import Solution
 
 
 @pytest.mark.parametrize(
-    ('nums', 'expected'),
+    ("nums", "expected"),
     [
         ([], []),
         ([0, 0, 0], [(0, 0, 0)]),
@@ -16,6 +16,8 @@ from three_sum import Solution
         ([1, 1, 1, 1], []),
     ],
 )
-def test_three_sum(nums: list[int], expected: list[tuple[int, int, int]]):
+def test_three_sum(
+    nums: list[int], expected: list[tuple[int, int, int]]
+) -> None:
     solution = Solution()
     assert solution.threeSum(nums) == expected
