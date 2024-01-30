@@ -26,7 +26,7 @@ from container_with_most_water import Solution
         [[1], 0],  # List with only one element.
     ],
 )
-def test_max_area(height: list[int], expected: int) -> None:
+def test_container_with_most_water(height: list[int], expected: int) -> None:
     container = Solution()
     result = container.maxArea(height)
     assert result == expected

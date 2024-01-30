@@ -16,6 +16,6 @@ from three_sum import Solution
         ([1, 1, 1, 1], []),
     ],
 )
-def test_threeSum(nums: list[int], expected: list[tuple[int, int, int]]):
+def test_three_sum(nums: list[int], expected: list[tuple[int, int, int]]):
     solution = Solution()
     assert solution.threeSum(nums) == expected
