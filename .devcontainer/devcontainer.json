@@ -1,10 +1,16 @@
 {
-  "customizations":{
-    "vscode":{
-      "extensions":[
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode-remote.remote-containers",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "GitHub.codespaces",
+        "vsls-contrib.gitdoc",
         "donjayamanne.python-environment-manager",
         "KevinRose.vsc-python-indent",
         "ms-python.black-formatter",
+        "EditorConfig.EditorConfig",
         "ms-python.pylint",
         "ms-python.python",
         "ms-python.flake8",
@@ -16,7 +22,7 @@
         "streetsidesoftware.code-spell-checker",
         "VisualStudioExptTeam.intellicode-api-usage-examples",
         "VisualStudioExptTeam.vscodeintellicode",
-        "vsls-contrib.gitdoc"
+        "markdownlint.markdownlint"
       ]
     }
   }
