@@ -3,7 +3,7 @@ from three_sum import Solution
 
 
 @pytest.mark.parametrize(
-    ("nums", "expected"),
+    ["nums", "expected"],
     [
         ([], []),
         ([0, 0, 0], [(0, 0, 0)]),

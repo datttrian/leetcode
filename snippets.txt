@@ -1,1 +1,3 @@
 docker run -e RUN_LOCAL=true -e VALIDATE_MARKDOWN=false -e VALIDATE_EDITORCONFIG=false -v "$(pwd)":/tmp/lint github/super-linter
+docker run -e RUN_LOCAL=true -e VALIDATE_PYTHON_BLACK=true -v "$(pwd)":/tmp/lint github/super-linter
+
