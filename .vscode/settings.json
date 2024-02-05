@@ -1,36 +1,33 @@
 {
-  "git.autofetch":true,
-  "gitdoc.enabled":true,
-  "gitdoc.autoCommitDelay":60000,
-  "gitdoc.autoPullDelay":0,
-  "gitdoc.autoPushDelay":0,
-  "gitdoc.commitMessageFormat":"ccc, LLL d, y, h:mm a '+00:00'",
-  "editor.formatOnSfave": true,
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features",
-    "editor.tabSize": 2
-  },
-  
-  "python.formatting.provider":"none",
-  "black-formatter.args":[
-    "--line-length=79"
-  ],
-  "flake8.importStrategy":"fromEnvironment",
-  "flake8.args":[
-    "--ignore=D100,D101,D102,D103,D107,E203,W503,D400,D205,D415"
-  ],
-  "python.analysis.typeCheckingMode":"strict",
-  "editor.rulers":[
-    79
-  ],
-  "editor.bracketPairColorization.enabled":true,
-  "python.analysis.inlayHints.functionReturnTypes":true,
-  "python.linting.flake8Enabled":true,
-  "python.linting.mypyEnabled":true,
-  "python.testing.unittestEnabled":false,
-  "python.testing.pytestEnabled":true,
-  "files.insertFinalNewline": true
+    "git.autofetch": true,
+    "gitdoc.enabled": true,
+    "gitdoc.autoCommitDelay": 60000,
+    "gitdoc.autoPullDelay": 0,
+    "gitdoc.autoPushDelay": 0,
+    "gitdoc.commitMessageFormat": "ccc, LLL d, y, h:mm a '+00:00'",
+    "editor.formatOnSfave": true,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features",
+        "editor.tabSize": 2
+    },
+    "python.formatting.provider": "none",
+    "black-formatter.args": [
+        "--line-length=79"
+    ],
+    "flake8.importStrategy": "fromEnvironment",
+    "flake8.args": [
+        "--ignore=D100,D101,D102,D103,D107,E203,W503,D400,D205,D415"
+    ],
+    "python.analysis.typeCheckingMode": "strict",
+    "editor.rulers": [
+        79
+    ],
+    "editor.bracketPairColorization.enabled": true,
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "files.insertFinalNewline": true
 }
