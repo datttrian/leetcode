@@ -4,6 +4,7 @@ class Solution:
         nums1: list[int],
         nums2: list[int],
     ) -> float:
+        # pylint: disable=C0103
         A, B = (nums1, nums2) if len(nums1) <= len(nums2) else (nums2, nums1)
 
         total_length = len(A) + len(B)
