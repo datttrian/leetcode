@@ -16,10 +16,10 @@ class Solution:
             i = (left_index + right_index) // 2
             j = half_point - i - 2
 
-            a_left = A[i] if i >= 0 else float('-infinity')
-            a_right = A[i + 1] if (i + 1) < len(A) else float('infinity')
-            b_left = B[j] if j >= 0 else float('-infinity')
-            b_right = B[j + 1] if (j + 1) < len(B) else float('infinity')
+            a_left = A[i] if i >= 0 else float("-infinity")
+            a_right = A[i + 1] if (i + 1) < len(A) else float("infinity")
+            b_left = B[j] if j >= 0 else float("-infinity")
+            b_right = B[j + 1] if (j + 1) < len(B) else float("infinity")
 
             if a_left <= b_right and b_left <= a_right:
                 if total_length % 2:
