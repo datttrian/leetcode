@@ -3,7 +3,7 @@ class Solution:
         if numRows == 1 or numRows >= len(s):
             return s
 
-        rows = [''] * numRows
+        rows = [""] * numRows
         current_row = 0
         going_down = False
 
@@ -15,4 +15,4 @@ class Solution:
 
             current_row += 1 if going_down else -1
 
-        return ''.join(rows)
+        return "".join(rows)
