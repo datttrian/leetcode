@@ -14,7 +14,7 @@ class TestSolution:
             ("abcdefedcba", "abcdefedcba"),
         ],
     )
-    def test_longest_palindrome(
+    def test_longest_palindromic_substring(
         self, input_str: str, expected_output: str
     ) -> None:
         solution = Solution()
