@@ -11,15 +11,3 @@ class Solution:
             num_dict[num] = i
 
         return []
-
-
-if __name__ == "__main__":
-    nums = [3, 2, 4]
-    target = 6
-
-    # Place a breakpoint at the line of function call
-    # For example:
-    # breakpoint()  # Before calling the function
-    result = Solution().twoSum(nums, target)
-
-    print("Indices:", result)
