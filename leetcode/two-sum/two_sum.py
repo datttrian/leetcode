@@ -2,12 +2,6 @@ class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
         num_dict: dict[int, int] = {}
 
-        # Place breakpoints in the function
-        # For example:
-        # breakpoint()  # Start of the function
-        # breakpoint()  # Inside the loop
-        # breakpoint()  # Just before the return statement
-
         for i, num in enumerate(nums):
             complement = target - num
 
