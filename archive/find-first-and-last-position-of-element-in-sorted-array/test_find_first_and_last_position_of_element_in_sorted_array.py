@@ -1,0 +1,24 @@
+from typing import List
+
+import pytest
+from find_first_and_last_position_of_element_in_sorted_array import Solution
+
+
+@pytest.mark.parametrize(
+    ('nums', 'target', 'expected_result'),
+    [
+        ([5, 7, 7, 8, 8, 10], 8, [3, 4]),
+        ([5, 7, 7, 8, 8, 10], 6, [-1, -1]),
+        ([], 0, [-1, -1]),
+        ([1], 1, [0, 0]),
+        ([2, 2], 2, [0, 1]),
+        ([1, 2, 3, 4, 5, 6], 4, [3, 3]),
+        ([1, 2, 2, 3, 4, 4, 4, 5, 6], 4, [4, 6]),
+        ([1, 2, 2, 3, 4, 4, 4, 5, 6], 7, [-1, -1]),
+        ([1, 2, 2, 3, 4, 4, 4, 5, 6], 0, [-1, -1]),
+    ],
+)
+def test_searchRange(nums: List[int], target: int, expected_result: List[int]):
+    solution = Solution()
+    result = solution.searchRange(nums, target)
+    assert result == expected_result
