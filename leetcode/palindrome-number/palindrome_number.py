@@ -3,12 +3,9 @@ class Solution:
         if x < 0 or (x % 10 == 0 and x != 0):
             return False
 
-        reversed_num = 0
+        reversed_half = 0
+        while x > reversed_half:
+            reversed_half = reversed_half * 10 + x % 10
+            x //= 10
 
-        original_num = x
-
-        while x > 0:
-            x, digit = divmod(x, 10)
-            reversed_num = reversed_num * 10 + digit
-
-        return reversed_num == original_num
+        return x == reversed_half or x == reversed_half // 10
