@@ -1,6 +1,6 @@
 {
     "git.autofetch": true,
-    "gitdoc.enabled": true,
+    "gitdoc.enabled": false,
     "gitdoc.autoCommitDelay": 60000,
     "gitdoc.autoPullDelay": 0,
     "gitdoc.autoPushDelay": 0,
