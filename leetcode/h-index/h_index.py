@@ -2,13 +2,10 @@ class Solution:
     def hIndex(self, citations: list[int]) -> int:
         citations.sort()
         n = len(citations)
-        left, right = 0, n - 1
-
-        while left <= right:
-            mid = left + (right - left) // 2
-            if citations[mid] >= n - mid:
-                right = mid - 1
+        h = 0
+        for i in range(n - 1, -1, -1):
+            if citations[i] >= n - i:
+                h = max(h, n - i)
             else:
-                left = mid + 1
-
-        return n - left
+                break
+        return h
