@@ -20,3 +20,4 @@
 |Easy      |[242. Valid Anagram](https://leetcode.com/problems/valid-anagram/solutions/5069127/on-o1/)                                  |Arrays                                        |O(n), O(1)                                      |
 |Easy      |[242. Valid Anagram](https://leetcode.com/problems/valid-anagram/solutions/5069036/on-on/)                                  |Hash Map                                      |O(n), O(n)                                      |
 |Easy      |[242. Valid Anagram](https://leetcode.com/problems/valid-anagram/solutions/5069033/on-log-n-on/)                            |Sorting                                       |O(n log n), O(n)                                |
+|Medium    |274. H-Index                                                                                                                |Linear Search                                 |O(n), O(n)                                      |
