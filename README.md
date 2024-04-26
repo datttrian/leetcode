@@ -14,6 +14,7 @@
 |Difficulty|Problem                                                                                                                     |Approach                                      |Complexity                                      |
 |----------|----------------------------------------------------------------------------------------------------------------------------|----------------------------------------------|------------------------------------------------|
 |Hard      |4. Median of Two Sorted Arrays                                                                                              |Binary Search                                 |O(log(min(n, m))), O(n)                         |
+|Medium    |121. Best Time to Buy and Sell Stock                            |                                   |                                      |
 |Medium    |[125. Valid Palindrome](https://leetcode.com/problems/valid-palindrome/solutions/5077384/on-on/)                            |Brute Force                                   |O(n), O(n)                                      |
 |Medium    |[125. Valid Palindrome](https://leetcode.com/problems/valid-palindrome/solutions/5077373/on-o1/)                            |Two Pointers                                  |O(n), O(1)                                      |
 |Medium    |[217. Contains Duplicate](https://leetcode.com/problems/contains-duplicate/solutions/5064039/on-on/)                        |Hash Set                                      |O(n), O(n)                                      |
