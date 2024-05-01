@@ -1,29 +1,27 @@
 {
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "ms-vscode-remote.remote-containers",
-        "GitHub.copilot",
-        "GitHub.copilot-chat",
-        "GitHub.codespaces",
-        "vsls-contrib.gitdoc",
-        "donjayamanne.python-environment-manager",
-        "KevinRose.vsc-python-indent",
-        "ms-python.black-formatter",
-        "EditorConfig.EditorConfig",
-        "ms-python.pylint",
-        "ms-python.python",
-        "ms-python.flake8",
-        "ms-python.mypy-type-checker",
-        "ms-python.vscode-pylance",
-        "njpwerner.autodocstring",
-        "PKief.material-icon-theme",
-        "rvest.vs-code-prettier-eslint",
-        "streetsidesoftware.code-spell-checker",
-        "VisualStudioExptTeam.intellicode-api-usage-examples",
-        "VisualStudioExptTeam.vscodeintellicode",
-        "markdownlint.markdownlint"
-      ]
+    "name": "Python 3",
+    "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bullseye",
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vsls-contrib.gitdoc",
+                "ms-toolsai.jupyter",
+                "TianyiShi.rmarkdown",
+                "ms-python.pylint",
+                "ms-python.python",
+                "ms-python.flake8",
+                "ms-python.vscode-pylance",
+                "ms-python.mypy-type-checker",
+                "ms-python.black-formatter",
+                "streetsidesoftware.code-spell-checker",
+                "DavidAnson.vscode-markdownlint",
+                "EditorConfig.EditorConfig",
+                "VisualStudioExptTeam.intellicode-api-usage-examples",
+                "VisualStudioExptTeam.vscodeintellicode"
+            ]
+        }
     }
-  }
 }
