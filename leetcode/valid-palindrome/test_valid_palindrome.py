@@ -20,6 +20,6 @@ from valid_palindrome import Solution
         ],
     ],
 )
-def test_is_palindrome(s: str, t: str, expected_result: bool) -> None:
+def test_isPalindrome(s: str, t: str, expected_result: bool) -> None:
     solution = Solution()
     assert solution.isPalindrome(s, t) == expected_result

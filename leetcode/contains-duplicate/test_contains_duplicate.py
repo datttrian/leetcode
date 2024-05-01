@@ -10,6 +10,6 @@ from contains_duplicate import Solution
         [[1, 1, 1, 3, 3, 4, 3, 2, 4, 2], True],
     ],
 )
-def test_contains_duplicate(input_nums: list[int], expected: bool) -> None:
+def test_containsDuplicate(input_nums: list[int], expected: bool) -> None:
     solution = Solution()
     assert solution.containsDuplicate(input_nums) == expected

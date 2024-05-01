@@ -12,6 +12,6 @@ from h_index import Solution
         [[0, 1, 3, 5, 6], 3],
     ],
 )
-def test_h_index(citations: list[int], expected_h_index: int) -> None:
+def test_hIndex(citations: list[int], expected_h_index: int) -> None:
     solution = Solution()
     assert solution.hIndex(citations) == expected_h_index
