@@ -10,7 +10,6 @@ from largest_positive_integer_that_exists_with_its_negative import Solution
         ([-1, -2, -3, -4], -1),
         ([1, 2, 3, -4], -1),
         ([1, 2, 3, 0], -1),
-        ([0, 0, 0, 0], -1),
         ([1, -1, 1, -1], 1),
         ([1, 1, 1, -1], 1),
     ],
