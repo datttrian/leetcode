@@ -1,15 +1,20 @@
-import heapq
-
-
 class Solution:
     def findMaxK(self, nums: list[int]) -> int:
-        max_heap: list[int] = []
 
-        for num in nums:
-            heapq.heappush(max_heap, -num)
+        nums.sort()
+        left, right = 0, len(nums) - 1
+        largest_k = -1
 
-        while max_heap:
-            num = -heapq.heappop(max_heap)
-            if num in max_heap:
-                return num
-        return -1
+        while left < right:
+            current_sum = nums[left] + nums[right]
+            if current_sum == 0:
+                if nums[right] > 0:
+                    largest_k = max(largest_k, nums[right])
+                left += 1
+                right -= 1
+            elif current_sum > 0:
+                right -= 1
+            else:
+                left += 1
+
+        return largest_k
