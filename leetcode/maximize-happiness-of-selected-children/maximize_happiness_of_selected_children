@@ -1,11 +1,16 @@
+import heapq
+
+
 class Solution:
     def maximumHappinessSum(self, happiness: list[int], k: int) -> int:
-        happiness_list = list(happiness)
-        happiness_list.sort(reverse=True)
+        neg_happiness = [-h for h in happiness]
+        heapq.heapify(neg_happiness)
 
-        max_happiness = 0
+        total_sum = 0
+        turns = 0
 
-        for i in range(k):
-            max_happiness += max(happiness_list[i] - i, 0)
+        for _ in range(k):
+            total_sum += max(-heapq.heappop(neg_happiness) - turns, 0)
+            turns += 1
 
-        return max_happiness
+        return total_sum
