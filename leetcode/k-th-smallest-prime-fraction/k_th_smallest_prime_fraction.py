@@ -1,14 +1,32 @@
-from typing import Tuple
-
-
 class Solution:
     def kthSmallestPrimeFraction(self, arr: list[int], k: int) -> list[int]:
-        fractions: list[Tuple[float, int, int]] = []
+        n = len(arr)
+        low, high = 0.0, 1.0
 
-        for idx_i, val_i in enumerate(arr):
-            for _, val_j in enumerate(arr[idx_i + 1 :], start=idx_i + 1):
-                fractions.append((val_i / val_j, val_i, val_j))
+        while low < high:
+            mid = (low + high) / 2
+            count = 0
+            max_fraction = (0, 1)
+            i = 0
 
-        fractions.sort()
+            for j in range(1, n):
+                while i < j and arr[i] / arr[j] <= mid:
+                    i += 1
+                count += i
 
-        return [fractions[k - 1][1], fractions[k - 1][2]]
+                if i > 0:
+                    i -= 1
+
+                    if arr[i] / arr[j] <= mid and (
+                        arr[i] * max_fraction[1] > arr[j] * max_fraction[0]
+                    ):
+                        max_fraction = (arr[i], arr[j])
+
+            if count == k:
+                return list(max_fraction)
+            elif count < k:
+                low = mid + 1e-9
+            else:
+                high = mid
+
+        return []
