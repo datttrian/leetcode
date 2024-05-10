@@ -1,18 +1,14 @@
-import heapq
+from typing import Tuple
 
 
 class Solution:
     def kthSmallestPrimeFraction(self, arr: list[int], k: int) -> list[int]:
-        n = len(arr)
-        heap: list[tuple[float, int, int]] = []
+        fractions: list[Tuple[float, int, int]] = []
 
-        for i in range(n - 1):
-            heapq.heappush(heap, (arr[i] / arr[n - 1], i, n - 1))
+        for idx_i, val_i in enumerate(arr):
+            for _, val_j in enumerate(arr[idx_i + 1 :], start=idx_i + 1):
+                fractions.append((val_i / val_j, val_i, val_j))
 
-        for _ in range(k - 1):
-            _, i, j = heapq.heappop(heap)
-            if j - 1 > i:
-                heapq.heappush(heap, (arr[i] / arr[j - 1], i, j - 1))
+        fractions.sort()
 
-        _, i, j = heapq.heappop(heap)
-        return [arr[i], arr[j]]
+        return [fractions[k - 1][1], fractions[k - 1][2]]
