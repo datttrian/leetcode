@@ -1,7 +1,5 @@
 import pytest
-from k_th_smallest_prime_fraction import (
-    Solution,
-)
+from k_th_smallest_prime_fraction import Solution
 
 
 @pytest.mark.parametrize(

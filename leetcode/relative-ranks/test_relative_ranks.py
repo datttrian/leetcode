@@ -1,5 +1,4 @@
 import pytest
-
 from relative_ranks import Solution
 
 
