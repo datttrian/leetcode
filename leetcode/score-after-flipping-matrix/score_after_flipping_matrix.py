@@ -4,17 +4,18 @@ class Solution:
         for row in grid:
             if row[0] == 0:
                 for j in range(len(row)):
-                    row[j] = 1 - row[j]
+                    row[j] ^= 1
 
-        for j in range(1, len(grid[0])):
-            num_ones = sum(row[j] for row in grid)
+        for col in range(1, len(grid[0])):
+            num_ones = sum(row[col] for row in grid)
             if num_ones < len(grid) / 2:
                 for row in grid:
-                    row[j] = 1 - row[j]
+                    row[col] ^= 1
 
-        total_score = 0
+        score = 0
         for row in grid:
-            row_value = int("".join(map(str, row)), 2)
-            total_score += row_value
 
-        return total_score
+            row_value = int("".join(map(str, row)), 2)
+            score += row_value
+
+        return score
