@@ -1,6 +1,5 @@
 class Solution:
     def matrixScore(self, grid: list[list[int]]) -> int:
-
         for row in grid:
             if row[0] == 0:
                 for j in range(len(row)):
@@ -14,7 +13,6 @@ class Solution:
 
         score = 0
         for row in grid:
-
             row_value = int("".join(map(str, row)), 2)
             score += row_value
 
