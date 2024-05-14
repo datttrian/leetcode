@@ -1,13 +1,7 @@
 class Solution:
     def getMaximumGold(self, grid: list[list[int]]) -> int:
         def dfs(x: int, y: int) -> int:
-            if (
-                x < 0
-                or x >= len(grid)
-                or y < 0
-                or y >= len(grid[0])
-                or grid[x][y] == 0
-            ):
+            if x < 0 or x >= len(grid) or y < 0 or y >= len(grid[0]) or grid[x][y] == 0:
                 return 0
 
             current_gold = grid[x][y]
