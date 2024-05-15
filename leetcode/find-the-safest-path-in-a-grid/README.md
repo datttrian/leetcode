@@ -3,8 +3,8 @@
 You are given a **0-indexed** 2D matrix `grid` of size `n x n`, where
 `(r, c)` represents:
 
--   A cell containing a thief if `grid[r][c] = 1`
--   An empty cell if `grid[r][c] = 0`
+- A cell containing a thief if `grid[r][c] = 1`
+- An empty cell if `grid[r][c] = 0`
 
 You are initially positioned at cell `(0, 0)`. In one move, you can move
 to any adjacent cell in the grid, including cells containing thieves.
@@ -22,8 +22,6 @@ An **adjacent** cell of cell `(r, c)`, is one of the cells `(r, c + 1)`,
 The **Manhattan distance** between two cells `(a, b)` and `(x, y)` is
 equal to `|a - x| + |b - y|`, where `|val|` denotes the absolute value
 of val.
-
- 
 
 **Example 1:**
 
@@ -57,11 +55,9 @@ style="width: 362px; height: 242px;" />
     - The closest cell of the path to the thief at cell (3, 0) is cell (3, 2). The distance between them is | 3 - 3 | + | 0 - 2 | = 2.
     It can be shown that there are no other paths with a higher safeness factor.
 
- 
-
 **Constraints:**
 
--   `1 <= grid.length == n <= 400`
--   `grid[i].length == n`
--   `grid[i][j]` is either `0` or `1`.
--   There is at least one thief in the `grid`.
+- `1 <= grid.length == n <= 400`
+- `grid[i].length == n`
+- `grid[i][j]` is either `0` or `1`.
+- There is at least one thief in the `grid`.
