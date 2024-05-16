@@ -39,28 +39,3 @@ class Solution:
 
         # This point should never be reached if the input is valid
         raise ValueError("Invalid node value: must be 0, 1, 2, or 3")
-
-
-if __name__ == "__main__":
-    # Create the binary tree for testing
-    # Example:
-    #     2
-    #    / \
-    #   3   1
-    #  / \
-    # 0   1
-
-    # Creating nodes for the tree
-    node_0 = TreeNode(0)
-    node_1 = TreeNode(1)
-    node_3 = TreeNode(3, node_0, node_1)
-    root = TreeNode(2, node_3, node_1)
-
-    # Create a Solution object
-    solution = Solution()
-
-    # Evaluate the tree
-    result = solution.evaluateTree(root)
-
-    # Print the result
-    print(f"The result of evaluating the tree is: {result}")
