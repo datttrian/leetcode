@@ -28,7 +28,6 @@ class Solution:
 
         if root.val == 2:
             return left_eval or right_eval
-
         if root.val == 3:
             return left_eval and right_eval
 
