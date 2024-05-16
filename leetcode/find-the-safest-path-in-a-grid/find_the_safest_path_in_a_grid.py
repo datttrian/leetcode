@@ -4,9 +4,8 @@ from typing import Tuple
 
 
 class Solution:
-    def __init__(self) -> None:
-        self.row_directions: list[int] = [0, 0, -1, 1]
-        self.col_directions: list[int] = [-1, 1, 0, 0]
+    row_directions = [0, 0, -1, 1]
+    col_directions = [-1, 1, 0, 0]
 
     def bfs(
         self, grid: list[list[int]], scores: list[list[float]], n: int
