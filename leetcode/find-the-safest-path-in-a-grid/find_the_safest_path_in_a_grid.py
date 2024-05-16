@@ -58,12 +58,9 @@ class Solution:
                 new_x = x + self.row_directions[i]
                 new_y = y + self.col_directions[i]
 
-                if (
-                    0 <= new_x < n
-                    and 0 <= new_y < n
-                    and not visited[new_x][new_y]
-                ):
+                if 0 <= new_x < n and 0 <= new_y < n and not visited[new_x][new_y]:
                     new_safe = min(current_safe, scores[new_x][new_y])
                     heapq.heappush(priority_queue, (-new_safe, new_x, new_y))
                     visited[new_x][new_y] = True
+
         return -1
