@@ -16,7 +16,7 @@ class TreeNode:
 class Solution:
     def evaluateTree(self, root: Optional[TreeNode]) -> bool:
         if root is None:
-            raise ValueError("Root cannot be None")
+            return False
 
         if root.val == 0:
             return False
@@ -32,10 +32,4 @@ class Solution:
         if root.val == 3:
             return left_eval and right_eval
 
-        raise ValueError("Invalid node value")
-
-
-if __name__ == "__main__":
-    solution = Solution()
-    result = solution.evaluateTree(TreeNode(3, TreeNode(1), TreeNode(0)))
-    print(result)
+        return False
