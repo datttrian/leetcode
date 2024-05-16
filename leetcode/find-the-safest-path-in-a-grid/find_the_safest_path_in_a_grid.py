@@ -34,6 +34,7 @@ class Solution:
 
     def maximumSafenessFactor(self, grid: list[list[int]]) -> float:
         n: int = len(grid)
+
         if grid[0][0] or grid[n - 1][n - 1]:
             return 0
 
@@ -65,5 +66,4 @@ class Solution:
                     new_safe = min(current_safe, scores[new_x][new_y])
                     heapq.heappush(priority_queue, (-new_safe, new_x, new_y))
                     visited[new_x][new_y] = True
-
         return -1
