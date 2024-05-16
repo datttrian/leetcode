@@ -1,5 +1,5 @@
-from collections import deque
 import heapq
+from collections import deque
 from typing import Tuple
 
 
@@ -7,9 +7,7 @@ class Solution:
     row_directions = [0, 0, -1, 1]
     col_directions = [-1, 1, 0, 0]
 
-    def bfs(
-        self, grid: list[list[int]], scores: list[list[float]], n: int
-    ) -> None:
+    def bfs(self, grid: list[list[int]], scores: list[list[float]], n: int) -> None:
         queue: deque[Tuple[int, int]] = deque()
 
         for i in range(n):
