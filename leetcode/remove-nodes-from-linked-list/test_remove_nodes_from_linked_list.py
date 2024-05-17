@@ -29,11 +29,13 @@ def linkedlist_to_list(node: Optional[ListNode]) -> list[int]:
     "input_list, expected_output_list",
     [
         ([1, 2, 3, 4, 5], [5]),
+        ([5, 4, 3, 2, 1], [5, 4, 3, 2, 1]),
+        ([3, 2, 6, 5, 1, 4], [6, 5, 4]),
+        ([], []),
+        ([1, 1, 1, 1], [1, 1, 1, 1]),
     ],
 )
-def test_removeNodes(
-    input_list: list[int], expected_output_list: list[int]
-) -> None:
+def test_removeNodes(input_list: list[int], expected_output_list: list[int]) -> None:
     solution = Solution()
     head = list_to_linkedlist(input_list)
     new_head = solution.removeNodes(head)

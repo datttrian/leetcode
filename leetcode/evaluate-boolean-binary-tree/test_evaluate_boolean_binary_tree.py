@@ -1,6 +1,6 @@
 from typing import Optional
-import pytest
 
+import pytest
 from evaluate_boolean_binary_tree import Solution, TreeNode
 
 
