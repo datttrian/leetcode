@@ -1,6 +1,6 @@
 from typing import Optional
 import pytest
-from evaluate_boolean_binary_tree import TreeNode, Solution
+from evaluate_boolean_binary_tree import Solution, TreeNode
 
 
 @pytest.mark.parametrize(
