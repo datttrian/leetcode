@@ -1,6 +1,7 @@
 from typing import Optional
+
 import pytest
-from remove_nodes_from_linked_list import Solution, ListNode
+from remove_nodes_from_linked_list import ListNode, Solution
 
 
 def list_to_linkedlist(lst: list[int]) -> Optional[ListNode]:
@@ -28,7 +29,6 @@ def linkedlist_to_list(node: Optional[ListNode]) -> list[int]:
     "input_list, expected_output_list",
     [
         ([1, 2, 3, 4, 5], [5]),
-        
     ],
 )
 def test_removeNodes(
