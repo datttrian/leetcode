@@ -31,13 +31,30 @@ class Solution:
         return moves
 
 
+def build_tree(values: list[int]) -> Optional[TreeNode]:
+    if not values:
+        return None
+
+    root = TreeNode(values[0])
+    queue = [root]
+    i = 1
+    while i < len(values):
+        node = queue.pop(0)
+        if i < len(values):
+            node.left = TreeNode(values[i])
+            queue.append(node.left)
+        i += 1
+        if i < len(values):
+            node.right = TreeNode(values[i])
+            queue.append(node.right)
+        i += 1
+
+    return root
+
+
 def main() -> None:
-    #        3
-    #       / \
-    #      0   0
-    root = TreeNode(0)
-    root.left = TreeNode(3)
-    root.right = TreeNode(0)
+    values = [6, 0, 1, 0, 0, 0, 1]
+    root = build_tree(values)
 
     # Create a Solution object
     solution = Solution()
