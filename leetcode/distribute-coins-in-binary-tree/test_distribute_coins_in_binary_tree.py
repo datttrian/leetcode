@@ -10,7 +10,6 @@ from distribute_coins_in_binary_tree import Solution, TreeNode
         (TreeNode(0, TreeNode(3), TreeNode(0)), 3),
         (TreeNode(1, TreeNode(0), TreeNode(2)), 2),
         (TreeNode(1, TreeNode(0, TreeNode(3)), TreeNode(0)), 4),
-
     ],
 )
 def test_distributeCoins(root: Optional[TreeNode], expected: int) -> None:

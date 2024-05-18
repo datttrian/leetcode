@@ -53,13 +53,11 @@ def build_tree(values: list[int]) -> Optional[TreeNode]:
 
 
 def main() -> None:
-    values = [6, 0, 1, 0, 0, 0, 1]
+    values = [6, 2, 0, 0, 0, 0, 0, 0]
     root = build_tree(values)
 
-    # Create a Solution object
     solution = Solution()
 
-    # Call the distributeCoins method and print the result
     moves = solution.distributeCoins(root)
     print(f"Number of moves required: {moves}")
 
