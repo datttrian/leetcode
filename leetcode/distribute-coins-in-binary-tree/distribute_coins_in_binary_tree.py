@@ -32,23 +32,12 @@ class Solution:
 
 
 def main() -> None:
-    # Create a more complicated binary tree
     #        3
     #       / \
     #      0   0
-    #     / \   \
-    #    0   0   0
-    #   /       / \
-    #  0       0   2
-    root = TreeNode(3)
-    root.left = TreeNode(0)
+    root = TreeNode(0)
+    root.left = TreeNode(3)
     root.right = TreeNode(0)
-    root.left.left = TreeNode(0)
-    root.left.right = TreeNode(0)
-    root.right.right = TreeNode(0)
-    root.left.left.left = TreeNode(0)
-    root.right.right.left = TreeNode(0)
-    root.right.right.right = TreeNode(2)
 
     # Create a Solution object
     solution = Solution()
