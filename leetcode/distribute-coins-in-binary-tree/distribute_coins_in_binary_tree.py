@@ -29,3 +29,20 @@ class Solution:
 
         moves, _ = dfs(root)
         return moves
+
+
+def main() -> None:
+    root = TreeNode(3)
+    root.left = TreeNode(0)
+    root.right = TreeNode(0)
+
+    # Create a Solution object
+    solution = Solution()
+
+    # Call the distributeCoins method and print the result
+    moves = solution.distributeCoins(root)
+    print(f"Number of moves required: {moves}")
+
+
+if __name__ == "__main__":
+    main()
