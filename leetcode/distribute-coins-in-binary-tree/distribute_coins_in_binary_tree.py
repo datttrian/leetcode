@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, Tuple
 
 
 class TreeNode:
@@ -15,4 +15,17 @@ class TreeNode:
 
 class Solution:
     def distributeCoins(self, root: Optional[TreeNode]) -> int:
-        return 0
+        def dfs(node: Optional[TreeNode]) -> Tuple[int, int]:
+            if not node:
+                return 0, 0
+
+            left_moves, left_excess = dfs(node.left)
+            right_moves, right_excess = dfs(node.right)
+
+            total_moves = left_moves + right_moves
+            total_excess = left_excess + right_excess + node.val - 1
+
+            return total_moves + abs(total_excess), total_excess
+
+        moves, _ = dfs(root)
+        return moves
