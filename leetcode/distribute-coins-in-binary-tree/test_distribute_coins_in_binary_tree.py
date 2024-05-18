@@ -1,4 +1,5 @@
 from typing import Optional
+
 import pytest
 from distribute_coins_in_binary_tree import Solution, TreeNode
 
