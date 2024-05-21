@@ -22,4 +22,4 @@ nums5 = [-10, 0, 10]
 print(subsets(nums5))
 
 nums6 = [1, 2, 3, 4]
-print(subsets(nums4))
+print(subsets(nums6))
