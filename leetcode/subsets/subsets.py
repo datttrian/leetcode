@@ -12,14 +12,14 @@ print(subsets(nums1))
 nums2 = [-5]
 print(subsets(nums2))
 
-nums3 = [-1, 0, 1]
+nums3 = [-1, 1]
 print(subsets(nums3))
 
-nums4 = [-1, 1]
+nums4 = [7, 7]
 print(subsets(nums4))
 
-nums5 = [-10, 0, 10]
+nums5 = [1, 2, 3]
 print(subsets(nums5))
 
-nums6 = [1, 2, 3, 4]
+nums6 = [1, 2, 3, 4, 5]
 print(subsets(nums6))
