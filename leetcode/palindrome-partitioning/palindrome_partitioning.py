@@ -24,5 +24,9 @@ def get_partitions(s: str) -> list[list[str]]:
     return result
 
 
+def is_palindrome(sub: str) -> bool:
+    return sub == sub[::-1]
+
+
 s = "aab"
-print(get_partitions(s))
+partitions = get_partitions(s)
