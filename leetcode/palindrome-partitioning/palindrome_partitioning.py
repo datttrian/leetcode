@@ -1,25 +1,15 @@
-def get_all_substrings(s: str) -> list[str]:
-    substrings: list[str] = []
-    length = len(s)
-    for i in range(length):
-        for j in range(i + 1, length + 1):
-            substrings.append(s[i:j])
-    return substrings
+def get_partitions(s: str) -> list[list[str]]:
+    def backtrack(start: int, path: list[str]) -> None:
+        if start == len(s):
+            result.append(path)
+            return
+        for i in range(start, len(s)):
+            backtrack(i + 1, path + [s[start : i + 1]])
 
-
-def is_palindrome(sub: str) -> bool:
-    return sub == sub[::-1]
-
-
-def main(s: str) -> list[str]:
-    substrings = get_all_substrings(s)
-    result: list[str] = []
-    for substring in substrings:
-        if is_palindrome(substring):
-            result.append(substring)
+    result: list[list[str]] = []
+    backtrack(0, [])
     return result
 
 
-# Example usage:
-input_string = "abba"
-print(main(input_string))
+s = "aab"
+print(get_partitions(s))
