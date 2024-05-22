@@ -5,7 +5,6 @@ class Solution:
     def partition(self, s: str) -> list[list[str]]:
 
         def get_partitions(s: str) -> list[list[str]]:
-
             partitions: list[Tuple[list[str], int]] = [([s], 0)]
             result: list[list[str]] = []
 
@@ -15,7 +14,6 @@ class Solution:
                 if index == len(s):
                     result.append(partition)
                 else:
-
                     for i in range(index + 1, len(s) + 1):
                         new_partition = (
                             partition[:-1]
@@ -23,9 +21,7 @@ class Solution:
                             + [partition[-1][i - index :]]
                         )
 
-                        new_partition = [
-                            part for part in new_partition if part
-                        ]
+                        new_partition = [part for part in new_partition if part]
                         partitions.append((new_partition, i))
 
             return result
