@@ -30,3 +30,9 @@ def is_palindrome(sub: str) -> bool:
 
 s = "aab"
 partitions = get_partitions(s)
+result = [
+    partition
+    for partition in partitions
+    if all(is_palindrome(sub) for sub in partition)
+]
+print(result)
