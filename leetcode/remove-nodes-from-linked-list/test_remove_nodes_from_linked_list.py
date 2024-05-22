@@ -15,29 +15,8 @@ def list_to_linkedlist(lst: list[int]) -> Optional[ListNode]:
     return head
 
 
-def linkedlist_to_list(node: Optional[ListNode]) -> list[int]:
+def linkedlist_to_list(head: Optional[ListNode]) -> list[int]:
     lst: list[int] = []
-    current = node
-    while current:
-        lst.append(current.val)
-        if current.next:
-            current = current.next
-    return lst
-
-
-def list_to_linkedlist(lst):
-    if not lst:
-        return None
-    head = ListNode(lst[0])
-    current = head
-    for val in lst[1:]:
-        current.next = ListNode(val)
-        current = current.next
-    return head
-
-
-def linkedlist_to_list(head):
-    lst = []
     current = head
     while current:
         lst.append(current.val)
@@ -58,7 +37,7 @@ def linkedlist_to_list(head):
         ([], []),
     ],
 )
-def test_removeNodes(input_list, expected_list):
+def test_removeNodes(input_list: list[int], expected_list: list[int]) -> None:
     solution = Solution()
     head = list_to_linkedlist(input_list)
     new_head = solution.removeNodes(head)
