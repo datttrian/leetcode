@@ -35,4 +35,34 @@ jobs:
           VALIDATE_JSCPD: false
           VALIDATE_JSON: false
           VALIDATE_MARKDOWN: false
-...
+
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip wheel setuptools
+          pip install --requirement requirements.txt
+      - name: Run tests
+        run: |
+          ./tests.sh
+      - name: Comment coverage
+        id: coverageComment
+        uses: MishaKav/pytest-coverage-comment@v1.1.42
+        with:
+          pytest-coverage-path: ./pytest-coverage.txt
+          junitxml-path: ./pytest.xml
+      - name: Check if tests passed
+        if: steps.coverageComment.outputs.failures != '0' || steps.coverageComment.outputs.errors != '0'
+        run: exit 1
