@@ -18,5 +18,6 @@
                 "VisualStudioExptTeam.vscodeintellicode"
             ]
         }
-    }
+    },
+    "postCreateCommand": "pip install -r requirements.txt"
 }
