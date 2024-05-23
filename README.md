@@ -2,6 +2,11 @@
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/datttrian/leetcode)
 
+## Linting
+
+``` sh
+docker run -e VALIDATE_EDITORCONFIG=false -e VALIDATE_GITLEAKS=false -e VALIDATE_JSCPD=false -e VALIDATE_JSON=false -e VALIDATE_MARKDOWN=false -e RUN_LOCAL=true -v "$(pwd)":/tmp/lint github/super-linter
+```
 
 |Difficulty|Problem                                                                                                                                                                                     |DSA                                           |Complexity                                      |
 |----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------|------------------------------------------------|
