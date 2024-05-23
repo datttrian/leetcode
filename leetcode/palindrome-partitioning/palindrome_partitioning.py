@@ -3,7 +3,6 @@ from typing import Tuple
 
 class Solution:
     def partition(self, s: str) -> list[list[str]]:
-
         def get_partitions(s: str) -> list[list[str]]:
             partitions: list[Tuple[list[str], int]] = [([s], 0)]
             result: list[list[str]] = []
