@@ -7,11 +7,11 @@ class Solution:
                 res.append([num])
             return res
 
-        def isBeautiful(subset: list[int], k: int) -> bool:
-            for i, val_i in enumerate(subset):
-                for j, val_j in enumerate(subset):
-                    if i != j and abs(val_i - val_j) == k:
-                        return False
+        def isBeautiful(nums: list[int], k: int) -> bool:
+            nums_set = set(nums)
+            for num in nums:
+                if (num + k) in nums_set or (num - k) in nums_set:
+                    return False
             return True
 
         subsets = getSubsets(nums)

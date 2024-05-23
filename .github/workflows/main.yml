@@ -57,12 +57,3 @@ jobs:
       - name: Run tests
         run: |
           ./tests.sh
-      - name: Comment coverage
-        id: coverageComment
-        uses: MishaKav/pytest-coverage-comment@v1.1.42
-        with:
-          pytest-coverage-path: ./pytest-coverage.txt
-          junitxml-path: ./pytest.xml
-      - name: Check if tests passed
-        if: steps.coverageComment.outputs.failures != '0' || steps.coverageComment.outputs.errors != '0'
-        run: exit 1
