@@ -45,5 +45,11 @@ for letter in letters:
     else:
         letter_counts[letter] = 1
 
+
 # Print the dictionary
 print(letter_counts)
+
+# Given list of words
+words = ["dog", "cat", "dad", "good"]
+
+print(words)
