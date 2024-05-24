@@ -8,9 +8,8 @@ class Solution:
             return res
 
         def isBeautiful(nums: list[int], k: int) -> bool:
-            nums_set = set(nums)
             for num in nums:
-                if (num + k) in nums_set or (num - k) in nums_set:
+                if (num + k) in nums or (num - k) in nums:
                     return False
             return True
 
