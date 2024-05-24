@@ -35,6 +35,7 @@ jobs:
           VALIDATE_JSCPD: false
           VALIDATE_JSON: false
           VALIDATE_MARKDOWN: false
+          VALIDATE_BASH: false
 
   tests:
     runs-on: ubuntu-latest
