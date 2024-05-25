@@ -19,7 +19,7 @@
     ],
     "flake8.importStrategy": "fromEnvironment",
     "flake8.args": [
-        "--ignore=D100,D101,D102,D103,D107,E203,W503,D400,D205,D415,E501"
+        "--ignore=C901,D100,D101,D102,D103,D107,E203,W503,D400,D205,D415,E501"
     ],
     "python.analysis.typeCheckingMode": "strict",
     "editor.rulers": [
