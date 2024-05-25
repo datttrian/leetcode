@@ -9,9 +9,7 @@ class Solution:
         for letter in letters:
             letter_counts[letter] = letter_counts.get(letter, 0) + 1
 
-        score_dict: dict[str, int] = {
-            chr(97 + i): score[i] for i in range(len(score))
-        }
+        score_dict: dict[str, int] = {chr(97 + i): score[i] for i in range(len(score))}
 
         def generate_subsets(words: list[str]) -> list[list[str]]:
             subsets: list[list[str]] = []
@@ -23,9 +21,7 @@ class Solution:
         def calculate_word_score(word: str, score_dict: dict[str, int]) -> int:
             return sum(score_dict[char] for char in word)
 
-        def can_form_words(
-            words: list[str], letter_counts: dict[str, int]
-        ) -> bool:
+        def can_form_words(words: list[str], letter_counts: dict[str, int]) -> bool:
             temp_letter_counts = letter_counts.copy()
             for word in words:
                 for char in word:
