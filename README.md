@@ -6,6 +6,7 @@
 
 |Difficulty|Problem                                                                                                                                                                                     |DSA                                           |Complexity                                      |
 |----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------|------------------------------------------------|
+|Hard      |140. Word Break II                                             |                                     |                                  |
 |Hard      |1255. Maximum Score Words Formed by Letters                                             |                                     |                                  |
 |Medium    |[2597. The Number of Beautiful Subsets](https://leetcode.com/problems/the-number-of-beautiful-subsets/solutions/5199367/iteration-o-2-n-o-2-n/)                                             |Iteration                                     |O(2^n), O(2^n)                                  |
 |Medium    |[131. Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/solutions/5194330/iteration-o-2-n-o-2-n/)                                                              |Iteration                                     |O(2^n), O(2^n)                                  |
