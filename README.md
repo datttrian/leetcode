@@ -2,6 +2,8 @@
 
 [![Lint](https://github.com/datttrian/leetcode/actions/workflows/main.yml/badge.svg)](https://github.com/datttrian/leetcode/actions/workflows/main.yml)
 
+[![Open in Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/datttrian/leetcode/blob/main/notebook.ipynb)
+
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/datttrian/leetcode)
 
 |Difficulty|Problem                                                                                                                                                                                     |DSA                                           |Complexity                                      |
