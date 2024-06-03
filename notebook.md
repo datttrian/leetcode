@@ -176,3 +176,113 @@ print(solution.isAnagram(s="rat", t="car"))
     True
     False
 
+
+### Arrays & Hashing - O(n), O(n)
+
+
+```python
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s) != len(t):
+            return False
+        
+        count_s: dict[str, int] = {}
+        count_t: dict[str, int] = {}
+        
+        for char in s:
+            if char in count_s:
+                count_s[char] += 1
+            else:
+                count_s[char] = 1
+        
+        for char in t:
+            if char in count_t:
+                count_t[char] += 1
+            else:
+                count_t[char] = 1
+        
+        for char in count_s:
+            if char not in count_t or count_s[char] != count_t[char]:
+                return False
+        
+        for char in count_t:
+            if char not in count_s:
+                return False
+        
+        return True
+
+
+solution = Solution()
+print(solution.isAnagram(s="anagram", t="nagaram"))
+print(solution.isAnagram(s="rat", t="car"))
+```
+
+    True
+    False
+
+
+
+```python
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s) != len(t):
+            return False
+
+        count: dict[str, int] = {}
+
+        for char in s:
+            if char in count:
+                count[char] += 1
+            else:
+                count[char] = 1
+
+        for char in t:
+            if char in count:
+                count[char] -= 1
+            else:
+                return False
+
+        for char in count:
+            if count[char] != 0:
+                return False
+
+        return True
+
+
+solution = Solution()
+print(solution.isAnagram(s="anagram", t="nagaram"))
+print(solution.isAnagram(s="rat", t="car"))
+```
+
+    True
+    False
+
+
+
+```python
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s) != len(t):
+            return False
+        
+        count: dict[str, int] = {}
+
+        for i in range(len(s)):
+            count[s[i]] = count.get(s[i], 0) + 1
+            count[t[i]] = count.get(t[i], 0) - 1
+
+        for value in count.values():
+            if value != 0:
+                return False
+            
+        return True
+    
+
+solution = Solution()
+print(solution.isAnagram(s="anagram", t="nagaram"))
+print(solution.isAnagram(s="rat", t="car"))
+```
+
+    True
+    False
+
