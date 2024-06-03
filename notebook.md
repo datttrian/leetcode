@@ -137,17 +137,35 @@ class Solution:
             return False
 
         for char in s:
-            is_found = False
+            is_matched = False
             for i in range(len(t)):
                 if t[i] == char:
                     t = t[:i] + t[i + 1 :]
-                    is_found = True
+                    is_matched = True
                     break
 
-            if not is_found:
+            if not is_matched:
                 return False
 
         return True
+
+
+solution = Solution()
+print(solution.isAnagram(s="anagram", t="nagaram"))
+print(solution.isAnagram(s="rat", t="car"))
+```
+
+    True
+    False
+
+
+### Sorting - O(n log n), O(n)
+
+
+```python
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        return sorted(s) == sorted(t)
 
 
 solution = Solution()
