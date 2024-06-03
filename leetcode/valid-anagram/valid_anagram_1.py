@@ -5,6 +5,7 @@ class Solution:
 
         for char in s:
             is_matched = False
+
             for i in range(len(t)):
                 if t[i] == char:
                     t = t[:i] + t[i + 1 :]
