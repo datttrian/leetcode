@@ -99,3 +99,62 @@ print(solution.containsDuplicate(nums=[1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
     False
     True
 
+
+## 242. Valid Anagram
+
+Given two strings `s` and `t`, return `true` *if* `t` *is an anagram of*
+`s`*, and* `false` *otherwise*.
+
+An **Anagram** is a word or phrase formed by rearranging the letters of
+a different word or phrase, typically using all the original letters
+exactly once.
+
+**Example 1:**
+
+    Input: s = "anagram", t = "nagaram"
+    Output: true
+
+**Example 2:**
+
+    Input: s = "rat", t = "car"
+    Output: false
+
+**Constraints:**
+
+- `1 <= s.length, t.length <= 5 * 10`<sup>`4`</sup>
+- `s` and `t` consist of lowercase English letters.
+
+**Follow up:** What if the inputs contain Unicode characters? How would
+you adapt your solution to such a case?
+
+### Brute Force - O(n^2), O(1)
+
+
+```python
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s) != len(t):
+            return False
+
+        for char in s:
+            is_found = False
+            for i in range(len(t)):
+                if t[i] == char:
+                    t = t[:i] + t[i + 1 :]
+                    is_found = True
+                    break
+
+            if not is_found:
+                return False
+
+        return True
+
+
+solution = Solution()
+print(solution.isAnagram(s="anagram", t="nagaram"))
+print(solution.isAnagram(s="rat", t="car"))
+```
+
+    True
+    False
+

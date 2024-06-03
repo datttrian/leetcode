@@ -4,14 +4,14 @@ class Solution:
             return False
 
         for char in s:
-            is_found = False
+            is_matched = False
             for i in range(len(t)):
                 if t[i] == char:
                     t = t[:i] + t[i + 1 :]
-                    is_found = True
+                    is_matched = True
                     break
 
-            if not is_found:
+            if not is_matched:
                 return False
 
         return True
