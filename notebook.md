@@ -75,7 +75,7 @@ print(solution.containsDuplicate(nums=[1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
     True
 
 
-### Arrays & Hashing
+### Arrays & Hashing - O(n), O(n)
 
 
 ```python
