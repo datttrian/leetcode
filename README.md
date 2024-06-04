@@ -8,6 +8,7 @@
 
 |Difficulty|Problem                                                                                                                                                                                     |DSA                                           |Complexity                                      |
 |----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------|------------------------------------------------|
+|Easy      |409. Longest Palindrome                                          |                                     |                                  |
 |Hard      |140. Word Break II                                             |Backtracking                                     |O(n^2 * 2^n), O(n^2)                                  |
 |Hard      |1255. Maximum Score Words Formed by Letters                                             |Brute Force                                     |                                  |
 |Medium    |[2597. The Number of Beautiful Subsets](https://leetcode.com/problems/the-number-of-beautiful-subsets/solutions/5199367/iteration-o-2-n-o-2-n/)                                             |Brute Force                                     |O(2^n), O(2^n)                                  |
