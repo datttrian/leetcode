@@ -1,17 +1,17 @@
 class Solution:
     def threeSum(self, nums: list[int]) -> list[list[int]]:
-        triplets: list[list[int]] = []
         n = len(nums)
+        result: list[list[int]] = []
 
         for i in range(n):
             for j in range(i + 1, n):
                 for k in range(j + 1, n):
                     if nums[i] + nums[j] + nums[k] == 0:
                         triplet = sorted([nums[i], nums[j], nums[k]])
-                        if triplet not in triplets:
-                            triplets.append(triplet)
+                        if triplet not in result:
+                            result.append(triplet)
 
-        return triplets
+        return result
 
 
 solution = Solution()
