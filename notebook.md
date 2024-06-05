@@ -496,32 +496,6 @@ Given a string `s`, return `true` *if it is a **palindrome**, or*
 ```python
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        def alphaNum(c: str) -> bool:
-            return (
-                ord("A") <= ord(c) <= ord("Z")
-                or ord("a") <= ord(c) <= ord("z")
-                or ord("0") <= ord(c) <= ord("9")
-            )
-
-        normalized_s = "".join(char.lower() for char in s if alphaNum(char))
-        return normalized_s == normalized_s[::-1]
-
-
-solution = Solution()
-print(solution.isPalindrome(s="A man, a plan, a canal: Panama"))
-print(solution.isPalindrome(s="race a car"))
-print(solution.isPalindrome(s=" "))
-```
-
-    True
-    False
-    True
-
-
-
-```python
-class Solution:
-    def isPalindrome(self, s: str) -> bool:
         normalized_s = "".join(char.lower() for char in s if char.isalnum())
         return normalized_s == normalized_s[::-1]
 
@@ -543,12 +517,19 @@ print(solution.isPalindrome(s=" "))
 ```python
 class Solution:
     def isPalindrome(self, s: str) -> bool:
+        def alphaNum(c: str) -> bool:
+            return (
+                ord("A") <= ord(c) <= ord("Z")
+                or ord("a") <= ord(c) <= ord("z")
+                or ord("0") <= ord(c) <= ord("9")
+            )
+
         left, right = 0, len(s) - 1
 
         while left < right:
-            while left < right and not s[left].isalnum():
+            while left < right and not alphaNum(s[left]):
                 left += 1
-            while left < right and not s[right].isalnum():
+            while left < right and not alphaNum(s[right]):
                 right -= 1
 
             if s[left].lower() != s[right].lower():
