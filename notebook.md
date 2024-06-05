@@ -1,6 +1,6 @@
 # LeetCode
 
-## 217. Contains Duplicate
+## 217. Contains Duplicate - Easy
 
 Given an integer array `nums`, return `true` if any value appears **at
 least twice** in the array, and return `false` if every element is
@@ -100,7 +100,7 @@ print(solution.containsDuplicate(nums=[1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
     True
 
 
-## 242. Valid Anagram
+## 242. Valid Anagram - Easy
 
 Given two strings `s` and `t`, return `true` *if* `t` *is an anagram of*
 `s`*, and* `false` *otherwise*.
@@ -332,7 +332,7 @@ print(solution.isAnagram(s="rat", t="car"))
     False
 
 
-## 1. Two Sum
+## 1. Two Sum - Easy
 
 Given an array of integers `nums` and an integer `target`, return
 *indices of the two numbers such that they add up to `target`*.
@@ -395,7 +395,183 @@ print(solution.twoSum(nums=[3, 3], target=6))
     [0, 1]
 
 
-## 15. 3Sum
+### Two Pointers - O(n log n), O(n)
+
+
+```python
+class Solution:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        nums_sorted = sorted(enumerate(nums), key=lambda x: x[1])
+        left, right = 0, len(nums) - 1
+
+        while left < right:
+            sum = nums_sorted[left][1] + nums_sorted[right][1]
+            if sum == target:
+                return [nums_sorted[left][0], nums_sorted[right][0]]
+            elif sum < target:
+                left += 1
+            else:
+                right -= 1
+        return []
+
+
+solution = Solution()
+print(solution.twoSum(nums=[2, 7, 11, 15], target=9))
+print(solution.twoSum(nums=[3, 2, 4], target=6))
+print(solution.twoSum(nums=[3, 3], target=6))
+```
+
+    [0, 1]
+    [1, 2]
+    [0, 1]
+
+
+### Arrays & Hashing - O(n), O(n)
+
+
+```python
+class Solution:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        nums_index = {}
+
+        for index, num in enumerate(nums):
+            complement = target - num
+
+            if complement in nums_index:
+                return [nums_index[complement], index]
+
+            nums_index[num] = index
+
+        return []
+
+
+solution = Solution()
+print(solution.twoSum(nums=[2, 7, 11, 15], target=9))
+print(solution.twoSum(nums=[3, 2, 4], target=6))
+print(solution.twoSum(nums=[3, 3], target=6))
+```
+
+    [0, 1]
+    [1, 2]
+    [0, 1]
+
+
+## 125. Valid Palindrome - Easy
+
+A phrase is a **palindrome** if, after converting all uppercase letters
+into lowercase letters and removing all non-alphanumeric characters, it
+reads the same forward and backward. Alphanumeric characters include
+letters and numbers.
+
+Given a string `s`, return `true` *if it is a **palindrome**, or*
+`false` *otherwise*.
+
+**Example 1:**
+
+    Input: s = "A man, a plan, a canal: Panama"
+    Output: true
+    Explanation: "amanaplanacanalpanama" is a palindrome.
+
+**Example 2:**
+
+    Input: s = "race a car"
+    Output: false
+    Explanation: "raceacar" is not a palindrome.
+
+**Example 3:**
+
+    Input: s = " "
+    Output: true
+    Explanation: s is an empty string "" after removing non-alphanumeric characters.
+    Since an empty string reads the same forward and backward, it is a palindrome.
+
+**Constraints:**
+
+- `1 <= s.length <= 2 * 10`<sup>`5`</sup>
+- `s` consists only of printable ASCII characters.
+
+### Brute Force - O(n), O(n)
+
+
+```python
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        def alphaNum(c: str) -> bool:
+            return (
+                ord("A") <= ord(c) <= ord("Z")
+                or ord("a") <= ord(c) <= ord("z")
+                or ord("0") <= ord(c) <= ord("9")
+            )
+
+        normalized_s = "".join(char.lower() for char in s if alphaNum(char))
+        return normalized_s == normalized_s[::-1]
+
+
+solution = Solution()
+print(solution.isPalindrome(s="A man, a plan, a canal: Panama"))
+print(solution.isPalindrome(s="race a car"))
+print(solution.isPalindrome(s=" "))
+```
+
+    True
+    False
+    True
+
+
+
+```python
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        normalized_s = "".join(char.lower() for char in s if char.isalnum())
+        return normalized_s == normalized_s[::-1]
+
+
+solution = Solution()
+print(solution.isPalindrome(s="A man, a plan, a canal: Panama"))
+print(solution.isPalindrome(s="race a car"))
+print(solution.isPalindrome(s=" "))
+```
+
+    True
+    False
+    True
+
+
+### Two Pointers - O(n), O(1)
+
+
+```python
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        left, right = 0, len(s) - 1
+
+        while left < right:
+            while left < right and not s[left].isalnum():
+                left += 1
+            while left < right and not s[right].isalnum():
+                right -= 1
+
+            if s[left].lower() != s[right].lower():
+                return False
+
+            left += 1
+            right -= 1
+
+        return True
+
+
+solution = Solution()
+print(solution.isPalindrome(s="A man, a plan, a canal: Panama"))
+print(solution.isPalindrome(s="race a car"))
+print(solution.isPalindrome(s=" "))
+```
+
+    True
+    False
+    True
+
+
+## 15. 3Sum - Medium
 
 Given an integer array nums, return all the triplets
 `[nums[i], nums[j], nums[k]]` such that `i != j`, `i != k`, and
