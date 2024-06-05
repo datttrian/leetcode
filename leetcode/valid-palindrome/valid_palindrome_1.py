@@ -1,6 +1,13 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        normalized_s = "".join(char.lower() for char in s if char.isalnum())
+        def alphaNum(c: str) -> bool:
+            return (
+                ord("A") <= ord(c) <= ord("Z")
+                or ord("a") <= ord(c) <= ord("z")
+                or ord("0") <= ord(c) <= ord("9")
+            )
+
+        normalized_s = "".join(char.lower() for char in s if alphaNum(char))
         return normalized_s == normalized_s[::-1]
 
 
