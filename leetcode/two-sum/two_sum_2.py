@@ -1,15 +1,16 @@
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
-        nums_index = {}
+        nums_sorted = sorted(enumerate(nums), key=lambda x: x[1])
+        left, right = 0, len(nums) - 1
 
-        for index, num in enumerate(nums):
-            complement = target - num
-
-            if complement in nums_index:
-                return [nums_index[complement], index]
-
-            nums_index[num] = index
-
+        while left < right:
+            sum = nums_sorted[left][1] + nums_sorted[right][1]
+            if sum == target:
+                return [nums_sorted[left][0], nums_sorted[right][0]]
+            elif sum < target:
+                left += 1
+            else:
+                right -= 1
         return []
 
 
