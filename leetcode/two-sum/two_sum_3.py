@@ -1,6 +1,6 @@
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
-        nums_index = {}
+        nums_index: dict[int, int] = {}
 
         for index, num in enumerate(nums):
             complement = target - num
