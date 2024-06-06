@@ -1,16 +1,14 @@
 class Solution:
     def twoSum(self, numbers: list[int], target: int) -> list[int]:
+        numbers_index: dict[int, int] = {}
 
-        left, right = 0, len(numbers) - 1
+        for index, num in enumerate(numbers):
+            complement = target - num
 
-        while left < right:
-            current_sum = numbers[left] + numbers[right]
-            if current_sum == target:
-                return [left + 1, right + 1]
-            elif current_sum < target:
-                left += 1
-            else:
-                right -= 1
+            if complement in numbers_index:
+                return [numbers_index[complement] + 1, index + 1]
+
+            numbers_index[num] = index
 
         return []
 
