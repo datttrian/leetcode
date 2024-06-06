@@ -1,6 +1,6 @@
 # LeetCode
 
-## 217. Contains Duplicate - Easy
+## 217. Contains Duplicate (Easy)
 
 Given an integer array `nums`, return `true` if any value appears **at
 least twice** in the array, and return `false` if every element is
@@ -28,7 +28,6 @@ distinct.
 
 ### Brute Force - O(n^2), O(1)
 
-
 ```python
 class Solution:
     def containsDuplicate(self, nums: list[int]) -> bool:
@@ -50,9 +49,7 @@ print(solution.containsDuplicate(nums=[1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
     False
     True
 
-
 ### Sorting - O(n log n), O(1)
-
 
 ```python
 class Solution:
@@ -74,9 +71,7 @@ print(solution.containsDuplicate(nums=[1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
     False
     True
 
-
 ### Arrays & Hashing - O(n), O(n)
-
 
 ```python
 class Solution:
@@ -99,8 +94,7 @@ print(solution.containsDuplicate(nums=[1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
     False
     True
 
-
-## 242. Valid Anagram - Easy
+## 242. Valid Anagram (Easy)
 
 Given two strings `s` and `t`, return `true` *if* `t` *is an anagram of*
 `s`*, and* `false` *otherwise*.
@@ -128,7 +122,6 @@ exactly once.
 you adapt your solution to such a case?
 
 ### Brute Force - O(n^2), O(1)
-
 
 ```python
 class Solution:
@@ -159,9 +152,7 @@ print(solution.isAnagram(s="rat", t="car"))
     True
     False
 
-
 ### Sorting - O(n log n), O(n)
-
 
 ```python
 class Solution:
@@ -177,9 +168,7 @@ print(solution.isAnagram(s="rat", t="car"))
     True
     False
 
-
 ### Arrays & Hashing - O(n), O(1)
-
 
 ```python
 class Solution:
@@ -221,8 +210,6 @@ print(solution.isAnagram(s="rat", t="car"))
     True
     False
 
-
-
 ```python
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
@@ -258,8 +245,6 @@ print(solution.isAnagram(s="rat", t="car"))
     True
     False
 
-
-
 ```python
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
@@ -287,8 +272,6 @@ print(solution.isAnagram(s="rat", t="car"))
     True
     False
 
-
-
 ```python
 from typing import Counter
 
@@ -305,8 +288,6 @@ print(solution.isAnagram(s="rat", t="car"))
 
     True
     False
-
-
 
 ```python
 class Solution:
@@ -331,8 +312,7 @@ print(solution.isAnagram(s="rat", t="car"))
     True
     False
 
-
-## 1. Two Sum - Easy
+## 1. Two Sum (Easy)
 
 Given an array of integers `nums` and an integer `target`, return
 *indices of the two numbers such that they add up to `target`*.
@@ -370,7 +350,6 @@ You can return the answer in any order.
 
 ### Brute Force - O(n^2), O(1)
 
-
 ```python
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
@@ -394,9 +373,7 @@ print(solution.twoSum(nums=[3, 3], target=6))
     [1, 2]
     [0, 1]
 
-
 ### Two Pointers - O(n log n), O(n)
-
 
 ```python
 class Solution:
@@ -425,14 +402,12 @@ print(solution.twoSum(nums=[3, 3], target=6))
     [1, 2]
     [0, 1]
 
-
 ### Arrays & Hashing - O(n), O(n)
-
 
 ```python
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
-        nums_index = {}
+        nums_index: dict[int, int] = {}
 
         for index, num in enumerate(nums):
             complement = target - num
@@ -455,8 +430,7 @@ print(solution.twoSum(nums=[3, 3], target=6))
     [1, 2]
     [0, 1]
 
-
-## 125. Valid Palindrome - Easy
+## 125. Valid Palindrome (Easy)
 
 A phrase is a **palindrome** if, after converting all uppercase letters
 into lowercase letters and removing all non-alphanumeric characters, it
@@ -492,7 +466,6 @@ Given a string `s`, return `true` *if it is a **palindrome**, or*
 
 ### Brute Force - O(n), O(n)
 
-
 ```python
 class Solution:
     def isPalindrome(self, s: str) -> bool:
@@ -510,9 +483,7 @@ print(solution.isPalindrome(s=" "))
     False
     True
 
-
 ### Two Pointers - O(n), O(1)
-
 
 ```python
 class Solution:
@@ -551,8 +522,169 @@ print(solution.isPalindrome(s=" "))
     False
     True
 
+## 167. Two Sum II - Input Array Is Sorted (Medium)
 
-## 15. 3Sum - Medium
+Given a **1-indexed** array of integers `numbers` that is already
+***sorted in non-decreasing order***, find two numbers such that they
+add up to a specific `target` number. Let these two numbers be
+`numbers[index`<sub>`1`</sub>`]` and `numbers[index`<sub>`2`</sub>`]`
+where
+`1 <= index`<sub>`1`</sub>`< index`<sub>`2`</sub>`<= numbers.length`.
+
+Return *the indices of the two numbers,* `index`<sub>`1`</sub> *and*
+`index`<sub>`2`</sub>*, **added by one** as an integer array*
+`[index`<sub>`1`</sub>`, index`<sub>`2`</sub>`]` *of length 2.*
+
+The tests are generated such that there is **exactly one solution**. You
+**may not** use the same element twice.
+
+Your solution must use only constant extra space.
+
+**Example 1:**
+
+    Input: numbers = [2,7,11,15], target = 9
+    Output: [1,2]
+    Explanation: The sum of 2 and 7 is 9. Therefore, index1 = 1, index2 = 2. We return [1, 2].
+
+**Example 2:**
+
+    Input: numbers = [2,3,4], target = 6
+    Output: [1,3]
+    Explanation: The sum of 2 and 4 is 6. Therefore index1 = 1, index2 = 3. We return [1, 3].
+
+**Example 3:**
+
+    Input: numbers = [-1,0], target = -1
+    Output: [1,2]
+    Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We return [1, 2].
+
+**Constraints:**
+
+- `2 <= numbers.length <= 3 * 10`<sup>`4`</sup>
+- `-1000 <= numbers[i] <= 1000`
+- `numbers` is sorted in **non-decreasing order**.
+- `-1000 <= target <= 1000`
+- The tests are generated such that there is **exactly one solution**.
+
+### Brute Force - O(n^2), O(1)
+
+```python
+class Solution:
+    def twoSum(self, numbers: list[int], target: int) -> list[int]:
+        n = len(numbers)
+
+        for i in range(n):
+            for j in range(i + 1, n):
+                if numbers[i] + numbers[j] == target:
+                    return [i + 1, j + 1]
+
+        return []
+
+
+solution = Solution()
+print(solution.twoSum(numbers=[2, 7, 11, 15], target=9))
+print(solution.twoSum(numbers=[2, 3, 4], target=6))
+print(solution.twoSum(numbers=[-1, 0], target=-1))
+```
+
+    [1, 2]
+    [1, 3]
+    [1, 2]
+
+### Arrays & Hashing - O(n), O(n)
+
+```python
+class Solution:
+    def twoSum(self, numbers: list[int], target: int) -> list[int]:
+        numbers_index: dict[int, int] = {}
+
+        for index, num in enumerate(numbers):
+            complement = target - num
+
+            if complement in numbers_index:
+                return [numbers_index[complement] + 1, index + 1]
+
+            numbers_index[num] = index
+
+        return []
+
+
+solution = Solution()
+print(solution.twoSum(numbers=[2, 7, 11, 15], target=9))
+print(solution.twoSum(numbers=[2, 3, 4], target=6))
+print(solution.twoSum(numbers=[-1, 0], target=-1))
+```
+
+    [1, 2]
+    [1, 3]
+    [1, 2]
+
+### Two Pointers - O(n), O(1)
+
+```python
+class Solution:
+    def twoSum(self, numbers: list[int], target: int) -> list[int]:
+        left, right = 0, len(numbers) - 1
+
+        while left < right:
+            current_sum = numbers[left] + numbers[right]
+            if current_sum == target:
+                return [left + 1, right + 1]
+            elif current_sum < target:
+                left += 1
+            else:
+                right -= 1
+
+        return []
+
+
+solution = Solution()
+print(solution.twoSum(numbers=[2, 7, 11, 15], target=9))
+print(solution.twoSum(numbers=[2, 3, 4], target=6))
+print(solution.twoSum(numbers=[-1, 0], target=-1))
+```
+
+    [1, 2]
+    [1, 3]
+    [1, 2]
+
+## 170. Two Sum III - Data structure design (Easy)
+
+Design a data structure that accepts a stream of integers and checks if
+it has a pair of integers that sum up to a particular value.
+
+Implement the `TwoSum` class:
+
+- `TwoSum()` Initializes the `TwoSum` object, with an empty array
+    initially.
+- `void add(int number)` Adds `number` to the data structure.
+- `boolean find(int value)` Returns `true` if there exists any pair of
+    numbers whose sum is equal to `value`, otherwise, it returns
+    `false`.
+
+**Example 1:**
+
+    Input
+    ["TwoSum", "add", "add", "add", "find", "find"]
+    [[], [1], [3], [5], [4], [7]]
+    Output
+    [null, null, null, null, true, false]
+
+    Explanation
+    TwoSum twoSum = new TwoSum();
+    twoSum.add(1);   // [] --> [1]
+    twoSum.add(3);   // [1] --> [1,3]
+    twoSum.add(5);   // [1,3] --> [1,3,5]
+    twoSum.find(4);  // 1 + 3 = 4, return true
+    twoSum.find(7);  // No two integers sum up to 7, return false
+
+**Constraints:**
+
+- `-10^5 <= number <= 10^5`
+- `-2^31 <= value <= 2^31 - 1`
+- At most `5 * 10^4` calls will be made to `add` and `find`.
+
+## 15. 3Sum (Medium)
 
 Given an integer array nums, return all the triplets
 `[nums[i], nums[j], nums[k]]` such that `i != j`, `i != k`, and
@@ -590,7 +722,6 @@ Notice that the solution set must not contain duplicate triplets.
 
 ### Brute Force - O(n^3), O(n)
 
-
 ```python
 class Solution:
     def threeSum(self, nums: list[int]) -> list[list[int]]:
@@ -617,4 +748,3 @@ print(solution.threeSum(nums=[0, 0, 0]))
     [[-1, 0, 1], [-1, -1, 2]]
     []
     [[0, 0, 0]]
-
