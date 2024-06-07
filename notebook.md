@@ -30,6 +30,7 @@ distinct.
 
 #### Brute Force - O(n^2), O(1)
 
+
 ```python
 class Solution:
     def containsDuplicate(self, nums: list[int]) -> bool:
@@ -51,7 +52,9 @@ print(solution.containsDuplicate(nums=[1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
     False
     True
 
+
 #### Sorting - O(n log n), O(1)
+
 
 ```python
 class Solution:
@@ -73,7 +76,9 @@ print(solution.containsDuplicate(nums=[1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
     False
     True
 
+
 #### Arrays & Hashing - O(n), O(n)
+
 
 ```python
 class Solution:
@@ -95,6 +100,7 @@ print(solution.containsDuplicate(nums=[1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
     True
     False
     True
+
 
 ### 242. Valid Anagram
 
@@ -125,6 +131,7 @@ you adapt your solution to such a case?
 
 #### Brute Force - O(n^2), O(1)
 
+
 ```python
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
@@ -154,7 +161,9 @@ print(solution.isAnagram(s="rat", t="car"))
     True
     False
 
+
 #### Sorting - O(n log n), O(n)
+
 
 ```python
 class Solution:
@@ -170,7 +179,9 @@ print(solution.isAnagram(s="rat", t="car"))
     True
     False
 
+
 #### Arrays & Hashing - O(n), O(1)
+
 
 ```python
 class Solution:
@@ -212,6 +223,8 @@ print(solution.isAnagram(s="rat", t="car"))
     True
     False
 
+
+
 ```python
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
@@ -247,6 +260,8 @@ print(solution.isAnagram(s="rat", t="car"))
     True
     False
 
+
+
 ```python
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
@@ -274,6 +289,8 @@ print(solution.isAnagram(s="rat", t="car"))
     True
     False
 
+
+
 ```python
 from typing import Counter
 
@@ -290,6 +307,8 @@ print(solution.isAnagram(s="rat", t="car"))
 
     True
     False
+
+
 
 ```python
 class Solution:
@@ -313,6 +332,7 @@ print(solution.isAnagram(s="rat", t="car"))
 
     True
     False
+
 
 ### 1. Two Sum
 
@@ -352,6 +372,7 @@ You can return the answer in any order.
 
 #### Brute Force - O(n^2), O(1)
 
+
 ```python
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
@@ -375,7 +396,9 @@ print(solution.twoSum(nums=[3, 3], target=6))
     [1, 2]
     [0, 1]
 
+
 #### Two Pointers - O(n log n), O(n)
+
 
 ```python
 class Solution:
@@ -404,7 +427,9 @@ print(solution.twoSum(nums=[3, 3], target=6))
     [1, 2]
     [0, 1]
 
+
 #### Arrays & Hashing - O(n), O(n)
+
 
 ```python
 class Solution:
@@ -431,6 +456,7 @@ print(solution.twoSum(nums=[3, 3], target=6))
     [0, 1]
     [1, 2]
     [0, 1]
+
 
 ### 125. Valid Palindrome
 
@@ -468,6 +494,7 @@ Given a string `s`, return `true` *if it is a **palindrome**, or*
 
 #### Brute Force - O(n), O(n)
 
+
 ```python
 class Solution:
     def isPalindrome(self, s: str) -> bool:
@@ -485,7 +512,9 @@ print(solution.isPalindrome(s=" "))
     False
     True
 
+
 #### Two Pointers - O(n), O(1)
+
 
 ```python
 class Solution:
@@ -524,7 +553,8 @@ print(solution.isPalindrome(s=" "))
     False
     True
 
-### 170. Two Sum III - Data structure design (Easy)
+
+### 170. Two Sum III - Data structure design
 
 Design a data structure that accepts a stream of integers and checks if
 it has a pair of integers that sum up to a particular value.
@@ -608,6 +638,7 @@ Your solution must use only constant extra space.
 
 #### Brute Force - O(n^2), O(1)
 
+
 ```python
 class Solution:
     def twoSum(self, numbers: list[int], target: int) -> list[int]:
@@ -631,7 +662,9 @@ print(solution.twoSum(numbers=[-1, 0], target=-1))
     [1, 3]
     [1, 2]
 
+
 #### Arrays & Hashing - O(n), O(n)
+
 
 ```python
 class Solution:
@@ -659,7 +692,9 @@ print(solution.twoSum(numbers=[-1, 0], target=-1))
     [1, 3]
     [1, 2]
 
+
 #### Two Pointers - O(n), O(1)
+
 
 ```python
 class Solution:
@@ -687,6 +722,7 @@ print(solution.twoSum(numbers=[-1, 0], target=-1))
     [1, 2]
     [1, 3]
     [1, 2]
+
 
 ### 15. 3Sum
 
@@ -726,6 +762,7 @@ Notice that the solution set must not contain duplicate triplets.
 
 #### Brute Force - O(n^3), O(n)
 
+
 ```python
 class Solution:
     def threeSum(self, nums: list[int]) -> list[list[int]]:
@@ -752,6 +789,7 @@ print(solution.threeSum(nums=[0, 0, 0]))
     [[-1, 0, 1], [-1, -1, 2]]
     []
     [[0, 0, 0]]
+
 
 ## Hard
 
@@ -800,3 +838,48 @@ style="width: 404px; height: 405px;" />
 - `1 <= n <= 50`
 - `0 <= grid[i][j] < n`<sup>`2`</sup>
 - Each value `grid[i][j]` is **unique**.
+
+
+```python
+from collections import deque
+
+
+class Solution:
+    def swimInWater(self, grid: list[list[int]]) -> int:
+        n = len(grid)
+
+        def can_swim(t: int) -> bool:
+            directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
+            queue: deque[tuple[int, int]] = deque([(0, 0)])
+            visited: set[tuple[int, int]] = set()
+            visited.add((0, 0))
+
+            while queue:
+                x, y = queue.popleft()
+                if x == n - 1 and y == n - 1:
+                    return True
+
+                for dx, dy in directions:
+                    nx, ny = x + dx, y + dy
+                    if (
+                        0 <= nx < n
+                        and 0 <= ny < n
+                        and (nx, ny) not in visited
+                        and grid[nx][ny] <= t
+                    ):
+                        visited.add((nx, ny))
+                        queue.append((nx, ny))
+
+            return False
+
+        low, high = grid[0][0], max(max(row) for row in grid)
+
+        while low < high:
+            mid = (low + high) // 2
+            if can_swim(mid):
+                high = mid
+            else:
+                low = mid + 1
+
+        return low
+```

@@ -3,7 +3,6 @@ from collections import deque
 
 class Solution:
     def swimInWater(self, grid: list[list[int]]) -> int:
-
         n = len(grid)
 
         def can_swim(t: int) -> bool:
