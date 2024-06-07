@@ -1,6 +1,8 @@
 # LeetCode
 
-## 217. Contains Duplicate (Easy)
+## Easy
+
+### 217. Contains Duplicate
 
 Given an integer array `nums`, return `true` if any value appears **at
 least twice** in the array, and return `false` if every element is
@@ -26,7 +28,7 @@ distinct.
 - `1 <= nums.length <= 10`<sup>`5`</sup>
 - `-10`<sup>`9`</sup>`<= nums[i] <= 10`<sup>`9`</sup>
 
-### Brute Force - O(n^2), O(1)
+#### Brute Force - O(n^2), O(1)
 
 ```python
 class Solution:
@@ -49,7 +51,7 @@ print(solution.containsDuplicate(nums=[1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
     False
     True
 
-### Sorting - O(n log n), O(1)
+#### Sorting - O(n log n), O(1)
 
 ```python
 class Solution:
@@ -71,7 +73,7 @@ print(solution.containsDuplicate(nums=[1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
     False
     True
 
-### Arrays & Hashing - O(n), O(n)
+#### Arrays & Hashing - O(n), O(n)
 
 ```python
 class Solution:
@@ -94,7 +96,7 @@ print(solution.containsDuplicate(nums=[1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
     False
     True
 
-## 242. Valid Anagram (Easy)
+### 242. Valid Anagram
 
 Given two strings `s` and `t`, return `true` *if* `t` *is an anagram of*
 `s`*, and* `false` *otherwise*.
@@ -121,7 +123,7 @@ exactly once.
 **Follow up:** What if the inputs contain Unicode characters? How would
 you adapt your solution to such a case?
 
-### Brute Force - O(n^2), O(1)
+#### Brute Force - O(n^2), O(1)
 
 ```python
 class Solution:
@@ -152,7 +154,7 @@ print(solution.isAnagram(s="rat", t="car"))
     True
     False
 
-### Sorting - O(n log n), O(n)
+#### Sorting - O(n log n), O(n)
 
 ```python
 class Solution:
@@ -168,7 +170,7 @@ print(solution.isAnagram(s="rat", t="car"))
     True
     False
 
-### Arrays & Hashing - O(n), O(1)
+#### Arrays & Hashing - O(n), O(1)
 
 ```python
 class Solution:
@@ -312,7 +314,7 @@ print(solution.isAnagram(s="rat", t="car"))
     True
     False
 
-## 1. Two Sum (Easy)
+### 1. Two Sum
 
 Given an array of integers `nums` and an integer `target`, return
 *indices of the two numbers such that they add up to `target`*.
@@ -348,7 +350,7 @@ You can return the answer in any order.
 **Follow-up:** Can you come up with an algorithm that is less than
 `O(n`<sup>`2`</sup>`)` time complexity?
 
-### Brute Force - O(n^2), O(1)
+#### Brute Force - O(n^2), O(1)
 
 ```python
 class Solution:
@@ -373,7 +375,7 @@ print(solution.twoSum(nums=[3, 3], target=6))
     [1, 2]
     [0, 1]
 
-### Two Pointers - O(n log n), O(n)
+#### Two Pointers - O(n log n), O(n)
 
 ```python
 class Solution:
@@ -402,7 +404,7 @@ print(solution.twoSum(nums=[3, 3], target=6))
     [1, 2]
     [0, 1]
 
-### Arrays & Hashing - O(n), O(n)
+#### Arrays & Hashing - O(n), O(n)
 
 ```python
 class Solution:
@@ -430,7 +432,7 @@ print(solution.twoSum(nums=[3, 3], target=6))
     [1, 2]
     [0, 1]
 
-## 125. Valid Palindrome (Easy)
+### 125. Valid Palindrome
 
 A phrase is a **palindrome** if, after converting all uppercase letters
 into lowercase letters and removing all non-alphanumeric characters, it
@@ -464,7 +466,7 @@ Given a string `s`, return `true` *if it is a **palindrome**, or*
 - `1 <= s.length <= 2 * 10`<sup>`5`</sup>
 - `s` consists only of printable ASCII characters.
 
-### Brute Force - O(n), O(n)
+#### Brute Force - O(n), O(n)
 
 ```python
 class Solution:
@@ -483,7 +485,7 @@ print(solution.isPalindrome(s=" "))
     False
     True
 
-### Two Pointers - O(n), O(1)
+#### Two Pointers - O(n), O(1)
 
 ```python
 class Solution:
@@ -522,7 +524,45 @@ print(solution.isPalindrome(s=" "))
     False
     True
 
-## 167. Two Sum II - Input Array Is Sorted (Medium)
+### 170. Two Sum III - Data structure design (Easy)
+
+Design a data structure that accepts a stream of integers and checks if
+it has a pair of integers that sum up to a particular value.
+
+Implement the `TwoSum` class:
+
+- `TwoSum()` Initializes the `TwoSum` object, with an empty array
+    initially.
+- `void add(int number)` Adds `number` to the data structure.
+- `boolean find(int value)` Returns `true` if there exists any pair of
+    numbers whose sum is equal to `value`, otherwise, it returns
+    `false`.
+
+**Example 1:**
+
+    Input
+    ["TwoSum", "add", "add", "add", "find", "find"]
+    [[], [1], [3], [5], [4], [7]]
+    Output
+    [null, null, null, null, true, false]
+
+    Explanation
+    TwoSum twoSum = new TwoSum();
+    twoSum.add(1);   // [] --> [1]
+    twoSum.add(3);   // [1] --> [1,3]
+    twoSum.add(5);   // [1,3] --> [1,3,5]
+    twoSum.find(4);  // 1 + 3 = 4, return true
+    twoSum.find(7);  // No two integers sum up to 7, return false
+
+**Constraints:**
+
+- `-10^5 <= number <= 10^5`
+- `-2^31 <= value <= 2^31 - 1`
+- At most `5 * 10^4` calls will be made to `add` and `find`.
+
+## Medium
+
+### 167. Two Sum II - Input Array Is Sorted
 
 Given a **1-indexed** array of integers `numbers` that is already
 ***sorted in non-decreasing order***, find two numbers such that they
@@ -566,7 +606,7 @@ Your solution must use only constant extra space.
 - `-1000 <= target <= 1000`
 - The tests are generated such that there is **exactly one solution**.
 
-### Brute Force - O(n^2), O(1)
+#### Brute Force - O(n^2), O(1)
 
 ```python
 class Solution:
@@ -591,7 +631,7 @@ print(solution.twoSum(numbers=[-1, 0], target=-1))
     [1, 3]
     [1, 2]
 
-### Arrays & Hashing - O(n), O(n)
+#### Arrays & Hashing - O(n), O(n)
 
 ```python
 class Solution:
@@ -619,7 +659,7 @@ print(solution.twoSum(numbers=[-1, 0], target=-1))
     [1, 3]
     [1, 2]
 
-### Two Pointers - O(n), O(1)
+#### Two Pointers - O(n), O(1)
 
 ```python
 class Solution:
@@ -648,43 +688,7 @@ print(solution.twoSum(numbers=[-1, 0], target=-1))
     [1, 3]
     [1, 2]
 
-## 170. Two Sum III - Data structure design (Easy)
-
-Design a data structure that accepts a stream of integers and checks if
-it has a pair of integers that sum up to a particular value.
-
-Implement the `TwoSum` class:
-
-- `TwoSum()` Initializes the `TwoSum` object, with an empty array
-    initially.
-- `void add(int number)` Adds `number` to the data structure.
-- `boolean find(int value)` Returns `true` if there exists any pair of
-    numbers whose sum is equal to `value`, otherwise, it returns
-    `false`.
-
-**Example 1:**
-
-    Input
-    ["TwoSum", "add", "add", "add", "find", "find"]
-    [[], [1], [3], [5], [4], [7]]
-    Output
-    [null, null, null, null, true, false]
-
-    Explanation
-    TwoSum twoSum = new TwoSum();
-    twoSum.add(1);   // [] --> [1]
-    twoSum.add(3);   // [1] --> [1,3]
-    twoSum.add(5);   // [1,3] --> [1,3,5]
-    twoSum.find(4);  // 1 + 3 = 4, return true
-    twoSum.find(7);  // No two integers sum up to 7, return false
-
-**Constraints:**
-
-- `-10^5 <= number <= 10^5`
-- `-2^31 <= value <= 2^31 - 1`
-- At most `5 * 10^4` calls will be made to `add` and `find`.
-
-## 15. 3Sum (Medium)
+### 15. 3Sum
 
 Given an integer array nums, return all the triplets
 `[nums[i], nums[j], nums[k]]` such that `i != j`, `i != k`, and
@@ -720,7 +724,7 @@ Notice that the solution set must not contain duplicate triplets.
 - `3 <= nums.length <= 3000`
 - `-10`<sup>`5`</sup>`<= nums[i] <= 10`<sup>`5`</sup>
 
-### Brute Force - O(n^3), O(n)
+#### Brute Force - O(n^3), O(n)
 
 ```python
 class Solution:
@@ -748,3 +752,51 @@ print(solution.threeSum(nums=[0, 0, 0]))
     [[-1, 0, 1], [-1, -1, 2]]
     []
     [[0, 0, 0]]
+
+## Hard
+
+### 778. Swim in Rising Water
+
+You are given an `n x n` integer matrix `grid` where each value
+`grid[i][j]` represents the elevation at that point `(i, j)`.
+
+The rain starts to fall. At time `t`, the depth of the water everywhere
+is `t`. You can swim from a square to another 4-directionally adjacent
+square if and only if the elevation of both squares individually are at
+most `t`. You can swim infinite distances in zero time. Of course, you
+must stay within the boundaries of the grid during your swim.
+
+Return *the least time until you can reach the bottom right square*
+`(n - 1, n - 1)` *if you start at the top left square* `(0, 0)`.
+
+**Example 1:**
+
+<img src="https://assets.leetcode.com/uploads/2021/06/29/swim1-grid.jpg"
+style="width: 164px; height: 165px;" />
+
+    Input: grid = [[0,2],[1,3]]
+    Output: 3
+    Explanation:
+    At time 0, you are in grid location (0, 0).
+    You cannot go anywhere else because 4-directionally adjacent neighbors have a higher elevation than t = 0.
+    You cannot reach point (1, 1) until time 3.
+    When the depth of water is 3, we can swim anywhere inside the grid.
+
+**Example 2:**
+
+<img
+src="https://assets.leetcode.com/uploads/2021/06/29/swim2-grid-1.jpg"
+style="width: 404px; height: 405px;" />
+
+    Input: grid = [[0,1,2,3,4],[24,23,22,21,5],[12,13,14,15,16],[11,17,18,19,20],[10,9,8,7,6]]
+    Output: 16
+    Explanation: The final route is shown.
+    We need to wait until time 16 so that (0, 0) and (4, 4) are connected.
+
+**Constraints:**
+
+- `n == grid.length`
+- `n == grid[i].length`
+- `1 <= n <= 50`
+- `0 <= grid[i][j] < n`<sup>`2`</sup>
+- Each value `grid[i][j]` is **unique**.
