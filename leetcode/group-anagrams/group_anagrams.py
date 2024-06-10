@@ -32,3 +32,9 @@ class Solution:
                 anagram_groups.append(group)
 
         return anagram_groups
+
+
+solution = Solution()
+print(solution.groupAnagrams(strs=["eat", "tea", "tan", "ate", "nat", "bat"]))
+print(solution.groupAnagrams(strs=[""]))
+print(solution.groupAnagrams(strs=["a"]))
