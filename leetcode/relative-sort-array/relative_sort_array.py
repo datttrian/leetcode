@@ -11,6 +11,7 @@ for i in arr2:
 
 print(arr1)
 print(result)  # type: ignore
-for num in arr1:
-    result.append(num)  # type: ignore
-print(result)  # type: ignore
+print(sorted(arr1))
+# for num in arr1:
+#     result.append(num)  # type: ignore
+# print(result)  # type: ignore
