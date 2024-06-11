@@ -4,14 +4,15 @@ arr2 = [2, 1, 4, 3, 9, 6]
 result = []
 
 for i in arr2:
-    for j in arr1:
-        if i == j:
-            result.append(j)  # type: ignore
-            arr1.remove(j)
+    for j in range(len(arr1)):
+        if i == arr1[j]:
+            result.append(arr1[j])  # type: ignore
+            arr1[j] = 0
 
 print(arr1)
 print(result)  # type: ignore
-
-for num in sorted(arr1):
-    result.append(num)  # type: ignore
+arr1.sort()
+for num in arr1:
+    if num != 0:
+        result.append(num)  # type: ignore
 print(result)  # type: ignore
