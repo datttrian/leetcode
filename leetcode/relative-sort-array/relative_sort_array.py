@@ -16,3 +16,4 @@ for i in arr2:
 
 print(arr1)
 print(result)  # type: ignore
+result.append(arr1)  # type: ignore
