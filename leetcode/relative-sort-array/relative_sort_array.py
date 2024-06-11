@@ -8,4 +8,7 @@ count = Counter(arr1)
 print(count[1])
 result = []
 
-print(result.extend([arr1[1]] * count[arr2[1]]))  # type: ignore
+for i in arr2:
+    for j in arr1:
+        if i == j:
+            result.append(j)  # type: ignore
