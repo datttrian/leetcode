@@ -12,3 +12,7 @@ for i in arr2:
     for j in arr1:
         if i == j:
             result.append(j)  # type: ignore
+            arr1.remove(j)
+
+print(arr1)
+print(result)  # type: ignore
