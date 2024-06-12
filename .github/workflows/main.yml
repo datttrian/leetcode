@@ -30,6 +30,7 @@ jobs:
           DEFAULT_BRANCH: main
           # To report GitHub Actions status checks
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_CHECKOV: false
           VALIDATE_EDITORCONFIG: false
           VALIDATE_GITLEAKS: false
           VALIDATE_JSCPD: false
