@@ -7,26 +7,16 @@ class Solution:
         count_t: dict[str, int] = {}
 
         for char in s:
-            if char in count_s:
-                count_s[char] += 1
-            else:
-                count_s[char] = 1
+            count_s[char] = count_s.get(char, 0) + 1
 
         for char in t:
-            if char in count_t:
-                count_t[char] += 1
-            else:
-                count_t[char] = 1
+            count_t[char] = count_t.get(char, 0) + 1
 
-        for char in count_s:
-            if char not in count_t or count_s[char] != count_t[char]:
+        for char, count in count_s.items():
+            if count_t.get(char, 0) != count:
                 return False
 
-        for char in count_t:
-            if char not in count_s:
-                return False
-
-        return True
+        return len(count_s) == len(count_t)
 
 
 solution = Solution()

@@ -5,7 +5,6 @@ class Solution:
 
         for num in nums:
             if num > 0 and -num in nums_set:
-                if num > largest_k:
-                    largest_k = num
+                largest_k = max(largest_k, num)
 
         return largest_k

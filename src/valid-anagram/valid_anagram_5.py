@@ -5,11 +5,11 @@ class Solution:
 
         count: dict[str, int] = {}
 
-        for i in range(len(s)):
-            count[s[i]] = count.get(s[i], 0) + 1
+        for i, char in enumerate(s):
+            count[char] = count.get(char, 0) + 1
             count[t[i]] = count.get(t[i], 0) - 1
 
-        for value in count.values():
+        for _, value in count.items():
             if value != 0:
                 return False
 

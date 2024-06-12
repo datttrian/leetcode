@@ -1,15 +1,17 @@
 class Solution:
     def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
-        def isAnagram(s: str, t: str) -> bool:
+        def is_anagrams(s: str, t: str) -> bool:
             if len(s) != len(t):
                 return False
+
+            t_list = list(t)
 
             for char in s:
                 is_matched = False
 
-                for i in range(len(t)):
-                    if t[i] == char:
-                        t = t[:i] + t[i + 1 :]
+                for i, t_char in enumerate(t_list):
+                    if t_char == char:
+                        t_list.pop(i)
                         is_matched = True
                         break
 
@@ -21,13 +23,13 @@ class Solution:
         anagram_groups: list[list[str]] = []
         used = [False] * len(strs)
 
-        for i in range(len(strs)):
+        for i, str_i in enumerate(strs):
             if not used[i]:
-                group = [strs[i]]
+                group = [str_i]
                 used[i] = True
-                for j in range(i + 1, len(strs)):
-                    if not used[j] and isAnagram(strs[i], strs[j]):
-                        group.append(strs[j])
+                for j, str_j in enumerate(strs[i + 1 :], start=i + 1):
+                    if not used[j] and is_anagrams(str_i, str_j):
+                        group.append(str_j)
                         used[j] = True
                 anagram_groups.append(group)
 

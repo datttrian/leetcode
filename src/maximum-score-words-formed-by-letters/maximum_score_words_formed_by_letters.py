@@ -18,11 +18,11 @@ class Solution:
                     subsets.append(list(combo))
             return subsets
 
-        def calculate_word_score(word: str, score_dict: dict[str, int]) -> int:
-            return sum(score_dict[char] for char in word)
+        def calculate_word_score(word: str, scoreDict: dict[str, int]) -> int:
+            return sum(scoreDict[char] for char in word)
 
-        def can_form_words(words: list[str], letter_counts: dict[str, int]) -> bool:
-            temp_letter_counts = letter_counts.copy()
+        def can_form_words(words: list[str], letterCounts: dict[str, int]) -> bool:
+            temp_letter_counts = letterCounts.copy()
             for word in words:
                 for char in word:
                     if temp_letter_counts.get(char, 0) == 0:

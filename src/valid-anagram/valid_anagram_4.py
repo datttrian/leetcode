@@ -17,8 +17,8 @@ class Solution:
             else:
                 return False
 
-        for char in count:
-            if count[char] != 0:
+        for char, cnt in count.items():
+            if cnt != 0:
                 return False
 
         return True

@@ -2,8 +2,8 @@ class Solution:
     def matrixScore(self, grid: list[list[int]]) -> int:
         for row in grid:
             if row[0] == 0:
-                for j in range(len(row)):
-                    row[j] ^= 1
+                for j, val in enumerate(row):
+                    row[j] = val ^ 1
 
         for col in range(1, len(grid[0])):
             num_ones = sum(row[col] for row in grid)

@@ -24,7 +24,8 @@ class Solution:
 
             if count == k:
                 return list(max_fraction)
-            elif count < k:
+
+            if count < k:
                 low = mid + 1e-9
             else:
                 high = mid

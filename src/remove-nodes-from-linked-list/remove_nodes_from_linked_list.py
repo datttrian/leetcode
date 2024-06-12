@@ -5,7 +5,7 @@ class ListNode:
     def __init__(
         self,
         val: int = 0,
-        next_node: "Optional[ListNode]" = None,
+        next_node: "Optional[ListNode]" = None,  # pylint: disable=invalid-name
     ) -> None:
         self.val: int = val
         self.next: Optional[ListNode] = next_node

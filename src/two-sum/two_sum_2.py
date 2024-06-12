@@ -4,10 +4,11 @@ class Solution:
         left, right = 0, len(nums) - 1
 
         while left < right:
-            sum = nums_sorted[left][1] + nums_sorted[right][1]
-            if sum == target:
+            current_sum = nums_sorted[left][1] + nums_sorted[right][1]
+            if current_sum == target:
                 return [nums_sorted[left][0], nums_sorted[right][0]]
-            elif sum < target:
+
+            if current_sum < target:
                 left += 1
             else:
                 right -= 1
