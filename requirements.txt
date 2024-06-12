@@ -1,3 +1,5 @@
 isort
-pylint-pytest
 jupyter
+jupytext
+nbconvert
+pylint-pytest
