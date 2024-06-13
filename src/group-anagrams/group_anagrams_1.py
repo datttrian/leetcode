@@ -1,6 +1,6 @@
 class Solution:
     def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
-        def is_anagrams(s: str, t: str) -> bool:
+        def is_anagram(s: str, t: str) -> bool:
             if len(s) != len(t):
                 return False
 
@@ -28,7 +28,7 @@ class Solution:
                 group = [str_i]
                 used[i] = True
                 for j, str_j in enumerate(strs[i + 1 :], start=i + 1):
-                    if not used[j] and is_anagrams(str_i, str_j):
+                    if not used[j] and is_anagram(str_i, str_j):
                         group.append(str_j)
                         used[j] = True
                 anagram_groups.append(group)
