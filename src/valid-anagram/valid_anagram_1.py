@@ -8,7 +8,7 @@ class Solution:
 
             for i, c in enumerate(t):
                 if c == char:
-                    t = t[:i] + t[i + 1:]
+                    t = t[:i] + t[i + 1 :]
                     is_matched = True
                     break
 
