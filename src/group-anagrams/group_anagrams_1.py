@@ -4,14 +4,12 @@ class Solution:
             if len(s) != len(t):
                 return False
 
-            t_list = list(t)
-
             for char in s:
                 is_matched = False
 
-                for i, t_char in enumerate(t_list):
-                    if t_char == char:
-                        t_list.pop(i)
+                for i, c in enumerate(t):
+                    if c == char:
+                        t = t[:i] + t[i + 1 :]
                         is_matched = True
                         break
 
