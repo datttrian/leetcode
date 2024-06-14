@@ -5,8 +5,7 @@ class Solution:
 
         for i in range(n):
             for j in range(i + 1, n):
-                profit = prices[j] - prices[i]
-                max_profit = max(profit, max_profit)
+                max_profit = max(prices[j] - prices[i], max_profit)
 
         return max_profit
 
