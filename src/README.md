@@ -30,7 +30,6 @@ distinct.
 
 #### Brute Force - O(n^2), O(1)
 
-
 ```python
 class Solution:
     def containsDuplicate(self, nums: list[int]) -> bool:
@@ -52,9 +51,7 @@ print(solution.containsDuplicate(nums=[1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
     False
     True
 
-
 #### Sorting - O(n log n), O(1)
-
 
 ```python
 class Solution:
@@ -76,9 +73,7 @@ print(solution.containsDuplicate(nums=[1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
     False
     True
 
-
 #### Arrays & Hashing - O(n), O(n)
-
 
 ```python
 class Solution:
@@ -100,7 +95,6 @@ print(solution.containsDuplicate(nums=[1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
     True
     False
     True
-
 
 ### 242. Valid Anagram
 
@@ -131,7 +125,6 @@ you adapt your solution to such a case?
 
 #### Brute Force - O(n^2), O(1)
 
-
 ```python
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
@@ -161,9 +154,7 @@ print(solution.isAnagram(s="rat", t="car"))
     True
     False
 
-
 #### Sorting - O(n log n), O(n)
-
 
 ```python
 class Solution:
@@ -179,9 +170,7 @@ print(solution.isAnagram(s="rat", t="car"))
     True
     False
 
-
 #### Arrays & Hashing - O(n), O(1)
-
 
 ```python
 class Solution:
@@ -223,8 +212,6 @@ print(solution.isAnagram(s="rat", t="car"))
     True
     False
 
-
-
 ```python
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
@@ -260,8 +247,6 @@ print(solution.isAnagram(s="rat", t="car"))
     True
     False
 
-
-
 ```python
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
@@ -289,8 +274,6 @@ print(solution.isAnagram(s="rat", t="car"))
     True
     False
 
-
-
 ```python
 from typing import Counter
 
@@ -307,8 +290,6 @@ print(solution.isAnagram(s="rat", t="car"))
 
     True
     False
-
-
 
 ```python
 class Solution:
@@ -332,7 +313,6 @@ print(solution.isAnagram(s="rat", t="car"))
 
     True
     False
-
 
 ### 1. Two Sum
 
@@ -372,7 +352,6 @@ You can return the answer in any order.
 
 #### Brute Force - O(n^2), O(1)
 
-
 ```python
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
@@ -396,9 +375,7 @@ print(solution.twoSum(nums=[3, 3], target=6))
     [1, 2]
     [0, 1]
 
-
 #### Two Pointers - O(n log n), O(n)
-
 
 ```python
 class Solution:
@@ -428,9 +405,7 @@ print(solution.twoSum(nums=[3, 3], target=6))
     [1, 2]
     [0, 1]
 
-
 #### Arrays & Hashing - O(n), O(n)
-
 
 ```python
 class Solution:
@@ -457,7 +432,6 @@ print(solution.twoSum(nums=[3, 3], target=6))
     [0, 1]
     [1, 2]
     [0, 1]
-
 
 ### 125. Valid Palindrome
 
@@ -495,7 +469,6 @@ Given a string `s`, return `true` *if it is a **palindrome**, or*
 
 #### Brute Force - O(n), O(n)
 
-
 ```python
 class Solution:
     def isPalindrome(self, s: str) -> bool:
@@ -513,9 +486,7 @@ print(solution.isPalindrome(s=" "))
     False
     True
 
-
 #### Two Pointers - O(n), O(1)
-
 
 ```python
 class Solution:
@@ -553,7 +524,6 @@ print(solution.isPalindrome(s=" "))
     True
     False
     True
-
 
 ### 170. Two Sum III - Data structure design
 
@@ -622,7 +592,6 @@ you cannot achieve any profit, return `0`.
 
 #### Brute Force
 
-
 ```python
 class Solution:
     def maxProfit(self, prices: list[int]) -> int:
@@ -644,9 +613,7 @@ print(solution.maxProfit(prices=[7, 6, 4, 3, 1]))
     5
     0
 
-
 #### Sliding Window - O(n), O(1)
-
 
 ```python
 class Solution:
@@ -674,8 +641,6 @@ print(solution.maxProfit(prices=[7, 6, 4, 3, 1]))
     5
     0
 
-
-
 ```python
 class Solution:
     def maxProfit(self, prices: list[int]) -> int:
@@ -696,7 +661,6 @@ print(solution.maxProfit(prices=[7, 6, 4, 3, 1]))
 
     5
     0
-
 
 ## Medium
 
@@ -731,7 +695,6 @@ exactly once.
 - `strs[i]` consists of lowercase English letters.
 
 #### Brute Force - O(n^2 * m), O(n)
-
 
 ```python
 class Solution:
@@ -780,7 +743,6 @@ print(solution.groupAnagrams(strs=["a"]))
     [['']]
     [['a']]
 
-
 ### 167. Two Sum II - Input Array Is Sorted
 
 Given a **1-indexed** array of integers `numbers` that is already
@@ -827,7 +789,6 @@ Your solution must use only constant extra space.
 
 #### Brute Force - O(n^2), O(1)
 
-
 ```python
 class Solution:
     def twoSum(self, numbers: list[int], target: int) -> list[int]:
@@ -851,9 +812,7 @@ print(solution.twoSum(numbers=[-1, 0], target=-1))
     [1, 3]
     [1, 2]
 
-
 #### Arrays & Hashing - O(n), O(n)
-
 
 ```python
 class Solution:
@@ -881,9 +840,7 @@ print(solution.twoSum(numbers=[-1, 0], target=-1))
     [1, 3]
     [1, 2]
 
-
 #### Two Pointers - O(n), O(1)
-
 
 ```python
 class Solution:
@@ -913,7 +870,6 @@ print(solution.twoSum(numbers=[-1, 0], target=-1))
     [1, 2]
     [1, 3]
     [1, 2]
-
 
 ### 15. 3Sum
 
@@ -953,7 +909,6 @@ Notice that the solution set must not contain duplicate triplets.
 
 #### Brute Force - O(n^3), O(n)
 
-
 ```python
 class Solution:
     def threeSum(self, nums: list[int]) -> list[list[int]]:
@@ -980,7 +935,6 @@ print(solution.threeSum(nums=[0, 0, 0]))
     [[-1, 0, 1], [-1, -1, 2]]
     []
     [[0, 0, 0]]
-
 
 ## Hard
 
@@ -1031,7 +985,6 @@ style="width: 404px; height: 405px;" />
 - Each value `grid[i][j]` is **unique**.
 
 #### Binary Search - O(n^2 * log(n^2)), O(n^2)
-
 
 ```python
 from collections import deque
