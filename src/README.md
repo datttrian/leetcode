@@ -141,8 +141,8 @@ class Solution:
         for char in s:
             is_matched = False
 
-            for i in range(len(t)):
-                if t[i] == char:
+            for i, c in enumerate(t):
+                if c == char:
                     t = t[:i] + t[i + 1 :]
                     is_matched = True
                     break
@@ -188,30 +188,30 @@ class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
             return False
-        
+
         count_s: dict[str, int] = {}
         count_t: dict[str, int] = {}
-        
+
         for char in s:
             if char in count_s:
                 count_s[char] += 1
             else:
                 count_s[char] = 1
-        
+
         for char in t:
             if char in count_t:
                 count_t[char] += 1
             else:
                 count_t[char] = 1
-        
-        for char in count_s:
-            if char not in count_t or count_s[char] != count_t[char]:
+
+        for char, count in count_s.items():
+            if char not in count_t or count != count_t[char]:
                 return False
-        
+
         for char in count_t:
             if char not in count_s:
                 return False
-        
+
         return True
 
 
@@ -245,8 +245,8 @@ class Solution:
             else:
                 return False
 
-        for char in count:
-            if count[char] != 0:
+        for char, cnt in count.items():
+            if cnt != 0:
                 return False
 
         return True
@@ -267,19 +267,19 @@ class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
             return False
-        
+
         count: dict[str, int] = {}
 
-        for i in range(len(s)):
-            count[s[i]] = count.get(s[i], 0) + 1
+        for i, char in enumerate(s):
+            count[char] = count.get(char, 0) + 1
             count[t[i]] = count.get(t[i], 0) - 1
 
-        for value in count.values():
+        for _, value in count.items():
             if value != 0:
                 return False
-            
+
         return True
-    
+
 
 solution = Solution()
 print(solution.isAnagram(s="anagram", t="nagaram"))
@@ -318,8 +318,8 @@ class Solution:
 
         count = [0] * 26  # lowercase English letters
 
-        for i in range(len(s)):
-            count[ord(s[i]) - ord("a")] += 1
+        for i, char in enumerate(s):
+            count[ord(char) - ord("a")] += 1
             count[ord(t[i]) - ord("a")] -= 1
 
         return all(c == 0 for c in count)
@@ -407,10 +407,11 @@ class Solution:
         left, right = 0, len(nums) - 1
 
         while left < right:
-            sum = nums_sorted[left][1] + nums_sorted[right][1]
-            if sum == target:
+            current_sum = nums_sorted[left][1] + nums_sorted[right][1]
+            if current_sum == target:
                 return [nums_sorted[left][0], nums_sorted[right][0]]
-            elif sum < target:
+
+            if current_sum < target:
                 left += 1
             else:
                 right -= 1
@@ -519,7 +520,7 @@ print(solution.isPalindrome(s=" "))
 ```python
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        def alphaNum(c: str) -> bool:
+        def alpha_num(c: str) -> bool:
             return (
                 ord("A") <= ord(c) <= ord("Z")
                 or ord("a") <= ord(c) <= ord("z")
@@ -529,9 +530,9 @@ class Solution:
         left, right = 0, len(s) - 1
 
         while left < right:
-            while left < right and not alphaNum(s[left]):
+            while left < right and not alpha_num(s[left]):
                 left += 1
-            while left < right and not alphaNum(s[right]):
+            while left < right and not alpha_num(s[right]):
                 right -= 1
 
             if s[left].lower() != s[right].lower():
@@ -590,6 +591,113 @@ Implement the `TwoSum` class:
 - `-2^31 <= value <= 2^31 - 1`
 - At most `5 * 10^4` calls will be made to `add` and `find`.
 
+### 121. Best Time to Buy and Sell Stock
+
+You are given an array `prices` where `prices[i]` is the price of a
+given stock on the `i`<sup>`th`</sup> day.
+
+You want to maximize your profit by choosing a **single day** to buy one
+stock and choosing a **different day in the future** to sell that stock.
+
+Return *the maximum profit you can achieve from this transaction*. If
+you cannot achieve any profit, return `0`.
+
+**Example 1:**
+
+    Input: prices = [7,1,5,3,6,4]
+    Output: 5
+    Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+    Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
+
+**Example 2:**
+
+    Input: prices = [7,6,4,3,1]
+    Output: 0
+    Explanation: In this case, no transactions are done and the max profit = 0.
+
+**Constraints:**
+
+- `1 <= prices.length <= 10`<sup>`5`</sup>
+- `0 <= prices[i] <= 10`<sup>`4`</sup>
+
+#### Brute Force
+
+
+```python
+class Solution:
+    def maxProfit(self, prices: list[int]) -> int:
+        n = len(prices)
+        max_profit = 0
+
+        for i in range(n):
+            for j in range(i + 1, n):
+                max_profit = max(prices[j] - prices[i], max_profit)
+
+        return max_profit
+
+
+solution = Solution()
+print(solution.maxProfit(prices=[7, 1, 5, 3, 6, 4]))
+print(solution.maxProfit(prices=[7, 6, 4, 3, 1]))
+```
+
+    5
+    0
+
+
+#### Sliding Window - O(n), O(1)
+
+
+```python
+class Solution:
+    def maxProfit(self, prices: list[int]) -> int:
+        if not prices or len(prices) == 1:
+            return 0
+
+        max_profit = 0
+        min_price = prices[0]
+
+        for price in prices[1:]:
+            if price < min_price:
+                min_price = price
+            else:
+                max_profit = max(max_profit, price - min_price)
+
+        return max_profit
+
+
+solution = Solution()
+print(solution.maxProfit(prices=[7, 1, 5, 3, 6, 4]))
+print(solution.maxProfit(prices=[7, 6, 4, 3, 1]))
+```
+
+    5
+    0
+
+
+
+```python
+class Solution:
+    def maxProfit(self, prices: list[int]) -> int:
+        min_price = prices[0]
+        max_profit = 0
+
+        for price in prices[1:]:
+            min_price = min(min_price, price)
+            max_profit = max(max_profit, price - min_price)
+
+        return max_profit
+
+
+solution = Solution()
+print(solution.maxProfit(prices=[7, 1, 5, 3, 6, 4]))
+print(solution.maxProfit(prices=[7, 6, 4, 3, 1]))
+```
+
+    5
+    0
+
+
 ## Medium
 
 ### 49. Group Anagrams
@@ -628,15 +736,15 @@ exactly once.
 ```python
 class Solution:
     def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
-        def isAnagram(s: str, t: str) -> bool:
+        def is_anagram(s: str, t: str) -> bool:
             if len(s) != len(t):
                 return False
 
             for char in s:
                 is_matched = False
 
-                for i in range(len(t)):
-                    if t[i] == char:
+                for i, c in enumerate(t):
+                    if c == char:
                         t = t[:i] + t[i + 1 :]
                         is_matched = True
                         break
@@ -649,13 +757,13 @@ class Solution:
         anagram_groups: list[list[str]] = []
         used = [False] * len(strs)
 
-        for i in range(len(strs)):
+        for i, str_i in enumerate(strs):
             if not used[i]:
-                group = [strs[i]]
+                group = [str_i]
                 used[i] = True
-                for j in range(i + 1, len(strs)):
-                    if not used[j] and isAnagram(strs[i], strs[j]):
-                        group.append(strs[j])
+                for j, str_j in enumerate(strs[i + 1 :], start=i + 1):
+                    if not used[j] and is_anagram(str_i, str_j):
+                        group.append(str_j)
                         used[j] = True
                 anagram_groups.append(group)
 
@@ -784,9 +892,11 @@ class Solution:
 
         while left < right:
             current_sum = numbers[left] + numbers[right]
+
             if current_sum == target:
                 return [left + 1, right + 1]
-            elif current_sum < target:
+
+            if current_sum < target:
                 left += 1
             else:
                 right -= 1
