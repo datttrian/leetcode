@@ -5,7 +5,8 @@ class Solution:
 
         for char in s:
             if char in bracket_map:
-                if not stack or stack.pop() != bracket_map[char]:
+                top_element = stack.pop() if stack else "#"
+                if bracket_map[char] != top_element:
                     return False
             else:
                 stack.append(char)
