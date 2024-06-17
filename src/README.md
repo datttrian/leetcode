@@ -220,41 +220,6 @@ class Solution:
 
         count: dict[str, int] = {}
 
-        for char in s:
-            if char in count:
-                count[char] += 1
-            else:
-                count[char] = 1
-
-        for char in t:
-            if char in count:
-                count[char] -= 1
-            else:
-                return False
-
-        for char, cnt in count.items():
-            if cnt != 0:
-                return False
-
-        return True
-
-
-solution = Solution()
-print(solution.isAnagram(s="anagram", t="nagaram"))
-print(solution.isAnagram(s="rat", t="car"))
-```
-
-    True
-    False
-
-```python
-class Solution:
-    def isAnagram(self, s: str, t: str) -> bool:
-        if len(s) != len(t):
-            return False
-
-        count: dict[str, int] = {}
-
         for i, char in enumerate(s):
             count[char] = count.get(char, 0) + 1
             count[t[i]] = count.get(t[i], 0) - 1
@@ -661,6 +626,119 @@ print(solution.maxProfit(prices=[7, 6, 4, 3, 1]))
 
     5
     0
+
+### 20. Valid Parentheses
+
+Given a string `s` containing just the characters `'('`, `')'`, `'{'`,
+`'}'`, `'['` and `']'`, determine if the input string is valid.
+
+An input string is valid if:
+
+1. Open brackets must be closed by the same type of brackets.
+2. Open brackets must be closed in the correct order.
+3. Every close bracket has a corresponding open bracket of the same
+    type.
+
+**Example 1:**
+
+    Input: s = "()"
+    Output: true
+
+**Example 2:**
+
+    Input: s = "()[]{}"
+    Output: true
+
+**Example 3:**
+
+    Input: s = "(]"
+    Output: false
+
+**Constraints:**
+
+- `1 <= s.length <= 10`<sup>`4`</sup>
+- `s` consists of parentheses only `'()[]{}'`.
+
+#### Brute Force - O(n^2), O(n)
+
+```python
+class Solution:
+    def isValid(self, s: str) -> bool:
+        matching_parentheses = ["()", "{}", "[]"]
+        while any(pair in s for pair in matching_parentheses):
+            s = s.replace("()", "").replace("{}", "").replace("[]", "")
+        return not s
+
+
+solution = Solution()
+print(solution.isValid(s="()"))
+print(solution.isValid(s="()[]{}"))
+print(solution.isValid(s="(]"))
+```
+
+    True
+    True
+    False
+
+#### Recursion - O(n^2), O(n)
+
+```python
+class Solution:
+    def isValid(self, s: str) -> bool:
+        if not s:
+            return True
+
+        n = len(s)
+        i = 0
+        matching_parentheses = [("(", ")"), ("{", "}"), ("[", "]")]
+
+        while i < n - 1:
+            for opening, closing in matching_parentheses:
+                if s[i] == opening and s[i + 1] == closing:
+                    new_s = s[:i] + s[i + 2 :]
+                    return self.isValid(new_s)
+            i += 1
+
+        return False
+
+
+solution = Solution()
+print(solution.isValid(s="()"))
+print(solution.isValid(s="()[]{}"))
+print(solution.isValid(s="(]"))
+```
+
+    True
+    True
+    False
+
+#### Stack - O(n), O(n)
+
+```python
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack: list[str] = []
+        matching_parentheses = {")": "(", "}": "{", "]": "["}
+
+        for char in s:
+            if char in matching_parentheses:
+                if not stack or stack.pop() != matching_parentheses[char]:
+                    return False
+            else:
+                stack.append(char)
+
+        return not stack
+
+
+solution = Solution()
+print(solution.isValid(s="()"))
+print(solution.isValid(s="()[]{}"))
+print(solution.isValid(s="(]"))
+```
+
+    True
+    True
+    False
 
 ## Medium
 
