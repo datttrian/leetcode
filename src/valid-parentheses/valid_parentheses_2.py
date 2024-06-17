@@ -17,3 +17,9 @@ class Solution:
             i += 1
 
         return False
+
+
+solution = Solution()
+print(solution.isValid(s="()"))
+print(solution.isValid(s="()[]{}"))
+print(solution.isValid(s="(]"))
