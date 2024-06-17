@@ -1,11 +1,11 @@
 class Solution:
     def isValid(self, s: str) -> bool:
         stack: list[str] = []
-        bracket_map = {")": "(", "}": "{", "]": "["}
+        matching_parentheses = {")": "(", "}": "{", "]": "["}
 
         for char in s:
-            if char in bracket_map:
-                if not stack or stack.pop() != bracket_map[char]:
+            if char in matching_parentheses:
+                if not stack or stack.pop() != matching_parentheses[char]:
                     return False
             else:
                 stack.append(char)
