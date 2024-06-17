@@ -5,20 +5,12 @@ class Solution:
 
         count: dict[str, int] = {}
 
-        for char in s:
-            if char in count:
-                count[char] += 1
-            else:
-                count[char] = 1
+        for i, char in enumerate(s):
+            count[char] = count.get(char, 0) + 1
+            count[t[i]] = count.get(t[i], 0) - 1
 
-        for char in t:
-            if char in count:
-                count[char] -= 1
-            else:
-                return False
-
-        for char, cnt in count.items():
-            if cnt != 0:
+        for _, value in count.items():
+            if value != 0:
                 return False
 
         return True

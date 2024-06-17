@@ -7,8 +7,6 @@ right side of it.
 
 Return *the* `head` *of the modified linked list.*
 
- 
-
 **Example 1:**
 
 <img src="https://assets.leetcode.com/uploads/2022/10/02/drawio.png"
@@ -27,10 +25,8 @@ style="width: 631px; height: 51px;" />
     Output: [1,1,1,1]
     Explanation: Every node has value 1, so no nodes are removed.
 
- 
-
 **Constraints:**
 
--   The number of the nodes in the given list is in the range
+- The number of the nodes in the given list is in the range
     `[1, 10`<sup>`5`</sup>`]`.
--   `1 <= Node.val <= 10`<sup>`5`</sup>
+- `1 <= Node.val <= 10`<sup>`5`</sup>

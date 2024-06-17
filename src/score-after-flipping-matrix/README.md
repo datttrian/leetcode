@@ -12,8 +12,6 @@ Every row of the matrix is interpreted as a binary number, and the
 Return *the highest possible **score** after making any number of
 **moves** (including zero moves)*.
 
- 
-
 **Example 1:**
 
 <img src="https://assets.leetcode.com/uploads/2021/07/23/lc-toogle1.jpg"
@@ -28,11 +26,9 @@ style="width: 500px; height: 299px;" />
     Input: grid = [[0]]
     Output: 1
 
- 
-
 **Constraints:**
 
--   `m == grid.length`
--   `n == grid[i].length`
--   `1 <= m, n <= 20`
--   `grid[i][j]` is either `0` or `1`.
+- `m == grid.length`
+- `n == grid[i].length`
+- `1 <= m, n <= 20`
+- `grid[i][j]` is either `0` or `1`.

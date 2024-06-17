@@ -9,17 +9,15 @@ The athletes are **placed** based on their scores, where the
 `2`<sup>`nd`</sup> place athlete has the `2`<sup>`nd`</sup> highest
 score, and so on. The placement of each athlete determines their rank:
 
--   The `1`<sup>`st`</sup> place athlete's rank is `"Gold Medal"`.
--   The `2`<sup>`nd`</sup> place athlete's rank is `"Silver Medal"`.
--   The `3`<sup>`rd`</sup> place athlete's rank is `"Bronze Medal"`.
--   For the `4`<sup>`th`</sup> place to the `n`<sup>`th`</sup> place
+- The `1`<sup>`st`</sup> place athlete's rank is `"Gold Medal"`.
+- The `2`<sup>`nd`</sup> place athlete's rank is `"Silver Medal"`.
+- The `3`<sup>`rd`</sup> place athlete's rank is `"Bronze Medal"`.
+- For the `4`<sup>`th`</sup> place to the `n`<sup>`th`</sup> place
     athlete, their rank is their placement number (i.e., the
     `x`<sup>`th`</sup> place athlete's rank is `"x"`).
 
 Return an array `answer` of size `n` where `answer[i]` is the **rank**
 of the `i`<sup>`th`</sup> athlete.
-
- 
 
 **Example 1:**
 
@@ -33,11 +31,9 @@ of the `i`<sup>`th`</sup> athlete.
     Output: ["Gold Medal","5","Bronze Medal","Silver Medal","4"]
     Explanation: The placements are [1st, 5th, 3rd, 2nd, 4th].
 
- 
-
 **Constraints:**
 
--   `n == score.length`
--   `1 <= n <= 10`<sup>`4`</sup>
--   `0 <= score[i] <= 10`<sup>`6`</sup>
--   All the values in `score` are **unique**.
+- `n == score.length`
+- `1 <= n <= 10`<sup>`4`</sup>
+- `0 <= score[i] <= 10`<sup>`6`</sup>
+- All the values in `score` are **unique**.

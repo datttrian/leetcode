@@ -1,19 +1,9 @@
+from typing import Counter
+
+
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        if len(s) != len(t):
-            return False
-
-        count: dict[str, int] = {}
-
-        for i, char in enumerate(s):
-            count[char] = count.get(char, 0) + 1
-            count[t[i]] = count.get(t[i], 0) - 1
-
-        for _, value in count.items():
-            if value != 0:
-                return False
-
-        return True
+        return Counter(s) == Counter(t)
 
 
 solution = Solution()
