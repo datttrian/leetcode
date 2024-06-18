@@ -77,43 +77,170 @@ maximized, the total profit will also be maximized.
 
 #### Implementation
 
+```python
+class Solution:
+    def maxProfitAssignment(
+        self, difficulty: List[int], profit: List[int], worker: List[int]
+    ) -> int:
+        job_profile = [(0, 0)]
+        for i in range(len(difficulty)):
+            job_profile.append((profit[i], difficulty[i]))
+
+        # Sort in decreasing order of profit.
+        job_profile.sort(reverse=True)
+        for i in range(len(job_profile) - 1):
+            job_profile[i + 1] = (
+                job_profile[i + 1][0],
+                min(job_profile[i][1], job_profile[i + 1][1]),
+            )
+
+        net_profit = 0
+        for ability in worker:
+            # Maximize profit using binary search.
+            l, r = 0, len(job_profile) - 1
+            job_profit = 0
+            while l <= r:
+                mid = (l + r) // 2
+                if job_profile[mid][1] <= ability:
+                    job_profit = max(job_profit, job_profile[mid][0])
+                    r = mid - 1
+                else:
+                    l = mid + 1
+            # Add profit of each worker to total profit.
+            net_profit += job_profit
+
+        return net_profit
+```
+
+<details>
+<summary>C++</summary>
+
+```cpp
+class Solution {
+public:
+    int maxProfitAssignment(vector<int>& difficulty, vector<int>& profit,
+                            vector<int>& worker) {
+        vector<pair<int, int>> jobProfile;
+        jobProfile.push_back({0, 0});
+        for (int i = 0; i < difficulty.size(); i++) {
+            jobProfile.push_back({profit[i], difficulty[i]});
+        }
+
+        // Sort in decreasing order of profit.
+        sort(jobProfile.begin(), jobProfile.end());
+        reverse(jobProfile.begin(), jobProfile.end());
+        for (int i = 0; i < jobProfile.size() - 1; i++) {
+            jobProfile[i + 1].second =
+                min(jobProfile[i].second, jobProfile[i + 1].second);
+        }
+
+        int netProfit = 0;
+        for (int i = 0; i < worker.size(); i++) {
+            int ability = worker[i];
+            // Maximize profit using binary search.
+            int l = 0, r = jobProfile.size() - 1, jobProfit = 0;
+            while (l <= r) {
+                int mid = (l + r) / 2;
+                if (jobProfile[mid].second <= ability) {
+                    jobProfit = max(jobProfit, jobProfile[mid].first);
+                    r = mid - 1;
+                } else {
+                    l = mid + 1;
+                }
+            }
+            // Add profit of each worker to total profit.
+            netProfit += jobProfit;
+        }
+        return netProfit;
+    }
+};
+```
+
+</details>
+
+<details>
+<summary>Java</summary>
+
+```java
+class Solution {
+
+    public int maxProfitAssignment(
+        int[] difficulty,
+        int[] profit,
+        int[] worker
+    ) {
+        List<int[]> jobProfile = new ArrayList<>();
+        jobProfile.add(new int[] { 0, 0 });
+        for (int i = 0; i < difficulty.length; i++) {
+            jobProfile.add(new int[] { profit[i], difficulty[i] });
+        }
+
+        // Sort in decreasing order of profit.
+        jobProfile.sort((a, b) -> Integer.compare(b[0], a[0]));
+        for (int i = 0; i < jobProfile.size() - 1; i++) {
+            jobProfile.get(i + 1)[1] = Math.min(
+                jobProfile.get(i)[1],
+                jobProfile.get(i + 1)[1]
+            );
+        }
+
+        int netProfit = 0;
+        for (int i = 0; i < worker.length; i++) {
+            int ability = worker[i];
+            // Maximize profit using binary search.
+            int l = 0, r = jobProfile.size() - 1, jobProfit = 0;
+            while (l <= r) {
+                int mid = (l + r) / 2;
+                if (jobProfile.get(mid)[1] <= ability) {
+                    jobProfit = Math.max(jobProfit, jobProfile.get(mid)[0]);
+                    r = mid - 1;
+                } else {
+                    l = mid + 1;
+                }
+            }
+            // Add profit of each worker to total profit.
+            netProfit += jobProfit;
+        }
+        return netProfit;
+    }
+}
+```
+
+</details>
+
 #### Complexity Analysis
 
-Let nnn be the size of the `difficulty` and `profit` arrays, and `m` be
+Let $n$ be the size of the `difficulty` and `profit` arrays, and `m` be
 the size of the `worker` array.
 
-- Time complexity: O(n⋅log⁡n+m⋅log⁡n)O(n \cdot \log n + m \cdot \log
-  n)O(n⋅logn+m⋅logn)
+- Time complexity: $O(n \cdot \log n + m \cdot \log n)$
 
-  The time complexity for sorting the `jobProfile` array is O(n⋅log⁡n)O(n
-  \cdot \log n)O(n⋅logn).
+  The time complexity for sorting the `jobProfile` array is $O(n \cdot \log n)$.
 
   While iterating the `worker` array of size `m`, we perform a binary
   search with search space size `n`. The time complexity is given by
-  O(m⋅log⁡n)O(m \cdot \log n)O(m⋅logn).
+  $O(m \cdot \log n)$.
 
-  Therefore, the total time complexity is given by O(n⋅log⁡n+m⋅log⁡n)O(n
-  \cdot \log n + m \cdot \log n)O(n⋅logn+m⋅logn).
+  Therefore, the total time complexity is given by $O(n \cdot \log n + m \cdot \log n)$.
 
-- Space complexity: O(n)O(n)O(n)
+- Space complexity: $O(n)$
 
-  We create an additional `jobProfile` array of size 2⋅n2 \cdot n2⋅n.
+  We create an additional `jobProfile` array of size $2 \cdot n$.
   Apart from this, some extra space is used when we sort an array in
   place. The space complexity of the sorting algorithm depends on the
   programming language.
 
   - In Python, the `sort` method sorts a list using the Tim Sort
     algorithm which is a combination of Merge Sort and Insertion Sort
-    and has O(n)O(n)O(n) additional space. Additionally, Tim Sort is
+    and has $O(n)$ additional space. Additionally, Tim Sort is
     designed to be a stable algorithm.
   - In Java, `Arrays.sort()` is implemented using a variant of the Quick
-    Sort algorithm which has a space complexity of O(log⁡n)O( \log
-    n)O(logn) for sorting an array.
+    Sort algorithm which has a space complexity of $O( \log n)$ for sorting an array.
   - In C++, the `sort()` function is implemented as a hybrid of Quick
     Sort, Heap Sort, and Insertion Sort, with a worse-case space
-    complexity of O(log⁡n)O( \log n)O(logn).
+    complexity of $O( \log n)$.
 
-  Therefore, space complexity is given by O(n)O(n)O(n).
+  Therefore, space complexity is given by $O(n)$.
 
 ------------------------------------------------------------------------
 
