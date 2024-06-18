@@ -15,3 +15,8 @@ class Solution:
             )
 
         return binary_search(0, len(nums) - 1)
+
+
+solution = Solution()
+print(solution.search([-1, 0, 3, 5, 9, 12], target=9))
+print(solution.search([-1, 0, 3, 5, 9, 12], target=2))
