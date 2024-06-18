@@ -740,6 +740,131 @@ print(solution.isValid(s="(]"))
     True
     False
 
+### 704. Binary Search
+
+Given an array of integers `nums` which is sorted in ascending order,
+and an integer `target`, write a function to search `target` in `nums`.
+If `target` exists, then return its index. Otherwise, return `-1`.
+
+You must write an algorithm with `O(log n)` runtime complexity.
+
+**Example 1:**
+
+    Input: nums = [-1,0,3,5,9,12], target = 9
+    Output: 4
+    Explanation: 9 exists in nums and its index is 4
+
+**Example 2:**
+
+    Input: nums = [-1,0,3,5,9,12], target = 2
+    Output: -1
+    Explanation: 2 does not exist in nums so return -1
+
+**Constraints:**
+
+- `1 <= nums.length <= 10`<sup>`4`</sup>
+- `-10`<sup>`4`</sup>`< nums[i], target < 10`<sup>`4`</sup>
+- All the integers in `nums` are **unique**.
+- `nums` is sorted in ascending order.
+
+#### Two Pointers
+
+```python
+class Solution:
+    def search(self, nums: list[int], target: int) -> int:
+        left, right = 0, len(nums) - 1
+
+        while left <= right:
+            mid = (left + right) // 2
+
+            if nums[mid] == target:
+                return mid
+
+            if nums[mid] < target:
+                left = mid + 1
+            else:
+                right = mid - 1
+
+        return -1
+
+
+solution = Solution()
+print(solution.search([-1, 0, 3, 5, 9, 12], target=9))
+print(solution.search([-1, 0, 3, 5, 9, 12], target=2))
+```
+
+    4
+    -1
+
+#### Recursion
+
+```python
+class Solution:
+    def search(self, nums: list[int], target: int) -> int:
+        def binary_search(left, right):
+            if left > right:
+                return -1
+            mid = (left + right) // 2
+
+            if nums[mid] == target:
+                return mid
+
+            return (
+                binary_search(mid + 1, right)
+                if nums[mid] < target
+                else binary_search(left, mid - 1)
+            )
+
+        return binary_search(0, len(nums) - 1)
+
+
+solution = Solution()
+print(solution.search([-1, 0, 3, 5, 9, 12], target=9))
+print(solution.search([-1, 0, 3, 5, 9, 12], target=2))
+```
+
+    4
+    -1
+
+### Exponential Search
+
+```python
+class Solution:
+    def search(self, nums: list[int], target: int) -> int:
+        if nums[0] == target:
+            return 0
+
+        n = len(nums)
+        bound = 1
+        while bound < n and nums[bound] < target:
+            bound *= 2
+
+        left = bound // 2
+        right = min(bound, n - 1)
+
+        def binary_search(left, right):
+            while left <= right:
+                mid = (left + right) // 2
+                if nums[mid] == target:
+                    return mid
+
+                left, right = (
+                    (mid + 1, right) if nums[mid] < target else (left, mid - 1)
+                )
+
+            return -1
+
+        return binary_search(left, right)
+
+
+solution = Solution()
+print(solution.search([-1, 0, 3, 5, 9, 12], target=9))
+print(solution.search([-1, 0, 3, 5, 9, 12], target=2))
+```
+
+    4
+    -1
+
 ## Medium
 
 ### 49. Group Anagrams
