@@ -24,7 +24,7 @@ When assigning a job to any worker, we disregard any jobs that are too
 difficult and then select the job with the highest profit. An example is
 shown below:
 
-![figA](https://assets.leetcode.com/static_assets/media/original_images/826/Slide1.PNG)
+![figA](Slide1.PNG)
 
 If we need to choose the most optimal job for the worker
 algorithmically, we could use a linear search to find the maximum profit
