@@ -162,6 +162,7 @@ public:
 </details>
 
 <details>
+
 <summary>Java</summary>
 
 ```java
@@ -375,6 +376,7 @@ public:
 </details>
 
 <details>
+
 <summary>Java</summary>
 
 ```java
@@ -505,44 +507,141 @@ all workers and store the total profit as the sum of the maximum profit.
 
 #### Implementation
 
+```python
+class Solution:
+    def maxProfitAssignment(
+        self, difficulty: List[int], profit: List[int], worker: List[int]
+    ) -> int:
+        job_profile = [
+            (difficulty[i], profit[i]) for i in range(len(difficulty))
+        ]
+
+        # Sort both worker and job_profile arrays
+
+        worker.sort()
+        job_profile.sort()
+
+        net_profit, max_profit, index = 0, 0, 0
+        for ability in worker:
+            # While the index has not reached the end and worker can pick a job
+            # with greater difficulty move ahead.
+
+            while index < len(difficulty) and ability >= job_profile[index][0]:
+                max_profit = max(max_profit, job_profile[index][1])
+                index += 1
+            net_profit += max_profit
+        return net_profit
+```
+
+<details>
+<summary>C++</summary>
+
+```cpp
+class Solution {
+public:
+    int maxProfitAssignment(vector<int>& difficulty, vector<int>& profit,
+                            vector<int>& worker) {
+        vector<pair<int, int>> jobProfile;
+        for (int i = 0; i < difficulty.size(); i++) {
+            jobProfile.push_back({difficulty[i], profit[i]});
+        }
+
+        // Sort both worker and jobProfile arrays
+        sort(worker.begin(), worker.end());
+        sort(jobProfile.begin(), jobProfile.end());
+
+        int netProfit = 0, maxProfit = 0, index = 0;
+        for (int i = 0; i < worker.size(); i++) {
+            // While the index has not reached the end and worker can pick a job
+            // with greater difficulty move ahead.
+            while (index < difficulty.size() and
+                   worker[i] >= jobProfile[index].first) {
+                maxProfit = max(maxProfit, jobProfile[index].second);
+                index++;
+            }
+            netProfit += maxProfit;
+        }
+        return netProfit;
+    }
+};
+```
+
+</details>
+
+<details>
+
+<summary>Java</summary>
+
+```java
+class Solution {
+
+    public int maxProfitAssignment(
+        int[] difficulty,
+        int[] profit,
+        int[] worker
+    ) {
+        List<int[]> jobProfile = new ArrayList<>();
+        for (int i = 0; i < difficulty.length; i++) {
+            jobProfile.add(new int[] { difficulty[i], profit[i] });
+        }
+
+        // Sort both worker and jobProfile arrays
+        Arrays.sort(worker);
+        jobProfile.sort((a, b) -> Integer.compare(a[0], b[0]));
+
+        int netProfit = 0, maxProfit = 0, index = 0;
+        for (int i = 0; i < worker.length; i++) {
+            // While the index has not reached the end and worker can pick a job
+            // with greater difficulty move ahead.
+            while (
+                index < difficulty.length &&
+                worker[i] >= jobProfile.get(index)[0]
+            ) {
+                maxProfit = Math.max(maxProfit, jobProfile.get(index)[1]);
+                index++;
+            }
+            netProfit += maxProfit;
+        }
+        return netProfit;
+    }
+}
+```
+
+</details>
+
 #### Complexity Analysis
 
-Let nnn be the size of the `difficulty` and `profit` arrays and `m` be
+Let $n$ be the size of the `difficulty` and `profit` arrays and `m` be
 the size of the `worker` array.
 
-- Time complexity: O(n⋅log⁡n+m⋅log⁡(m))O(n \cdot \log n + m \cdot
-  \log(m))O(n⋅logn+m⋅log(m))
+- Time complexity: $O(n \cdot \log n + m \cdot \log(m))$
 
-  The time taken for sorting the `difficulty` array is O(n⋅log⁡n)O(n
-  \cdot \log n)O(n⋅logn) and sorting the `worker` array is
-  O(m⋅log⁡(m))O(m \cdot \log(m))O(m⋅log(m)).
+  The time taken for sorting the `difficulty` array is $O(n \cdot \log n)$ and sorting the `worker` array is $O(m \cdot \log(m))$.
 
   In the two pointers, while iterating through the `worker` array we
   iterate the `jobProfile` array exactly once. Time complexity is given
   by O(n+m)O(n + m)O(n+m)
 
-  Therefore, the total time complexity is given by O(n⋅log⁡n+m⋅log⁡(m))O(n
-  \cdot \log n + m \cdot \log(m))O(n⋅logn+m⋅log(m)).
+  Therefore, the total time complexity is given by $O(n \cdot \log n + m \cdot \log(m))$.
 
-- Space complexity: O(n)O(n)O(n)
+- Space complexity: $O(n)$
 
-  We create an additional `jobProfile` array of size 2⋅n2 \cdot n2⋅n.
+  We create an additional `jobProfile` array of size $2 \cdot n$.
   Apart from this, some extra space is used when we sort an array in
   place. The space complexity of the sorting algorithm depends on the
   programming language.
 
   - In Python, the `sort` method sorts a list using the Tim Sort
     algorithm which is a combination of Merge Sort and Insertion Sort
-    and has O(n)O(n)O(n) additional space. Additionally, Tim Sort is
+    and has $O(n)$ additional space. Additionally, Tim Sort is
     designed to be a stable algorithm.
   - In Java, `Arrays.sort()` is implemented using a variant of the Quick
-    Sort algorithm which has a space complexity of O(log⁡n)O( \log
-    n)O(logn) for sorting an array.
+    Sort algorithm which has a space complexity of $O( \log n)$ for sorting an array.
   - In C++, the `sort()` function is implemented as a hybrid of Quick
     Sort, Heap Sort, and Insertion Sort, with a worse-case space
-    complexity of O(log⁡n)O( \log n)O(logn).
+    complexity of $O( \log n)$.
 
-  Therefore, space complexity is given by O(n)O(n)O(n).
+  Therefore, space complexity is given by $O(n)$.
 
 ------------------------------------------------------------------------
 
@@ -593,28 +692,118 @@ this array with worker abilities as the indices.
 
 #### Implementation
 
+```python
+class Solution:
+    def maxProfitAssignment(
+        self, difficulty: List[int], profit: List[int], worker: List[int]
+    ) -> int:
+        # Find maximum ability in the worker array.
+
+        maxAbility = max(worker)
+        jobs = [0] * (maxAbility + 1)
+
+        for i in range(len(difficulty)):
+            if difficulty[i] <= maxAbility:
+                jobs[difficulty[i]] = max(jobs[difficulty[i]], profit[i])
+        # Take maxima of prefixes.
+
+        for i in range(1, maxAbility + 1):
+            jobs[i] = max(jobs[i], jobs[i - 1])
+        netProfit = 0
+        for ability in worker:
+            netProfit += jobs[ability]
+        return netProfit
+```
+
+<details>
+<summary>C++</summary>
+
+```cpp
+class Solution {
+public:
+    int maxProfitAssignment(vector<int>& difficulty, vector<int>& profit,
+                            vector<int>& worker) {
+        // Find maximum ability in the worker array.
+        int maxAbility = *max_element(begin(worker), end(worker));
+        vector<int> jobs(maxAbility + 1, 0);
+        for (int i = 0; i < difficulty.size(); i++) {
+            if (difficulty[i] <= maxAbility)
+                jobs[difficulty[i]] = max(jobs[difficulty[i]], profit[i]);
+        }
+        // Take maxima of prefixes.
+        for (int i = 1; i <= maxAbility; i++)
+            jobs[i] = max(jobs[i], jobs[i - 1]);
+
+        int netProfit = 0;
+        for (auto ability : worker) {
+            int maxProfit = jobs[ability];
+            netProfit += maxProfit;
+        }
+        return netProfit;
+    }
+};
+```
+
+</details>
+
+<details>
+
+<summary>Java</summary>
+
+```java
+class Solution {
+
+    public int maxProfitAssignment(
+        int[] difficulty,
+        int[] profit,
+        int[] worker
+    ) {
+        // Find maximum ability in the worker array.
+        int maxAbility = Arrays.stream(worker).max().getAsInt();
+        int[] jobs = new int[maxAbility + 1];
+
+        for (int i = 0; i < difficulty.length; i++) {
+            if (difficulty[i] <= maxAbility) {
+                jobs[difficulty[i]] = Math.max(jobs[difficulty[i]], profit[i]);
+            }
+        }
+
+        // Take maxima of prefixes.
+        for (int i = 1; i <= maxAbility; i++) {
+            jobs[i] = Math.max(jobs[i], jobs[i - 1]);
+        }
+
+        int netProfit = 0;
+        for (int ability : worker) {
+            netProfit += jobs[ability];
+        }
+        return netProfit;
+    }
+}
+```
+
+</details>
+
 #### Complexity Analysis
 
-Let nnn be the size of the `difficulty` and `profit` arrays and `m` be
+Let $n$ be the size of the `difficulty` and `profit` arrays and `m` be
 the size of the `worker` array. Also, let `maxAbility` be the maximum
 value in the `worker` array.
 
-- Time complexity: O(n+m+maxAbility)O(n + m +
-  maxAbility)O(n+m+maxAbility)
+- Time complexity: $O(n + m + maxAbility)$
 
   In this approach, we iterate through the `difficulty`, `worker` and
   `jobs` arrays exactly once.
 
-  Therefore, the total time complexity is given by
-  O(n+m+maxAbility)O(n + m + maxAbility)O(n+m+maxAbility).
+  Therefore, the total time complexity is given by $O(n + m + maxAbility)$.
 
-- Space complexity: O(maxAbility)O(maxAbility)O(maxAbility)
+- Space complexity: $O(maxAbility)$
 
   We create an additional `jobs` array of size
-  maxAbilitymaxAbilitymaxAbility. Apart from this, no additional space
+  $maxAbility$. Apart from this, no additional space
   is used.
 
   Therefore, space complexity is given by
-  O(maxAbility)O(maxAbility)O(maxAbility).
+  $O(maxAbility)$.
 
 ------------------------------------------------------------------------
