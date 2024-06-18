@@ -1,17 +1,27 @@
 class Solution:
     def search(self, nums: list[int], target: int) -> int:
-        left, right = 0, len(nums) - 1
+        if nums[0] == target:
+            return 0
 
-        while left <= right:
-            mid = (left + right) // 2
+        n = len(nums)
+        bound = 1
+        while bound < n and nums[bound] < target:
+            bound *= 2
 
-            return (
-                mid
-                if nums[mid] == target
-                else (left := mid + 1) if nums[mid] <= target else (right := mid - 1)
-            )
+        left = bound // 2
+        right = min(bound, n - 1)
 
+        def binary_search(left, right):
+            while left <= right:
+                mid = (left + right) // 2
+                if nums[mid] == target:
+                    return mid
 
-solution = Solution()
-print(solution.search([-1, 0, 3, 5, 9, 12], target=9))
-print(solution.search([-1, 0, 3, 5, 9, 12], target=2))
+                if nums[mid] < target:
+                    left = mid + 1
+                else:
+                    right = mid - 1
+
+            return -1
+
+        return binary_search(left, right)
