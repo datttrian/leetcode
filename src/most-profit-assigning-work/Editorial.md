@@ -84,6 +84,222 @@ class Solution:
     ) -> int:
         job_profile = [(0, 0)]
         for i in range(len(difficulty)):
+            job_profile.append((difficulty[i], profit[i]))
+        # Sort by difficulty values in increasing order.
+
+        job_profile.sort()
+        for i in range(len(job_profile) - 1):
+            job_profile[i + 1] = (
+                job_profile[i + 1][0],
+                max(job_profile[i][1], job_profile[i + 1][1]),
+            )
+        net_profit = 0
+        for i in range(len(worker)):
+            ability = worker[i]
+
+            # Find the job with just smaller or equal difficulty than ability.
+
+            l, r = 0, len(job_profile) - 1
+            job_profit = 0
+            while l <= r:
+                mid = (l + r) // 2
+                if job_profile[mid][0] <= ability:
+                    job_profit = max(job_profit, job_profile[mid][1])
+                    l = mid + 1
+                else:
+                    r = mid - 1
+            # Increment profit of current worker to total profit.
+
+            net_profit += job_profit
+        return net_profit
+```
+
+<details>
+<summary>C++</summary>
+
+```cpp
+class Solution {
+public:
+    int maxProfitAssignment(vector<int>& difficulty, vector<int>& profit,
+                            vector<int>& worker) {
+        vector<pair<int, int>> jobProfile;
+        jobProfile.push_back({0, 0});
+        for (int i = 0; i < difficulty.size(); i++) {
+            jobProfile.push_back({difficulty[i], profit[i]});
+        }
+
+        // Sort by difficulty values in increasing order.
+        sort(jobProfile.begin(), jobProfile.end());
+        for (int i = 0; i < jobProfile.size() - 1; i++) {
+            jobProfile[i + 1].second =
+                max(jobProfile[i].second, jobProfile[i + 1].second);
+        }
+
+        int netProfit = 0;
+        for (int i = 0; i < worker.size(); i++) {
+            int ability = worker[i];
+
+            // Find the job with just smaller or equal difficulty than ability.
+            int l = 0, r = jobProfile.size() - 1, jobProfit = 0;
+            while (l <= r) {
+                int mid = (l + r) / 2;
+                if (jobProfile[mid].first <= ability) {
+                    jobProfit = max(jobProfit, jobProfile[mid].second);
+                    l = mid + 1;
+                } else {
+                    r = mid - 1;
+                }
+            }
+
+            // Increment profit of current worker to total profit.
+            netProfit += jobProfit;
+        }
+        return netProfit;
+    }
+};
+```
+
+</details>
+
+<details>
+<summary>Java</summary>
+
+```java
+class Solution {
+
+    public int maxProfitAssignment(
+        int[] difficulty,
+        int[] profit,
+        int[] worker
+    ) {
+        List<int[]> jobProfile = new ArrayList<>();
+        jobProfile.add(new int[] { 0, 0 });
+        for (int i = 0; i < difficulty.length; i++) {
+            jobProfile.add(new int[] { difficulty[i], profit[i] });
+        }
+
+        // Sort by difficulty values in increasing order.
+        Collections.sort(jobProfile, (a, b) -> Integer.compare(a[0], b[0]));
+        for (int i = 0; i < jobProfile.size() - 1; i++) {
+            jobProfile.get(i + 1)[1] = Math.max(
+                jobProfile.get(i)[1],
+                jobProfile.get(i + 1)[1]
+            );
+        }
+
+        int netProfit = 0;
+        for (int i = 0; i < worker.length; i++) {
+            int ability = worker[i];
+
+            // Find the job with just smaller or equal difficulty than ability.
+            int l = 0, r = jobProfile.size() - 1, jobProfit = 0;
+            while (l <= r) {
+                int mid = (l + r) / 2;
+                if (jobProfile.get(mid)[0] <= ability) {
+                    jobProfit = Math.max(jobProfit, jobProfile.get(mid)[1]);
+                    l = mid + 1;
+                } else {
+                    r = mid - 1;
+                }
+            }
+
+            // Increment profit of current worker to total profit.
+            netProfit += jobProfit;
+        }
+        return netProfit;
+    }
+}
+```
+
+</details>
+
+#### Complexity Analysis
+
+Let $n$ be the size of the `difficulty` and `profit` arrays, and `m` be
+the size of the `worker` array.
+
+- Time complexity: $O(n \cdot \log n + m \cdot \log n)$
+
+  The time complexity for sorting the `jobProfile` array is $O(n \cdot \log n)$.
+
+  While iterating the `worker` array of size `m`, we perform a binary
+  search with search space size `n`. The time complexity is given by
+  $O(m \cdot \log n)$.
+
+  Therefore, the total time complexity is given by $O(n \cdot \log n + m \cdot \log n)$.
+
+- Space complexity: $O(n)$
+
+  We create an additional `jobProfile` array of size $2 \cdot n$.
+  Apart from this, some extra space is used when we sort an array in
+  place. The space complexity of the sorting algorithm depends on the
+  programming language.
+
+  - In Python, the `sort` method sorts a list using the Tim Sort
+    algorithm which is a combination of Merge Sort and Insertion Sort
+    and has $O(n)$ additional space. Additionally, Tim Sort is
+    designed to be a stable algorithm.
+  - In Java, `Arrays.sort()` is implemented using a variant of the Quick
+    Sort algorithm which has a space complexity of $O( \log n)$ for sorting an array.
+  - In C++, the `sort()` function is implemented as a hybrid of Quick
+    Sort, Heap Sort, and Insertion Sort, with a worse-case space
+    complexity of $O( \log n)$.
+
+  Therefore, space complexity is given by $O(n)$.
+
+------------------------------------------------------------------------
+
+### Approach 2: Binary Search and Greedy (Sort by profit)
+
+#### Intuition
+
+Is it possible to use binary search on the `profit` array to maximize
+the profit for a worker?
+
+Suppose we sort the `profit` array in decreasing order while rearranging
+the `difficulty` array to preserve the original ordering of indices. For
+each worker, we will find the first index where the value of difficulty
+is less than or equal to the worker's ability. This index will store the
+maximum profit possible for that worker's ability. To efficiently apply
+binary search, we can preprocess the array to store the minimum
+difficulty up to the current index.
+
+Similar to the previous approach, we will return the sum of all
+individual job profits as the maximum total profit.
+
+#### Algorithm
+
+1. Initialize an array of pairs `jobProfile` with `{0, 0}`.
+2. For `i` from `0` to `n` (where `n` is the size of the `difficulty`
+    and `profit` arrays):
+    - Append `{difficulty[i], profit[i]}` to `jobProfile`.
+3. Sort `jobProfile` by `profit` in descending order.
+4. For `i` from `0` to `n-1`:
+    - Update `jobProfile[i].difficulty` to be the minimum of its current
+      value and the previous difficulty value.
+5. Initialize `netProfit` to `0`.
+6. For each `ability` in the `worker` array:
+    - Set binary search parameters: `l = 0`, `r = n-1`, `jobProfit = 0`.
+    - While `l` \<= `r`:
+      - Calculate `mid = (l + r) / 2`.
+      - If `jobProfile[mid].difficulty` \<= `ability`:
+        - Update `jobProfit` to the maximum of `jobProfit` and
+          `jobProfile[mid].profit`.
+        - Set `r = mid - 1`.
+      - Else:
+        - Set `l = mid + 1`.
+    - Add `jobProfit` to `netProfit`.
+7. Return `netProfit`.  
+
+#### Implementation
+
+```python
+class Solution:
+    def maxProfitAssignment(
+        self, difficulty: List[int], profit: List[int], worker: List[int]
+    ) -> int:
+        job_profile = [(0, 0)]
+        for i in range(len(difficulty)):
             job_profile.append((profit[i], difficulty[i]))
 
         # Sort in decreasing order of profit.
@@ -210,20 +426,20 @@ class Solution {
 
 #### Complexity Analysis
 
-Let $n$ be the size of the `difficulty` and `profit` arrays, and `m` be
+Let $n$ be the size of the `difficulty` and `profit` arrays and `m` be
 the size of the `worker` array.
 
 - Time complexity: $O(n \cdot \log n + m \cdot \log n)$
 
-  The time complexity for sorting the `jobProfile` array is $O(n \cdot \log n)$.
+  The time complexity for sorting the difficulty array is $O(n \cdot \log n)$.
 
   While iterating the `worker` array of size `m`, we perform a binary
-  search with search space size `n`. The time complexity is given by
+  search with search space size `n`. The time complexity for is given by
   $O(m \cdot \log n)$.
 
   Therefore, the total time complexity is given by $O(n \cdot \log n + m \cdot \log n)$.
 
-- Space complexity: $O(n)$
+- Space complexity: O(n)O(n)O(n)
 
   We create an additional `jobProfile` array of size $2 \cdot n$.
   Apart from this, some extra space is used when we sort an array in
@@ -241,90 +457,6 @@ the size of the `worker` array.
     complexity of $O( \log n)$.
 
   Therefore, space complexity is given by $O(n)$.
-
-------------------------------------------------------------------------
-
-### Approach 2: Binary Search and Greedy (Sort by profit)
-
-#### Intuition
-
-Is it possible to use binary search on the `profit` array to maximize
-the profit for a worker?
-
-Suppose we sort the `profit` array in decreasing order while rearranging
-the `difficulty` array to preserve the original ordering of indices. For
-each worker, we will find the first index where the value of difficulty
-is less than or equal to the worker's ability. This index will store the
-maximum profit possible for that worker's ability. To efficiently apply
-binary search, we can preprocess the array to store the minimum
-difficulty up to the current index.
-
-Similar to the previous approach, we will return the sum of all
-individual job profits as the maximum total profit.
-
-#### Algorithm
-
-1. Initialize an array of pairs `jobProfile` with `{0, 0}`.
-2. For `i` from `0` to `n` (where `n` is the size of the `difficulty`
-    and `profit` arrays):
-    - Append `{difficulty[i], profit[i]}` to `jobProfile`.
-3. Sort `jobProfile` by `profit` in descending order.
-4. For `i` from `0` to `n-1`:
-    - Update `jobProfile[i].difficulty` to be the minimum of its current
-      value and the previous difficulty value.
-5. Initialize `netProfit` to `0`.
-6. For each `ability` in the `worker` array:
-    - Set binary search parameters: `l = 0`, `r = n-1`, `jobProfit = 0`.
-    - While `l` \<= `r`:
-      - Calculate `mid = (l + r) / 2`.
-      - If `jobProfile[mid].difficulty` \<= `ability`:
-        - Update `jobProfit` to the maximum of `jobProfit` and
-          `jobProfile[mid].profit`.
-        - Set `r = mid - 1`.
-      - Else:
-        - Set `l = mid + 1`.
-    - Add `jobProfit` to `netProfit`.
-7. Return `netProfit`.  
-
-#### Implementation
-
-#### Complexity Analysis
-
-Let nnn be the size of the `difficulty` and `profit` arrays and `m` be
-the size of the `worker` array.
-
-- Time complexity: O(n⋅log⁡n+m⋅log⁡n)O(n \cdot \log n + m \cdot \log
-  n)O(n⋅logn+m⋅logn)
-
-  The time complexity for sorting the difficulty array is O(n⋅log⁡n)O(n
-  \cdot \log n)O(n⋅logn).
-
-  While iterating the `worker` array of size `m`, we perform a binary
-  search with search space size `n`. The time complexity for is given by
-  O(m⋅log⁡n)O(m \cdot \log n)O(m⋅logn).
-
-  Therefore, the total time complexity is given by O(n⋅log⁡n+m⋅log⁡n)O(n
-  \cdot \log n + m \cdot \log n)O(n⋅logn+m⋅logn).
-
-- Space complexity: O(n)O(n)O(n)
-
-  We create an additional `jobProfile` array of size 2⋅n2 \cdot n2⋅n.
-  Apart from this, some extra space is used when we sort an array in
-  place. The space complexity of the sorting algorithm depends on the
-  programming language.
-
-  - In Python, the `sort` method sorts a list using the Tim Sort
-    algorithm which is a combination of Merge Sort and Insertion Sort
-    and has O(n)O(n)O(n) additional space. Additionally, Tim Sort is
-    designed to be a stable algorithm.
-  - In Java, `Arrays.sort()` is implemented using a variant of the Quick
-    Sort algorithm which has a space complexity of O(log⁡n)O( \log
-    n)O(logn) for sorting an array.
-  - In C++, the `sort()` function is implemented as a hybrid of Quick
-    Sort, Heap Sort, and Insertion Sort, with a worse-case space
-    complexity of O(log⁡n)O( \log n)O(logn).
-
-  Therefore, space complexity is given by O(n)O(n)O(n).
 
 ------------------------------------------------------------------------
 
