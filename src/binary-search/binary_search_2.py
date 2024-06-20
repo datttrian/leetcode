@@ -1,6 +1,6 @@
 class Solution:
     def search(self, nums: list[int], target: int) -> int:
-        def binary_search(left, right):
+        def binary_search(left: int, right: int) -> int:
             if left > right:
                 return -1
             mid = (left + right) // 2
