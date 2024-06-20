@@ -1,7 +1,8 @@
+from collections import defaultdict
+
+
 class Solution:
     def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
-        from collections import defaultdict
-
         anagrams: dict[tuple[int, ...], list[str]] = defaultdict(list)
 
         for s in strs:
