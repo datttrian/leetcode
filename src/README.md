@@ -896,7 +896,7 @@ style="width: 182px; height: 222px;" />
 **Follow up:** A linked list can be reversed either iteratively or
 recursively. Could you implement both?
 
-#### Brute Force - O(n), O(1)
+#### Iterative - O(n), O(1)
 
 ```python
 from typing import Optional
