@@ -3,7 +3,7 @@ from typing import Optional
 
 # Definition for singly-linked list.
 class ListNode:
-    def __init__(self, val=0, next_node=None):
+    def __init__(self, val=0, next_node=None):  # pylint: disable=invalid-name
         self.val = val
         self.next = next_node
 
@@ -34,9 +34,9 @@ def create_linked_list(head):
 
 
 # Helper function to convert a linked list to a list
-def linked_list_to_list(head_node):
+def linked_list_to_list(headNode):
     result = []
-    current_node = head_node
+    current_node = headNode
     while current_node:
         result.append(current_node.val)
         current_node = current_node.next
