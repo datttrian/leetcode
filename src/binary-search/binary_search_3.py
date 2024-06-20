@@ -11,7 +11,7 @@ class Solution:
         left = bound // 2
         right = min(bound, n - 1)
 
-        def binary_search(left, right):
+        def binary_search(left: int, right: int):
             while left <= right:
                 mid = (left + right) // 2
                 if nums[mid] == target:
