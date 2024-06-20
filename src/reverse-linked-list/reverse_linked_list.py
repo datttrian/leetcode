@@ -2,18 +2,18 @@ from typing import Optional
 
 
 # Definition for singly-linked list.
-class listNode:
+class ListNode:
     def __init__(
         self,
         val: int = 0,
-        nextNode: "Optional[listNode]" = None,
+        nextNode: "Optional[ListNode]" = None,
     ) -> None:
         self.val: int = val
-        self.next: Optional[listNode] = nextNode
+        self.next: Optional[ListNode] = nextNode
 
 
 class Solution:
-    def reverseList(self, head: Optional[listNode]) -> Optional[listNode]:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         node = None
 
         while head:
@@ -26,19 +26,19 @@ class Solution:
 
 
 # Helper function to create a linked list from a list
-def create_linked_list(head: list[int]) -> Optional[listNode]:
+def create_linked_list(head: list[int]) -> Optional[ListNode]:
     if not head:
         return None
-    head_node = listNode(head[0])
+    head_node = ListNode(head[0])
     current_node = head_node
     for value in head[1:]:
-        current_node.next = listNode(value)
+        current_node.next = ListNode(value)
         current_node = current_node.next
     return head_node
 
 
 # Helper function to convert a linked list to a list
-def linked_list_to_list(headNode: Optional[listNode]) -> list[int]:
+def linked_list_to_list(headNode: Optional[ListNode]) -> list[int]:
     result: list[int] = []
     current_node = headNode
     while current_node:
