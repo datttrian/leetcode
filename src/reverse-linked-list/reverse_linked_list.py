@@ -3,9 +3,9 @@ from typing import Optional
 
 # Definition for singly-linked list.
 class ListNode:
-    def __init__(self, val=0, next=None):
+    def __init__(self, val=0, next_node=None):
         self.val = val
-        self.next = next
+        self.next = next_node
 
 
 class Solution:
@@ -25,20 +25,21 @@ class Solution:
 def create_linked_list(arr):
     if not arr:
         return None
-    head = ListNode(arr[0])
-    current = head
+    head_node = ListNode(arr[0])
+    current_node = head_node
     for value in arr[1:]:
-        current.next = ListNode(value)
-        current = current.next
-    return head
+        current_node.next = ListNode(value)
+        current_node = current_node.next
+    return head_node
 
 
 # Helper function to convert a linked list to a list
-def linked_list_to_list(head):
+def linked_list_to_list(head_node):
     result = []
-    while head:
-        result.append(head.val)
-        head = head.next
+    current_node = head_node
+    while current_node:
+        result.append(current_node.val)
+        current_node = current_node.next
     return result
 
 
