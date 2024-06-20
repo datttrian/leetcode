@@ -13,7 +13,7 @@ class listNode:
 
 
 class Solution:
-    def reverselist(self, head: Optional[listNode]) -> Optional[listNode]:
+    def reverseList(self, head: Optional[listNode]) -> Optional[listNode]:
         node = None
 
         while head:
@@ -49,7 +49,7 @@ def linked_list_to_list(headNode: Optional[listNode]) -> list[int]:
 
 solution = Solution()
 print(
-    linked_list_to_list(solution.reverselist(create_linked_list(head=[1, 2, 3, 4, 5])))
+    linked_list_to_list(solution.reverseList(create_linked_list(head=[1, 2, 3, 4, 5])))
 )
-print(linked_list_to_list(solution.reverselist(create_linked_list(head=[1, 2]))))
-print(linked_list_to_list(solution.reverselist(create_linked_list(head=[]))))
+print(linked_list_to_list(solution.reverseList(create_linked_list(head=[1, 2]))))
+print(linked_list_to_list(solution.reverseList(create_linked_list(head=[]))))
