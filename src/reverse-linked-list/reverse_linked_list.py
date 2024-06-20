@@ -2,14 +2,18 @@ from typing import Optional
 
 
 # Definition for singly-linked list.
-class ListNode:
-    def __init__(self, val=0, next_node=None):  # pylint: disable=invalid-name
-        self.val = val
-        self.next = next_node
+class listNode:
+    def __init__(
+        self,
+        val: int = 0,
+        nextNode: "Optional[listNode]" = None,
+    ) -> None:
+        self.val: int = val
+        self.next: Optional[listNode] = nextNode
 
 
 class Solution:
-    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def reverselist(self, head: Optional[listNode]) -> Optional[listNode]:
         node = None
 
         while head:
@@ -22,20 +26,20 @@ class Solution:
 
 
 # Helper function to create a linked list from a list
-def create_linked_list(head):
+def create_linked_list(head: list[int]) -> Optional[listNode]:
     if not head:
         return None
-    head_node = ListNode(head[0])
+    head_node = listNode(head[0])
     current_node = head_node
     for value in head[1:]:
-        current_node.next = ListNode(value)
+        current_node.next = listNode(value)
         current_node = current_node.next
     return head_node
 
 
 # Helper function to convert a linked list to a list
-def linked_list_to_list(headNode):
-    result = []
+def linked_list_to_list(headNode: Optional[listNode]) -> list[int]:
+    result: list[int] = []
     current_node = headNode
     while current_node:
         result.append(current_node.val)
@@ -45,7 +49,7 @@ def linked_list_to_list(headNode):
 
 solution = Solution()
 print(
-    linked_list_to_list(solution.reverseList(create_linked_list(head=[1, 2, 3, 4, 5])))
+    linked_list_to_list(solution.reverselist(create_linked_list(head=[1, 2, 3, 4, 5])))
 )
-print(linked_list_to_list(solution.reverseList(create_linked_list(head=[1, 2]))))
-print(linked_list_to_list(solution.reverseList(create_linked_list(head=[]))))
+print(linked_list_to_list(solution.reverselist(create_linked_list(head=[1, 2]))))
+print(linked_list_to_list(solution.reverselist(create_linked_list(head=[]))))

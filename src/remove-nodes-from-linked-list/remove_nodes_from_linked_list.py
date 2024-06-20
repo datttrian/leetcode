@@ -5,10 +5,10 @@ class ListNode:
     def __init__(
         self,
         val: int = 0,
-        next_node: "Optional[ListNode]" = None,  # pylint: disable=invalid-name
+        nextNode: "Optional[ListNode]" = None,
     ) -> None:
         self.val: int = val
-        self.next: Optional[ListNode] = next_node
+        self.next: Optional[ListNode] = nextNode
 
 
 class Solution:
