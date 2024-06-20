@@ -256,6 +256,8 @@ print(solution.isAnagram(s="rat", t="car"))
     True
     False
 
+#### Using Character Count as Key - O(n), O(1)
+
 ```python
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
@@ -269,6 +271,59 @@ class Solution:
             count[ord(t[i]) - ord("a")] -= 1
 
         return all(c == 0 for c in count)
+
+
+solution = Solution()
+print(solution.isAnagram(s="anagram", t="nagaram"))
+print(solution.isAnagram(s="rat", t="car"))
+```
+
+    True
+    False
+
+#### Using Prime Numbers - O(n), O(1)
+
+```python
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        prime_numbers = {
+            "a": 2,
+            "b": 3,
+            "c": 5,
+            "d": 7,
+            "e": 11,
+            "f": 13,
+            "g": 17,
+            "h": 19,
+            "i": 23,
+            "j": 29,
+            "k": 31,
+            "l": 37,
+            "m": 41,
+            "n": 43,
+            "o": 47,
+            "p": 53,
+            "q": 59,
+            "r": 61,
+            "s": 67,
+            "t": 71,
+            "u": 73,
+            "v": 79,
+            "w": 83,
+            "x": 89,
+            "y": 97,
+            "z": 101,
+        }
+
+        product_s = 1
+        for char in s:
+            product_s *= prime_numbers[char]
+
+        product_t = 1
+        for char in t:
+            product_t *= prime_numbers[char]
+
+        return product_s == product_t
 
 
 solution = Solution()
@@ -555,7 +610,7 @@ you cannot achieve any profit, return `0`.
 - `1 <= prices.length <= 10`<sup>`5`</sup>
 - `0 <= prices[i] <= 10`<sup>`4`</sup>
 
-#### Brute Force
+#### Brute Force - O(n^2), O(1)
 
 ```python
 class Solution:
@@ -798,7 +853,7 @@ print(solution.search([-1, 0, 3, 5, 9, 12], target=2))
 ```python
 class Solution:
     def search(self, nums: list[int], target: int) -> int:
-        def binary_search(left, right):
+        def binary_search(left: int, right: int) -> int:
             if left > right:
                 return -1
             mid = (left + right) // 2
@@ -839,7 +894,7 @@ class Solution:
         left = bound // 2
         right = min(bound, n - 1)
 
-        def binary_search(left, right):
+        def binary_search(left: int, right: int):
             while left <= right:
                 mid = (left + right) // 2
                 if nums[mid] == target:
@@ -960,6 +1015,68 @@ print(linked_list_to_list(solution.reverseList(create_linked_list(head=[]))))
     [2, 1]
     []
 
+#### Recursive - O(n), O(n)
+
+```python
+from typing import Optional
+
+
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(
+        self,
+        val: int = 0,
+        nextNode: "Optional[ListNode]" = None,
+    ) -> None:
+        self.val: int = val
+        self.next: Optional[ListNode] = nextNode
+
+
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if not head or not head.next:
+            return head
+
+        new_head = self.reverseList(head.next)
+        head.next.next = head
+        head.next = None
+        return new_head
+
+
+# Helper function to create a linked list from a list
+def create_linked_list(head: list[int]) -> Optional[ListNode]:
+    if not head:
+        return None
+    head_node = ListNode(head[0])
+    current_node = head_node
+    for value in head[1:]:
+        current_node.next = ListNode(value)
+        current_node = current_node.next
+    return head_node
+
+
+# Helper function to convert a linked list to a list
+def linked_list_to_list(headNode: Optional[ListNode]) -> list[int]:
+    result: list[int] = []
+    current_node = headNode
+    while current_node:
+        result.append(current_node.val)
+        current_node = current_node.next
+    return result
+
+
+solution = Solution()
+print(
+    linked_list_to_list(solution.reverseList(create_linked_list(head=[1, 2, 3, 4, 5])))
+)
+print(linked_list_to_list(solution.reverseList(create_linked_list(head=[1, 2]))))
+print(linked_list_to_list(solution.reverseList(create_linked_list(head=[]))))
+```
+
+    [5, 4, 3, 2, 1]
+    [2, 1]
+    []
+
 ## Medium
 
 ### 49. Group Anagrams
@@ -1029,6 +1146,122 @@ class Solution:
                 anagram_groups.append(group)
 
         return anagram_groups
+
+
+solution = Solution()
+print(solution.groupAnagrams(strs=["eat", "tea", "tan", "ate", "nat", "bat"]))
+print(solution.groupAnagrams(strs=[""]))
+print(solution.groupAnagrams(strs=["a"]))
+```
+
+    [['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat']]
+    [['']]
+    [['a']]
+
+#### Arrays & Hashing - O(n *m* log(m)), O(n * m)
+
+```python
+from collections import defaultdict
+
+
+class Solution:
+    def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
+        anagrams: dict[str, list[str]] = defaultdict(list)
+
+        for s in strs:
+            sorted_str = "".join(sorted(s))
+            anagrams[sorted_str].append(s)
+
+        return list(anagrams.values())
+
+
+solution = Solution()
+print(solution.groupAnagrams(strs=["eat", "tea", "tan", "ate", "nat", "bat"]))
+print(solution.groupAnagrams(strs=[""]))
+print(solution.groupAnagrams(strs=["a"]))
+```
+
+    [['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat']]
+    [['']]
+    [['a']]
+
+#### Using Character Count as Key - O(n *m), O(n* m)
+
+```python
+from collections import defaultdict
+
+
+class Solution:
+    def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
+        anagrams: dict[tuple[int, ...], list[str]] = defaultdict(list)
+
+        for s in strs:
+            count = [0] * 26
+            for char in s:
+                count[ord(char) - ord("a")] += 1
+            key = tuple(count)
+            anagrams[key].append(s)
+
+        return list(anagrams.values())
+
+
+solution = Solution()
+print(solution.groupAnagrams(strs=["eat", "tea", "tan", "ate", "nat", "bat"]))
+print(solution.groupAnagrams(strs=[""]))
+print(solution.groupAnagrams(strs=["a"]))
+```
+
+    [['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat']]
+    [['']]
+    [['a']]
+
+#### Using Prime Numbers - O(n *m), O(n* m)
+
+```python
+class Solution:
+    def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
+        prime_numbers = {
+            "a": 2,
+            "b": 3,
+            "c": 5,
+            "d": 7,
+            "e": 11,
+            "f": 13,
+            "g": 17,
+            "h": 19,
+            "i": 23,
+            "j": 29,
+            "k": 31,
+            "l": 37,
+            "m": 41,
+            "n": 43,
+            "o": 47,
+            "p": 53,
+            "q": 59,
+            "r": 61,
+            "s": 67,
+            "t": 71,
+            "u": 73,
+            "v": 79,
+            "w": 83,
+            "x": 89,
+            "y": 97,
+            "z": 101,
+        }
+
+        anagrams: dict[int, list[str]] = {}
+
+        for word in strs:
+            product = 1
+            for char in word:
+                product *= prime_numbers[char]
+
+            if product in anagrams:
+                anagrams[product].append(word)
+            else:
+                anagrams[product] = [word]
+
+        return list(anagrams.values())
 
 
 solution = Solution()
