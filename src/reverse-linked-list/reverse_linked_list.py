@@ -22,12 +22,12 @@ class Solution:
 
 
 # Helper function to create a linked list from a list
-def create_linked_list(arr):
-    if not arr:
+def create_linked_list(head):
+    if not head:
         return None
-    head_node = ListNode(arr[0])
+    head_node = ListNode(head[0])
     current_node = head_node
-    for value in arr[1:]:
+    for value in head[1:]:
         current_node.next = ListNode(value)
         current_node = current_node.next
     return head_node
@@ -43,11 +43,9 @@ def linked_list_to_list(head_node):
     return result
 
 
-# solution = Solution()
-input_list = [1, 2, 3, 4, 5]
-# head = create_linked_list(input_list)
-# reversed_head = solution.reverseList(head)
-# output_list = linked_list_to_list(reversed_head)
-# print(output_list)  # Output: [5, 4, 3, 2, 1]
-
-print(input_list | create_linked_list)
+solution = Solution()
+print(
+    linked_list_to_list(solution.reverseList(create_linked_list(head=[1, 2, 3, 4, 5])))
+)
+print(linked_list_to_list(solution.reverseList(create_linked_list(head=[1, 2]))))
+print(linked_list_to_list(solution.reverseList(create_linked_list(head=[]))))
