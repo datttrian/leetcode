@@ -43,14 +43,11 @@ def linked_list_to_list(head_node):
     return result
 
 
-# Input
+# solution = Solution()
 input_list = [1, 2, 3, 4, 5]
-head = create_linked_list(input_list)
+# head = create_linked_list(input_list)
+# reversed_head = solution.reverseList(head)
+# output_list = linked_list_to_list(reversed_head)
+# print(output_list)  # Output: [5, 4, 3, 2, 1]
 
-# Reverse the linked list
-solution = Solution()
-reversed_head = solution.reverseList(head)
-
-# Output
-output_list = linked_list_to_list(reversed_head)
-print(output_list)  # Output: [5, 4, 3, 2, 1]
+print(input_list | create_linked_list)
