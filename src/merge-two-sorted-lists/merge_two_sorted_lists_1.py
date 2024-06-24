@@ -16,11 +16,9 @@ class Solution:
     def mergeTwoLists(
         self, list1: Optional[ListNode], list2: Optional[ListNode]
     ) -> Optional[ListNode]:
-        # Create a dummy node to form the new sorted list
         dummy = ListNode()
         current = dummy
 
-        # Traverse both lists and compare the current nodes of both lists
         while list1 and list2:
             if list1.val < list2.val:
                 current.next = list1
@@ -30,11 +28,9 @@ class Solution:
                 list2 = list2.next
             current = current.next
 
-        # If either list is not empty, append the remaining elements
         if list1:
             current.next = list1
         else:
             current.next = list2
 
-        # Return the merged list, which starts at dummy.next
         return dummy.next
