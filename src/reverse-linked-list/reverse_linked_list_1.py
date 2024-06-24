@@ -26,10 +26,10 @@ class Solution:
 
 
 # Helper function to convert list to linked list
-def list_to_linkedlist(head: list[int]) -> Optional[ListNode]:
+def list_to_linkedlist(lst: list[int]) -> Optional[ListNode]:
     dummy = ListNode()
     current = dummy
-    for value in head:
+    for value in lst:
         current.next = ListNode(value)
         current = current.next
     return dummy.next
@@ -45,10 +45,6 @@ def linkedlist_to_list(node: Optional[ListNode]) -> list[int]:
 
 
 solution = Solution()
-print(
-    linkedlist_to_list(solution.reverseList(
-        list_to_linkedlist(head=[1, 2, 3, 4, 5])))
-)
-print(linkedlist_to_list(solution.reverseList(
-    list_to_linkedlist(head=[1, 2]))))
-print(linkedlist_to_list(solution.reverseList(list_to_linkedlist(head=[]))))
+print(linkedlist_to_list(solution.reverseList(list_to_linkedlist([1, 2, 3, 4, 5]))))
+print(linkedlist_to_list(solution.reverseList(list_to_linkedlist([1, 2]))))
+print(linkedlist_to_list(solution.reverseList(list_to_linkedlist([]))))

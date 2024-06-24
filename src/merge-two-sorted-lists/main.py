@@ -13,7 +13,9 @@ class ListNode:
 
 
 class Solution:
-    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+    def mergeTwoLists(
+        self, list1: Optional[ListNode], list2: Optional[ListNode]
+    ) -> Optional[ListNode]:
         # Create a dummy node to form the new sorted list
         dummy = ListNode()
         current = dummy
@@ -59,9 +61,20 @@ def linkedlist_to_list(node: Optional[ListNode]) -> list[int]:
 
 # Example usage
 solution = Solution()
-print(linkedlist_to_list(solution.mergeTwoLists(list_to_linkedlist(
-    [1, 2, 4]), list_to_linkedlist([1, 3, 4]))))
-print(linkedlist_to_list(solution.mergeTwoLists(
-    list_to_linkedlist([]), list_to_linkedlist([]))))
-print(linkedlist_to_list(solution.mergeTwoLists(
-    list_to_linkedlist([]), list_to_linkedlist([0]))))
+print(
+    linkedlist_to_list(
+        solution.mergeTwoLists(
+            list_to_linkedlist([1, 2, 4]), list_to_linkedlist([1, 3, 4])
+        )
+    )
+)
+print(
+    linkedlist_to_list(
+        solution.mergeTwoLists(list_to_linkedlist([]), list_to_linkedlist([]))
+    )
+)
+print(
+    linkedlist_to_list(
+        solution.mergeTwoLists(list_to_linkedlist([]), list_to_linkedlist([0]))
+    )
+)
