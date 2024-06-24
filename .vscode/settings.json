@@ -9,6 +9,6 @@
     "python.analysis.typeCheckingMode": "strict",
     "flake8.args": [
         "--ignore=E203",
-        "--max-line-length=100"
+        "--max-line-length=150"
     ]
 }
