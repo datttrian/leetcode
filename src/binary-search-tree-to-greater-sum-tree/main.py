@@ -15,23 +15,6 @@ class TreeNode:
 
 root = [4, 1, 6, 0, 2, 5, 7, None, None, None, 3, None, None, None, 8]
 
-queue = [TreeNode(root[1])]  # type: ignore
-print(queue)
-queue.append(TreeNode(root[2]))  # type: ignore
-queue.append(TreeNode(root[3]))  # type: ignore
-queue.append(TreeNode(root[4]))  # type: ignore
-queue.append(TreeNode(root[5]))  # type: ignore
-print(queue)
-
-current = queue.pop(2)
-
-print(current)
-print(current.right)
-
-current.right = TreeNode(root[1])  # type: ignore
-print(current)
-print(current.right)
-
 
 def list_to_tree(lst):  # type: ignore
     if not lst:
@@ -45,9 +28,18 @@ def list_to_tree(lst):  # type: ignore
             current.left = TreeNode(lst[i])  # type: ignore
             queue.append(current.left)
         i += 1
-        
+        if i < len(lst) and lst[i] is not None:  # type: ignore
+            current.right = TreeNode(lst[i])  # type: ignore
+            queue.append(current.right)
+        i += 1
     return root
 
 
-print(list_to_tree(root))
-print(TreeNode(root[0]))  # type: ignore
+root_tree = list_to_tree(root)
+print(root_tree)
+
+
+stack = []
+
+stack.append(root_tree)  # type: ignore
+print(stack)  # type: ignore

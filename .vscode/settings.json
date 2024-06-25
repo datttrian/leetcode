@@ -10,5 +10,8 @@
     "flake8.args": [
         "--ignore=E203",
         "--max-line-length=150"
-    ]
+    ],
+    "mypy-type-checker.args": [
+        "var-annotated"
+    ],
 }
