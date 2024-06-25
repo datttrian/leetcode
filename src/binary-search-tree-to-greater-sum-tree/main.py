@@ -49,3 +49,10 @@ print(root_tree.left)  # type: ignore
 
 node = root_tree.left  # type: ignore
 print(node.val)  # type: ignore
+
+
+def bstToGst(root: TreeNode) -> TreeNode:
+    if not root:
+        return TreeNode(0)
+
+    return root  # Return the modified root
