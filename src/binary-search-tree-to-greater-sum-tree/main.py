@@ -20,6 +20,7 @@ class Solution:
         total = 0
 
         while stack or node:
+
             while node:
                 stack.append(node)
                 node = node.right
@@ -27,7 +28,6 @@ class Solution:
             node = stack.pop()
             total += node.val
             node.val = total
-
             node = node.left
 
         return root
