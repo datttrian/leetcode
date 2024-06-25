@@ -45,3 +45,7 @@ print(root_tree)
 stack.append(root_tree)  # type: ignore
 print(stack)  # type: ignore
 print(root_tree.left)  # type: ignore
+
+
+node = root_tree.left  # type: ignore
+print(node.val)  # type: ignore
