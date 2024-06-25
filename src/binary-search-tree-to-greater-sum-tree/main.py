@@ -52,7 +52,5 @@ print(node.val)  # type: ignore
 
 
 def bstToGst(root: TreeNode) -> TreeNode:
-    if not root:
-        return TreeNode(0)
 
-    return root  # Return the modified root
+    return TreeNode(0)  # Return the modified root
