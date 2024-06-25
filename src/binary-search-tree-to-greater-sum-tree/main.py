@@ -19,3 +19,6 @@ queue = [TreeNode(root[1])]  # type: ignore
 print(queue)
 queue.append(TreeNode(root[2]))  # type: ignore
 print(queue)
+
+print(queue.pop(0))
+print(queue)
