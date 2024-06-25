@@ -40,6 +40,8 @@ print(root_tree)
 
 
 stack = []
-
+print(stack)  # type: ignore
+print(root_tree)
 stack.append(root_tree)  # type: ignore
 print(stack)  # type: ignore
+print(root_tree.left)  # type: ignore
