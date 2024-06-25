@@ -18,12 +18,28 @@ root = [4, 1, 6, 0, 2, 5, 7, None, None, None, 3, None, None, None, 8]
 queue = [TreeNode(root[1])]  # type: ignore
 print(queue)
 queue.append(TreeNode(root[2]))  # type: ignore
+queue.append(TreeNode(root[3]))  # type: ignore
+queue.append(TreeNode(root[4]))  # type: ignore
+queue.append(TreeNode(root[5]))  # type: ignore
 print(queue)
 
-temp = queue.pop(0)
-print(temp)
-print(queue)
+current = queue.pop(2)
+
+print(current)
+print(current.right)
+
+current.right = TreeNode(root[1])  # type: ignore
+print(current)
+print(current.right)
 
 
-print(temp.left)
-print(temp.right)
+def list_to_tree(lst):  # type: ignore
+    if not lst:
+        return None
+    root = TreeNode(lst[0])  # type: ignore
+
+    return root
+
+
+print(list_to_tree(root))
+print(TreeNode(root[0]))  # type: ignore
