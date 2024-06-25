@@ -16,7 +16,7 @@ class TreeNode:
 class Solution:
     def bstToGst(self, root: TreeNode) -> TreeNode:
         stack: list[TreeNode] = []
-        node = root
+        node: Optional[TreeNode] = root
         total = 0
 
         while stack or node:
