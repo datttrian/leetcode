@@ -73,11 +73,11 @@ def tree_to_list(root: Optional[TreeNode]) -> list[Union[int, None]]:
 
 # Input tree
 input_list = [4, 1, 6, 0, 2, 5, 7, None, None, None, 3, None, None, None, 8]
-root = list_to_tree(input_list)  # type: ignore
+input_tree = list_to_tree(input_list)  # type: ignore
 
 solution = Solution()
 # Transform the BST
-new_root = solution.bstToGst(root)  # type: ignore
+new_root = solution.bstToGst(input_tree)  # type: ignore
 
 # Output the transformed tree as a list
 output_list = tree_to_list(new_root)
