@@ -54,15 +54,17 @@ print(node.val)  # type: ignore
 def bstToGst(root: TreeNode) -> TreeNode:
     stack = []
     node = root
-    total = 0
+    total_sum = 0
 
     while stack or node:
         while node:
             stack.append(node)  # type: ignore
-            node = node.left  # type: ignore
+            node = node.right  # type: ignore
 
         node = stack.pop()  # type: ignore
-        total += node.val  # type: ignore
-        node.val = total
+        total_sum += node.val  # type: ignore
+        node.val = total_sum
+
+        node = node.left  # type: ignore
 
     return root
