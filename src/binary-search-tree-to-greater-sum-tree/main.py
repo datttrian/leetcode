@@ -14,3 +14,7 @@ class TreeNode:
 
 
 root = [4, 1, 6, 0, 2, 5, 7, None, None, None, 3, None, None, None, 8]
+
+queue = [TreeNode(root[1])]  # type: ignore
+
+print(queue.pop(0))
