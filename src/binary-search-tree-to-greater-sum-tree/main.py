@@ -37,7 +37,15 @@ def list_to_tree(lst):  # type: ignore
     if not lst:
         return None
     root = TreeNode(lst[0])  # type: ignore
-
+    queue = [root]
+    i = 1
+    while i < len(lst):  # type: ignore
+        current = queue.pop(0)
+        if lst[i] is not None:
+            current.left = TreeNode(lst[i])  # type: ignore
+            queue.append(current.left)
+        i += 1
+        
     return root
 
 
