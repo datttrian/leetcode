@@ -31,3 +31,53 @@ class Solution:
             node = node.left
 
         return root
+
+
+def list_to_tree(lst: list[int]) -> Optional[TreeNode]:
+    if not lst:
+        return None
+    root = TreeNode(lst[0])
+    queue = [root]
+    i = 1
+    while i < len(lst):
+        current = queue.pop(0)
+        current.left = TreeNode(lst[i])
+        queue.append(current.left)
+        i += 1
+        if i < len(lst):
+            current.right = TreeNode(lst[i])
+            queue.append(current.right)
+        i += 1
+    return root
+
+
+# def tree_to_list(root: Optional[TreeNode]) -> list[Union[int, None]]:
+#     if not root:
+#         return []
+#     result = []
+#     queue = [root]
+#     while queue:
+#         node = queue.pop(0)
+#         if node:
+#             result.append(node.val)
+#             queue.append(node.left)
+#             queue.append(node.right)
+#         else:
+#             result.append(None)
+#     # Trim the trailing None values
+#     while result and result[-1] is None:
+#         result.pop()
+#     return result
+
+
+# # Input tree
+# input_list = [4, 1, 6, 0, 2, 5, 7, None, None, None, 3, None, None, None, 8]
+# root = list_to_tree(input_list)
+
+# solution = Solution()
+# # Transform the BST
+# new_root = solution.bstToGst(root)
+
+# # Output the transformed tree as a list
+# output_list = tree_to_list(new_root)
+# print(output_list)
