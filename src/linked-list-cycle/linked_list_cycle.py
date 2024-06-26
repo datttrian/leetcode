@@ -27,20 +27,17 @@ class Solution:
 
 
 def list_to_linked_list(lst: list[int], pos: int) -> Optional[ListNode]:
-    head = ListNode(lst[0])
-    current = head
-    cycle_entry = head
+    if not lst:
+        return None
 
-    for index in range(1, len(lst)):
-        current.next = ListNode(lst[index])
-        current = current.next
-        if index == pos:
-            cycle_entry = current
+    nodes = [ListNode(val) for val in lst]
+    for i in range(1, len(lst)):
+        nodes[i - 1].next = nodes[i]
 
     if pos != -1:
-        current.next = cycle_entry
+        nodes[-1].next = nodes[pos]
 
-    return head
+    return nodes[0]
 
 
 solution = Solution()
