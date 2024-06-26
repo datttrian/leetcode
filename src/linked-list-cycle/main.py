@@ -6,10 +6,10 @@ class ListNode:
     def __init__(
         self,
         val: int = 0,
-        nextNode: "Optional[ListNode]" = None,
+        nextNode: Optional["ListNode"] = None,
     ) -> None:
         self.val: int = val
-        self.next: Optional[ListNode] = nextNode
+        self.next: Optional["ListNode"] = nextNode
 
 
 class Solution:
