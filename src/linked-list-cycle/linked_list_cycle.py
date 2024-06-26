@@ -27,10 +27,8 @@ class Solution:
 
 
 def list_to_linked_list(lst: list[int], pos: int) -> Optional[ListNode]:
-    if not lst:
-        return None
-
     nodes = [ListNode(val) for val in lst]
+
     for i in range(1, len(lst)):
         nodes[i - 1].next = nodes[i]
 
