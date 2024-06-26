@@ -26,13 +26,13 @@ class Solution:
         return False
 
 
-def list_to_linked_list(values: list[int], pos: int) -> Optional[ListNode]:
-    head = ListNode(values[0])
+def list_to_linked_list(lst: list[int], pos: int) -> Optional[ListNode]:
+    head = ListNode(lst[0])
     current = head
-    cycle_entry = head if pos == 0 else None
+    cycle_entry = head
 
-    for index in range(1, len(values)):
-        current.next = ListNode(values[index])
+    for index in range(1, len(lst)):
+        current.next = ListNode(lst[index])
         current = current.next
         if index == pos:
             cycle_entry = current
