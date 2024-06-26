@@ -43,7 +43,7 @@ def list_to_linked_list(values: list[int], pos: int) -> Optional[ListNode]:
     return head
 
 
-# Example 1
 solution = Solution()
-head = list_to_linked_list([3, 2, 0, -4], 1)
-print(solution.hasCycle(head))
+print(solution.hasCycle(list_to_linked_list([3, 2, 0, -4], 1)))
+print(solution.hasCycle(list_to_linked_list([1, 2], 0)))
+print(solution.hasCycle(list_to_linked_list([1], -1)))
