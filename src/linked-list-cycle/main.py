@@ -14,15 +14,11 @@ class ListNode:
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        if not head:
-            return False
-
         slow = head
         fast = head
 
-        while fast and fast.next:
-            if slow.next:
-                slow = slow.next
+        while slow and fast and fast.next:
+            slow = slow.next
             fast = fast.next.next
             if slow == fast:
                 return True
@@ -31,9 +27,6 @@ class Solution:
 
 
 def list_to_linked_list(values: list[int], pos: int) -> Optional[ListNode]:
-    if not values:
-        return None
-
     head = ListNode(values[0])
     current = head
     cycle_entry = head if pos == 0 else None
@@ -53,12 +46,4 @@ def list_to_linked_list(values: list[int], pos: int) -> Optional[ListNode]:
 # Example 1
 solution = Solution()
 head = list_to_linked_list([3, 2, 0, -4], 1)
-print(solution.hasCycle(head))  # Output: True
-
-# Example 2
-head = list_to_linked_list([1, 2], 0)
-print(solution.hasCycle(head))  # Output: True
-
-# Example 3
-head = list_to_linked_list([1], -1)
-print(solution.hasCycle(head))  # Output: False
+print(solution.hasCycle(head))
