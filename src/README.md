@@ -951,8 +951,6 @@ style="width: 182px; height: 222px;" />
 **Follow up:** A linked list can be reversed either iteratively or
 recursively. Could you implement both?
 
-#### Iterative - O(n), O(1)
-
 ```python
 from typing import Optional
 
@@ -966,8 +964,31 @@ class ListNode:
     ) -> None:
         self.val: int = val
         self.next: Optional[ListNode] = nextNode
+```
+
+```python
+# Helper function to convert list to linked list
+def list_to_linkedlist(lst: list[int]) -> Optional[ListNode]:
+    dummy = ListNode()
+    current = dummy
+    for value in lst:
+        current.next = ListNode(value)
+        current = current.next
+    return dummy.next
 
 
+# Helper function to convert linked list to list
+def linkedlist_to_list(node: Optional[ListNode]) -> list[int]:
+    result: list[int] = []
+    while node:
+        result.append(node.val)
+        node = node.next
+    return result
+```
+
+#### Iterative - O(n), O(1)
+
+```python
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         node = None
@@ -981,34 +1002,10 @@ class Solution:
         return node
 
 
-# Helper function to create a linked list from a list
-def create_linked_list(head: list[int]) -> Optional[ListNode]:
-    if not head:
-        return None
-    head_node = ListNode(head[0])
-    current_node = head_node
-    for value in head[1:]:
-        current_node.next = ListNode(value)
-        current_node = current_node.next
-    return head_node
-
-
-# Helper function to convert a linked list to a list
-def linked_list_to_list(headNode: Optional[ListNode]) -> list[int]:
-    result: list[int] = []
-    current_node = headNode
-    while current_node:
-        result.append(current_node.val)
-        current_node = current_node.next
-    return result
-
-
 solution = Solution()
-print(
-    linked_list_to_list(solution.reverseList(create_linked_list(head=[1, 2, 3, 4, 5])))
-)
-print(linked_list_to_list(solution.reverseList(create_linked_list(head=[1, 2]))))
-print(linked_list_to_list(solution.reverseList(create_linked_list(head=[]))))
+print(linkedlist_to_list(solution.reverseList(list_to_linkedlist([1, 2, 3, 4, 5]))))
+print(linkedlist_to_list(solution.reverseList(list_to_linkedlist([1, 2]))))
+print(linkedlist_to_list(solution.reverseList(list_to_linkedlist([]))))
 ```
 
     [5, 4, 3, 2, 1]
@@ -1043,38 +1040,498 @@ class Solution:
         return new_head
 
 
-# Helper function to create a linked list from a list
-def create_linked_list(head: list[int]) -> Optional[ListNode]:
-    if not head:
-        return None
-    head_node = ListNode(head[0])
-    current_node = head_node
-    for value in head[1:]:
-        current_node.next = ListNode(value)
-        current_node = current_node.next
-    return head_node
-
-
-# Helper function to convert a linked list to a list
-def linked_list_to_list(headNode: Optional[ListNode]) -> list[int]:
-    result: list[int] = []
-    current_node = headNode
-    while current_node:
-        result.append(current_node.val)
-        current_node = current_node.next
-    return result
-
-
 solution = Solution()
-print(
-    linked_list_to_list(solution.reverseList(create_linked_list(head=[1, 2, 3, 4, 5])))
-)
-print(linked_list_to_list(solution.reverseList(create_linked_list(head=[1, 2]))))
-print(linked_list_to_list(solution.reverseList(create_linked_list(head=[]))))
+print(linkedlist_to_list(solution.reverseList(list_to_linkedlist([1, 2, 3, 4, 5]))))
+print(linkedlist_to_list(solution.reverseList(list_to_linkedlist([1, 2]))))
+print(linkedlist_to_list(solution.reverseList(list_to_linkedlist([]))))
 ```
 
     [5, 4, 3, 2, 1]
     [2, 1]
+    []
+
+### 21. Merge Two Sorted Lists
+
+You are given the heads of two sorted linked lists `list1` and `list2`.
+
+Merge the two lists into one **sorted** list. The list should be made by
+splicing together the nodes of the first two lists.
+
+Return *the head of the merged linked list*.
+
+**Example 1:**
+
+<img src="https://assets.leetcode.com/uploads/2020/10/03/merge_ex1.jpg"
+style="width: 662px; height: 302px;" />
+
+    Input: list1 = [1,2,4], list2 = [1,3,4]
+    Output: [1,1,2,3,4,4]
+
+**Example 2:**
+
+    Input: list1 = [], list2 = []
+    Output: []
+
+**Example 3:**
+
+    Input: list1 = [], list2 = [0]
+    Output: [0]
+
+**Constraints:**
+
+- The number of nodes in both lists is in the range `[0, 50]`.
+- `-100 <= Node.val <= 100`
+- Both `list1` and `list2` are sorted in **non-decreasing** order.
+
+```python
+from typing import Optional
+
+
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(
+        self,
+        val: int = 0,
+        nextNode: "Optional[ListNode]" = None,
+    ) -> None:
+        self.val: int = val
+        self.next: Optional[ListNode] = nextNode
+```
+
+```python
+# Helper function to convert list to linked list
+def list_to_linkedlist(lst: list[int]) -> Optional[ListNode]:
+    dummy = ListNode()
+    current = dummy
+    for value in lst:
+        current.next = ListNode(value)
+        current = current.next
+    return dummy.next
+
+
+# Helper function to convert linked list to list
+def linkedlist_to_list(node: Optional[ListNode]) -> list[int]:
+    result: list[int] = []
+    while node:
+        result.append(node.val)
+        node = node.next
+    return result
+```
+
+#### Iterative - O(n), O(1)
+
+```python
+class Solution:
+    def mergeTwoLists(
+        self, list1: Optional[ListNode], list2: Optional[ListNode]
+    ) -> Optional[ListNode]:
+        dummy = ListNode()
+        current = dummy
+
+        while list1 and list2:
+            if list1.val < list2.val:
+                current.next = list1
+                list1 = list1.next
+            else:
+                current.next = list2
+                list2 = list2.next
+            current = current.next
+
+        if list1:
+            current.next = list1
+        else:
+            current.next = list2
+
+        return dummy.next
+
+
+solution = Solution()
+print(
+    linkedlist_to_list(
+        solution.mergeTwoLists(
+            list_to_linkedlist([1, 2, 4]), list_to_linkedlist([1, 3, 4])
+        )
+    )
+)
+print(
+    linkedlist_to_list(
+        solution.mergeTwoLists(list_to_linkedlist([]), list_to_linkedlist([]))
+    )
+)
+print(
+    linkedlist_to_list(
+        solution.mergeTwoLists(list_to_linkedlist([]), list_to_linkedlist([0]))
+    )
+)
+```
+
+    [1, 1, 2, 3, 4, 4]
+    []
+    [0]
+
+#### Recursive - O(n), O(n)
+
+```python
+from typing import Optional
+
+
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(
+        self,
+        val: int = 0,
+        nextNode: "Optional[ListNode]" = None,
+    ) -> None:
+        self.val: int = val
+        self.next: Optional[ListNode] = nextNode
+
+
+class Solution:
+    def mergeTwoLists(
+        self, list1: Optional[ListNode], list2: Optional[ListNode]
+    ) -> Optional[ListNode]:
+        if not list1:
+            return list2
+        if not list2:
+            return list1
+
+        if list1.val < list2.val:
+            list1.next = self.mergeTwoLists(list1.next, list2)
+            return list1
+        list2.next = self.mergeTwoLists(list1, list2.next)
+        return list2
+
+
+solution = Solution()
+print(
+    linkedlist_to_list(
+        solution.mergeTwoLists(
+            list_to_linkedlist([1, 2, 4]), list_to_linkedlist([1, 3, 4])
+        )
+    )
+)
+print(
+    linkedlist_to_list(
+        solution.mergeTwoLists(list_to_linkedlist([]), list_to_linkedlist([]))
+    )
+)
+print(
+    linkedlist_to_list(
+        solution.mergeTwoLists(list_to_linkedlist([]), list_to_linkedlist([0]))
+    )
+)
+```
+
+    [1, 1, 2, 3, 4, 4]
+    []
+    [0]
+
+### 141. Linked List Cycle
+
+Given `head`, the head of a linked list, determine if the linked list
+has a cycle in it.
+
+There is a cycle in a linked list if there is some node in the list that
+can be reached again by continuously following the `next` pointer.
+Internally, `pos` is used to denote the index of the node
+that tail's `next` pointer is connected to. **Note that `pos` is not
+passed as a parameter**.
+
+Return `true` *if there is a cycle in the linked list*. Otherwise,
+return `false`.
+
+**Example 1:**
+
+<img
+src="https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist.png"
+style="width: 300px; height: 97px; margin-top: 8px; margin-bottom: 8px;" />
+
+    Input: head = [3,2,0,-4], pos = 1
+    Output: true
+    Explanation: There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).
+
+**Example 2:**
+
+<img
+src="https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist_test2.png"
+style="width: 141px; height: 74px;" />
+
+    Input: head = [1,2], pos = 0
+    Output: true
+    Explanation: There is a cycle in the linked list, where the tail connects to the 0th node.
+
+**Example 3:**
+
+<img
+src="https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist_test3.png"
+style="width: 45px; height: 45px;" />
+
+    Input: head = [1], pos = -1
+    Output: false
+    Explanation: There is no cycle in the linked list.
+
+```python
+from typing import Optional
+
+
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(
+        self,
+        val: int = 0,
+        nextNode: Optional["ListNode"] = None,
+    ) -> None:
+        self.val: int = val
+        self.next: Optional["ListNode"] = nextNode
+```
+
+```python
+def list_to_linked_list(lst: list[int], pos: int) -> Optional[ListNode]:
+    nodes = [ListNode(val) for val in lst]
+
+    for i in range(1, len(lst)):
+        nodes[i - 1].next = nodes[i]
+
+    if pos != -1:
+        nodes[-1].next = nodes[pos]
+
+    return nodes[0]
+```
+
+#### Arrays & Hashing - O(n), O(n)
+
+```python
+class Solution:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        visited_nodes = {}
+        current_node = head
+
+        while current_node:
+            if current_node in visited_nodes:
+                return True
+            visited_nodes[current_node] = True
+            current_node = current_node.next
+
+        return False
+
+
+solution = Solution()
+print(solution.hasCycle(list_to_linked_list([3, 2, 0, -4], 1)))
+print(solution.hasCycle(list_to_linked_list([1, 2], 0)))
+print(solution.hasCycle(list_to_linked_list([1], -1)))
+```
+
+    True
+    True
+    False
+
+#### Two Pointers - O(n), O(1)
+
+```python
+class Solution:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        slow = head
+        fast = head
+
+        while slow and fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            if slow == fast:
+                return True
+
+        return False
+
+
+solution = Solution()
+print(solution.hasCycle(list_to_linked_list([3, 2, 0, -4], 1)))
+print(solution.hasCycle(list_to_linked_list([1, 2], 0)))
+print(solution.hasCycle(list_to_linked_list([1], -1)))
+```
+
+    True
+    True
+    False
+
+### 226. Invert Binary Tree
+
+Given the `root` of a binary tree, invert the tree, and return *its
+root*.
+
+**Example 1:**
+
+<img
+src="https://assets.leetcode.com/uploads/2021/03/14/invert1-tree.jpg"
+style="width: 500px; height: 165px;" />
+
+    Input: root = [4,2,7,1,3,6,9]
+    Output: [4,7,2,9,6,3,1]
+
+**Example 2:**
+
+<img
+src="https://assets.leetcode.com/uploads/2021/03/14/invert2-tree.jpg"
+style="width: 500px; height: 120px;" />
+
+    Input: root = [2,1,3]
+    Output: [2,3,1]
+
+**Example 3:**
+
+    Input: root = []
+    Output: []
+
+**Constraints:**
+
+- The number of nodes in the tree is in the range `[0, 100]`.
+- `-100 <= Node.val <= 100`
+
+```python
+from collections import deque
+from typing import Optional
+
+
+class TreeNode:
+    def __init__(
+        self,
+        val: int = 0,
+        left: Optional["TreeNode"] = None,
+        right: Optional["TreeNode"] = None,
+    ) -> None:
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+def list_to_tree(lst: list[int]) -> Optional[TreeNode]:
+    if not lst:
+        return None
+
+    root = TreeNode(lst[0])
+    queue = deque([root])
+    i = 1
+
+    while i < len(lst):
+        current = queue.popleft()
+
+        current.left = TreeNode(lst[i])
+        queue.append(current.left)
+        i += 1
+
+        if i < len(lst):
+            current.right = TreeNode(lst[i])
+            queue.append(current.right)
+        i += 1
+
+    return root
+
+
+def tree_to_list(root: Optional[TreeNode]) -> list[Optional[int]]:
+
+    result: list[Optional[int]] = []
+    queue: deque[Optional[TreeNode]] = deque([root])
+
+    while queue:
+        current = queue.popleft()
+        if current:
+            result.append(current.val)
+            queue.append(current.left)
+            queue.append(current.right)
+        else:
+            result.append(None)
+
+    while result and result[-1] is None:
+        result.pop()
+
+    return result
+```
+
+#### Iterative DFS - O(n), O(n)
+
+```python
+class Solution:
+    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        if not root:
+            return None
+
+        stack = [root]
+
+        while stack:
+            current = stack.pop()
+            current.left, current.right = current.right, current.left
+
+            if current.left:
+                stack.append(current.left)
+            if current.right:
+                stack.append(current.right)
+
+        return root
+
+
+solution = Solution()
+print(tree_to_list(solution.invertTree(list_to_tree([4, 2, 7, 1, 3, 6, 9]))))
+print(tree_to_list(solution.invertTree(list_to_tree([2, 1, 3]))))
+print(tree_to_list(solution.invertTree(list_to_tree([]))))
+```
+
+    [4, 7, 2, 9, 6, 3, 1]
+    [2, 3, 1]
+    []
+
+#### Iterative BFS - O(n), O(n)
+
+```python
+class Solution:
+    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        if not root:
+            return None
+
+        queue = deque([root])
+
+        while queue:
+            current = queue.popleft()
+            current.left, current.right = current.right, current.left
+
+            if current.left:
+                queue.append(current.left)
+            if current.right:
+                queue.append(current.right)
+
+        return root
+
+
+solution = Solution()
+print(tree_to_list(solution.invertTree(list_to_tree([4, 2, 7, 1, 3, 6, 9]))))
+print(tree_to_list(solution.invertTree(list_to_tree([2, 1, 3]))))
+print(tree_to_list(solution.invertTree(list_to_tree([]))))
+```
+
+    [4, 7, 2, 9, 6, 3, 1]
+    [2, 3, 1]
+    []
+
+#### Recursive (DFS) - O(n), O(n)
+
+```python
+class Solution:
+    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        if not root:
+            return None
+
+        root.left, root.right = root.right, root.left
+        self.invertTree(root.left)
+        self.invertTree(root.right)
+
+        return root
+
+
+solution = Solution()
+print(tree_to_list(solution.invertTree(list_to_tree([4, 2, 7, 1, 3, 6, 9]))))
+print(tree_to_list(solution.invertTree(list_to_tree([2, 1, 3]))))
+print(tree_to_list(solution.invertTree(list_to_tree([]))))
+```
+
+    [4, 7, 2, 9, 6, 3, 1]
+    [2, 3, 1]
     []
 
 ## Medium
