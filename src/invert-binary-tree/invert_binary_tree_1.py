@@ -63,7 +63,6 @@ def tree_to_list(root: Optional[TreeNode]) -> list[Optional[int]]:
         else:
             result.append(None)
 
-    # Remove trailing None values that are not needed for the representation
     while result and result[-1] is None:
         result.pop()
 
