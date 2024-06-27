@@ -19,16 +19,9 @@ class Solution:
         if not root:
             return None
 
-        stack = deque([root])
-
-        while stack:
-            current = stack.pop()
-            current.left, current.right = current.right, current.left
-
-            if current.left:
-                stack.append(current.left)
-            if current.right:
-                stack.append(current.right)
+        root.left, root.right = root.right, root.left
+        self.invertTree(root.left)
+        self.invertTree(root.right)
 
         return root
 
