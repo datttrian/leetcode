@@ -26,23 +26,23 @@ class Solution:
         return root
 
 
-def list_to_tree(nodes: list[int]) -> Optional[TreeNode]:
-    if not nodes:
+def list_to_tree(lst: list[int]) -> Optional[TreeNode]:
+    if not lst:
         return None
 
-    root = TreeNode(nodes[0])
+    root = TreeNode(lst[0])
     queue = deque([root])
     i = 1
 
-    while i < len(nodes):
+    while i < len(lst):
         current = queue.popleft()
 
-        current.left = TreeNode(nodes[i])
+        current.left = TreeNode(lst[i])
         queue.append(current.left)
         i += 1
 
-        if i < len(nodes):
-            current.right = TreeNode(nodes[i])
+        if i < len(lst):
+            current.right = TreeNode(lst[i])
             queue.append(current.right)
         i += 1
 
