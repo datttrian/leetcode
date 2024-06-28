@@ -16,9 +16,6 @@ class TreeNode:
 
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
-        if not root:
-            return 0
-
         queue: deque[tuple[Optional[TreeNode], int]] = deque([(root, 1)])
         max_depth = 0
 
