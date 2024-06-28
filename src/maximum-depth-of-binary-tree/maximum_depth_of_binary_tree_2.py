@@ -16,7 +16,20 @@ class TreeNode:
 
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
-        return 0
+        if not root:
+            return 0
+
+        stack: list[tuple[Optional[TreeNode], int]] = [(root, 1)]
+        max_depth = 0
+
+        while stack:
+            node, depth = stack.pop()
+            if node:
+                max_depth = max(max_depth, depth)
+                stack.append((node.left, depth + 1))
+                stack.append((node.right, depth + 1))
+
+        return max_depth
 
 
 def list_to_tree(lst: list[Optional[int]]) -> Optional[TreeNode]:
