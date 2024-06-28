@@ -26,26 +26,25 @@ def list_to_tree(lst: list[Optional[int]]) -> Optional[TreeNode]:
     if not lst:
         return None
 
-    root = TreeNode(lst[0]) if lst[0] is not None else None
+    root = TreeNode(lst[0])
     queue = deque([root])
     i = 1
 
     while i < len(lst):
         current = queue.popleft()
 
-        if current:
-            if i < len(lst) and lst[i] is not None:
-                current.left = TreeNode(lst[i])
-                queue.append(current.left)
-            i += 1
+        current.left = TreeNode(lst[i])
+        queue.append(current.left)
+        i += 1
 
-            if i < len(lst) and lst[i] is not None:
-                current.right = TreeNode(lst[i])
-                queue.append(current.right)
-            i += 1
+        if i < len(lst):
+            current.right = TreeNode(lst[i])
+            queue.append(current.right)
+        i += 1
 
     return root
 
 
 solution = Solution()
 print(solution.maxDepth(list_to_tree([3, 9, 20, None, None, 15, 7])))
+print(solution.maxDepth(list_to_tree([1, None, 2])))
