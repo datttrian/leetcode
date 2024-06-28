@@ -19,15 +19,15 @@ class Solution:
         if not root:
             return 0
 
-        stack: list[tuple[Optional[TreeNode], int]] = [(root, 1)]
+        queue: deque[tuple[Optional[TreeNode], int]] = deque([(root, 1)])
         max_depth = 0
 
-        while stack:
-            node, depth = stack.pop()
+        while queue:
+            node, depth = queue.popleft()
             if node:
                 max_depth = max(max_depth, depth)
-                stack.append((node.left, depth + 1))
-                stack.append((node.right, depth + 1))
+                queue.append((node.left, depth + 1))
+                queue.append((node.right, depth + 1))
 
         return max_depth
 
