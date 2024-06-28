@@ -1534,6 +1534,143 @@ print(tree_to_list(solution.invertTree(list_to_tree([]))))
     [2, 3, 1]
     []
 
+### 104. Maximum Depth of Binary Tree
+
+Given the `root` of a binary tree, return *its maximum depth*.
+
+A binary tree's **maximum depth** is the number of nodes along the
+longest path from the root node down to the farthest leaf node.
+
+**Example 1:**
+
+<img src="https://assets.leetcode.com/uploads/2020/11/26/tmp-tree.jpg"
+style="width: 400px; height: 277px;" />
+
+    Input: root = [3,9,20,null,null,15,7]
+    Output: 3
+
+**Example 2:**
+
+    Input: root = [1,null,2]
+    Output: 2
+
+**Constraints:**
+
+- The number of nodes in the tree is in the range
+    `[0, 10`<sup>`4`</sup>`]`.
+- `-100 <= Node.val <= 100`
+
+```python
+from collections import deque
+from typing import Optional
+
+
+class TreeNode:
+    def __init__(
+        self,
+        val: Optional[int] = 0,
+        left: Optional["TreeNode"] = None,
+        right: Optional["TreeNode"] = None,
+    ) -> None:
+        self.val = val
+        self.left = left
+        self.right = right
+```
+
+```python
+def list_to_tree(lst: list[Optional[int]]) -> Optional[TreeNode]:
+    if not lst:
+        return None
+
+    root = TreeNode(lst[0])
+    queue = deque([root])
+    i = 1
+
+    while i < len(lst):
+        current = queue.popleft()
+
+        current.left = TreeNode(lst[i])
+        queue.append(current.left)
+        i += 1
+
+        if i < len(lst):
+            current.right = TreeNode(lst[i])
+            queue.append(current.right)
+        i += 1
+
+    return root
+```
+
+#### Iterative DFS - O(n), O(n)
+
+```python
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        stack: list[tuple[Optional[TreeNode], int]] = [(root, 1)]
+        max_depth = 0
+
+        while stack:
+            node, depth = stack.pop()
+            if node:
+                max_depth = max(max_depth, depth)
+                stack.append((node.left, depth + 1))
+                stack.append((node.right, depth + 1))
+
+        return max_depth
+
+
+solution = Solution()
+print(solution.maxDepth(list_to_tree([3, 9, 20, None, None, 15, 7])))
+print(solution.maxDepth(list_to_tree([1, None, 2])))
+```
+
+    3
+    2
+
+#### Iterative BFS - O(n), O(n)
+
+```python
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        queue: deque[tuple[Optional[TreeNode], int]] = deque([(root, 1)])
+        max_depth = 0
+
+        while queue:
+            node, depth = queue.popleft()
+            if node:
+                max_depth = max(max_depth, depth)
+                queue.append((node.left, depth + 1))
+                queue.append((node.right, depth + 1))
+
+        return max_depth
+
+
+solution = Solution()
+print(solution.maxDepth(list_to_tree([3, 9, 20, None, None, 15, 7])))
+print(solution.maxDepth(list_to_tree([1, None, 2])))
+```
+
+    3
+    2
+
+#### Recursive (DFS) - O(n), O(n)
+
+```python
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        return (
+            1 + max(self.maxDepth(root.left), self.maxDepth(root.right)) if root else 0
+        )
+
+
+solution = Solution()
+print(solution.maxDepth(list_to_tree([3, 9, 20, None, None, 15, 7])))
+print(solution.maxDepth(list_to_tree([1, None, 2])))
+```
+
+    3
+    2
+
 ## Medium
 
 ### 49. Group Anagrams
