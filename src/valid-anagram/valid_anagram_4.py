@@ -3,17 +3,13 @@ class Solution:
         if len(s) != len(t):
             return False
 
-        count: dict[str, int] = {}
+        count = [0] * 26  # lowercase English letters
 
         for i, char in enumerate(s):
-            count[char] = count.get(char, 0) + 1
-            count[t[i]] = count.get(t[i], 0) - 1
+            count[ord(char) - ord("a")] += 1
+            count[ord(t[i]) - ord("a")] -= 1
 
-        for _, value in count.items():
-            if value != 0:
-                return False
-
-        return True
+        return all(c == 0 for c in count)
 
 
 solution = Solution()
