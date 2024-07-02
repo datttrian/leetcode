@@ -1,10 +1,11 @@
+from collections import deque
 from typing import Optional, Union
 
 
 class TreeNode:
     def __init__(
         self,
-        val: int = 0,
+        val: Optional[int] = 0,
         left: Optional["TreeNode"] = None,
         right: Optional["TreeNode"] = None,
     ) -> None:
@@ -26,29 +27,34 @@ class Solution:
                 node = node.right
 
             node = stack.pop()
-            total += node.val
+            if node.val:
+                total += node.val
             node.val = total
             node = node.left
 
         return root
 
 
-def list_to_tree(lst: list[int]) -> Optional[TreeNode]:
+def list_to_tree(lst: list[Optional[int]]) -> Optional[TreeNode]:
     if not lst:
         return None
+
     root = TreeNode(lst[0])
-    queue = [root]
+    queue = deque([root])
     i = 1
+
     while i < len(lst):
-        current = queue.pop(0)
-        if lst[i] is not None:  # type: ignore
-            current.left = TreeNode(lst[i])
-            queue.append(current.left)
+        current = queue.popleft()
+
+        current.left = TreeNode(lst[i])
+        queue.append(current.left)
         i += 1
-        if i < len(lst) and lst[i] is not None:  # type: ignore
+
+        if i < len(lst):
             current.right = TreeNode(lst[i])
             queue.append(current.right)
         i += 1
+
     return root
 
 
