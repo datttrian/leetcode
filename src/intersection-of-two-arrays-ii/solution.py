@@ -6,9 +6,22 @@ nums2 = [2, 2]
 intersection = []
 
 count_nums1 = Counter(nums1)
-print(count_nums1)
 
-for num in count_nums1:
+for num in nums2:
+    if num in nums2:
+        intersection.append(num)  # type:ignore
+        count_nums1[num] -= 1  # type:ignore
+
+print(count_nums1)
+print(intersection)  # type:ignore
+
+nums1 = [4, 9, 5]
+nums2 = [9, 4, 9, 8, 4]
+intersection = []
+
+count_nums1 = Counter(nums1)
+
+for num in nums2:
     if num in nums2:
         intersection.append(num)  # type:ignore
         count_nums1[num] -= 1  # type:ignore
