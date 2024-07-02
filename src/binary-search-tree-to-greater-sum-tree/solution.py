@@ -1,5 +1,5 @@
 from collections import deque
-from typing import Optional, Union
+from typing import Deque, Optional, Union
 
 
 class TreeNode:
@@ -43,14 +43,14 @@ def list_to_tree(lst: list[Optional[int]]) -> Optional[TreeNode]:
     queue = deque([root])
     i = 1
 
-    while i < len(lst):
+    while queue and i < len(lst):
         current = queue.popleft()
-
-        current.left = TreeNode(lst[i])
-        queue.append(current.left)
+        if lst[i] is not None:
+            current.left = TreeNode(lst[i])
+            queue.append(current.left)
         i += 1
 
-        if i < len(lst):
+        if i < len(lst) and lst[i] is not None:
             current.right = TreeNode(lst[i])
             queue.append(current.right)
         i += 1
@@ -61,30 +61,21 @@ def list_to_tree(lst: list[Optional[int]]) -> Optional[TreeNode]:
 def tree_to_list(root: Optional[TreeNode]) -> list[Union[int, None]]:
     if not root:
         return []
+
     result: list[Optional[int]] = []
-    queue: list[Optional["TreeNode"]] = [root]
+    queue: Deque[Optional[TreeNode]] = deque([root])
+
     while queue:
-        node = queue.pop(0)
+        node = queue.popleft()
         if node:
             result.append(node.val)
             queue.append(node.left)
             queue.append(node.right)
         else:
             result.append(None)
-    # Trim the trailing None values
+
+    # Remove trailing None values
     while result and result[-1] is None:
         result.pop()
+
     return result
-
-
-# Input tree
-input_list = [4, 1, 6, 0, 2, 5, 7, None, None, None, 3, None, None, None, 8]
-input_tree = list_to_tree(input_list)  # type: ignore
-
-solution = Solution()
-# Transform the BST
-new_root = solution.bstToGst(input_tree)  # type: ignore
-
-# Output the transformed tree as a list
-output_list = tree_to_list(new_root)
-print(output_list)
