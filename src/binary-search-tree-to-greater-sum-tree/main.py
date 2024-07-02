@@ -62,13 +62,13 @@ def tree_to_list(root: Optional[TreeNode]) -> list[Union[int, None]]:
     if not root:
         return []
     result: list[Optional[int]] = []
-    queue = [root]
+    queue: list[Optional["TreeNode"]] = [root]
     while queue:
         node = queue.pop(0)
         if node:
             result.append(node.val)
-            queue.append(node.left)  # type: ignore
-            queue.append(node.right)  # type: ignore
+            queue.append(node.left)
+            queue.append(node.right)
         else:
             result.append(None)
     # Trim the trailing None values
