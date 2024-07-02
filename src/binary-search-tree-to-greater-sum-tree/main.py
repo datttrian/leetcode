@@ -61,20 +61,20 @@ def list_to_tree(lst: list[Optional[int]]) -> Optional[TreeNode]:
 def tree_to_list(root: Optional[TreeNode]) -> list[Union[int, None]]:
     if not root:
         return []
-    result = []
+    result: list[Optional[int]] = []
     queue = [root]
     while queue:
         node = queue.pop(0)
         if node:
-            result.append(node.val)  # type: ignore
+            result.append(node.val)
             queue.append(node.left)  # type: ignore
             queue.append(node.right)  # type: ignore
         else:
-            result.append(None)  # type: ignore
+            result.append(None)
     # Trim the trailing None values
     while result and result[-1] is None:
         result.pop()
-    return result  # type: ignore
+    return result
 
 
 # Input tree
