@@ -34,3 +34,33 @@ class Solution:
                 and self.isSameTree(p.right, q.right)
             )
         )
+
+
+def list_to_tree(lst: list[Optional[int]]) -> Optional[TreeNode]:
+    if not lst:
+        return None
+
+    root = TreeNode(lst[0])
+    stack = [root]
+    i = 1
+
+    while i < len(lst):
+        current = stack.pop()
+
+        current.left = TreeNode(lst[i])
+        stack.append(current.left)
+        i += 1
+
+        if i < len(lst):
+            current.right = TreeNode(lst[i])
+            stack.append(current.right)
+        i += 1
+
+    return root
+
+
+solution = Solution()
+print(solution.isSubtree(list_to_tree(
+    [3, 4, 5, 1, 2]), list_to_tree([4, 1, 2])))
+print(solution.isSubtree(list_to_tree(
+    [3, 4, 5, 1, 2, None, None, None, None, 0]), list_to_tree([4, 1, 2])))
