@@ -23,9 +23,7 @@ class Solution:
 
             if not node1 and not node2:
                 continue
-            if not node1 or not node2:
-                return False
-            if node1.val != node2.val:
+            if not node1 or not node2 or node1.val != node2.val:
                 return False
 
             stack.append((node1.right, node2.right))
