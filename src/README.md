@@ -173,73 +173,6 @@ print(solution.isAnagram(s="rat", t="car"))
 #### Arrays & Hashing - O(n), O(1)
 
 ```python
-class Solution:
-    def isAnagram(self, s: str, t: str) -> bool:
-        if len(s) != len(t):
-            return False
-
-        count_s: dict[str, int] = {}
-        count_t: dict[str, int] = {}
-
-        for char in s:
-            if char in count_s:
-                count_s[char] += 1
-            else:
-                count_s[char] = 1
-
-        for char in t:
-            if char in count_t:
-                count_t[char] += 1
-            else:
-                count_t[char] = 1
-
-        for char, count in count_s.items():
-            if char not in count_t or count != count_t[char]:
-                return False
-
-        for char in count_t:
-            if char not in count_s:
-                return False
-
-        return True
-
-
-solution = Solution()
-print(solution.isAnagram(s="anagram", t="nagaram"))
-print(solution.isAnagram(s="rat", t="car"))
-```
-
-    True
-    False
-
-```python
-class Solution:
-    def isAnagram(self, s: str, t: str) -> bool:
-        if len(s) != len(t):
-            return False
-
-        count: dict[str, int] = {}
-
-        for i, char in enumerate(s):
-            count[char] = count.get(char, 0) + 1
-            count[t[i]] = count.get(t[i], 0) - 1
-
-        for _, value in count.items():
-            if value != 0:
-                return False
-
-        return True
-
-
-solution = Solution()
-print(solution.isAnagram(s="anagram", t="nagaram"))
-print(solution.isAnagram(s="rat", t="car"))
-```
-
-    True
-    False
-
-```python
 from typing import Counter
 
 
@@ -634,32 +567,6 @@ print(solution.maxProfit(prices=[7, 6, 4, 3, 1]))
     0
 
 #### Sliding Window - O(n), O(1)
-
-```python
-class Solution:
-    def maxProfit(self, prices: list[int]) -> int:
-        if not prices or len(prices) == 1:
-            return 0
-
-        max_profit = 0
-        min_price = prices[0]
-
-        for price in prices[1:]:
-            if price < min_price:
-                min_price = price
-            else:
-                max_profit = max(max_profit, price - min_price)
-
-        return max_profit
-
-
-solution = Solution()
-print(solution.maxProfit(prices=[7, 1, 5, 3, 6, 4]))
-print(solution.maxProfit(prices=[7, 6, 4, 3, 1]))
-```
-
-    5
-    0
 
 ```python
 class Solution:
@@ -1670,6 +1577,173 @@ print(solution.maxDepth(list_to_tree([1, None, 2])))
 
     3
     2
+
+### 100. Same Tree
+
+Given the roots of two binary trees `p` and `q`, write a function to
+check if they are the same or not.
+
+Two binary trees are considered the same if they are structurally
+identical, and the nodes have the same value.
+
+**Example 1:**
+
+<img src="https://assets.leetcode.com/uploads/2020/12/20/ex1.jpg"
+style="width: 622px; height: 182px;" />
+
+    Input: p = [1,2,3], q = [1,2,3]
+    Output: true
+
+**Example 2:**
+
+<img src="https://assets.leetcode.com/uploads/2020/12/20/ex2.jpg"
+style="width: 382px; height: 182px;" />
+
+    Input: p = [1,2], q = [1,null,2]
+    Output: false
+
+**Example 3:**
+
+<img src="https://assets.leetcode.com/uploads/2020/12/20/ex3.jpg"
+style="width: 622px; height: 182px;" />
+
+    Input: p = [1,2,1], q = [1,1,2]
+    Output: false
+
+**Constraints:**
+
+- The number of nodes in both trees is in the range `[0, 100]`.
+- `-10`<sup>`4`</sup>`<= Node.val <= 10`<sup>`4`</sup>
+
+```python
+from typing import Optional
+
+
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(
+        self,
+        val: Optional[int] = 0,
+        left: Optional["TreeNode"] = None,
+        right: Optional["TreeNode"] = None,
+    ) -> None:
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+def list_to_tree(lst: list[Optional[int]]) -> Optional[TreeNode]:
+    if not lst:
+        return None
+
+    root = TreeNode(lst[0])
+    stack = [root]
+    i = 1
+
+    while i < len(lst):
+        current = stack.pop()
+
+        current.left = TreeNode(lst[i])
+        stack.append(current.left)
+        i += 1
+
+        if i < len(lst):
+            current.right = TreeNode(lst[i])
+            stack.append(current.right)
+        i += 1
+
+    return root
+```
+
+#### Iterative DFS - O(n), O(n)
+
+```python
+class Solution:
+    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        stack = [(p, q)]
+
+        while stack:
+            node1, node2 = stack.pop()
+
+            if not node1 and not node2:
+                continue
+            if not node1 or not node2 or node1.val != node2.val:
+                return False
+
+            stack.append((node1.right, node2.right))
+            stack.append((node1.left, node2.left))
+
+        return True
+
+
+solution = Solution()
+print(solution.isSameTree(list_to_tree([1, 2, 3]), list_to_tree([1, 2, 3])))
+print(solution.isSameTree(list_to_tree([1, 2]), list_to_tree([1, None, 2])))
+print(solution.isSameTree(list_to_tree([1, 2, 1]), list_to_tree([1, 1, 2])))
+```
+
+    True
+    False
+    False
+
+#### Iterative BFS - O(n), O(n)
+
+```python
+from collections import deque
+
+
+class Solution:
+    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        queue = deque([(p, q)])
+
+        while queue:
+            node1, node2 = queue.popleft()
+
+            if not node1 and not node2:
+                continue
+            if not node1 or not node2 or node1.val != node2.val:
+                return False
+
+            queue.append((node1.right, node2.right))
+            queue.append((node1.left, node2.left))
+
+        return True
+
+
+solution = Solution()
+print(solution.isSameTree(list_to_tree([1, 2, 3]), list_to_tree([1, 2, 3])))
+print(solution.isSameTree(list_to_tree([1, 2]), list_to_tree([1, None, 2])))
+print(solution.isSameTree(list_to_tree([1, 2, 1]), list_to_tree([1, 1, 2])))
+```
+
+    True
+    False
+    False
+
+#### Recursive (DFS) - O(n), O(n)
+
+```python
+class Solution:
+    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        if not p or not q:
+            return p == q
+
+        return (
+            p.val == q.val
+            and self.isSameTree(p.left, q.left)
+            and self.isSameTree(p.right, q.right)
+        )
+
+
+solution = Solution()
+print(solution.isSameTree(list_to_tree([1, 2, 3]), list_to_tree([1, 2, 3])))
+print(solution.isSameTree(list_to_tree([1, 2]), list_to_tree([1, None, 2])))
+print(solution.isSameTree(list_to_tree([1, 2, 1]), list_to_tree([1, 1, 2])))
+```
+
+    True
+    False
+    False
 
 ## Medium
 
