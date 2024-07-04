@@ -1,7 +1,7 @@
 from typing import Optional
+
+
 # Definition for a binary tree node.
-
-
 class TreeNode:
     def __init__(
         self,
@@ -16,10 +16,6 @@ class TreeNode:
 
 class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
-        # If both nodes are None, they are the same
-        if not p and not q:
-            return True
-        # If one of the nodes is None or their values are different, they are not the same
         if not p or not q or p.val != q.val:
             return False
 
