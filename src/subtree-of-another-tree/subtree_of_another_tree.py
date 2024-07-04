@@ -1,3 +1,4 @@
+from collections import deque
 from typing import Optional
 
 
@@ -41,19 +42,18 @@ def list_to_tree(lst: list[Optional[int]]) -> Optional[TreeNode]:
         return None
 
     root = TreeNode(lst[0])
-    stack = [root]
+    queue = deque([root])
     i = 1
-
-    while i < len(lst):
-        current = stack.pop()
-
-        current.left = TreeNode(lst[i])
-        stack.append(current.left)
+    while queue and i < len(lst):
+        node = queue.popleft()
+        if lst[i] is not None:
+            node.left = TreeNode(lst[i])
+            queue.append(node.left)
         i += 1
 
-        if i < len(lst):
-            current.right = TreeNode(lst[i])
-            stack.append(current.right)
+        if i < len(lst) and lst[i] is not None:
+            node.right = TreeNode(lst[i])
+            queue.append(node.right)
         i += 1
 
     return root
