@@ -1416,7 +1416,7 @@ print(tree_to_list(solution.invertTree(list_to_tree([]))))
     [2, 3, 1]
     []
 
-#### Recursive (DFS) - O(n), O(n)
+#### Recursive DFS - O(n), O(n)
 
 ```python
 class Solution:
@@ -1560,7 +1560,7 @@ print(solution.maxDepth(list_to_tree([1, None, 2])))
     3
     2
 
-#### Recursive (DFS) - O(n), O(n)
+#### Recursive DFS - O(n), O(n)
 
 ```python
 class Solution:
@@ -1720,18 +1720,19 @@ print(solution.isSameTree(list_to_tree([1, 2, 1]), list_to_tree([1, 1, 2])))
     False
     False
 
-#### Recursive (DFS) - O(n), O(n)
+#### Recursive DFS - O(n), O(n)
 
 ```python
 class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
-        if not p or not q:
-            return p == q
-
         return (
-            p.val == q.val
-            and self.isSameTree(p.left, q.left)
-            and self.isSameTree(p.right, q.right)
+            p == q
+            if not p or not q
+            else (
+                p.val == q.val
+                and self.isSameTree(p.left, q.left)
+                and self.isSameTree(p.right, q.right)
+            )
         )
 
 
@@ -1743,6 +1744,117 @@ print(solution.isSameTree(list_to_tree([1, 2, 1]), list_to_tree([1, 1, 2])))
 
     True
     False
+    False
+
+### 572. Subtree of Another Tree
+
+Given the roots of two binary trees `root` and `subRoot`, return `true`
+if there is a subtree of `root` with the same structure and node values
+of`subRoot` and `false` otherwise.
+
+A subtree of a binary tree `tree` is a tree that consists of a node in
+`tree` and all of this node's descendants. The tree `tree` could also be
+considered as a subtree of itself.
+
+**Example 1:**
+
+<img
+src="https://assets.leetcode.com/uploads/2021/04/28/subtree1-tree.jpg"
+style="width: 532px; height: 400px;" />
+
+    Input: root = [3,4,5,1,2], subRoot = [4,1,2]
+    Output: true
+
+**Example 2:**
+
+<img
+src="https://assets.leetcode.com/uploads/2021/04/28/subtree2-tree.jpg"
+style="width: 502px; height: 458px;" />
+
+    Input: root = [3,4,5,1,2,null,null,null,null,0], subRoot = [4,1,2]
+    Output: false
+
+**Constraints:**
+
+- The number of nodes in the `root` tree is in the range `[1, 2000]`.
+- The number of nodes in the `subRoot` tree is in the range
+    `[1, 1000]`.
+- `-10`<sup>`4`</sup>`<= root.val <= 10`<sup>`4`</sup>
+- `-10`<sup>`4`</sup>`<= subRoot.val <= 10`<sup>`4`</sup>
+
+```python
+from collections import deque
+from typing import Optional
+
+
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(
+        self,
+        val: Optional[int] = 0,
+        left: Optional["TreeNode"] = None,
+        right: Optional["TreeNode"] = None,
+    ) -> None:
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+def list_to_tree(lst: list[Optional[int]]) -> Optional[TreeNode]:
+    if not lst:
+        return None
+
+    root = TreeNode(lst[0])
+    queue = deque([root])
+    i = 1
+    while queue and i < len(lst):
+        node = queue.popleft()
+        if lst[i] is not None:
+            node.left = TreeNode(lst[i])
+            queue.append(node.left)
+        i += 1
+
+        if i < len(lst) and lst[i] is not None:
+            node.right = TreeNode(lst[i])
+            queue.append(node.right)
+        i += 1
+
+    return root
+```
+
+#### Recursive DFS - O(n), O(n)
+
+```python
+class Solution:
+    def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
+        return (
+            False
+            if not root
+            else self.isSameTree(root, subRoot)
+            or self.isSubtree(root.left, subRoot)
+            or self.isSubtree(root.right, subRoot)
+        )
+
+    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        return (
+            p == q
+            if not p or not q
+            else (
+                p.val == q.val
+                and self.isSameTree(p.left, q.left)
+                and self.isSameTree(p.right, q.right)
+            )
+        )
+
+
+solution = Solution()
+print(solution.isSubtree(list_to_tree(
+    [3, 4, 5, 1, 2]), list_to_tree([4, 1, 2])))
+print(solution.isSubtree(list_to_tree(
+    [3, 4, 5, 1, 2, None, None, None, None, 0]), list_to_tree([4, 1, 2])))
+```
+
+    True
     False
 
 ## Medium

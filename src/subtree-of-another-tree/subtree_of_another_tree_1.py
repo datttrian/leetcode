@@ -1,4 +1,3 @@
-from collections import deque
 from typing import Optional
 
 
@@ -35,32 +34,3 @@ class Solution:
                 and self.isSameTree(p.right, q.right)
             )
         )
-
-
-def list_to_tree(lst: list[Optional[int]]) -> Optional[TreeNode]:
-    if not lst:
-        return None
-
-    root = TreeNode(lst[0])
-    queue = deque([root])
-    i = 1
-    while queue and i < len(lst):
-        node = queue.popleft()
-        if lst[i] is not None:
-            node.left = TreeNode(lst[i])
-            queue.append(node.left)
-        i += 1
-
-        if i < len(lst) and lst[i] is not None:
-            node.right = TreeNode(lst[i])
-            queue.append(node.right)
-        i += 1
-
-    return root
-
-
-solution = Solution()
-print(solution.isSubtree(list_to_tree(
-    [3, 4, 5, 1, 2]), list_to_tree([4, 1, 2])))
-print(solution.isSubtree(list_to_tree(
-    [3, 4, 5, 1, 2, None, None, None, None, 0]), list_to_tree([4, 1, 2])))
