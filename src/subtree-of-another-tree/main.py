@@ -16,20 +16,14 @@ class TreeNode:
 
 class Solution:
     def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
-        if not root:
-            return False
+        return False if not root else self.isSameTree(root, subRoot) or self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
 
-        if self.isSameTree(root, subRoot):
-            return True
+    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        if not p or not q:
+            return p == q
 
-        return self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
-
-    def isSameTree(self, s: Optional[TreeNode], t: Optional[TreeNode]) -> bool:
-        if not s and not t:
-            return True
-        if not s or not t:
-            return False
-        if s.val != t.val:
-            return False
-
-        return self.isSameTree(s.left, t.left) and self.isSameTree(s.right, t.right)
+        return (
+            p.val == q.val
+            and self.isSameTree(p.left, q.left)
+            and self.isSameTree(p.right, q.right)
+        )
