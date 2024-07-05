@@ -15,9 +15,6 @@ class TreeNode:
 
 class Solution:
     def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
-        if not root:
-            return 0
-
         stack: list[tuple[Optional[TreeNode], bool]] = [(root, False)]
         depth: dict[Optional[TreeNode], int] = {}
         diameter = 0
