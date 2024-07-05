@@ -15,19 +15,17 @@ class TreeNode:
 
 class Solution:
     def diameterOfBinaryTree(self, root: TreeNode) -> int:
-        self.diameter = 0
+        diameter = [0]
 
         def depth(node: Optional["TreeNode"]) -> int:
             if not node:
                 return 0
+
             left_depth = depth(node.left)
             right_depth = depth(node.right)
+            diameter[0] = max(diameter[0], left_depth + right_depth)
 
-            # The path through this node
-            self.diameter = max(self.diameter, left_depth + right_depth)
-
-            # Return the depth of the tree rooted at this node
             return max(left_depth, right_depth) + 1
 
         depth(root)
-        return self.diameter
+        return diameter[0]
