@@ -14,7 +14,7 @@ class TreeNode:
 
 
 class Solution:
-    def diameterOfBinaryTree(self, root: TreeNode) -> int:
+    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
         diameter = [0]
 
         def depth(node: Optional["TreeNode"]) -> int:
