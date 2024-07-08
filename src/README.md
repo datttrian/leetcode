@@ -1976,6 +1976,103 @@ print(solution.diameterOfBinaryTree(build_tree([1, 2])))
     3
     1
 
+### 110. Balanced Binary Tree
+
+Given a binary tree, determine if it is **height-balanced**.
+
+A **height-balanced** binary tree is a binary tree in which the depth of the two subtrees of every node never differs by more than one.
+
+**Example 1:**
+
+<img src="https://assets.leetcode.com/uploads/2020/10/06/balance_1.jpg"
+style="width: 342px; height: 221px;" />
+
+    Input: root = [3,9,20,null,null,15,7]
+    Output: true
+
+**Example 2:**
+
+<img src="https://assets.leetcode.com/uploads/2020/10/06/balance_2.jpg"
+style="width: 452px; height: 301px;" />
+
+    Input: root = [1,2,2,3,3,null,null,4,4]
+    Output: false
+
+**Example 3:**
+
+    Input: root = []
+    Output: true
+
+**Constraints:**
+
+- The number of nodes in the tree is in the range `[0, 5000]`.
+- `-10`<sup>`4`</sup>`<= Node.val <= 10`<sup>`4`</sup>
+
+```python
+from typing import Optional
+
+
+class TreeNode:
+    def __init__(
+        self,
+        val: int = 0,
+        left: Optional["TreeNode"] = None,
+        right: Optional["TreeNode"] = None,
+    ) -> None:
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+def build_tree(values: list[Optional[int]]) -> Optional[TreeNode]:
+    if not values:
+        return None
+    root = TreeNode(values[0])
+    queue = [root]
+    i = 1
+    while i < len(values):
+        current = queue.pop(0)
+        if values[i] is not None:
+            current.left = TreeNode(values[i])
+            queue.append(current.left)
+        i += 1
+        if i < len(values) and values[i] is not None:
+            current.right = TreeNode(values[i])
+            queue.append(current.right)
+        i += 1
+    return root
+```
+
+#### Recursive DFS - O(n), O(h)
+
+```python
+class Solution:
+    def isBalanced(self, root: Optional[TreeNode]) -> bool:
+        def dfs(node: Optional[TreeNode]) -> int:
+            if not node:
+                return 0
+            left_height, right_height = dfs(node.left), dfs(node.right)
+            if (
+                left_height == -1
+                or right_height == -1
+                or abs(left_height - right_height) > 1
+            ):
+                return -1
+            return max(left_height, right_height) + 1
+
+        return dfs(root) != -1
+
+
+solution = Solution()
+print(solution.isBalanced(build_tree([3, 9, 20, None, None, 15, 7])))
+print(solution.isBalanced(build_tree([1, 2, 2, 3, 3, None, None, 4, 4])))
+print(solution.isBalanced(build_tree([])))
+```
+
+    True
+    False
+    True
+
 ## Medium
 
 ### 49. Group Anagrams
