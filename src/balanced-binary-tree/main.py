@@ -15,13 +15,12 @@ class TreeNode:
 
 class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
-        def dfs(root: Optional[TreeNode]) -> tuple[bool, int]:
-            if not root:
-                return (True, 0)
+        def dfs(node: Optional[TreeNode]) -> int:
+            if not node:
+                return 0
+            left_height, right_height = dfs(node.left), dfs(node.right)
+            if left_height == -1 or right_height == -1 or abs(left_height - right_height) > 1:
+                return -1
+            return max(left_height, right_height) + 1
 
-            left, right = dfs(root.left), dfs(root.right)
-            balanced = (left[0] and right[0]) and abs(left[1] - right[1]) <= 1
-
-            return (balanced, 1 + max(left[1], right[1]))
-
-        return dfs(root)[0]
+        return dfs(root) != -1
