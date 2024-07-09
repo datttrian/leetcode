@@ -25,3 +25,20 @@ print(customer2_finish)
 print(customer2_wait)
 
 print((customer0_wait + customer1_wait + customer2_wait) / len(customers))
+
+
+def averageWaitingTime(customers):  # type: ignore
+    current = 0
+    total = 0
+    for arrival, time in customers:  # type: ignore
+        finish = current + time  # type: ignore
+        wait = finish - arrival  # type: ignore
+        total = total + wait  # type: ignore
+        current = finish  # type: ignore
+        print(finish, wait, total, current)  # type: ignore
+
+    average = total / len(customers)  # type: ignore
+    return average  # type: ignore
+
+
+print(averageWaitingTime(customers))
