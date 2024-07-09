@@ -31,6 +31,8 @@ def averageWaitingTime(customers):  # type: ignore
     current = 0
     total = 0
     for arrival, time in customers:  # type: ignore
+        if current < arrival:
+            current = arrival  # type: ignore
         finish = current + time  # type: ignore
         wait = finish - arrival  # type: ignore
         total = total + wait  # type: ignore
@@ -42,4 +44,5 @@ def averageWaitingTime(customers):  # type: ignore
 
 
 print(averageWaitingTime(customers))
+print()
 print(averageWaitingTime([[5, 2], [5, 4], [10, 3], [20, 1]]))
