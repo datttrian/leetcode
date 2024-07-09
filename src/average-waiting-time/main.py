@@ -4,4 +4,5 @@ arrival_time = customers[0]
 
 print(arrival_time)
 
-print(arrival_time[0] + arrival_time[1])
+time_customer_0 = arrival_time[0] + arrival_time[1]
+print(time_customer_0)
