@@ -7,10 +7,21 @@ arrival_time_2 = customers[2]
 print(arrival_time_0)
 
 customer0_finish = arrival_time_0[0] + arrival_time_0[1]
-print(customer0_finish)
+customer0_wait = customer0_finish - arrival_time_0[0]
+
 
 customer1_finish = customer0_finish + arrival_time_1[1]
-print(customer1_finish)
+customer1_wait = customer1_finish - arrival_time_1[0]
+
 
 customer2_finish = customer1_finish + arrival_time_2[1]
+customer2_wait = customer2_finish - arrival_time_2[0]
+
+print(customer0_finish)
+print(customer0_wait)
+print(customer1_finish)
+print(customer1_wait)
 print(customer2_finish)
+print(customer2_wait)
+
+print((customer0_wait + customer1_wait + customer2_wait) / len(customers))
