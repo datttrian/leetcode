@@ -42,3 +42,4 @@ def averageWaitingTime(customers):  # type: ignore
 
 
 print(averageWaitingTime(customers))
+print(averageWaitingTime([[5, 2], [5, 4], [10, 3], [20, 1]]))
