@@ -1,3 +1,4 @@
+# pylint: disable=import-error
 from sortedcontainers import SortedList  # type: ignore
 
 
