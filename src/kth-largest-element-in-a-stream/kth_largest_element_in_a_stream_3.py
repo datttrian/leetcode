@@ -1,20 +1,14 @@
-import heapq
+from sortedcontainers import SortedList  # type: ignore
 
 
 class KthLargest:
-
     def __init__(self, k: int, nums: list[int]):
         self.k = k
-        self.min_heap: list[int] = nums
-        heapq.heapify(self.min_heap)
-        while len(self.min_heap) > k:
-            heapq.heappop(self.min_heap)
+        self.sorted_list: list[int] = SortedList(nums)
 
     def add(self, val: int) -> int:
-        heapq.heappush(self.min_heap, val)
-        if len(self.min_heap) > self.k:
-            heapq.heappop(self.min_heap)
-        return self.min_heap[0]
+        self.sorted_list.add(val)  # type: ignore
+        return self.sorted_list[-self.k]
 
 
 # Your KthLargest object will be instantiated and called as such:
