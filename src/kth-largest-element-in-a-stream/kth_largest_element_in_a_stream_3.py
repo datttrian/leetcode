@@ -1,15 +1,12 @@
-# pylint: disable=import-error
-from sortedcontainers import SortedList  # type: ignore
-
-
 class KthLargest:
     def __init__(self, k: int, nums: list[int]):
         self.k = k
-        self.sorted_list: list[int] = SortedList(nums)
+        self.nums = sorted(nums, reverse=True)
 
     def add(self, val: int) -> int:
-        self.sorted_list.add(val)  # type: ignore
-        return self.sorted_list[-self.k]
+        self.nums.append(val)
+        self.nums.sort(reverse=True)
+        return self.nums[self.k - 1]
 
 
 # Your KthLargest object will be instantiated and called as such:
