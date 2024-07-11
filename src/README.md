@@ -2073,6 +2073,109 @@ print(solution.isBalanced(build_tree([])))
     False
     True
 
+### 703. Kth Largest Element in a Stream
+
+Design a class to find the `k`<sup>`th`</sup> largest element in a
+stream. Note that it is the `k`<sup>`th`</sup> largest element in the
+sorted order, not the `k`<sup>`th`</sup> distinct element.
+
+Implement `KthLargest` class:
+
+- `KthLargest(int k, int[] nums)` Initializes the object with the
+    integer `k` and the stream of integers `nums`.
+- `int add(int val)` Appends the integer `val` to the stream and
+    returns the element representing the `k`<sup>`th`</sup> largest
+    element in the stream.
+
+**Example 1:**
+
+    Input
+    ["KthLargest", "add", "add", "add", "add", "add"]
+    [[3, [4, 5, 8, 2]], [3], [5], [10], [9], [4]]
+    Output
+    [null, 4, 5, 5, 8, 8]
+
+    Explanation
+    KthLargest kthLargest = new KthLargest(3, [4, 5, 8, 2]);
+    kthLargest.add(3);   // return 4
+    kthLargest.add(5);   // return 5
+    kthLargest.add(10);  // return 5
+    kthLargest.add(9);   // return 8
+    kthLargest.add(4);   // return 8
+
+**Constraints:**
+
+- `1 <= k <= 10`<sup>`4`</sup>
+- `0 <= nums.length <= 10`<sup>`4`</sup>
+- `-10`<sup>`4`</sup>`<= nums[i] <= 10`<sup>`4`</sup>
+- `-10`<sup>`4`</sup>`<= val <= 10`<sup>`4`</sup>
+- At most `10`<sup>`4`</sup> calls will be made to `add`.
+- It is guaranteed that there will be at least `k` elements in the
+    array when you search for the `k`<sup>`th`</sup> element.
+
+#### Sorting - O(n log n), O(n); O(n log n), O(n)
+
+```python
+class KthLargest:
+    def __init__(self, k: int, nums: list[int]):
+        self.k = k
+        self.nums = sorted(nums, reverse=True)
+
+    def add(self, val: int) -> int:
+        self.nums.append(val)
+        self.nums.sort(reverse=True)
+        return self.nums[self.k - 1]
+
+
+obj = KthLargest(3, [4, 5, 8, 2])
+print(obj.add(3))
+print(obj.add(5))
+print(obj.add(10))
+print(obj.add(9))
+print(obj.add(4))
+```
+
+    4
+    5
+    5
+    8
+    8
+
+#### Heap - O(log k), O(k); O(n log k), O(k)
+
+```python
+import heapq
+
+
+class KthLargest:
+
+    def __init__(self, k: int, nums: list[int]):
+        self.k = k
+        self.min_heap: list[int] = []
+        for num in nums:
+            self.add(num)
+
+    def add(self, val: int) -> int:
+        heapq.heappush(self.min_heap, val)
+        if len(self.min_heap) > self.k:
+            heapq.heappop(self.min_heap)
+        return self.min_heap[0]
+
+
+obj = KthLargest(3, [4, 5, 8, 2])
+print(obj.add(3))
+print(obj.add(5))
+print(obj.add(10))
+print(obj.add(9))
+print(obj.add(4))
+```
+
+    4
+    5
+    5
+    8
+    8
+
 ## Medium
 
 ### 49. Group Anagrams
