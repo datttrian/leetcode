@@ -1,4 +1,4 @@
-### 703. Kth Largest Element in a Stream
+### 1046. Last Stone Weight
 
 You are given an array of integers `stones` where `stones[i]` is the
 weight of the `i`<sup>`th`</sup> stone.
