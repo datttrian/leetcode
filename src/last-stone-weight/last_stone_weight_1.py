@@ -1,21 +1,10 @@
-import heapq
-
-
 class Solution:
     def lastStoneWeight(self, stones: list[int]) -> int:
-        stones = [-stone for stone in stones]
-        heapq.heapify(stones)
-
         while len(stones) > 1:
-            x = heapq.heappop(stones)
-            y = heapq.heappop(stones)
-
+            stones.sort(reverse=True)
+            x = stones.pop(0)
+            y = stones.pop(0)
             if x != y:
-                heapq.heappush(stones, x - y)
+                stones.append(x - y)
 
-        return -stones[0] if stones else 0
-
-
-solution = Solution()
-print(solution.lastStoneWeight([2, 7, 4, 1, 8, 1]))
-print(solution.lastStoneWeight([1]))
+        return stones[0] if stones else 0
