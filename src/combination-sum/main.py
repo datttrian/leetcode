@@ -6,15 +6,15 @@ class Solution:
             start: int, current: list[int], total: int
         ) -> None:
             if total == target:
-                result.append(current.copy())
+                result.append(list(current))
                 return
-            if start >= len(candidates) or total > target:
+            if total > target:
                 return
 
-            current.append(candidates[start])
-            backtrack(start, current, total + candidates[start])
-            current.pop()
-            backtrack(start + 1, current, total)
+            for i in range(start, len(candidates)):
+                current.append(candidates[i])
+                backtrack(i, current, total + candidates[i])
+                current.pop()
 
         backtrack(0, [], 0)
         return result
