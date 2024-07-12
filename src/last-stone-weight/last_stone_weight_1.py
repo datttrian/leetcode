@@ -14,3 +14,8 @@ class Solution:
                 heapq.heappush(stones, x - y)
 
         return -stones[0] if stones else 0
+
+
+solution = Solution()
+print(solution.lastStoneWeight([2, 7, 4, 1, 8, 1]))
+print(solution.lastStoneWeight([1]))
