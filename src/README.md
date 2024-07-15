@@ -871,11 +871,10 @@ class ListNode:
     ) -> None:
         self.val: int = val
         self.next: Optional[ListNode] = nextNode
-```
 
-```python
+
 # Helper function to convert list to linked list
-def list_to_linkedlist(lst: list[int]) -> Optional[ListNode]:
+def list_to_linked_list(lst: list[int]) -> Optional[ListNode]:
     dummy = ListNode()
     current = dummy
     for value in lst:
@@ -885,7 +884,7 @@ def list_to_linkedlist(lst: list[int]) -> Optional[ListNode]:
 
 
 # Helper function to convert linked list to list
-def linkedlist_to_list(node: Optional[ListNode]) -> list[int]:
+def linked_list_to_list(node: Optional[ListNode]) -> list[int]:
     result: list[int] = []
     while node:
         result.append(node.val)
@@ -910,9 +909,9 @@ class Solution:
 
 
 solution = Solution()
-print(linkedlist_to_list(solution.reverseList(list_to_linkedlist([1, 2, 3, 4, 5]))))
-print(linkedlist_to_list(solution.reverseList(list_to_linkedlist([1, 2]))))
-print(linkedlist_to_list(solution.reverseList(list_to_linkedlist([]))))
+print(linked_list_to_list(solution.reverseList(list_to_linked_list([1, 2, 3, 4, 5]))))
+print(linked_list_to_list(solution.reverseList(list_to_linked_list([1, 2]))))
+print(linked_list_to_list(solution.reverseList(list_to_linked_list([]))))
 ```
 
     [5, 4, 3, 2, 1]
@@ -922,20 +921,6 @@ print(linkedlist_to_list(solution.reverseList(list_to_linkedlist([]))))
 #### Recursive - O(n), O(n)
 
 ```python
-from typing import Optional
-
-
-# Definition for singly-linked list.
-class ListNode:
-    def __init__(
-        self,
-        val: int = 0,
-        nextNode: "Optional[ListNode]" = None,
-    ) -> None:
-        self.val: int = val
-        self.next: Optional[ListNode] = nextNode
-
-
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         if not head or not head.next:
@@ -990,41 +975,6 @@ style="width: 662px; height: 302px;" />
 - `-100 <= Node.val <= 100`
 - Both `list1` and `list2` are sorted in **non-decreasing** order.
 
-```python
-from typing import Optional
-
-
-# Definition for singly-linked list.
-class ListNode:
-    def __init__(
-        self,
-        val: int = 0,
-        nextNode: "Optional[ListNode]" = None,
-    ) -> None:
-        self.val: int = val
-        self.next: Optional[ListNode] = nextNode
-```
-
-```python
-# Helper function to convert list to linked list
-def list_to_linkedlist(lst: list[int]) -> Optional[ListNode]:
-    dummy = ListNode()
-    current = dummy
-    for value in lst:
-        current.next = ListNode(value)
-        current = current.next
-    return dummy.next
-
-
-# Helper function to convert linked list to list
-def linkedlist_to_list(node: Optional[ListNode]) -> list[int]:
-    result: list[int] = []
-    while node:
-        result.append(node.val)
-        node = node.next
-    return result
-```
-
 #### Iterative - O(n), O(1)
 
 ```python
@@ -1053,23 +1003,9 @@ class Solution:
 
 
 solution = Solution()
-print(
-    linkedlist_to_list(
-        solution.mergeTwoLists(
-            list_to_linkedlist([1, 2, 4]), list_to_linkedlist([1, 3, 4])
-        )
-    )
-)
-print(
-    linkedlist_to_list(
-        solution.mergeTwoLists(list_to_linkedlist([]), list_to_linkedlist([]))
-    )
-)
-print(
-    linkedlist_to_list(
-        solution.mergeTwoLists(list_to_linkedlist([]), list_to_linkedlist([0]))
-    )
-)
+print(linked_list_to_list(solution.mergeTwoLists(list_to_linked_list([1, 2, 4]), list_to_linked_list([1, 3, 4]))))
+print(linked_list_to_list(solution.mergeTwoLists(list_to_linked_list([]), list_to_linked_list([]))))
+print(linked_list_to_list(solution.mergeTwoLists(list_to_linked_list([]), list_to_linked_list([0]))))
 ```
 
     [1, 1, 2, 3, 4, 4]
@@ -1079,20 +1015,6 @@ print(
 #### Recursive - O(n), O(n)
 
 ```python
-from typing import Optional
-
-
-# Definition for singly-linked list.
-class ListNode:
-    def __init__(
-        self,
-        val: int = 0,
-        nextNode: "Optional[ListNode]" = None,
-    ) -> None:
-        self.val: int = val
-        self.next: Optional[ListNode] = nextNode
-
-
 class Solution:
     def mergeTwoLists(
         self, list1: Optional[ListNode], list2: Optional[ListNode]
@@ -1110,23 +1032,9 @@ class Solution:
 
 
 solution = Solution()
-print(
-    linkedlist_to_list(
-        solution.mergeTwoLists(
-            list_to_linkedlist([1, 2, 4]), list_to_linkedlist([1, 3, 4])
-        )
-    )
-)
-print(
-    linkedlist_to_list(
-        solution.mergeTwoLists(list_to_linkedlist([]), list_to_linkedlist([]))
-    )
-)
-print(
-    linkedlist_to_list(
-        solution.mergeTwoLists(list_to_linkedlist([]), list_to_linkedlist([0]))
-    )
-)
+print(linked_list_to_list(solution.mergeTwoLists(list_to_linked_list([1, 2, 4]), list_to_linked_list([1, 3, 4]))))
+print(linked_list_to_list(solution.mergeTwoLists(list_to_linked_list([]), list_to_linked_list([]))))
+print(linked_list_to_list(solution.mergeTwoLists(list_to_linked_list([]), list_to_linked_list([0]))))
 ```
 
     [1, 1, 2, 3, 4, 4]
@@ -1178,22 +1086,7 @@ style="width: 45px; height: 45px;" />
     Explanation: There is no cycle in the linked list.
 
 ```python
-from typing import Optional
-
-
-# Definition for singly-linked list.
-class ListNode:
-    def __init__(
-        self,
-        val: int = 0,
-        nextNode: Optional["ListNode"] = None,
-    ) -> None:
-        self.val: int = val
-        self.next: Optional["ListNode"] = nextNode
-```
-
-```python
-def list_to_linked_list(lst: list[int], pos: int) -> Optional[ListNode]:
+def list_to_linked_list_cycle(lst: list[int], pos: int) -> Optional[ListNode]:
     nodes = [ListNode(val) for val in lst]
 
     for i in range(1, len(lst)):
@@ -1223,9 +1116,9 @@ class Solution:
 
 
 solution = Solution()
-print(solution.hasCycle(list_to_linked_list([3, 2, 0, -4], 1)))
-print(solution.hasCycle(list_to_linked_list([1, 2], 0)))
-print(solution.hasCycle(list_to_linked_list([1], -1)))
+print(solution.hasCycle(list_to_linked_list_cycle([3, 2, 0, -4], 1)))
+print(solution.hasCycle(list_to_linked_list_cycle([1, 2], 0)))
+print(solution.hasCycle(list_to_linked_list_cycle([1], -1)))
 ```
 
     True
@@ -1250,9 +1143,9 @@ class Solution:
 
 
 solution = Solution()
-print(solution.hasCycle(list_to_linked_list([3, 2, 0, -4], 1)))
-print(solution.hasCycle(list_to_linked_list([1, 2], 0)))
-print(solution.hasCycle(list_to_linked_list([1], -1)))
+print(solution.hasCycle(list_to_linked_list_cycle([3, 2, 0, -4], 1)))
+print(solution.hasCycle(list_to_linked_list_cycle([1, 2], 0)))
+print(solution.hasCycle(list_to_linked_list_cycle([1], -1)))
 ```
 
     True
@@ -1300,7 +1193,7 @@ from typing import Optional
 class TreeNode:
     def __init__(
         self,
-        val: int = 0,
+        val: Optional[int] = 0,
         left: Optional["TreeNode"] = None,
         right: Optional["TreeNode"] = None,
     ) -> None:
@@ -1309,26 +1202,22 @@ class TreeNode:
         self.right = right
 
 
-def list_to_tree(lst: list[int]) -> Optional[TreeNode]:
-    if not lst:
+def list_to_tree(values: list[Optional[int]]) -> Optional[TreeNode]:
+    if not values:
         return None
-
-    root = TreeNode(lst[0])
-    queue = deque([root])
+    root = TreeNode(values[0])
+    queue = [root]
     i = 1
-
-    while i < len(lst):
-        current = queue.popleft()
-
-        current.left = TreeNode(lst[i])
-        queue.append(current.left)
+    while i < len(values):
+        current = queue.pop(0)
+        if values[i] is not None:
+            current.left = TreeNode(values[i])
+            queue.append(current.left)
         i += 1
-
-        if i < len(lst):
-            current.right = TreeNode(lst[i])
+        if i < len(values) and values[i] is not None:
+            current.right = TreeNode(values[i])
             queue.append(current.right)
         i += 1
-
     return root
 
 
@@ -1467,47 +1356,6 @@ style="width: 400px; height: 277px;" />
     `[0, 10`<sup>`4`</sup>`]`.
 - `-100 <= Node.val <= 100`
 
-```python
-from collections import deque
-from typing import Optional
-
-
-class TreeNode:
-    def __init__(
-        self,
-        val: Optional[int] = 0,
-        left: Optional["TreeNode"] = None,
-        right: Optional["TreeNode"] = None,
-    ) -> None:
-        self.val = val
-        self.left = left
-        self.right = right
-```
-
-```python
-def list_to_tree(lst: list[Optional[int]]) -> Optional[TreeNode]:
-    if not lst:
-        return None
-
-    root = TreeNode(lst[0])
-    queue = deque([root])
-    i = 1
-
-    while i < len(lst):
-        current = queue.popleft()
-
-        current.left = TreeNode(lst[i])
-        queue.append(current.left)
-        i += 1
-
-        if i < len(lst):
-            current.right = TreeNode(lst[i])
-            queue.append(current.right)
-        i += 1
-
-    return root
-```
-
 #### Iterative DFS - O(n), O(n)
 
 ```python
@@ -1615,46 +1463,6 @@ style="width: 622px; height: 182px;" />
 - The number of nodes in both trees is in the range `[0, 100]`.
 - `-10`<sup>`4`</sup>`<= Node.val <= 10`<sup>`4`</sup>
 
-```python
-from typing import Optional
-
-
-# Definition for a binary tree node.
-class TreeNode:
-    def __init__(
-        self,
-        val: Optional[int] = 0,
-        left: Optional["TreeNode"] = None,
-        right: Optional["TreeNode"] = None,
-    ) -> None:
-        self.val = val
-        self.left = left
-        self.right = right
-
-
-def list_to_tree(lst: list[Optional[int]]) -> Optional[TreeNode]:
-    if not lst:
-        return None
-
-    root = TreeNode(lst[0])
-    stack = [root]
-    i = 1
-
-    while i < len(lst):
-        current = stack.pop()
-
-        current.left = TreeNode(lst[i])
-        stack.append(current.left)
-        i += 1
-
-        if i < len(lst):
-            current.right = TreeNode(lst[i])
-            stack.append(current.right)
-        i += 1
-
-    return root
-```
-
 #### Iterative DFS - O(n), O(n)
 
 ```python
@@ -1689,9 +1497,6 @@ print(solution.isSameTree(list_to_tree([1, 2, 1]), list_to_tree([1, 1, 2])))
 #### Iterative BFS - O(n), O(n)
 
 ```python
-from collections import deque
-
-
 class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
         queue = deque([(p, q)])
@@ -1782,46 +1587,6 @@ style="width: 502px; height: 458px;" />
 - `-10`<sup>`4`</sup>`<= root.val <= 10`<sup>`4`</sup>
 - `-10`<sup>`4`</sup>`<= subRoot.val <= 10`<sup>`4`</sup>
 
-```python
-from collections import deque
-from typing import Optional
-
-
-# Definition for a binary tree node.
-class TreeNode:
-    def __init__(
-        self,
-        val: Optional[int] = 0,
-        left: Optional["TreeNode"] = None,
-        right: Optional["TreeNode"] = None,
-    ) -> None:
-        self.val = val
-        self.left = left
-        self.right = right
-
-
-def list_to_tree(lst: list[Optional[int]]) -> Optional[TreeNode]:
-    if not lst:
-        return None
-
-    root = TreeNode(lst[0])
-    queue = deque([root])
-    i = 1
-    while queue and i < len(lst):
-        node = queue.popleft()
-        if lst[i] is not None:
-            node.left = TreeNode(lst[i])
-            queue.append(node.left)
-        i += 1
-
-        if i < len(lst) and lst[i] is not None:
-            node.right = TreeNode(lst[i])
-            queue.append(node.right)
-        i += 1
-
-    return root
-```
-
 #### Recursive DFS - O(n), O(n)
 
 ```python
@@ -1848,10 +1613,8 @@ class Solution:
 
 
 solution = Solution()
-print(solution.isSubtree(list_to_tree(
-    [3, 4, 5, 1, 2]), list_to_tree([4, 1, 2])))
-print(solution.isSubtree(list_to_tree(
-    [3, 4, 5, 1, 2, None, None, None, None, 0]), list_to_tree([4, 1, 2])))
+print(solution.isSubtree(list_to_tree([3, 4, 5, 1, 2]), list_to_tree([4, 1, 2])))
+print(solution.isSubtree(list_to_tree([3, 4, 5, 1, 2, None, None, None, None, 0]), list_to_tree([4, 1, 2])))
 ```
 
     True
@@ -1889,31 +1652,6 @@ style="width: 292px; height: 302px;" />
     `[1, 10`<sup>`4`</sup>`]`.
 - `-100 <= Node.val <= 100`
 
-```python
-from typing import Optional
-
-
-class TreeNode:
-    def __init__(
-        self,
-        val: Optional[int] = 0,
-        left: Optional["TreeNode"] = None,
-        right: Optional["TreeNode"] = None,
-    ) -> None:
-        self.val = val
-        self.left = left
-        self.right = right
-
-
-def build_tree(nodes: list[Optional[int]], index: int = 0) -> Optional[TreeNode]:
-    if index < len(nodes) and nodes[index] is not None:
-        node = TreeNode(nodes[index])
-        node.left = build_tree(nodes, 2 * index + 1)
-        node.right = build_tree(nodes, 2 * index + 2)
-        return node
-    return None
-```
-
 #### Iterative DFS - O(n), O(n)
 
 ```python
@@ -1940,8 +1678,8 @@ class Solution:
 
 
 solution = Solution()
-print(solution.diameterOfBinaryTree(build_tree([1, 2, 3, 4, 5])))
-print(solution.diameterOfBinaryTree(build_tree([1, 2])))
+print(solution.diameterOfBinaryTree(list_to_tree([1, 2, 3, 4, 5])))
+print(solution.diameterOfBinaryTree(list_to_tree([1, 2])))
 ```
 
     3
@@ -1969,8 +1707,8 @@ class Solution:
 
 
 solution = Solution()
-print(solution.diameterOfBinaryTree(build_tree([1, 2, 3, 4, 5])))
-print(solution.diameterOfBinaryTree(build_tree([1, 2])))
+print(solution.diameterOfBinaryTree(list_to_tree([1, 2, 3, 4, 5])))
+print(solution.diameterOfBinaryTree(list_to_tree([1, 2])))
 ```
 
     3
@@ -2008,41 +1746,6 @@ style="width: 452px; height: 301px;" />
 - The number of nodes in the tree is in the range `[0, 5000]`.
 - `-10`<sup>`4`</sup>`<= Node.val <= 10`<sup>`4`</sup>
 
-```python
-from typing import Optional
-
-
-class TreeNode:
-    def __init__(
-        self,
-        val: int = 0,
-        left: Optional["TreeNode"] = None,
-        right: Optional["TreeNode"] = None,
-    ) -> None:
-        self.val = val
-        self.left = left
-        self.right = right
-
-
-def build_tree(values: list[Optional[int]]) -> Optional[TreeNode]:
-    if not values:
-        return None
-    root = TreeNode(values[0])
-    queue = [root]
-    i = 1
-    while i < len(values):
-        current = queue.pop(0)
-        if values[i] is not None:
-            current.left = TreeNode(values[i])
-            queue.append(current.left)
-        i += 1
-        if i < len(values) and values[i] is not None:
-            current.right = TreeNode(values[i])
-            queue.append(current.right)
-        i += 1
-    return root
-```
-
 #### Recursive DFS - O(n), O(h)
 
 ```python
@@ -2064,9 +1767,9 @@ class Solution:
 
 
 solution = Solution()
-print(solution.isBalanced(build_tree([3, 9, 20, None, None, 15, 7])))
-print(solution.isBalanced(build_tree([1, 2, 2, 3, 3, None, None, 4, 4])))
-print(solution.isBalanced(build_tree([])))
+print(solution.isBalanced(list_to_tree([3, 9, 20, None, None, 15, 7])))
+print(solution.isBalanced(list_to_tree([1, 2, 2, 3, 3, None, None, 4, 4])))
+print(solution.isBalanced(list_to_tree([])))
 ```
 
     True
