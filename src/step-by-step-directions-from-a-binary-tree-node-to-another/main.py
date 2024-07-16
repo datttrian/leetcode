@@ -77,4 +77,5 @@ def find_path(node, value, path):
     return False
 
 
-print(find_path(t, startValue, destValue))
+print(find_path(t, startValue, []))
+print(find_path(t, destValue, []))
