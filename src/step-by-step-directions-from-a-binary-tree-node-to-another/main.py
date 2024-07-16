@@ -60,3 +60,7 @@ t = list_to_tree([5, 1, 2, 3, None, 6, 4])
 
 graph = defaultdict(list)
 queue = deque([t])
+
+node = queue.pop()
+graph[node.left.val].append((node.val, 'U'))
+print(graph)
