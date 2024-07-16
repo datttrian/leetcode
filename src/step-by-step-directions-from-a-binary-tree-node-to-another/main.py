@@ -59,3 +59,22 @@ destValue = 6
 
 t = list_to_tree(root)
 print(t)
+
+
+def find_path(node, value, path):
+    if not node:
+        return False
+    if node.val == value:
+        return True
+
+    path.append('L')
+    if find_path(node.left, value, path):
+        return True
+    path.pop()
+
+    path.append('R')
+    if find_path(node.right, value, path):
+        return True
+    path.pop()
+
+    return False
