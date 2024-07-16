@@ -88,6 +88,7 @@ seen = set()
 
 cur_val, cur_path = queue.popleft()
 
+
 seen.add(cur_val)
 
 for child, direction in graph[cur_val]:
