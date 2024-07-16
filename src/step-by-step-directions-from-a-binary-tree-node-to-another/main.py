@@ -75,34 +75,10 @@ while queue:
         queue.append(node.right)
 
 
-node = queue.pop()
-graph[node.left.val].append((node.val, 'U'))
-graph[node.val].append((node.left.val, 'L'))
-
-queue.append(node.left)
-print(queue)
-
-while queue:
-    node = queue.popleft()
-
-    if node.left:
-        graph[node.left.val].append((node.val, 'U'))
-        graph[node.val].append((node.left.val, 'L'))
-
-        queue.append(node.left)
-
-    if node.left:
-        graph[node.left.val].append((node.val, 'U'))
-        graph[node.val].append((node.left.val, 'L'))
-
-        queue.append(node.left)
-
 queue = deque([(startValue, "")])
 seen = set()
 
 cur_val, cur_path = queue.popleft()
-
-
 seen.add(cur_val)
 
 for child, direction in graph[cur_val]:
