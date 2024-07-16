@@ -91,38 +91,19 @@ cur_val, cur_path = queue.popleft()
 seen.add(cur_val)
 
 for child, direction in graph[cur_val]:
-    queue.append((child, cur_path + direction))
+    if child not in seen:
+        queue.append((child, cur_path + direction))
 
 cur_val, cur_path = queue.popleft()
-print(cur_val, cur_path)
-
-cur_val, cur_path = queue.popleft()
-
-seen.add(cur_val)
-
-for child, direction in graph[cur_val]:
-    queue.append((child, cur_path + direction))
-
-cur_val, cur_path = queue.popleft()
-print(cur_val, cur_path)
+print(queue, seen, cur_val, cur_path)
 
 cur_val, cur_path = queue.popleft()
 
 seen.add(cur_val)
 
 for child, direction in graph[cur_val]:
-    queue.append((child, cur_path + direction))
+    if child not in seen:
+        queue.append((child, cur_path + direction))
 
 cur_val, cur_path = queue.popleft()
-print(cur_val, cur_path)
-
-cur_val, cur_path = queue.popleft()
-
-seen.add(cur_val)
-
-for child, direction in graph[cur_val]:
-    queue.append((child, cur_path + direction))
-
-cur_val, cur_path = queue.popleft()
-print(cur_val, cur_path)
-
+print(queue, seen, cur_val, cur_path)
