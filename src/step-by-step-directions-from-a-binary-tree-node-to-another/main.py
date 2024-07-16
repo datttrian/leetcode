@@ -26,12 +26,12 @@ class Solution:
                 graph[node.left.val].append((node.val, 'U'))
                 graph[node.val].append((node.left.val, 'L'))
                 queue.append(node.left)
-
+            
             if node.right:
                 graph[node.right.val].append((node.val, 'U'))
                 graph[node.val].append((node.right.val, 'R'))
                 queue.append(node.right)
-
+        
         queue = deque([(startValue, "")])
         seen = set()
 
