@@ -61,6 +61,20 @@ t = list_to_tree([5, 1, 2, 3, None, 6, 4])
 graph = defaultdict(list)
 queue = deque([t])
 
+while queue:
+    node = queue.popleft()
+
+    if node.left:
+        graph[node.left.val].append((node.val, 'U'))
+        graph[node.val].append((node.left.val, 'L'))
+        queue.append(node.left)
+
+    if node.right:
+        graph[node.right.val].append((node.val, 'U'))
+        graph[node.val].append((node.right.val, 'R'))
+        queue.append(node.right)
+
+
 node = queue.pop()
 graph[node.left.val].append((node.val, 'U'))
 graph[node.val].append((node.left.val, 'L'))
