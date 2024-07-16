@@ -84,3 +84,8 @@ while queue:
         queue.append(node.left)
 
 queue = deque([startValue, ""])
+seen = set()
+
+cur_val, cur_path = queue.popleft()
+
+seen.add(cur_val)
