@@ -83,7 +83,7 @@ while queue:
 
         queue.append(node.left)
 
-queue = deque([startValue, ""])
+queue = deque([(startValue, "")])
 seen = set()
 
 cur_val, cur_path = queue.popleft()
@@ -94,5 +94,4 @@ for child, direction in graph[cur_val]:
     queue.append((child, cur_path + direction))
 
 cur_val, cur_path = queue.popleft()
-print(cur_val)
-
+print(cur_val, cur_path)
