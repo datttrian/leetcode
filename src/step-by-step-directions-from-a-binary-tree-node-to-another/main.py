@@ -1,4 +1,4 @@
-from collections import deque
+from collections import deque, defaultdict
 from typing import Optional
 
 
@@ -58,24 +58,5 @@ destValue = 6
 t = list_to_tree([5, 1, 2, 3, None, 6, 4])
 
 
-def find_path(node, value, path):
-    if not node:
-        return False
-    if node.val == value:
-        return True
-
-    path.append('L')
-    if find_path(node.left, value, path):
-        return True
-    path.pop()
-
-    path.append('R')
-    if find_path(node.right, value, path):
-        return True
-    path.pop()
-
-    return False
-
-
-print(find_path(t, startValue, []))
-print(find_path(t, destValue, []))
+graph = defaultdict(list)
+queue = deque([t])
