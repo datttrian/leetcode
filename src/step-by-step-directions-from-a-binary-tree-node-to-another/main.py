@@ -63,4 +63,5 @@ queue = deque([t])
 
 node = queue.pop()
 graph[node.left.val].append((node.val, 'U'))
+graph[node.val].append((node.left.val, 'L'))
 print(graph)
