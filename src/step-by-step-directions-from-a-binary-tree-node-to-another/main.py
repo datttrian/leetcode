@@ -53,12 +53,9 @@ def tree_to_list(root: Optional[TreeNode]) -> list[Optional[int]]:
     return result
 
 
-root = [5, 1, 2, 3, None, 6, 4]
 startValue = 3
 destValue = 6
-
-t = list_to_tree(root)
-print(t)
+t = list_to_tree([5, 1, 2, 3, None, 6, 4])
 
 
 def find_path(node, value, path):
@@ -79,3 +76,5 @@ def find_path(node, value, path):
 
     return False
 
+
+print(find_path(t, startValue, destValue))
