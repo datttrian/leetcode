@@ -36,24 +36,33 @@ class Solution:
         """
         Do not return anything, modify head in-place instead.
         """
+
+        # Base case: If the list is empty or has only one node, no need to reorder
         if not head or not head.next:
             return
 
-        slow, fast = head, head.next
+        # Initialize two pointers for finding the middle of the list
 
+        # Use two pointers to find the middle of the list
+        slow, fast = head, head.next
         while slow.next and fast and fast.next:
             slow = slow.next
             fast = fast.next.next
 
+        # Reverse the second half of the list starting from slow.next
         prev, curr = None, slow
         while curr:
-            next_temp = curr.next
-            curr.next = prev
-            prev = curr
-            curr = next_temp
+            next_temp = curr.next  # Store the next node
+            curr.next = prev  # Reverse the link
+            prev = curr  # Move prev to the current node
+            curr = next_temp  # Move to the next node
 
+        # At this point, prev is the head of the reversed second half
+        # Now, we merge the two halves
         first, second = head, prev
+
+        # Merge the two halves together
         while first and second and second.next:
-            temp1, temp2 = first.next, second.next
-            first.next, second.next = second, temp1
-            first, second = temp1, temp2
+            temp1, temp2 = first.next, second.next  # Store the next nodes
+            first.next, second.next = second, temp1  # Reorder nodes
+            first, second = temp1, temp2  # Move to the next nodes
