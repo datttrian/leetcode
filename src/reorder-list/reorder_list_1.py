@@ -41,8 +41,6 @@ class Solution:
         if not head or not head.next:
             return
 
-        # Initialize two pointers for finding the middle of the list
-
         # Use two pointers to find the middle of the list
         slow, fast = head, head.next
         while slow.next and fast and fast.next:
@@ -52,17 +50,25 @@ class Solution:
         # Reverse the second half of the list starting from slow.next
         prev, curr = None, slow
         while curr:
-            next_temp = curr.next  # Store the next node
-            curr.next = prev  # Reverse the link
-            prev = curr  # Move prev to the current node
-            curr = next_temp  # Move to the next node
 
-        # At this point, prev is the head of the reversed second half
-        # Now, we merge the two halves
-        first, second = head, prev
+            # Store the next node
+            next_temp = curr.next
+
+            # Reverse the link
+            curr.next = prev
+
+            # Move prev to the current node and the current node to the next node
+            prev, curr = curr, next_temp
 
         # Merge the two halves together
+        first, second = head, prev
         while first and second and second.next:
-            temp1, temp2 = first.next, second.next  # Store the next nodes
-            first.next, second.next = second, temp1  # Reorder nodes
-            first, second = temp1, temp2  # Move to the next nodes
+
+            # Store the next nodes
+            temp1, temp2 = first.next, second.next
+
+            # Reorder nodes
+            first.next, second.next = second, temp1
+
+            # Move to the next nodes
+            first, second = temp1, temp2
