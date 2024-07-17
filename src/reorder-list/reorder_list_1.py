@@ -45,19 +45,15 @@ class Solution:
             slow = slow.next
             fast = fast.next.next
 
-        second = slow.next
-        prev = slow.next = None
-
-        while second:
-            tmp = second.next
-            second.next = prev
-            prev = second
-            second = tmp
+        prev, curr = None, slow
+        while curr:
+            next_temp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = next_temp
 
         first, second = head, prev
-        while first.next and second:
-            tmp1, tmp2 = first.next, second.next
-            first.next = second
-            second.next = tmp1
-            first = tmp1
-            second = tmp2
+        while first and second and second.next:
+            temp1, temp2 = first.next, second.next
+            first.next, second.next = second, temp1
+            first, second = temp1, temp2
