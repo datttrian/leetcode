@@ -28,13 +28,15 @@ class Solution:
 
         prev: Optional[ListNode] = None
         curr: Optional[ListNode] = slow.next if slow else None
-        slow.next = None
+        if slow:
+            slow.next = None
         while curr:
             next_temp = curr.next
             curr.next = prev
             prev, curr = curr, next_temp
 
-        first, second = head, prev
+        first: Optional[ListNode] = head
+        second: Optional[ListNode] = prev
         while first and second:
             temp1, temp2 = first.next, second.next
             first.next, second.next = second, temp1
