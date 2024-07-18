@@ -20,12 +20,14 @@ class Solution:
         if not head or not head.next:
             return
 
-        slow, fast = head, head.next
+        slow: Optional[ListNode] = head
+        fast: Optional[ListNode] = head.next
         while slow.next and fast and fast.next:
             slow = slow.next
             fast = fast.next.next
 
-        prev, curr = None, slow
+        prev: Optional[ListNode] = None
+        curr: Optional[ListNode] = slow
         while curr:
             next_temp = curr.next
             curr.next = prev
