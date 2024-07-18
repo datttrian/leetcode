@@ -22,19 +22,20 @@ class Solution:
 
         slow: Optional[ListNode] = head
         fast: Optional[ListNode] = head.next
-        while slow.next and fast and fast.next:
+        while slow and slow.next and fast and fast.next:
             slow = slow.next
             fast = fast.next.next
 
         prev: Optional[ListNode] = None
-        curr: Optional[ListNode] = slow
+        curr: Optional[ListNode] = slow.next if slow else None
+        slow.next = None
         while curr:
             next_temp = curr.next
             curr.next = prev
             prev, curr = curr, next_temp
 
         first, second = head, prev
-        while first and second and second.next:
+        while first and second:
             temp1, temp2 = first.next, second.next
             first.next, second.next = second, temp1
             first, second = temp1, temp2
