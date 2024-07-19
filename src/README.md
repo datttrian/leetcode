@@ -33,11 +33,18 @@ distinct.
 ```python
 class Solution:
     def containsDuplicate(self, nums: list[int]) -> bool:
-        n = len(nums)
-        for i in range(n):
-            for j in range(i + 1, n):
-                if nums[i] == nums[j]:
+        # Loop through each element in the list 'nums'
+        length = len(nums)
+        for current_index in range(length):
+
+            # Loop through the remaining elements
+            for comparison_index in range(current_index + 1, length):
+
+                # Return True if the element at 'current_index' is equal to the element at 'comparison_index'
+                if nums[current_index] == nums[comparison_index]:
                     return True
+
+        # Return False if no such equality is found after checking all pairs
         return False
 
 
@@ -56,10 +63,17 @@ print(solution.containsDuplicate(nums=[1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
 ```python
 class Solution:
     def containsDuplicate(self, nums: list[int]) -> bool:
+        # Sort the list 'nums' in ascending order
         nums.sort()
-        for i in range(1, len(nums)):
-            if nums[i] == nums[i - 1]:
+
+        # Loop through the list starting from the second element
+        for index in range(1, len(nums)):
+
+            # Return True if the current element is equal to the previous element
+            if nums[index] == nums[index - 1]:
                 return True
+
+        # Return False If no such equality is found after checking all elements
         return False
 
 
@@ -78,11 +92,22 @@ print(solution.containsDuplicate(nums=[1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
 ```python
 class Solution:
     def containsDuplicate(self, nums: list[int]) -> bool:
-        nums_unique: set[int] = set()
+        # Create an empty set to store unique numbers in 'nums'
+        unique_nums: set[int] = set()
+
+        # Loop through each num in the list 'nums'
         for num in nums:
-            if num in nums_unique:
+
+            # Check if the current num is already in the set unique_nums
+            if num in unique_nums:
+                
+                # If a duplicate is found, return True
                 return True
-            nums_unique.add(num)
+            
+            # Add the current num to the set unique_nums
+            unique_nums.add(num)
+
+        # Return False if no duplicates are found after checking all elements
         return False
 
 
@@ -128,21 +153,32 @@ you adapt your solution to such a case?
 ```python
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
+        # Base case: If the lengths are different, they cannot be anagrams
         if len(s) != len(t):
             return False
 
+        # Loop through each character in the first string 's'
         for char in s:
+
+            # Create a flag to check if a matching character is found
             is_matched = False
 
-            for i, c in enumerate(t):
-                if c == char:
-                    t = t[:i] + t[i + 1 :]
+            # Iterate through each character in the second string 't'
+            for index, current_char in enumerate(t):
+
+                # If a matching character is found, remove it from 't'
+                if current_char == char:
+                    t = t[:index] + t[index + 1 :]
+
+                    # Set the flag to True indicating a match is found and exit the loop
                     is_matched = True
                     break
 
+            # If no matching character is found in 't', return False
             if not is_matched:
                 return False
 
+        # If all characters in 's' have matching characters in 't', return True
         return True
 
 
@@ -194,16 +230,25 @@ print(solution.isAnagram(s="rat", t="car"))
 ```python
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
+        # Base case: If the lengths are different, they cannot be anagrams
         if len(s) != len(t):
             return False
 
-        count = [0] * 26  # lowercase English letters
+        # Create a list to count the frequency of each English character in the strings
+        counts = [0] * 26
 
-        for i, char in enumerate(s):
-            count[ord(char) - ord("a")] += 1
-            count[ord(t[i]) - ord("a")] -= 1
+        # Loop through each character in the strings 's' and 't'
+        for index, char in enumerate(s):
 
-        return all(c == 0 for c in count)
+            # Increment the counts for the character in 's'
+            counts[ord(char) - ord("a")] += 1
+
+            # Decrement the counts for the corresponding character in 't'
+            counts[ord(t[index]) - ord("a")] -= 1
+
+        
+        # Return true if all counts are zero
+        return all(count == 0 for count in counts)
 
 
 solution = Solution()
@@ -219,6 +264,7 @@ print(solution.isAnagram(s="rat", t="car"))
 ```python
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
+        # Dictionary mapping each lowercase English letter to a unique prime number
         prime_numbers = {
             "a": 2,
             "b": 3,
@@ -248,14 +294,23 @@ class Solution:
             "z": 101,
         }
 
+        # Initialize product_s and product_t to 1 for the product of primes corresponding to characters in 's' and 't'
         product_s = 1
+        product_t = 1
+
+        # Loop through each character in string 's'
         for char in s:
+
+            # Multiply product_s by the prime number corresponding to the character
             product_s *= prime_numbers[char]
 
-        product_t = 1
+        # Loop through each character in string 't'
         for char in t:
+
+            # Multiply product_t by the prime number corresponding to the character
             product_t *= prime_numbers[char]
 
+        # Return True if the products are equal, indicating 's' and 't' are anagrams
         return product_s == product_t
 
 
@@ -308,13 +363,18 @@ You can return the answer in any order.
 ```python
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
+        # Loop through each element in the list 'nums'
         n = len(nums)
+        for current_index in range(n):
 
-        for i in range(n):
-            for j in range(i + 1, n):
-                if nums[i] + nums[j] == target:
-                    return [i, j]
+            # Loop through the remaining elements
+            for comparison_index in range(current_index + 1, n):
 
+                # Return True if the sum of the elements at two indices equals 'target'
+                if nums[current_index] + nums[comparison_index] == target:
+                    return [current_index, comparison_index]
+
+        # If no such equality is found after checking all pairs, return an empty list
         return []
 
 
@@ -333,18 +393,29 @@ print(solution.twoSum(nums=[3, 3], target=6))
 ```python
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
+        # Create a sorted list of tuples, where each tuple contains the original index and value of the number
         nums_sorted = sorted(enumerate(nums), key=lambda x: x[1])
-        left, right = 0, len(nums) - 1
 
+        # Loop until two pointers at the start and at the end of the sorted list meet
+        left, right = 0, len(nums) - 1
         while left < right:
+
+            # Calculate the sum of the values at the current pointers
             current_sum = nums_sorted[left][1] + nums_sorted[right][1]
+
+            # Return the original indices of the two numbers if the current sum is equal to the 'target'
             if current_sum == target:
                 return [nums_sorted[left][0], nums_sorted[right][0]]
 
+            # Move the left pointer to the right if the current sum is less than the 'target'
             if current_sum < target:
                 left += 1
+
+            # Move the right pointer to the left if the current sum is greater than the 'target'
             else:
                 right -= 1
+
+        # If no solution is found, return an empty list
         return []
 
 
@@ -363,16 +434,23 @@ print(solution.twoSum(nums=[3, 3], target=6))
 ```python
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
+        # Create a dictionary to store the indices of seen numbers
         nums_index: dict[int, int] = {}
 
+        # Iterate over 'nums' with their indices
         for index, num in enumerate(nums):
+
+            # Calculate the complement of the current number and the 'target'
             complement = target - num
 
+            # Return the indices of the two numbers if the complement is in nums_index
             if complement in nums_index:
                 return [nums_index[complement], index]
 
+            # Otherwise, add the current number and its index to the dictionary
             nums_index[num] = index
 
+        # If no solution is found, return an empty list
         return []
 
 
@@ -2481,7 +2559,7 @@ class Solution:
         Do not return anything, modify head in-place instead.
         """
 
-        # Base case: If the list is empty or has only one node, no need to reorder
+        # Base case: If the list is empty or has only one node, it cannot be reordered
         if not head or not head.next:
             return
 
