@@ -933,9 +933,9 @@ class Solution:
 
 
 solution = Solution()
-print(linkedlist_to_list(solution.reverseList(list_to_linkedlist([1, 2, 3, 4, 5]))))
-print(linkedlist_to_list(solution.reverseList(list_to_linkedlist([1, 2]))))
-print(linkedlist_to_list(solution.reverseList(list_to_linkedlist([]))))
+print(linked_list_to_list(solution.reverseList(list_to_linked_list([1, 2, 3, 4, 5]))))
+print(linked_list_to_list(solution.reverseList(list_to_linked_list([1, 2]))))
+print(linked_list_to_list(solution.reverseList(list_to_linked_list([]))))
 ```
 
     [5, 4, 3, 2, 1]
@@ -2433,6 +2433,107 @@ print(solution.combinationSum([2], 1))
     [[2, 2, 3], [7]]
     [[2, 2, 2, 2], [2, 3, 3], [3, 5]]
     []
+
+### 143. Reorder List
+
+You are given the head of a singly linked-list. The list can be
+represented as:
+
+    L0 → L1 → … → Ln - 1 → Ln
+
+*Reorder the list to be on the following form:*
+
+    L0 → Ln → L1 → Ln - 1 → L2 → Ln - 2 → …
+
+You may not modify the values in the list's nodes. Only nodes themselves
+may be changed.
+
+**Example 1:**
+
+<img
+src="https://assets.leetcode.com/uploads/2021/03/04/reorder1linked-list.jpg"
+style="width: 422px; height: 222px;" />
+
+    Input: head = [1,2,3,4]
+    Output: [1,4,2,3]
+
+**Example 2:**
+
+<img
+src="https://assets.leetcode.com/uploads/2021/03/09/reorder2-linked-list.jpg"
+style="width: 542px; height: 222px;" />
+
+    Input: head = [1,2,3,4,5]
+    Output: [1,5,2,4,3]
+
+**Constraints:**
+
+- The number of nodes in the list is in the range
+    `[1, 5 * 10`<sup>`4`</sup>`]`.
+- `1 <= Node.val <= 1000`
+
+#### Two Pointers - O(n), O(1)
+
+```python
+class Solution:
+    def reorderList(self, head: Optional[ListNode]) -> None:
+        """
+        Do not return anything, modify head in-place instead.
+        """
+
+        # Base case: If the list is empty or has only one node, no need to reorder
+        if not head or not head.next:
+            return
+
+        # Use two pointers to find the middle of the list
+        slow: Optional[ListNode] = head
+        fast: Optional[ListNode] = head.next
+        while slow and slow.next and fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+        # Reverse the second half of the list starting from slow.next
+        prev: Optional[ListNode] = None
+        curr: Optional[ListNode] = slow.next if slow else None
+        if slow:
+            slow.next = None
+        while curr:
+
+            # Store the next node
+            next_temp = curr.next
+
+            # Reverse the link
+            curr.next = prev
+
+            # Move prev to the current node and the current node to the next node
+            prev, curr = curr, next_temp
+
+        # Merge the two halves together
+        first: Optional[ListNode] = head
+        second: Optional[ListNode] = prev
+        while first and second:
+
+            # Store the next nodes
+            temp1, temp2 = first.next, second.next
+
+            # Reorder nodes
+            first.next, second.next = second, temp1
+
+            # Move to the next nodes
+            first, second = temp1, temp2
+
+
+solution = Solution()
+head = list_to_linked_list([1, 2, 3, 4])
+solution.reorderList(head)
+print(linked_list_to_list(head))
+head = list_to_linked_list([1, 2, 3, 4, 5])
+solution.reorderList(head)
+print(linked_list_to_list(head))
+```
+
+    [1, 4, 2, 3]
+    [1, 5, 2, 4, 3]
 
 ## Hard
 
