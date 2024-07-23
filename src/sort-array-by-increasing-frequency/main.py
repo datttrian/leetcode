@@ -7,6 +7,6 @@ print(nums_count)
 
 group_count = {}
 
-for num, freq in freq_dict.items():
-    if freq in freq_group:
-        freq_group[freq].append(n)
+nums_count[1]
+for num, count in nums_count.items():
+    group_count[count].append(num) if count in group_count else group_count = [num]
