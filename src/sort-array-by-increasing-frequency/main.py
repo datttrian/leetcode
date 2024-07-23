@@ -6,12 +6,17 @@ class Solution:
         nums_count = Counter(nums)
         group_count = defaultdict(list)
 
-        [group_count[count].append(num) for num, count in nums_count.items()]
+        for num, count in nums_count.items():
+            group_count[count].append(num)
 
-        for _, count in group_count.items():
-            count.sort(reverse=True)
+        for num_list in group_count.values():
+            num_list.sort(reverse=True)
 
-        result = [num for count in sorted(
-            group_count) for num in group_count[count] for _ in range(count)]
+        result = [
+            num
+            for count in sorted(group_count)
+            for num in group_count[count]
+            for _ in range(count)
+        ]
 
         return result
