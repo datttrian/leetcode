@@ -17,12 +17,11 @@ class Solution:
         for num_list in group_count.values():
             num_list.sort(reverse=True)
 
-        # Flatten the groups into a result list, ordered by increasing frequency
-        result = [
-            num
-            for count in sorted(group_count)
-            for num in group_count[count]
-            for _ in range(count)
-        ]
+        # Loop through group count
+        result: list[int] = []
+        for count, num_list in sorted(group_count.items()):
+            for num in num_list:
+                for _ in range(count):
+                    result.append(num)
 
         return result
