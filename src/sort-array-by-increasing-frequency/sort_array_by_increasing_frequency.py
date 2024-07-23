@@ -4,10 +4,10 @@ from collections import Counter, defaultdict
 class Solution:
     def frequencySort(self, nums: list[int]) -> list[int]:
 
-        # Count the frequency of each number in the input list
+        # Count the frequency of the numbers in 'nums'
         nums_count: Counter[int] = Counter(nums)
 
-        # Group numbers by their frequency
+        # Group the numbers by their frequency
         group_count: defaultdict[int, list[int]] = defaultdict(list)
         for num, count in nums_count.items():
             group_count[count].append(num)
@@ -27,4 +27,5 @@ class Solution:
                 for _ in range(count):
                     result.append(num)
 
+        # Return the final sorted list
         return result
