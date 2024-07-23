@@ -23,4 +23,4 @@ for group, count in group_count.items():
 print(group_count)
 
 result = []
-for 
+print(sorted(group_count))
