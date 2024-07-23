@@ -17,7 +17,7 @@ for num, count in nums_count.items():
 
 print(group_count.keys())
 
-for group, count in enumerate(group_count):
+for group, count in group_count.items():
     count.sort(reverse=True)
 
 print(group_count)
