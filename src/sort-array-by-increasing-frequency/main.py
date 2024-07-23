@@ -3,8 +3,8 @@ from collections import Counter, defaultdict
 
 class Solution:
     def frequencySort(self, nums: list[int]) -> list[int]:
-        nums_count = Counter(nums)
-        group_count = defaultdict(list)
+        nums_count: Counter[int] = Counter(nums)
+        group_count: defaultdict[int, list[int]] = defaultdict(list)
 
         for num, count in nums_count.items():
             group_count[count].append(num)
