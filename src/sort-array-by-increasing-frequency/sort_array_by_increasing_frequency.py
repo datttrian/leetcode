@@ -17,10 +17,14 @@ class Solution:
         for num_list in group_count.values():
             num_list.sort(reverse=True)
 
-        # Loop through group count
+        # Loop through the groups of sorted counts
         result: list[int] = []
         for count, num_list in sorted(group_count.items()):
+
+            # For each number in the group
             for num in num_list:
+
+                # Append the number count times to the result list
                 for _ in range(count):
                     result.append(num)
 
