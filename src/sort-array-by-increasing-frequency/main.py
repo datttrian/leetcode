@@ -21,6 +21,9 @@ for group, count in group_count.items():
     count.sort(reverse=True)
 
 print(group_count)
+print(sorted(group_count))
 
 result = []
-print(sorted(group_count))
+
+for count in sorted(group_count):
+    for 
