@@ -25,5 +25,9 @@ print(sorted(group_count))
 
 result = []
 for count, nums in sorted(group_count.items()):
-    print(count, nums)
+    for num in nums:
+        for _ in range(count):
+            result.append(num)
 
+
+print(result)
