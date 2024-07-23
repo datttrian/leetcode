@@ -17,7 +17,7 @@ class Solution:
         for num_list in group_count.values():
             num_list.sort(reverse=True)
 
-        # Loop through the groups of sorted counts
+        # Loop through the groups of sorted frequency
         result: list[int] = []
         for count, num_list in sorted(group_count.items()):
 
