@@ -7,6 +7,12 @@ print(nums_count)
 
 group_count = {}
 
-nums_count[1]
 for num, count in nums_count.items():
-    group_count[count].append(num) if count in group_count else group_count = [num]
+    if count in group_count:
+        group_count[count].append(num)
+    else:
+        group_count[count] = [num]
+
+
+
+print(group_count.keys())
