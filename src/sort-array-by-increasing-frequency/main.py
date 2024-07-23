@@ -24,6 +24,6 @@ print(group_count)
 print(sorted(group_count))
 
 result = []
+for count, nums in sorted(group_count.items()):
+    print(count, nums)
 
-for count in sorted(group_count):
-    for 
