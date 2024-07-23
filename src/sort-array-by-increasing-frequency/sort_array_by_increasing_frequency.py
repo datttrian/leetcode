@@ -6,10 +6,8 @@ class Solution:
         # Count the frequency of each number in the input list
         nums_count: Counter[int] = Counter(nums)
 
-        # Create a defaultdict to group numbers by their frequency
+        # Group numbers by their frequency
         group_count: defaultdict[int, list[int]] = defaultdict(list)
-
-        # Populate the defaultdict with numbers grouped by their frequency
         for num, count in nums_count.items():
             group_count[count].append(num)
 
