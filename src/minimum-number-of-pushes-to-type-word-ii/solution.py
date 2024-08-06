@@ -4,4 +4,7 @@ word = "aabbccddeeffgghhiiiiii"
 
 print(Counter(word))
 
-counts = [0] * 26
+counts = Counter(word)
+
+for key, value in counts:
+    
