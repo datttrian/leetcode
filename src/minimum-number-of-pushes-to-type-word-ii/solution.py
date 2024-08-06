@@ -2,18 +2,17 @@ from collections import Counter
 
 
 class Solution:
-    # Define the method minimumPushes that takes a string 'word' as input and returns an integer.
     def minimumPushes(self, word: str) -> int:
-        # Use Counter from the collections module to count the occurrences of each character in the input string.
+        # Count the occurrences of each character in `word` using `Counter`
         character_counts = Counter(word)
-        # Get a list of the counts of each character, sorted in descending order.
+
+        # Get the list of the counts sorted in descending order using `sorted`
         sorted_counts = sorted(character_counts.values(), reverse=True)
 
-        # Initialize the total number of pushes required to 0.
-        total_pushes = 0
         # Loop through the sorted counts with their indices.
+        total_pushes = 0
         for index, count in enumerate(sorted_counts):
-            # Calculate the multiplier based on the index. Every 8 characters increase the multiplier by 1.
+            # Calculate the multiplier for every 8 characters based on the index. Every 8 characters increase the multiplier by 1.
             multiplier = index // 8 + 1
             # Add the product of the count and the multiplier to the total pushes.
             total_pushes += count * multiplier
