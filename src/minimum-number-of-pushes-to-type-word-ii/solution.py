@@ -12,4 +12,8 @@ print(queue)
 
 
 push_count = 0
-index 
+
+for key, value in enumerate(queue):
+    push_count += value
+
+    if 
