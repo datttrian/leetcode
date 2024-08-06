@@ -1,6 +1,6 @@
 from collections import Counter
 
-word = "aabbccddeeffgghhiiiiii"
+word = "aaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbccccddddeeeeffffgggghhhhiiiiijjjjjkkkkkllllmmmmnnnnoooopppppqqqqrrrrsssstttttuuuuvvvvwwwwxxyyzzz"
 
 counts = Counter(word)
 
