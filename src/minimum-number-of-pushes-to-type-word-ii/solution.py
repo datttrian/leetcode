@@ -3,24 +3,12 @@ from collections import Counter
 
 class Solution:
     def minimumPushes(self, word: str) -> int:
-
         counts = Counter(word)
-
-        queue = list(counts.values())
-        queue.sort(reverse=True)
+        queue = sorted(counts.values(), reverse=True)
 
         push_count = 0
-
-        for key, value in enumerate(queue):
-            push_count += value
-
-            if key >= 8:
-                push_count += value
-
-            if key >= 16:
-                push_count += value
-
-            if key >= 24:
-                push_count += value
+        for i, value in enumerate(queue):
+            multiplier = i // 8 + 1
+            push_count += value * multiplier
 
         return push_count
