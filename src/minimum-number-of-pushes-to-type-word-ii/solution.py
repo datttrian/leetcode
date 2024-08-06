@@ -22,5 +22,5 @@ class Solution:
             # Add to the total pushes the product of the count and the multiplier
             total_pushes += count * multiplier
 
-        # Return the total number of pushes required.
+        # Return the total number of pushes required
         return total_pushes
