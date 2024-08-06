@@ -16,4 +16,7 @@ push_count = 0
 for key, value in enumerate(queue):
     push_count += value
 
-    if 
+    if key >= 8:
+        push_count += value
+
+print(push_count)
