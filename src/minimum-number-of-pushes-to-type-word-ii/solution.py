@@ -13,7 +13,7 @@ class Solution:
         # Initialize the total pushes required
         total_pushes = 0
 
-        # Loop through the sorted counts with their indices
+        # Loop through the list of the counts using `enumerate`
         for index, count in enumerate(sorted_counts):
 
             # Calculate the multiplier for every 8 characters based on the index
