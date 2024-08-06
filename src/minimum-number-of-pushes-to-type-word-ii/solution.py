@@ -2,8 +2,8 @@ from collections import Counter
 
 word = "aabbccddeeffgghhiiiiii"
 
-print(Counter(word))
-
 counts = Counter(word)
 
-print(counts.values())
+queue = list(counts.values())
+
+print(queue)
