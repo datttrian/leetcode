@@ -7,7 +7,7 @@ counts = Counter(word)
 queue = list(counts.values())
 queue.sort(reverse=True)
 
-print(queue)
+
 
 
 
@@ -19,4 +19,10 @@ for key, value in enumerate(queue):
     if key >= 8:
         push_count += value
 
-print(push_count)
+    if key >= 16:
+        push_count += value
+
+    if key >= 24:
+        push_count += value
+
+
