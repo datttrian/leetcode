@@ -1,8 +1,13 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        matching_parentheses = ["()", "{}", "[]"]
-        while any(pair in s for pair in matching_parentheses):
-            s = s.replace("()", "").replace("{}", "").replace("[]", "")
+
+        matching_parentheses = {"(": ")", "{": "}", "[": "]"}
+
+        while any(open_paren + close_paren in s for open_paren, close_paren in matching_parentheses.items()):
+
+            for open_paren, close_paren in matching_parentheses.items():
+                s = s.replace(open_paren + close_paren, "")
+
         return not s
 
 
