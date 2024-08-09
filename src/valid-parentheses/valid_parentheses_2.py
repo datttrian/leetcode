@@ -2,18 +2,15 @@ class Solution:
     def isValid(self, s: str) -> bool:
         if not s:
             return True
-
-        n = len(s)
-        i = 0
-        matching_parentheses = [("(", ")"), ("{", "}"), ("[", "]")]
-
-        while i < n - 1:
-            for opening, closing in matching_parentheses:
-                if s[i] == opening and s[i + 1] == closing:
-                    new_s = s[:i] + s[i + 2 :]
-                    return self.isValid(new_s)
-            i += 1
-
+        length = len(s)
+        index = 0
+        matching_parentheses = {"(": ")", "{": "}", "[": "]"}
+        while index < length - 1:
+            for open_paren, close_paren in matching_parentheses.items():
+                if s[index] == open_paren and s[index + 1] == close_paren:
+                    new_string = s[:index] + s[index + 2:]
+                    return self.isValid(new_string)
+            index += 1
         return False
 
 
