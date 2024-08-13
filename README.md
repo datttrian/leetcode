@@ -36,6 +36,7 @@ distinct.
 
 #### Brute Force - O(n^2), O(1)
 
+
 ```python
 class Solution:
     def containsDuplicate(self, nums: list[int]) -> bool:
@@ -65,7 +66,9 @@ print(solution.containsDuplicate(nums=[1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
     False
     True
 
+
 #### Sorting - O(n log n), O(1)
+
 
 ```python
 class Solution:
@@ -74,7 +77,7 @@ class Solution:
         # Sort the list `nums` in ascending order
         nums.sort()
 
-        # Loop through all numbers in `nums` starting from the second element
+        # Loop through all numbers in the sorted list starting from the second element
         for index in range(1, len(nums)):
 
             # Return True if the current number is equal to the previous number
@@ -95,7 +98,9 @@ print(solution.containsDuplicate(nums=[1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
     False
     True
 
+
 #### Arrays & Hashing - O(n), O(n)
+
 
 ```python
 class Solution:
@@ -128,6 +133,7 @@ print(solution.containsDuplicate(nums=[1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
     False
     True
 
+
 ### 242. Valid Anagram
 
 Given two strings `s` and `t`, return `true` *if* `t` *is an anagram of*
@@ -157,6 +163,7 @@ you adapt your solution to such a case?
 
 #### Brute Force - O(n^2), O(1)
 
+
 ```python
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
@@ -184,7 +191,7 @@ class Solution:
                     is_matched = True
                     break
 
-            # Return False if no match was found for the character in `s`
+            # Return False if no match is found for the character in `s`
             if not is_matched:
                 return False
 
@@ -200,7 +207,9 @@ print(solution.isAnagram(s="rat", t="car"))
     True
     False
 
+
 #### Sorting - O(n log n), O(n)
+
 
 ```python
 class Solution:
@@ -216,7 +225,9 @@ print(solution.isAnagram(s="rat", t="car"))
     True
     False
 
+
 #### Arrays & Hashing - O(n), O(1)
+
 
 ```python
 from typing import Counter
@@ -235,7 +246,9 @@ print(solution.isAnagram(s="rat", t="car"))
     True
     False
 
+
 #### Using Character Count as Key - O(n), O(1)
+
 
 ```python
 class Solution:
@@ -269,7 +282,9 @@ print(solution.isAnagram(s="rat", t="car"))
     True
     False
 
+
 #### Using Prime Numbers - O(n), O(1)
+
 
 ```python
 class Solution:
@@ -333,6 +348,7 @@ print(solution.isAnagram(s="rat", t="car"))
     True
     False
 
+
 ### 1. Two Sum
 
 Given an array of integers `nums` and an integer `target`, return
@@ -371,6 +387,7 @@ You can return the answer in any order.
 
 #### Brute Force - O(n^2), O(1)
 
+
 ```python
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
@@ -400,7 +417,9 @@ print(solution.twoSum(nums=[3, 3], target=6))
     [1, 2]
     [0, 1]
 
+
 #### Two Pointers - O(n log n), O(n)
+
 
 ```python
 class Solution:
@@ -442,7 +461,9 @@ print(solution.twoSum(nums=[3, 3], target=6))
     [1, 2]
     [0, 1]
 
+
 #### Arrays & Hashing - O(n), O(n)
+
 
 ```python
 class Solution:
@@ -477,6 +498,7 @@ print(solution.twoSum(nums=[3, 3], target=6))
     [0, 1]
     [1, 2]
     [0, 1]
+
 
 ### 125. Valid Palindrome
 
@@ -514,6 +536,7 @@ Given a string `s`, return `true` *if it is a **palindrome**, or*
 
 #### Brute Force - O(n), O(n)
 
+
 ```python
 class Solution:
     def isPalindrome(self, s: str) -> bool:
@@ -542,7 +565,9 @@ print(solution.isPalindrome(s=" "))
     False
     True
 
+
 #### Two Pointers - O(n), O(1)
+
 
 ```python
 class Solution:
@@ -587,6 +612,7 @@ print(solution.isPalindrome(s=" "))
     True
     False
     True
+
 
 ### 170. Two Sum III - Data structure design
 
@@ -655,6 +681,7 @@ you cannot achieve any profit, return `0`.
 
 #### Brute Force - O(n^2), O(1)
 
+
 ```python
 class Solution:
     def maxProfit(self, prices: list[int]) -> int:
@@ -687,7 +714,9 @@ print(solution.maxProfit(prices=[7, 6, 4, 3, 1]))
     5
     0
 
+
 #### Sliding Window - O(n), O(1)
+
 
 ```python
 class Solution:
@@ -723,6 +752,7 @@ print(solution.maxProfit(prices=[7, 6, 4, 3, 1]))
     5
     0
 
+
 ### 20. Valid Parentheses
 
 Given a string `s` containing just the characters `'('`, `')'`, `'{'`,
@@ -757,6 +787,7 @@ An input string is valid if:
 
 #### Brute Force - O(n^2), O(n)
 
+
 ```python
 class Solution:
     def isValid(self, s: str) -> bool:
@@ -785,7 +816,9 @@ print(solution.isValid(s="(]"))
     True
     False
 
+
 #### Recursion - O(n^2), O(n)
+
 
 ```python
 class Solution:
@@ -834,7 +867,9 @@ print(solution.isValid(s="(]"))
     True
     False
 
+
 #### Stack - O(n), O(n)
+
 
 ```python
 class Solution:
@@ -874,6 +909,7 @@ print(solution.isValid(s="(]"))
     True
     False
 
+
 ### 704. Binary Search
 
 Given an array of integers `nums` which is sorted in ascending order,
@@ -902,6 +938,7 @@ You must write an algorithm with `O(log n)` runtime complexity.
 - `nums` is sorted in ascending order.
 
 #### Two Pointers - O(log n), O(1)
+
 
 ```python
 class Solution:
@@ -938,7 +975,9 @@ print(solution.search([-1, 0, 3, 5, 9, 12], target=2))
     4
     -1
 
+
 #### Recursion - O(log n), O(1)
+
 
 ```python
 class Solution:
@@ -968,7 +1007,9 @@ print(solution.search([-1, 0, 3, 5, 9, 12], target=2))
     4
     -1
 
+
 #### Exponential Search - O(log n), O(1)
+
 
 ```python
 class Solution:
@@ -1007,6 +1048,7 @@ print(solution.search([-1, 0, 3, 5, 9, 12], target=2))
     4
     -1
 
+
 ### 206. Reverse Linked List
 
 Given the `head` of a singly linked list, reverse the list, and return
@@ -1040,6 +1082,7 @@ style="width: 182px; height: 222px;" />
 
 **Follow up:** A linked list can be reversed either iteratively or
 recursively. Could you implement both?
+
 
 ```python
 from typing import Optional
@@ -1077,6 +1120,7 @@ def linked_list_to_list(node: Optional[ListNode]) -> list[int]:
 
 #### Iterative - O(n), O(1)
 
+
 ```python
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
@@ -1101,7 +1145,9 @@ print(linked_list_to_list(solution.reverseList(list_to_linked_list([]))))
     [2, 1]
     []
 
+
 #### Recursive - O(n), O(n)
+
 
 ```python
 class Solution:
@@ -1124,6 +1170,7 @@ print(linked_list_to_list(solution.reverseList(list_to_linked_list([]))))
     [5, 4, 3, 2, 1]
     [2, 1]
     []
+
 
 ### 21. Merge Two Sorted Lists
 
@@ -1160,6 +1207,7 @@ style="width: 662px; height: 302px;" />
 
 #### Iterative - O(n), O(1)
 
+
 ```python
 class Solution:
     def mergeTwoLists(
@@ -1195,7 +1243,9 @@ print(linked_list_to_list(solution.mergeTwoLists(list_to_linked_list([]), list_t
     []
     [0]
 
+
 #### Recursive - O(n), O(n)
+
 
 ```python
 class Solution:
@@ -1223,6 +1273,7 @@ print(linked_list_to_list(solution.mergeTwoLists(list_to_linked_list([]), list_t
     [1, 1, 2, 3, 4, 4]
     []
     [0]
+
 
 ### 141. Linked List Cycle
 
@@ -1268,6 +1319,7 @@ style="width: 45px; height: 45px;" />
     Output: false
     Explanation: There is no cycle in the linked list.
 
+
 ```python
 def list_to_linked_list_cycle(lst: list[int], pos: int) -> Optional[ListNode]:
     nodes = [ListNode(val) for val in lst]
@@ -1282,6 +1334,7 @@ def list_to_linked_list_cycle(lst: list[int], pos: int) -> Optional[ListNode]:
 ```
 
 #### Arrays & Hashing - O(n), O(n)
+
 
 ```python
 class Solution:
@@ -1308,7 +1361,9 @@ print(solution.hasCycle(list_to_linked_list_cycle([1], -1)))
     True
     False
 
+
 #### Two Pointers - O(n), O(1)
+
 
 ```python
 class Solution:
@@ -1334,6 +1389,7 @@ print(solution.hasCycle(list_to_linked_list_cycle([1], -1)))
     True
     True
     False
+
 
 ### 226. Invert Binary Tree
 
@@ -1367,6 +1423,7 @@ style="width: 500px; height: 120px;" />
 
 - The number of nodes in the tree is in the range `[0, 100]`.
 - `-100 <= Node.val <= 100`
+
 
 ```python
 from collections import deque
@@ -1426,6 +1483,7 @@ def tree_to_list(root: Optional[TreeNode]) -> list[Optional[int]]:
 
 #### Iterative DFS - O(n), O(n)
 
+
 ```python
 class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
@@ -1456,7 +1514,9 @@ print(tree_to_list(solution.invertTree(list_to_tree([]))))
     [2, 3, 1]
     []
 
+
 #### Iterative BFS - O(n), O(n)
+
 
 ```python
 class Solution:
@@ -1488,7 +1548,9 @@ print(tree_to_list(solution.invertTree(list_to_tree([]))))
     [2, 3, 1]
     []
 
+
 #### Recursive DFS - O(n), O(n)
+
 
 ```python
 class Solution:
@@ -1512,6 +1574,7 @@ print(tree_to_list(solution.invertTree(list_to_tree([]))))
     [4, 7, 2, 9, 6, 3, 1]
     [2, 3, 1]
     []
+
 
 ### 104. Maximum Depth of Binary Tree
 
@@ -1541,6 +1604,7 @@ style="width: 400px; height: 277px;" />
 
 #### Iterative DFS - O(n), O(n)
 
+
 ```python
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
@@ -1565,7 +1629,9 @@ print(solution.maxDepth(list_to_tree([1, None, 2])))
     3
     2
 
+
 #### Iterative BFS - O(n), O(n)
+
 
 ```python
 class Solution:
@@ -1591,7 +1657,9 @@ print(solution.maxDepth(list_to_tree([1, None, 2])))
     3
     2
 
+
 #### Recursive DFS - O(n), O(n)
+
 
 ```python
 class Solution:
@@ -1608,6 +1676,7 @@ print(solution.maxDepth(list_to_tree([1, None, 2])))
 
     3
     2
+
 
 ### 100. Same Tree
 
@@ -1648,6 +1717,7 @@ style="width: 622px; height: 182px;" />
 
 #### Iterative DFS - O(n), O(n)
 
+
 ```python
 class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
@@ -1677,7 +1747,9 @@ print(solution.isSameTree(list_to_tree([1, 2, 1]), list_to_tree([1, 1, 2])))
     False
     False
 
+
 #### Iterative BFS - O(n), O(n)
+
 
 ```python
 class Solution:
@@ -1708,7 +1780,9 @@ print(solution.isSameTree(list_to_tree([1, 2, 1]), list_to_tree([1, 1, 2])))
     False
     False
 
+
 #### Recursive DFS - O(n), O(n)
+
 
 ```python
 class Solution:
@@ -1733,6 +1807,7 @@ print(solution.isSameTree(list_to_tree([1, 2, 1]), list_to_tree([1, 1, 2])))
     True
     False
     False
+
 
 ### 572. Subtree of Another Tree
 
@@ -1772,6 +1847,7 @@ style="width: 502px; height: 458px;" />
 
 #### Recursive DFS - O(n), O(n)
 
+
 ```python
 class Solution:
     def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
@@ -1802,6 +1878,7 @@ print(solution.isSubtree(list_to_tree([3, 4, 5, 1, 2, None, None, None, None, 0]
 
     True
     False
+
 
 ### 543. Diameter of Binary Tree
 
@@ -1837,6 +1914,7 @@ style="width: 292px; height: 302px;" />
 
 #### Iterative DFS - O(n), O(n)
 
+
 ```python
 class Solution:
     def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
@@ -1868,7 +1946,9 @@ print(solution.diameterOfBinaryTree(list_to_tree([1, 2])))
     3
     1
 
+
 #### Recursive DFS - O(n), O(n)
+
 
 ```python
 class Solution:
@@ -1896,6 +1976,7 @@ print(solution.diameterOfBinaryTree(list_to_tree([1, 2])))
 
     3
     1
+
 
 ### 110. Balanced Binary Tree
 
@@ -1931,6 +2012,7 @@ style="width: 452px; height: 301px;" />
 
 #### Recursive DFS - O(n), O(h)
 
+
 ```python
 class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
@@ -1958,6 +2040,7 @@ print(solution.isBalanced(list_to_tree([])))
     True
     False
     True
+
 
 ### 703. Kth Largest Element in a Stream
 
@@ -2001,6 +2084,7 @@ Implement `KthLargest` class:
 
 #### Sorting - O(n log n), O(n); O(n log n), O(n)
 
+
 ```python
 class KthLargest:
     def __init__(self, k: int, nums: list[int]):
@@ -2027,7 +2111,9 @@ print(obj.add(4))
     8
     8
 
+
 #### Heap - O(log k), O(k); O(n log k), O(k)
+
 
 ```python
 import heapq
@@ -2061,6 +2147,7 @@ print(obj.add(4))
     5
     8
     8
+
 
 ### 1046. Last Stone Weight
 
@@ -2103,6 +2190,7 @@ left, return `0`.
 
 #### Sorting - O(n^2), O(1)
 
+
 ```python
 class Solution:
     def lastStoneWeight(self, stones: list[int]) -> int:
@@ -2124,7 +2212,9 @@ print(solution.lastStoneWeight([1]))
     1
     1
 
+
 #### Heap - O(n log n), O(n)
+
 
 ```python
 import heapq
@@ -2153,6 +2243,7 @@ print(solution.lastStoneWeight([1]))
 
     1
     1
+
 
 ## Medium
 
@@ -2187,6 +2278,7 @@ exactly once.
 - `strs[i]` consists of lowercase English letters.
 
 #### Brute Force - O(n^2 * m), O(n)
+
 
 ```python
 class Solution:
@@ -2235,7 +2327,9 @@ print(solution.groupAnagrams(strs=["a"]))
     [['']]
     [['a']]
 
-#### Arrays & Hashing - O(n *m* log(m)), O(n * m)
+
+#### Arrays & Hashing - O(n * m * log(m)), O(n * m)
+
 
 ```python
 from collections import defaultdict
@@ -2262,7 +2356,9 @@ print(solution.groupAnagrams(strs=["a"]))
     [['']]
     [['a']]
 
-#### Using Character Count as Key - O(n *m), O(n* m)
+
+#### Using Character Count as Key - O(n * m), O(n * m)
+
 
 ```python
 from collections import defaultdict
@@ -2292,7 +2388,9 @@ print(solution.groupAnagrams(strs=["a"]))
     [['']]
     [['a']]
 
-#### Using Prime Numbers - O(n *m), O(n* m)
+
+#### Using Prime Numbers - O(n * m), O(n * m)
+
 
 ```python
 class Solution:
@@ -2351,6 +2449,7 @@ print(solution.groupAnagrams(strs=["a"]))
     [['']]
     [['a']]
 
+
 ### 167. Two Sum II - Input Array Is Sorted
 
 Given a **1-indexed** array of integers `numbers` that is already
@@ -2397,6 +2496,7 @@ Your solution must use only constant extra space.
 
 #### Brute Force - O(n^2), O(1)
 
+
 ```python
 class Solution:
     def twoSum(self, numbers: list[int], target: int) -> list[int]:
@@ -2420,7 +2520,9 @@ print(solution.twoSum(numbers=[-1, 0], target=-1))
     [1, 3]
     [1, 2]
 
+
 #### Arrays & Hashing - O(n), O(n)
+
 
 ```python
 class Solution:
@@ -2448,7 +2550,9 @@ print(solution.twoSum(numbers=[-1, 0], target=-1))
     [1, 3]
     [1, 2]
 
+
 #### Two Pointers - O(n), O(1)
+
 
 ```python
 class Solution:
@@ -2478,6 +2582,7 @@ print(solution.twoSum(numbers=[-1, 0], target=-1))
     [1, 2]
     [1, 3]
     [1, 2]
+
 
 ### 15. 3Sum
 
@@ -2517,6 +2622,7 @@ Notice that the solution set must not contain duplicate triplets.
 
 #### Brute Force - O(n^3), O(n)
 
+
 ```python
 class Solution:
     def threeSum(self, nums: list[int]) -> list[list[int]]:
@@ -2543,6 +2649,7 @@ print(solution.threeSum(nums=[0, 0, 0]))
     [[-1, 0, 1], [-1, -1, 2]]
     []
     [[0, 0, 0]]
+
 
 ### 39. Combination Sum
 
@@ -2586,6 +2693,7 @@ input.
 
 #### Backtracking - O(n^2), O(n)
 
+
 ```python
 class Solution:
     def combinationSum(self, candidates: list[int], target: int) -> list[list[int]]:
@@ -2616,6 +2724,7 @@ print(solution.combinationSum([2], 1))
     [[2, 2, 3], [7]]
     [[2, 2, 2, 2], [2, 3, 3], [3, 5]]
     []
+
 
 ### 143. Reorder List
 
@@ -2656,6 +2765,7 @@ style="width: 542px; height: 222px;" />
 - `1 <= Node.val <= 1000`
 
 #### Two Pointers - O(n), O(1)
+
 
 ```python
 class Solution:
@@ -2718,6 +2828,7 @@ print(linked_list_to_list(head))
     [1, 4, 2, 3]
     [1, 5, 2, 4, 3]
 
+
 ## Hard
 
 ### 778. Swim in Rising Water
@@ -2767,6 +2878,7 @@ style="width: 404px; height: 405px;" />
 - Each value `grid[i][j]` is **unique**.
 
 #### Binary Search - O(n^2 * log(n^2)), O(n^2)
+
 
 ```python
 from collections import deque
