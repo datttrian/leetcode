@@ -15,10 +15,8 @@ class Solution:
                 return mid
 
             return (
-
                 # Recursively search the right half if the target is greater than the mid element
                 binary_search(mid + 1, right)
-
                 # otherwise, search the left half
                 if nums[mid] < target
                 else binary_search(left, mid - 1)
