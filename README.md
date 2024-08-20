@@ -41,11 +41,11 @@ class Solution:
     def containsDuplicate(self, nums: list[int]) -> bool:
 
         # Loop through all numbers in `nums`
-        length = len(nums)
-        for current_index in range(length):
+        n = len(nums)
+        for current_index in range(n):
 
             # Loop through the remaining numbers
-            for comparison_index in range(current_index + 1, length):
+            for comparison_index in range(current_index + 1, n):
 
                 # Return True if the numbers at the two indices are equal
                 if nums[current_index] == nums[comparison_index]:
@@ -245,16 +245,16 @@ class Solution:
         if len(s) != len(t):
             return False
 
-        # Create a list to count the frequency of each English character in the strings
+        # Create a list to count the frequency of each English character in `s` and `t`
         counts = [0] * 26
 
         # Loop through all characters in `s` and `t`
         for index, char in enumerate(s):
 
-            # Increment the counts for the character in 's'
+            # Increment the counts for the character in `s`
             counts[ord(char) - ord("a")] += 1
 
-            # Decrement the counts for the character in 't'
+            # Decrement the counts for the character in `t`
             counts[ord(t[index]) - ord("a")] -= 1
 
         # Return true if the counts are zero
@@ -448,7 +448,7 @@ print(solution.twoSum(nums=[3, 3], target=6))
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
 
-        # Create a dictionary to store the indices of seen numbers in `nums`
+        # Create a dictionary to store the numbers and their indices in `nums`
         nums_index: dict[int, int] = {}
 
         # Loop through all numbers and their indices in `nums`
@@ -669,10 +669,10 @@ class Solution:
             # Loop through all subsequent days as the selling day
             for sell_day in range(buy_day + 1, num_days):
 
-                # Calculate the potential profit for the current pair of days
+                # Calculate the potential profit for the pair of days
                 potential_profit = prices[sell_day] - prices[buy_day]
 
-                # Update the maximum profit if the current potential profit is higher
+                # Update the maximum profit if the potential profit is higher
                 max_profit = max(potential_profit, max_profit)
 
         # Return the maximum profit
@@ -795,14 +795,12 @@ class Solution:
         if not s:
             return True
 
-        # Initialize the length of the string and an index to traverse it
-        length = len(s)
-        index = 0
-
         # Define a dictionary of matching parentheses pairs
         matching_parentheses = {"(": ")", "{": "}", "[": "]"}
 
         # Loop through `s` up to the second-to-last character
+        index = 0
+        length = len(s)
         while index < length - 1:
 
             # Check each pair of characters for a matching set of parentheses
@@ -918,7 +916,7 @@ class Solution:
             if nums[mid] == target:
                 return mid
 
-            # If the middle element is less than the target adjust the left pointer to search the right half
+            # If the middle element is less than `target` adjust the left pointer to search the right half
             if nums[mid] < target:
                 left, right = mid + 1, right
 
@@ -926,7 +924,7 @@ class Solution:
             else:
                 left, right = left, mid - 1
 
-        # Return -1 if the target is not found in the list after completing the iteration
+        # Return -1 if `target` is not found in the list after completing the iteration
         return -1
 
 
@@ -944,19 +942,28 @@ print(solution.search([-1, 0, 3, 5, 9, 12], target=2))
 class Solution:
     def search(self, nums: list[int], target: int) -> int:
         def binary_search(left: int, right: int) -> int:
+            """Recursively performs a binary search."""
+
+            # Base case: if the left index exceeds the right index, `target` is not found
             if left > right:
                 return -1
+
+            # Calculate the middle index of `nums`
             mid = (left + right) // 2
 
+            # Return the index if the element at the middle index equal `target`
             if nums[mid] == target:
                 return mid
 
             return (
+                # Recursively search the right half if `target` is greater than the middle element
                 binary_search(mid + 1, right)
+                # Otherwise, search the left half
                 if nums[mid] < target
                 else binary_search(left, mid - 1)
             )
 
+        # Start the binary search on `nums`
         return binary_search(0, len(nums) - 1)
 
 
@@ -973,30 +980,41 @@ print(solution.search([-1, 0, 3, 5, 9, 12], target=2))
 ```python
 class Solution:
     def search(self, nums: list[int], target: int) -> int:
+
+        # Return 0 if the first element in `nums` matches `target`
         if nums[0] == target:
             return 0
 
-        n = len(nums)
+        # Otherwise, initialize the search bound to 1
         bound = 1
+
+        # Increase the bound exponentially until it surpasses `target` or reach the end of `nums`
+        n = len(nums)
         while bound < n and nums[bound] < target:
             bound *= 2
 
+        # Loop until two pointers at half of the bound and at the minimum of the bound or the last index meet
         left = bound // 2
         right = min(bound, n - 1)
+        while left <= right:
 
-        def binary_search(left: int, right: int):
-            while left <= right:
-                mid = (left + right) // 2
-                if nums[mid] == target:
-                    return mid
+            # Calculate the middle index between two pointers
+            mid = (left + right) // 2
 
-                left, right = (
-                    (mid + 1, right) if nums[mid] < target else (left, mid - 1)
-                )
+            # Return the index if the middle element equal `target`
+            if nums[mid] == target:
+                return mid
 
-            return -1
+            # If the middle element is less than `target` adjust the left pointer to search the right half
+            if nums[mid] < target:
+                left, right = mid + 1, right
 
-        return binary_search(left, right)
+            # Otherwise, adjust the right pointer to search the left half
+            else:
+                left, right = left, mid - 1
+
+        # Return -1 if `target` is not found in the list after completing the iteration
+        return -1
 
 
 solution = Solution()
