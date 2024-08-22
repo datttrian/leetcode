@@ -1,5 +1,5 @@
-from typing import Optional
 from collections import deque
+from typing import Optional
 
 
 class TreeNode:
@@ -16,14 +16,14 @@ class TreeNode:
 
 class Solution:
     def goodNodes(self, root: TreeNode) -> int:
-        good = 0
+        count = 0
         queue = deque([(root, root.val)])
 
         while queue:
             node, max_val = queue.popleft()
 
             if node.val and max_val and node.val >= max_val:
-                good += 1
+                count += 1
 
             if max_val and node.val:
                 max_val = max(max_val, node.val)
@@ -33,4 +33,4 @@ class Solution:
             if node.right:
                 queue.append((node.right, max_val))
 
-        return good
+        return count

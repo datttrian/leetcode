@@ -15,18 +15,18 @@ class TreeNode:
 
 class Solution:
     def goodNodes(self, root: TreeNode) -> int:
-        def dfs(node: Optional[TreeNode], max_val: int) -> int:
+        def dfs(node: Optional[TreeNode], maxVal: int) -> int:
             if node is None:
                 return 0
 
-            good = 0
+            count = 0
             if node.val:
-                good = 1 if node.val >= max_val else 0
-                max_val = max(max_val, node.val)
+                count = 1 if node.val >= maxVal else 0
+                maxVal = max(maxVal, node.val)
 
-            good += dfs(node.left, max_val)
-            good += dfs(node.right, max_val)
+            count += dfs(node.left, maxVal)
+            count += dfs(node.right, maxVal)
 
-            return good
+            return count
 
         return dfs(root, root.val if root.val else -10 ^ 4)

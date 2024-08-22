@@ -15,14 +15,14 @@ class TreeNode:
 
 class Solution:
     def goodNodes(self, root: TreeNode) -> int:
-        good = 0
+        count = 0
         stack = [(root, root.val)]
 
         while stack:
             node, max_val = stack.pop()
 
             if node.val and max_val and max_val <= node.val:
-                good += 1
+                count += 1
 
             if node.val and max_val:
                 max_val = max(max_val, node.val)
@@ -33,4 +33,4 @@ class Solution:
             if node.left:
                 stack.append((node.left, max_val))
 
-        return good
+        return count
