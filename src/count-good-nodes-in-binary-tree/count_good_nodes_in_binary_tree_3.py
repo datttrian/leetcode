@@ -1,4 +1,5 @@
 from typing import Optional
+from collections import deque
 
 
 class TreeNode:
@@ -16,21 +17,21 @@ class TreeNode:
 class Solution:
     def goodNodes(self, root: TreeNode) -> int:
         good = 0
-        stack = [(root, float("-inf"))]
+        queue = deque([(root, root.val)])
 
-        while stack:
-            node, max_val = stack.pop()
+        while queue:
+            node, max_val = queue.popleft()
 
-            if node.val and max_val <= node.val:
+            if node.val and max_val and max_val >= node.val:
                 good += 1
 
-            if node.val:
+            if node.val and max_val:
                 max_val = max(max_val, node.val)
 
             if node.right:
-                stack.append((node.right, max_val))
+                queue.append((node.right, max_val))
 
             if node.left:
-                stack.append((node.left, max_val))
+                queue.append((node.left, max_val))
 
         return good
