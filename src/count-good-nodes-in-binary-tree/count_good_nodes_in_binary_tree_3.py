@@ -22,16 +22,15 @@ class Solution:
         while queue:
             node, max_val = queue.popleft()
 
-            if node.val and max_val and max_val >= node.val:
+            if node.val and max_val and node.val >= max_val:
                 good += 1
 
-            if node.val and max_val:
+            if max_val and node.val:
                 max_val = max(max_val, node.val)
-
-            if node.right:
-                queue.append((node.right, max_val))
 
             if node.left:
                 queue.append((node.left, max_val))
+            if node.right:
+                queue.append((node.right, max_val))
 
         return good

@@ -16,15 +16,15 @@ class TreeNode:
 class Solution:
     def goodNodes(self, root: TreeNode) -> int:
         good = 0
-        stack = [(root, float("-inf"))]
+        stack = [(root, root.val)]
 
         while stack:
             node, max_val = stack.pop()
 
-            if node.val and max_val <= node.val:
+            if node.val and max_val and max_val <= node.val:
                 good += 1
 
-            if node.val:
+            if node.val and max_val:
                 max_val = max(max_val, node.val)
 
             if node.right:
