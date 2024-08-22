@@ -1,6 +1,13 @@
-# Definition for a binary tree node.
+from typing import Optional
+
+
 class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
+    def __init__(
+        self,
+        val: Optional[int] = 0,
+        left: Optional["TreeNode"] = None,
+        right: Optional["TreeNode"] = None,
+    ) -> None:
         self.val = val
         self.left = left
         self.right = right
@@ -8,15 +15,18 @@ class TreeNode:
 
 class Solution:
     def goodNodes(self, root: TreeNode) -> int:
-        def dfs(node, maxVal):
-            if not node:
+        def dfs(node: Optional[TreeNode], max_val: int) -> int:
+            if node is None:
                 return 0
 
-            res = 1 if node.val >= maxVal else 0
-            maxVal = max(maxVal, node.val)
-            res += dfs(node.left, maxVal)
-            res += dfs(node.right, maxVal)
+            good = 0
+            if node.val:
+                good = 1 if node.val >= max_val else 0
+                max_val = max(max_val, node.val)
 
-            return res
-        
-        return dfs(root, root.val)
+            good += dfs(node.left, max_val)
+            good += dfs(node.right, max_val)
+
+            return good
+
+        return dfs(root, root.val if root.val else -10 ^ 4)
