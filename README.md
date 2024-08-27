@@ -74,7 +74,7 @@ class Solution:
         # Sort the list `nums` in ascending order
         nums.sort()
 
-        # Loop through all numbers in the sorted list starting from the second element
+        # Loop through all numbers in the sorted list from the second element
         for index in range(1, len(nums)):
 
             # Return True if the current number is equal to the previous number
@@ -699,7 +699,7 @@ class Solution:
         # Initialize the maximum profit to zero
         max_profit = 0
 
-        # Loop through all numbers in `prices` starting from the second day
+        # Loop through all numbers in `prices` from the second day
         for price in prices[1:]:
 
             # Update the minimum numbers if the current number is lower
@@ -1005,7 +1005,7 @@ class Solution:
             if nums[mid] == target:
                 return mid
 
-            # If the middle element is less than `target` adjust the left pointer to search the right half
+            # If the middle element is less than `target`, adjust the left pointer to search the right half
             if nums[mid] < target:
                 left, right = mid + 1, right
 
@@ -1098,15 +1098,28 @@ def linked_list_to_list(node: Optional[ListNode]) -> list[int]:
 ```python
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        node = None
 
-        while head:
-            temp = head.next
-            head.next = node
-            node = head
-            head = temp
+        # Initialize a variable to keep track of the previous node
+        previous_node = None
+        
+        # Loop through all nodes in `head`
+        current_node = head
+        while current_node:
 
-        return node
+            # Store the next node of the current node in a temporary variable
+            temp = current_node.next
+
+            # Point the next node of the current node to the previous node
+            current_node.next = previous_node
+
+            # Move the previous node to the current node
+            previous_node = current_node
+
+            # Move the current node to the next node stored in the temporary variable
+            current_node = temp
+
+        # Return the previous node that points to the new head after completing the iteration
+        return previous_node
 
 
 solution = Solution()
@@ -1124,13 +1137,22 @@ print(linked_list_to_list(solution.reverseList(list_to_linked_list([]))))
 ```python
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+
+        # Base case: if `head` is empty or has only one node, return the list as is
         if not head or not head.next:
             return head
 
-        new_head = self.reverseList(head.next)
+        # Recursively reverse the list from the second node
+        reversed_head = self.reverseList(head.next)
+
+        # After completing the recursion, point the next node of the end of the reversed list to the current node
         head.next.next = head
+
+        # Point the next node of the current node to None
         head.next = None
-        return new_head
+
+        # Return the head of the reversed list
+        return reversed_head
 
 
 solution = Solution()
@@ -2693,7 +2715,7 @@ class Solution:
             slow = slow.next
             fast = fast.next.next
 
-        # Reverse the second half of the list starting from slow.next
+        # Reverse the second half of the list from slow.next
         prev: Optional[ListNode] = None
         curr: Optional[ListNode] = slow.next if slow else None
         if slow:
